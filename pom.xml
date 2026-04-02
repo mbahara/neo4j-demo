@@ -29,7 +29,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -56,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-ogm-bolt-driver</artifactId>
+            <artifactId>neo4j-ogm-core</artifactId>
             <version>${neo4j-ogm.version}</version>
         </dependency>
         <dependency>

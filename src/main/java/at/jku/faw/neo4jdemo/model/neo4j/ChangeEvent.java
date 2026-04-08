@@ -11,7 +11,7 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 @Node("ChangeEvent")
 public class ChangeEvent { // ability_changelog.csv
 	@Id
-	private int id;
+	private Long id;
 	private String effect;
 
 	@Relationship(type = "OCCURRED_IN")

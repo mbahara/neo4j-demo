@@ -3,7 +3,7 @@ package at.jku.faw.neo4jdemo.model.csv;
 import com.opencsv.bean.CsvBindByName;
 
 public record CsvPokemonSpecies(
-		@CsvBindByName(column = "id") int id,
+		@CsvBindByName(column = "id") Long id,
 		@CsvBindByName(column = "identifier") String identifier,
 		@CsvBindByName(column = "generation_id") Integer generationId,
 		@CsvBindByName(column = "evolves_from_species_id") Integer evolvesFromSpeciesId,
@@ -14,7 +14,7 @@ public record CsvPokemonSpecies(
 		@CsvBindByName(column = "gender_rate") int genderRate,
 		@CsvBindByName(column = "capture_rate") int captureRate,
 		@CsvBindByName(column = "is_baby") int isBaby, // 0 or 1
-		@CsvBindByName(column = "growth_rate_id") int growthRateId,
+		@CsvBindByName(column = "growth_rate_id") Long growthRateId,
 		@CsvBindByName(column = "is_legendary") int isLegendary,
 		@CsvBindByName(column = "is_mythical") int isMythical,
 		@CsvBindByName(column = "order") int order,

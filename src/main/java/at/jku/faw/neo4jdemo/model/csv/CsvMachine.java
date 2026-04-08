@@ -4,7 +4,7 @@ import com.opencsv.bean.CsvBindByName;
 
 public record CsvMachine(
 		@CsvBindByName(column = "machine_number") int machineNumber,
-		@CsvBindByName(column = "version_group_id") int versionGroupId,
-		@CsvBindByName(column = "item_id") int itemId,
-		@CsvBindByName(column = "move_id") int moveId
+		@CsvBindByName(column = "version_group_id") Long versionGroupId,
+		@CsvBindByName(column = "item_id") Long itemId,
+		@CsvBindByName(column = "move_id") Long moveId
 ) {}

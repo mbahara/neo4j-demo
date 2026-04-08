@@ -3,9 +3,9 @@ package at.jku.faw.neo4jdemo.model.csv;
 import com.opencsv.bean.CsvBindByName;
 
 public record CsvMoveMeta(
-    @CsvBindByName(column = "move_id") int moveId,
-    @CsvBindByName(column = "meta_category_id") int metaCategoryId,
-    @CsvBindByName(column = "meta_ailment_id") int metaAilmentId,
+    @CsvBindByName(column = "move_id") Long moveId,
+    @CsvBindByName(column = "meta_category_id") Long metaCategoryId,
+    @CsvBindByName(column = "meta_ailment_id") Long metaAilmentId,
     @CsvBindByName(column = "min_hits") int minHits,
     @CsvBindByName(column = "max_hits") int maxHits,
     @CsvBindByName(column = "min_turns") int minTurns,

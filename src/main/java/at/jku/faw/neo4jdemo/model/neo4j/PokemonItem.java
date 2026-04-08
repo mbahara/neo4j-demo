@@ -11,8 +11,8 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class PokemonItem {
     @Id
     public Long id;
-    private int pokemonId;
-    private int versionId;
-    private int itemId;
+    private Long pokemonId;
+    private Long versionId;
+    private Long itemId;
     private int rarity;
 }

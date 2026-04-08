@@ -12,7 +12,7 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 @Node("Ability")
 public class Ability {
 	@Id
-	private int id;
+	private Long id;
 	private int name;
 	private int isMainSeries;
 	private int shortEffect;

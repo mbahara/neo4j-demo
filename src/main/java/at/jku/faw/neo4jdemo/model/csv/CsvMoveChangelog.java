@@ -10,7 +10,7 @@ public record CsvMoveChangelog(
 		@CsvBindByName(column = "pp") Integer pp,
 		@CsvBindByName(column = "accuracy") Integer accuracy,
 		@CsvBindByName(column = "priority") Integer priority,
-		@CsvBindByName(column = "target_id") Integer targetId,
-		@CsvBindByName(column = "effect_id") Integer effectId,
+		@CsvBindByName(column = "target_id") Long targetId,
+		@CsvBindByName(column = "effect_id") Long effectId,
 		@CsvBindByName(column = "effect_change") Integer effectChange
 ) {}

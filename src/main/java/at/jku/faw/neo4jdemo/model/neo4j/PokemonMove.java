@@ -1,0 +1,28 @@
+package at.jku.faw.neo4jdemo.model.neo4j;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
+
+@Setter
+@Getter
+@Node("PokemonMove")
+public class PokemonMove {
+	@Id @GeneratedValue
+	private Long id;
+
+	private int level;
+	private Integer order;
+
+	@Relationship(type = "MOVE_LEARNED")
+	private Move move;
+
+	@Relationship(type = "LEARNED_VIA")
+	private MoveMethod method;
+
+	@Relationship(type = "IN_VERSION_GROUP")
+	private VersionGroup versionGroup;
+}

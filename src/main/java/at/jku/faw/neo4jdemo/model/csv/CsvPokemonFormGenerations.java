@@ -1,0 +1,9 @@
+package at.jku.faw.neo4jdemo.model.csv;
+
+import com.opencsv.bean.CsvBindByName;
+
+public record CsvPokemonFormGenerations(
+    @CsvBindByName(column = "pokemon_form_id") int pokemonFormId,
+    @CsvBindByName(column = "generation_id") int generationId,
+    @CsvBindByName(column = "game_index") int gameIndex
+) {}

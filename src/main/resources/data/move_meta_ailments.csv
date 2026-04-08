@@ -1,0 +1,23 @@
+id,identifier,name
+-1,unknown,????
+0,none,none
+1,paralysis,Paralysis
+2,sleep,Sleep
+3,freeze,Freeze
+4,burn,Burn
+5,poison,Poison
+6,confusion,Confusion
+7,infatuation,Infatuation
+8,trap,Trap
+9,nightmare,Nightmare
+12,torment,Torment
+13,disable,Disable
+14,yawn,Yawn
+15,heal-block,Heal Block
+17,no-type-immunity,No type immunity
+18,leech-seed,Leech Seed
+19,embargo,Embargo
+20,perish-song,Perish Song
+21,ingrain,Ingrain
+24,silence,Silence
+42,tar-shot,Tar shot

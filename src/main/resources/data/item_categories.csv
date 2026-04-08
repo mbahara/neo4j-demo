@@ -1,0 +1,51 @@
+id,pocket_id,identifier,name
+1,7,stat-boosts,Stat boosts
+2,5,effort-drop,Effort drop
+3,5,medicine,Medicine
+4,5,other,Other
+5,5,in-a-pinch,In a pinch
+6,5,picky-healing,Picky healing
+7,5,type-protection,Type protection
+8,5,baking-only,Baking only
+9,1,collectibles,Collectibles
+10,1,evolution,Evolution
+11,1,spelunking,Spelunking
+12,1,held-items,Held items
+13,1,choice,Choice
+14,1,effort-training,Effort training
+15,1,bad-held-items,Bad held items
+16,1,training,Training
+17,1,plates,Plates
+18,1,species-specific,Species-specific
+19,1,type-enhancement,Type enhancement
+20,8,event-items,Event items
+21,8,gameplay,Gameplay
+22,8,plot-advancement,Plot advancement
+23,8,unused,Unused
+24,1,loot,Loot
+25,6,all-mail,All mail
+26,2,vitamins,Vitamins
+27,2,healing,Healing
+28,2,pp-recovery,PP recovery
+29,2,revival,Revival
+30,2,status-cures,Status cures
+32,1,mulch,Mulch
+33,3,special-balls,Special balls
+34,3,standard-balls,Standard balls
+35,1,dex-completion,Dex completion
+36,1,scarves,Scarves
+37,4,all-machines,All machines
+38,7,flutes,Flutes
+39,3,apricorn-balls,Apricorn balls
+40,8,apricorn-box,Apricorn Box
+41,8,data-cards,Data Cards
+42,1,jewels,Jewels
+43,7,miracle-shooter,Miracle Shooter
+44,1,mega-stones,Mega Stones
+45,1,memories,Memories
+46,8,z-crystals,Z-Crystals
+47,1,species-candies,Species candies
+48,5,catching-bonus,Catching bonus
+49,1,dynamax-crystals,Dynamax crystals
+50,2,nature-mints,Nature mints
+51,1,curry-ingredients,Curry ingredients

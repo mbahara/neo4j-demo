@@ -1,0 +1,35 @@
+id,version_group_id,identifier,name
+1,1,red,Red
+2,1,blue,Blue
+3,2,yellow,Yellow
+4,3,gold,Gold
+5,3,silver,Silver
+6,4,crystal,Crystal
+7,5,ruby,Ruby
+8,5,sapphire,Sapphire
+9,6,emerald,Emerald
+10,7,firered,FireRed
+11,7,leafgreen,LeafGreen
+12,8,diamond,Diamond
+13,8,pearl,Pearl
+14,9,platinum,Platinum
+15,10,heartgold,HeartGold
+16,10,soulsilver,SoulSilver
+17,11,black,Black
+18,11,white,White
+19,12,colosseum,Colosseum
+20,13,xd,XD
+21,14,black-2,Black 2
+22,14,white-2,White 2
+23,15,x,X
+24,15,y,Y
+25,16,omega-ruby,Omega Ruby
+26,16,alpha-sapphire,Alpha Sapphire
+27,17,sun,Sun
+28,17,moon,Moon
+29,18,ultra-sun,Ultra Sun
+30,18,ultra-moon,Ultra Moon
+31,19,lets-go-pikachu,"Let’s Go, Pikachu!"
+32,19,lets-go-eevee,"Let’s Go, Eevee!"
+33,20,sword,Sword
+34,20,shield,Shield

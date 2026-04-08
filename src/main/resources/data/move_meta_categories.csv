@@ -1,0 +1,15 @@
+id,identifier,description
+0,damage,Inflicts damage
+1,ailment,No damage; inflicts status ailment
+2,net-good-stats,No damage; lowers target's stats or raises user's stats
+3,heal,No damage; heals the user
+4,damage+ailment,Inflicts damage; inflicts status ailment
+5,swagger,No damage; inflicts status ailment; raises target's stats
+6,damage+lower,Inflicts damage; lowers target's stats
+7,damage+raise,Inflicts damage; raises user's stats
+8,damage+heal,Inflicts damage; absorbs damage done to heal the user
+9,ohko,One-hit KO
+10,whole-field-effect,Effect on the whole field
+11,field-effect,Effect on one side of the field
+12,force-switch,Forces target to switch out
+13,unique,Unique effect

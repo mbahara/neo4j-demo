@@ -1,0 +1,53 @@
+id,ability_id,changed_in_version_group_id,effect
+1,1,11,Has no effect in battle.
+2,5,11,Does not prevent regular KOs from full [HP]{mechanic:hp}.
+3,9,6,Has no overworld effect.
+4,10,8,"Does not absorb non-damaging []{type:electric} moves, i.e. []{move:thunder-wave}."
+5,16,11,Triggers on every hit of multiple-hit moves.
+6,18,8,[]{move:will-o-wisp} does not trigger this ability for Pokémon immune to [burns]{mechanic:burn}.
+7,21,6,Has no overworld effect.
+8,22,6,Has no overworld effect.
+9,22,8,Does not take effect if acquired after entering battle.
+10,23,8,Affects other Pokémon with this ability.
+11,24,8,Inflicts only 1/16 of the attacker's maximum [HP]{mechanic:hp} in damage.
+12,25,11,[]{move:fire-fang} and moves that inflict [typeless damage]{mechanic:typeless-damage} ignore this ability regardless of type.
+13,28,6,Has no overworld effect.
+14,28,8,Cannot influence the natures of Pokémon encountered by interacting with them on the overworld.
+15,28,11,Passes back bad [poison]{mechanic:poison} as regular poison.
+16,31,6,Has no overworld effect.
+17,31,8,"Does not affect non-damaging []{type:electric} moves, i.e. []{move:thunder-wave}.  Increases the frequency of Match Call calls on the overworld if any party Pokémon has this ability."
+18,31,11,Redirects []{type:electric} moves without negating them or granting any [Special Attack]{mechanic:special-attack} boost.  Does not redirect []{move:hidden-power}.
+19,40,6,Has no overworld effect.
+20,42,6,Has no overworld effect.
+21,43,11,"Prevents []{move:heal-bell} from curing the Pokémon, whether or not it is in battle."
+22,46,6,Has no overworld effect.
+23,46,8,Does not affect friendly Pokémon's moves that target all other Pokémon.  This ability's presence is not announced upon entering battle.
+24,49,6,Has no overworld effect.
+25,51,6,Has no overworld effect.
+26,52,6,Has no overworld effect.
+27,52,8,Doubles []{move:cut}'s grass-cutting radius on the overworld if any party Pokémon has this ability.
+28,53,11,Has no effect in battle.
+29,55,6,Has no overworld effect.
+30,56,6,Has no overworld effect.
+31,60,6,Has no overworld effect.
+32,62,8,Does not take effect during [sleep]{mechanic:sleep}.
+33,68,6,Has no overworld effect.
+34,68,8,Increases the frequency of cries heard on the overworld if any party Pokémon has this ability.
+35,71,6,Has no overworld effect.
+36,72,6,Has no overworld effect.
+37,73,6,Has no overworld effect.
+38,90,11,[Poison]{mechanic:poison} still damages the Pokémon outside of battle.
+39,98,11,"[Paralysis]{mechanic:paralysis} cannot prevent the Pokémon from moving, though the [Speed]{mechanic:speed} cut is unaffected.  [Poison]{mechanic:poison} still damages the Pokémon outside of battle."
+40,99,9,"Due to a glitch, moves affected by this ability have a (100 - accuracy)% chance to hit through []{move:detect} or []{move:protect}."
+41,102,11,[]{move:rest} works as usual during [strong sunlight]{mechanic:strong-sunlight}.
+42,103,11,[]{move:fling} can be used as usual.
+43,114,11,Redirects []{type:water} moves without negating them or granting any [Special Attack]{mechanic:special-attack} boost.  Does not redirect []{move:hidden-power}.
+44,36,11,Can copy []{ability:flower-gift} and []{ability:wonder-guard}.
+45,36,8,Can copy []{ability:forecast} and []{ability:trace}.
+46,57,11,Powers up only when paired with []{ability:minus}.
+47,58,11,Powers up only when paired with []{ability:plus}.
+48,61,11,Chance of taking effect is 30%.
+49,92,11,[]{move:triple-kick} is unaffected.
+50,101,11,[]{move:struggle} is unaffected.  []{move:helping-hand} and []{move:defense-curl} are not taken into account.
+51,14,6,Has no overworld effect.
+52,61,8,Chance of taking effect is 33%.

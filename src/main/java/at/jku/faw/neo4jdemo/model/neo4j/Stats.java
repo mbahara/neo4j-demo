@@ -15,7 +15,7 @@ public class Stats {
 
     private String identifier;
     private boolean isBattleOnly;
-    private Integer gameIndex;
+    private int gameIndex;
 
     // (:Stat)-[:HAS_DAMAGE_CLASS]->(:DamageClass)
     @Relationship(type = "HAS_DAMAGE_CLASS")

@@ -14,7 +14,7 @@ public class PokemonGameIndex {
     @RelationshipId
     private Long id;
 
-    private Integer index;
+    private int index;
 
     @TargetNode
     private Version version;

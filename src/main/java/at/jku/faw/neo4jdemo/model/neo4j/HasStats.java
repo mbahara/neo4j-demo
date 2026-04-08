@@ -14,8 +14,8 @@ public class HasStats {
 	@RelationshipId @GeneratedValue
 	private Long id;
 
-	private Integer baseStat; // from 'base_stat'
-	private Integer effort;   // from 'effort'
+	private int baseStat; // from 'base_stat'
+	private int effort;   // from 'effort'
 
 	@TargetNode
 	private Stats stat;

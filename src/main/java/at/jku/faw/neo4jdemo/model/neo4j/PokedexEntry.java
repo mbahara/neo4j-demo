@@ -15,7 +15,7 @@ public class PokedexEntry {
 	@RelationshipId @GeneratedValue
 	private Long id;
 
-	private Integer pokedexNr;
+	private int pokedexNr;
 
 	@TargetNode
 	private Pokedex pokedex;

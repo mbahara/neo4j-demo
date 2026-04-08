@@ -13,8 +13,8 @@ public class Encounter {
 	@Id
 	private Long id;
 
-	private Integer minLevel;
-	private Integer maxLevel;
+	private int minLevel;
+	private int maxLevel;
 
 	@Relationship(type = "IN_VERSION")
 	private Version version;

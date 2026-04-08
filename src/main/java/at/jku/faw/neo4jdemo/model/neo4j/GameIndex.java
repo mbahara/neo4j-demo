@@ -14,7 +14,7 @@ public class GameIndex {
     @RelationshipId @GeneratedValue
     public Long id;
 
-    private Integer index;
+    private int index;
 
     @TargetNode
     private Generation generation;

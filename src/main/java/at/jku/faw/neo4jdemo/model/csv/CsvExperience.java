@@ -5,5 +5,5 @@ import com.opencsv.bean.CsvBindByName;
 public record CsvExperience(
     @CsvBindByName(column = "growth_rate_id") Long growthRateId,
     @CsvBindByName(column = "level") int level,
-    @CsvBindByName(column = "experience") long experience
+    @CsvBindByName(column = "experience") int experience
 ) {}

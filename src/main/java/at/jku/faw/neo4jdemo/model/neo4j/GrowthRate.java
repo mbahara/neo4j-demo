@@ -15,7 +15,7 @@ public class GrowthRate {
     public Long id;
 
     private String identifier;
-    private int formula;
+    private String formula;
 
     @Relationship(type = "REQUIRES_EXP")
     private List<LevelRequirement> levels;

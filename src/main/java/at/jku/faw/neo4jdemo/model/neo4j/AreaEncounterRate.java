@@ -14,7 +14,7 @@ public class AreaEncounterRate {
     @Id @GeneratedValue
     public Long id;
 
-    public Integer rate;
+    public int rate;
     public Long versionId;
 
     @TargetNode

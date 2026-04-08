@@ -15,7 +15,7 @@ public class PokemonMove {
 	private Long id;
 
 	private int level;
-	private Integer order;
+	private int order;
 
 	@Relationship(type = "MOVE_LEARNED")
 	private Move move;

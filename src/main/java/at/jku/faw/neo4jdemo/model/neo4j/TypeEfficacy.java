@@ -14,7 +14,7 @@ public class TypeEfficacy {
     private Long id;
 
     // The 'damage_factor' column (e.g., 200 for Super Effective)
-    private Integer damageFactor;
+    private int damageFactor;
 
     @TargetNode
     private Type targetType;

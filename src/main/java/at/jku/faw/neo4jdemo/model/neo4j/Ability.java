@@ -13,10 +13,10 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 public class Ability {
 	@Id
 	private Long id;
-	private int name;
-	private int isMainSeries;
-	private int shortEffect;
-	private int effect;
+	private String name;
+	private boolean isMainSeries;
+	private String shortEffect;
+	private String effect;
 
 	@Relationship(type = "INTRODUCED_IN")
 	private Generation generation; // ability_generations.csv

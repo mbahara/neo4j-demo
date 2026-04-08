@@ -14,5 +14,5 @@ public class EncounterMethod {
 
 	private String identifier;
 	private String name;
-	private Integer order;
+	private int order;
 }

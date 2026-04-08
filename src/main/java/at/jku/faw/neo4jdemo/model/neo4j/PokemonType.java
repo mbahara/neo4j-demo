@@ -13,7 +13,7 @@ public class PokemonType {
 	@RelationshipId
 	private Long id;
 
-	private Integer slot;
+	private int slot;
 
 	@TargetNode
 	private Type type;

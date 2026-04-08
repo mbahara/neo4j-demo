@@ -16,11 +16,11 @@ public class Move {
 	private Long id;
 
 	private String name;
-	private Integer power;
-	private Integer pp;
-	private Integer accuracy;
-	private Integer priority;
-	private Integer effectChance;
+	private int power;
+	private int pp;
+	private int accuracy;
+	private int priority;
+	private int effectChance;
 
 	@Relationship(type = "HAS_TYPE")
 	private Type type;

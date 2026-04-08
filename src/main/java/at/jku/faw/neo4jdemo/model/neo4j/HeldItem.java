@@ -15,7 +15,7 @@ public class HeldItem {
 	@GeneratedValue
 	private Long id;
 
-	private Integer rarity;
+	private int rarity;
 
 	@Relationship(type = "ITEM_HELD")
 	private Item item;

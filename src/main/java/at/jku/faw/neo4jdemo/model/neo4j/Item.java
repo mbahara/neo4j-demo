@@ -15,8 +15,8 @@ public class Item {
 	private Long id;
 	private String identifier;
 	private String name;
-	private Integer cost;
-	private Integer flingPower;
+	private int cost;
+	private int flingPower;
 	private String shortEffect;
 	private String effect;
 

@@ -1,4 +1,4 @@
-package at.jku.faw.neo4jdemo.repository.test;
+package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Gender;
 import java.util.Optional;

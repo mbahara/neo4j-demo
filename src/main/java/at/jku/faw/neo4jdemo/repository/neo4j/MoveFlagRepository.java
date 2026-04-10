@@ -1,0 +1,21 @@
+package at.jku.faw.neo4jdemo.repository.neo4j;
+
+import at.jku.faw.neo4jdemo.model.neo4j.MoveFlag;
+import java.util.Optional;
+import org.springframework.data.neo4j.repository.Neo4jRepository;
+import org.springframework.data.neo4j.repository.query.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MoveFlagRepository extends Neo4jRepository<MoveFlag, Long> {
+    Optional<MoveFlag> findByIdentifier(String identifier);
+
+    @Query("""
+        MERGE (n:MoveFlag {id: $id})
+        ON CREATE SET n.identifier = $identifier
+        ON MATCH  SET n.identifier = $identifier
+        RETURN n
+        """)
+    MoveFlag insertMoveFlag(@Param("id") Long id, @Param("identifier") String identifier);
+}

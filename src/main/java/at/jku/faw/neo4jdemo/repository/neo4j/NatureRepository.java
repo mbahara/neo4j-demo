@@ -1,0 +1,54 @@
+package at.jku.faw.neo4jdemo.repository.neo4j;
+
+import at.jku.faw.neo4jdemo.model.neo4j.Nature;
+import java.util.Optional;
+import org.springframework.data.neo4j.repository.Neo4jRepository;
+import org.springframework.data.neo4j.repository.query.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface NatureRepository extends Neo4jRepository<Nature, Long> {
+    Optional<Nature> findByIdentifier(String identifier);
+    Optional<Nature> findByName(String name);
+
+    @Query("""
+        MERGE (n:Nature {id: $id})
+        ON CREATE SET n.identifier = $identifier, n.name = $name
+        ON MATCH  SET n.identifier = $identifier, n.name = $name
+        RETURN n
+        """)
+    Nature insertNature(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
+
+
+    @Query("""
+        MATCH (s:Nature {id: $natureId})
+        MATCH (t:Stat {id: $statId})
+        MERGE (s)-[:INCREASES]->(t)
+        """)
+    void linkNatureIncreasesStat(@Param("natureId") Long natureId,
+                        @Param("statId") Long statId);
+
+    @Query("""
+        MATCH (s:Nature {id: $natureId})
+        MATCH (t:Stat {id: $statId})
+        MERGE (s)-[:DECREASES]->(t)
+        """)
+    void linkNatureDecreasesStat(@Param("natureId") Long natureId,
+                        @Param("statId") Long statId);
+
+    @Query("""
+        MATCH (s:Nature {id: $natureId})
+        MATCH (t:MoveBattleStyle {id: $moveBattleStyleId})
+        MERGE (s)-[:PREFERRED_BATTLE_STYLE {lowHpPreference: $lowHpPreference, highHpPreference: $highHpPreference}]->(t)
+        """)
+    void linkNatureToMoveBattleStyle(@Param("natureId") Long natureId, @Param("moveBattleStyleId") Long moveBattleStyleId, @Param("lowHpPreference") int lowHpPreference, @Param("highHpPreference") int highHpPreference);
+
+
+    @Query("""
+        MATCH (s:Nature {id: $natureId})
+        MATCH (t:PokeathlonStats {id: $pokeathlonStatsId})
+        MERGE (s)-[:POKEATHLON_MODIFIER {maxChange: $maxChange}]->(t)
+        """)
+    void linkNatureToPokeathlonStats(@Param("natureId") Long natureId, @Param("pokeathlonStatsId") Long pokeathlonStatsId, @Param("maxChange") int maxChange);
+}

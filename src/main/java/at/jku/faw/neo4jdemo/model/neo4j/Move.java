@@ -1,6 +1,5 @@
 package at.jku.faw.neo4jdemo.model.neo4j;
 
-import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -53,19 +52,10 @@ public class Move {
 	private ContestEffect contestEffect;
 
 	@Relationship(type = "COMBOS_WITH")
-	private List<ContestCombo> combos;
+	private List<Move> combos;
 
 	// (:Move)-[:SUPER_CONTEST_COMBO_NEXT]->(:Move)
 	// The first move in a combo points to the second
 	@Relationship(type = "COMBOS_IN_SUPER_CONTEST")
 	private List<Move> comboFollowUps;
-
-	public void addCombo(Move nextMove) {
-		if (this.combos == null) {
-			this.combos = new ArrayList<>();
-		}
-		ContestCombo combo = new ContestCombo();
-		combo.setSecondMove(nextMove);
-		this.combos.add(combo);
-	}
 }

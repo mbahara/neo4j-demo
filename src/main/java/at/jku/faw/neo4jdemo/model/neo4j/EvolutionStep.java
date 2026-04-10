@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
-import org.springframework.data.neo4j.core.schema.TargetNode;
 
 @Getter
 @Setter
@@ -41,7 +40,6 @@ public class EvolutionStep {
 	@Relationship(type = "AT_LOCATION")
 	private Location location;
 
-	@TargetNode // The species this step leads to
 	@Relationship(type = "RESULTS_IN")
 	private PokemonSpecies evolvedSpecies;
 }

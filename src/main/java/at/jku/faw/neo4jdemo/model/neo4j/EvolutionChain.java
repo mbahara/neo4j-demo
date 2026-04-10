@@ -18,6 +18,6 @@ public class EvolutionChain {
     @Relationship(type = "BABY_TRIGGER_ITEM")
     private Item babyTriggerItem;
 
-    @Relationship(type = "MEMBERS", direction = Relationship.Direction.INCOMING)
+    @Relationship(type = "HAS_MEMBER")
     private List<PokemonSpecies> species;
 }

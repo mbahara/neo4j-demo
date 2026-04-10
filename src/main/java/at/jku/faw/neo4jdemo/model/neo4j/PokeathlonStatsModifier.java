@@ -15,7 +15,7 @@ public class PokeathlonStatsModifier {
 	@RelationshipId @GeneratedValue
 	private Long id;
 
-	private Integer maxChange;
+	private int maxChange;
 
 	@TargetNode
 	private PokeathlonStats stat;

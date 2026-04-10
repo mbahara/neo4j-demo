@@ -1,9 +1,9 @@
 package at.jku.faw.neo4jdemo.controller;
 
-import at.jku.faw.neo4jdemo.service.JkuMapService;
-import at.jku.faw.neo4jdemo.service.MovieService;
 import at.jku.faw.neo4jdemo.service.Neo4jEmbeddedServer;
-import at.jku.faw.neo4jdemo.service.PokemonService;
+import at.jku.faw.neo4jdemo.service.jkuMap.JkuMapService;
+import at.jku.faw.neo4jdemo.service.movie.MovieService;
+import at.jku.faw.neo4jdemo.service.pokemon.PokemonLoaderService;
 import java.util.Map;
 import org.neo4j.ogm.session.SessionFactory;
 import org.springframework.http.HttpStatus;
@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
 
 	private final SessionFactory sessionFactory;
-	private final PokemonService pokemonService;
+	private final PokemonLoaderService pokemonLoaderService;
 	private final JkuMapService jkuMapService;
 	private final MovieService movieService;
 
-	public MainController(SessionFactory sessionFactory, PokemonService pokemonService, JkuMapService jkuMapService,
+	public MainController(SessionFactory sessionFactory, PokemonLoaderService pokemonLoaderService, JkuMapService jkuMapService,
 						  MovieService movieService) {
 		this.sessionFactory = sessionFactory;
-		this.pokemonService = pokemonService;
+		this.pokemonLoaderService = pokemonLoaderService;
 		this.jkuMapService = jkuMapService;
 		this.movieService = movieService;
 	}
@@ -51,7 +51,7 @@ public class MainController {
 	public ResponseEntity<String> loadPokemon(@PathVariable String dataset, @RequestBody Map<String, String> body) {
 		if (Neo4jEmbeddedServer.SESSION_KEY.equals(body.get("key"))) {
 			if ("pokemon".equalsIgnoreCase(dataset)) {
-				pokemonService.importAllPokemon();
+				pokemonLoaderService.loadPokemonData();
 				return ResponseEntity.ok("Pokèmon Graph Generated Successfully");
 			}
 

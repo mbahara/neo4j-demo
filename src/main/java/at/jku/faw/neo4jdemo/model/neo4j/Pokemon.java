@@ -22,27 +22,27 @@ public class Pokemon {
 	private boolean isDefault;
 
 	@Relationship(type = "HAS_STAT")
-	private List<HasStats> stats;
+	private List<HasStats> stats; //pokemon_stats.csv
 
 	@Relationship(type = "HOLDS_ITEM")
-	private List<HeldItem> heldItems;
+	private List<HeldItem> heldItems; //pokemon_items.csv
 
 	@Relationship(type = "CAN_HAVE")
-	private List<PokemonAbility> abilities;
+	private List<PokemonAbility> abilities; //pokemon_abilities.csv
 
 	@Relationship(type = "BELONGS_TO_SPECIES")
-	private PokemonSpecies species;
+	private PokemonSpecies species; // species_id from pokemon.csv
 
 	@Relationship(type = "CAN_LEARN")
-	private List<PokemonMove> moves;
+	private List<PokemonMove> moves; //pokemon_moves.csv
 
 	// (:Pokemon)-[:FOUND_IN]->(:Area)
 	@Relationship(type = "FOUND_IN")
-	private List<Encounter> encounters;
+	private List<Encounter> encounters; //encounters.csv
 
 	@Relationship(type = "HAS_GAME_INDEX")
-	private List<PokemonGameIndex> gameIndices;
+	private List<PokemonGameIndex> gameIndices; //pokemon_game_indices.csv
 
 	@Relationship(type = "HAS_TYPE")
-	private List<PokemonType> types;
+	private List<PokemonType> types; //pokemon_types.csv
 }

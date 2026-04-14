@@ -5,7 +5,7 @@ import at.jku.faw.neo4jdemo.service.jkuMap.JkuMapService;
 import at.jku.faw.neo4jdemo.service.movie.MovieService;
 import at.jku.faw.neo4jdemo.service.pokemon.PokemonLoaderService;
 import java.util.Map;
-import org.neo4j.ogm.session.SessionFactory;
+import org.springframework.data.neo4j.core.Neo4jClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,17 +20,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class MainController {
 
-	private final SessionFactory sessionFactory;
 	private final PokemonLoaderService pokemonLoaderService;
 	private final JkuMapService jkuMapService;
 	private final MovieService movieService;
+	private final Neo4jClient neo4jClient;
 
-	public MainController(SessionFactory sessionFactory, PokemonLoaderService pokemonLoaderService, JkuMapService jkuMapService,
-						  MovieService movieService) {
-		this.sessionFactory = sessionFactory;
+	public MainController(PokemonLoaderService pokemonLoaderService, JkuMapService jkuMapService,
+						  MovieService movieService, Neo4jClient neo4jClient) {
 		this.pokemonLoaderService = pokemonLoaderService;
 		this.jkuMapService = jkuMapService;
 		this.movieService = movieService;
+		this.neo4jClient = neo4jClient;
 	}
 
 	@GetMapping("/health")
@@ -41,7 +41,9 @@ public class MainController {
 	@DeleteMapping("/clearDB")
 	public ResponseEntity<String> clearDatabase(@RequestBody Map<String, String> body) {
 		if (Neo4jEmbeddedServer.SESSION_KEY.equals(body.get("key"))) {
-			sessionFactory.openSession().purgeDatabase();
+			// clear the db
+			String query = "MATCH (n) DETACH DELETE n";
+			neo4jClient.query(query).run();
 			return ResponseEntity.ok("Database cleared!");
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Key");

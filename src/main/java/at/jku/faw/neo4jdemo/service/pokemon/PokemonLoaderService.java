@@ -1,10 +1,10 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
 import java.util.List;
-import org.neo4j.annotations.service.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.neo4j.core.Neo4jClient;
+import org.springframework.stereotype.Service;
 
 @Service
 public class PokemonLoaderService {
@@ -19,6 +19,8 @@ public class PokemonLoaderService {
 	}
 
 	public void loadPokemonData() {
+		// if there is a dump data file, load this, otherwise create the Pokémon data
+
 		log.info("--- Creating Nodes ---");
 		pokemonDataLoaders.forEach(IPokemonDataLoader::loadNodes);
 

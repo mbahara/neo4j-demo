@@ -24,7 +24,7 @@ public class ChangeEventService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertChangeEvent(csv.id(), csv.effect());
+            neo4jRepo.insertChangeEvent(csv.getId(), csv.getEffect());
         });
     }
 
@@ -32,8 +32,8 @@ public class ChangeEventService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.versionGroupId() != null) {
-                neo4jRepo.linkChangeEventToVersionGroup(csv.id(), csv.versionGroupId());
+            if (csv.getVersionGroupId() != null) {
+                neo4jRepo.linkChangeEventToVersionGroup(csv.getId(), csv.getVersionGroupId());
             }
         });
     }

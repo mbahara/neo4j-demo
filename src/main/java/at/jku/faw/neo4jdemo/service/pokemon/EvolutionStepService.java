@@ -24,7 +24,7 @@ public class EvolutionStepService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEvolutionStep(csv.id(), csv.minimumLevel(), csv.minimumHappiness(), csv.timeOfDay(), csv.relativePhysicalStats(), csv.needsOverworldRain() != 0, csv.turnUpsideDown(), csv.minimumBeauty(), csv.minimumAffection());
+            neo4jRepo.insertEvolutionStep(csv.getId(), csv.getMinimumLevel(), csv.getMinimumHappiness(), csv.getTimeOfDay(), csv.getRelativePhysicalStats(), csv.getNeedsOverworldRain() != 0, csv.getTurnUpsideDown(), csv.getMinimumBeauty(), csv.getMinimumAffection());
         });
     }
 
@@ -32,38 +32,38 @@ public class EvolutionStepService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.evolutionTriggerId() != null) {
-                neo4jRepo.linkEvolutionStepToEvolutionTrigger(csv.id(), csv.evolutionTriggerId());
+            if (csv.getEvolutionTriggerId() != null) {
+                neo4jRepo.linkEvolutionStepToEvolutionTrigger(csv.getId(), csv.getEvolutionTriggerId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.triggerItemId() != null) {
-                neo4jRepo.linkEvolutionStepToTriggerItem(csv.id(), csv.triggerItemId());
+            if (csv.getTriggerItemId() != null) {
+                neo4jRepo.linkEvolutionStepToTriggerItem(csv.getId(), csv.getTriggerItemId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.genderId() != null) {
-                neo4jRepo.linkEvolutionStepToGender(csv.id(), csv.genderId());
+            if (csv.getGenderId() != null) {
+                neo4jRepo.linkEvolutionStepToGender(csv.getId(), csv.getGenderId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.heldItemId() != null) {
-                neo4jRepo.linkEvolutionStepToItem(csv.id(), csv.heldItemId());
+            if (csv.getHeldItemId() != null) {
+                neo4jRepo.linkEvolutionStepToItem(csv.getId(), csv.getHeldItemId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.knownMoveId() != null) {
-                neo4jRepo.linkEvolutionStepToMove(csv.id(), csv.knownMoveId());
+            if (csv.getKnownMoveId() != null) {
+                neo4jRepo.linkEvolutionStepToMove(csv.getId(), csv.getKnownMoveId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.locationId() != null) {
-                neo4jRepo.linkEvolutionStepToLocation(csv.id(), csv.locationId());
+            if (csv.getLocationId() != null) {
+                neo4jRepo.linkEvolutionStepToLocation(csv.getId(), csv.getLocationId());
             }
         });
         csvMainRepo.getAll().forEach(csv -> {
-            if (csv.evolvedSpeciesId() != null) {
-                neo4jRepo.linkEvolutionStepToPokemonSpecies(csv.id(), csv.evolvedSpeciesId());
+            if (csv.getEvolvedSpeciesId() != null) {
+                neo4jRepo.linkEvolutionStepToPokemonSpecies(csv.getId(), csv.getEvolvedSpeciesId());
             }
         });
     }

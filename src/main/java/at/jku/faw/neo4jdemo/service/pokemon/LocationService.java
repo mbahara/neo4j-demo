@@ -32,7 +32,7 @@ public class LocationService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvLocationRepository.getAll().forEach(csv -> {
-            locationRepository.insertLocation(csv.id(), csv.identifier(), csv.name(), csv.subtitle());
+            locationRepository.insertLocation(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getSubtitle());
         });
     }
 
@@ -40,12 +40,12 @@ public class LocationService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvLocationRepository.getAll().forEach(csv -> {
-            if (csv.regionId() != null) {
-                locationRepository.linkLocationToRegion(csv.id(), csv.regionId());
+            if (csv.getRegionId() != null) {
+                locationRepository.linkLocationToRegion(csv.getId(), csv.getRegionId());
             }
 
-            csvLocationGameIndicesRepositoryImpl.getByLocationId(csv.id()).forEach(csvGameIndex -> {
-                gameIndexRepository.linkLocationHasGameIndex(csvGameIndex.locationId(), csvGameIndex.generationId(), csvGameIndex.gameIndex());
+            csvLocationGameIndicesRepositoryImpl.getByLocationId(csv.getId()).forEach(csvGameIndex -> {
+                gameIndexRepository.linkLocationHasGameIndex(csvGameIndex.getLocationId(), csvGameIndex.getGenerationId(), csvGameIndex.getGameIndex());
             });
         });
     }

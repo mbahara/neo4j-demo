@@ -57,8 +57,8 @@ public class ItemService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
 		for (CsvItem csv : csvMainRepo.getAll()) {
-			itemRepository.insertItem(csv.id(), csv.identifier(), csv.name(), csv.cost(), csv.flingPower(),
-					csv.shortEffect(), csv.effect());
+			itemRepository.insertItem(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getCost(), csv.getFlingPower(),
+					csv.getShortEffect(), csv.getEffect());
 		}
 	}
 
@@ -66,35 +66,35 @@ public class ItemService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
 		for (CsvItem csvItem : csvMainRepo.getAll()) {
-			if (csvItem.categoryId() != null) {
-				itemCategoryRepository.findById(csvItem.categoryId()).ifPresent(itemCategory -> {
-					itemRepository.linkItemToItemCategory(csvItem.id(), itemCategory.getId());
+			if (csvItem.getCategoryId() != null) {
+				itemCategoryRepository.findById(csvItem.getCategoryId()).ifPresent(itemCategory -> {
+					itemRepository.linkItemToItemCategory(csvItem.getId(), itemCategory.getId());
 				});
 			}
-			if (csvItem.flingEffectId() != null) {
-				flingEffectRepository.findById(csvItem.flingEffectId()).ifPresentOrElse(
+			if (csvItem.getFlingEffectId() != null) {
+				flingEffectRepository.findById(csvItem.getFlingEffectId()).ifPresentOrElse(
 						(flingEffect) -> {
-							itemRepository.linkItemToFlingEffect(csvItem.id(), flingEffect.getId());
+							itemRepository.linkItemToFlingEffect(csvItem.getId(), flingEffect.getId());
 						},
 						() -> {
-							itemRepository.linkItemToFlingEffect(csvItem.id(),
-									csvItem.flingEffectId());
+							itemRepository.linkItemToFlingEffect(csvItem.getId(),
+									csvItem.getFlingEffectId());
 						});
 			}
-			for (CsvItemFlagMap csvItemFlagMap : csvItemFlagMapRepositoryImpl.getByItemId(csvItem.id())) {
-				itemFlagRepository.findById(csvItemFlagMap.itemFlagId()).ifPresent(itemFlag -> {
-					itemRepository.linkItemToItemFlag(csvItem.id(), itemFlag.getId());
+			for (CsvItemFlagMap csvItemFlagMap : csvItemFlagMapRepositoryImpl.getByItemId(csvItem.getId())) {
+				itemFlagRepository.findById(csvItemFlagMap.getItemFlagId()).ifPresent(itemFlag -> {
+					itemRepository.linkItemToItemFlag(csvItem.getId(), itemFlag.getId());
 				});
 			}
 
-			for (CsvItemGameIndices csvItemGameIndices : csvItemGameIndicesRepositoryImpl.getByItemId(csvItem.id())) {
-				gameIndexRepository.linkItemHasGameIndex(csvItemGameIndices.itemId(), csvItemGameIndices.generationId(),
-						csvItemGameIndices.gameIndex());
+			for (CsvItemGameIndices csvItemGameIndices : csvItemGameIndicesRepositoryImpl.getByItemId(csvItem.getId())) {
+				gameIndexRepository.linkItemHasGameIndex(csvItemGameIndices.getItemId(), csvItemGameIndices.getGenerationId(),
+						csvItemGameIndices.getGameIndex());
 			}
 
-			for (CsvMachine csvMachine : csvMachineRepositoryImpl.getByItemId(csvItem.id())) {
+			for (CsvMachine csvMachine : csvMachineRepositoryImpl.getByItemId(csvItem.getId())) {
 				machineRepository.findAll().forEach(machine ->
-						itemRepository.linkItemToMachine(csvMachine.itemId(), machine.getId()));
+						itemRepository.linkItemToMachine(csvMachine.getItemId(), machine.getId()));
 			}
 		}
 	}

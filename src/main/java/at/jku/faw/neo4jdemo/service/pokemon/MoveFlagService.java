@@ -25,7 +25,7 @@ public class MoveFlagService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveFlagsRepository.getAll().forEach(csv -> {
-            moveFlagRepository.insertMoveFlag(csv.id(), csv.identifier());
+            moveFlagRepository.insertMoveFlag(csv.getId(), csv.getIdentifier());
         });
     }
 

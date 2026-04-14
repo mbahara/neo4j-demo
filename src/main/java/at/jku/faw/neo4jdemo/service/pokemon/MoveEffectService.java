@@ -25,7 +25,7 @@ public class MoveEffectService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveEffectRepository.getAll().forEach(csv -> {
-            moveEffectRepository.insertMoveEffect(csv.id(), csv.shortEffect(), csv.effect());
+            moveEffectRepository.insertMoveEffect(csv.getId(), csv.getShortEffect(), csv.getEffect());
         });
     }
 

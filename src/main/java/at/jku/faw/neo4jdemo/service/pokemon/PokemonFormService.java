@@ -48,8 +48,8 @@ public class PokemonFormService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
 		for (CsvPokemonForm csv : csvPokemonFormRepository.getAll()) {
-			pokemonFormRepository.insertPokemonForm(csv.id(), csv.identifier(), csv.isDefault() != 0, csv.isMega() != 0,
-					csv.isBattleOnly() != 0);
+			pokemonFormRepository.insertPokemonForm(csv.getId(), csv.getIdentifier(), csv.getIsDefault() != 0, csv.getIsMega() != 0,
+					csv.getIsBattleOnly() != 0);
 		}
 	}
 
@@ -57,24 +57,24 @@ public class PokemonFormService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvPokemonFormRepository.getAll().forEach(csvPokemonForm -> {
-            if (csvPokemonForm.pokemonId() != null) {
-                pokemonFormRepository.linkPokemonFormToPokemon(csvPokemonForm.id(), csvPokemonForm.pokemonId());
+            if (csvPokemonForm.getPokemonId() != null) {
+                pokemonFormRepository.linkPokemonFormToPokemon(csvPokemonForm.getId(), csvPokemonForm.getPokemonId());
             }
-            csvPokemonFormGenerationsRepositoryImpl.getByPokemonFormId(csvPokemonForm.id()).forEach(
+            csvPokemonFormGenerationsRepositoryImpl.getByPokemonFormId(csvPokemonForm.getId()).forEach(
                     csvPokemonFormGenerations ->
-                        gameIndexRepository.linkPokemonFormHasGameIndex(csvPokemonForm.id(), csvPokemonFormGenerations.generationId(), csvPokemonFormGenerations.gameIndex())
+                        gameIndexRepository.linkPokemonFormHasGameIndex(csvPokemonForm.getId(), csvPokemonFormGenerations.getGenerationId(), csvPokemonFormGenerations.getGameIndex())
                         );
 
             csvPokemonFormPokeathlonStatsRepositoryImpl.getAll().stream()
-                .filter(stats -> Objects.equals(stats.pokemonFormId(), csvPokemonForm.id()))
+                .filter(stats -> Objects.equals(stats.getPokemonFormId(), csvPokemonForm.getId()))
                 .forEach(stats -> {
-                    FormPokeathlonStats formPokeathlonStats = formPokeathlonStatsRepository.insertFormPokeathlonStats(stats.minimumStat(),
-                            stats.baseStat(), stats.maximumStat());
-                    Optional<PokeathlonStats> pokeStats = pokeathlonStatsRepository.findById(stats.pokeathlonStatId());
+                    FormPokeathlonStats formPokeathlonStats = formPokeathlonStatsRepository.insertFormPokeathlonStats(stats.getMinimumStat(),
+                            stats.getBaseStat(), stats.getMaximumStat());
+                    Optional<PokeathlonStats> pokeStats = pokeathlonStatsRepository.findById(stats.getPokeathlonStatId());
                     pokeStats.ifPresent(pokeathlonStats -> {
                         formPokeathlonStats.setPokeathlonStats(pokeathlonStats);
                         formPokeathlonStatsRepository.save(formPokeathlonStats);
-                        pokemonFormRepository.linkPokemonFormToPokeathlonStats(csvPokemonForm.id(), pokeathlonStats.getId(), formPokeathlonStats.getMinimumStat(), formPokeathlonStats.getBaseStat(), formPokeathlonStats.getMaximumStat());
+                        pokemonFormRepository.linkPokemonFormToPokeathlonStats(csvPokemonForm.getId(), pokeathlonStats.getId(), formPokeathlonStats.getMinimumStat(), formPokeathlonStats.getBaseStat(), formPokeathlonStats.getMaximumStat());
                     });
                 });
         });

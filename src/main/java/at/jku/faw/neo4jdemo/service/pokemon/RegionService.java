@@ -24,7 +24,7 @@ public class RegionService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvRegionsRepository.getAll().forEach(csv -> {
-            regionRepository.insertRegion(csv.id(), csv.identifier());
+            regionRepository.insertRegion(csv.getId(), csv.getIdentifier());
         });
     }
 

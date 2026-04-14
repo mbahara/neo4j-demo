@@ -26,7 +26,7 @@ public class ContestTypeService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvContestTypesRepository.getAll().forEach(csv -> {
-            contestTypeRepository.insertContestType(csv.id(), csv.identifier());
+            contestTypeRepository.insertContestType(csv.getId(), csv.getIdentifier());
         });
     }
 

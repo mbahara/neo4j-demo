@@ -25,7 +25,7 @@ public class PokemonMoveService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
 		for (CsvPokemonMoves csv : csvPokemonMovesRepository.getAll()) {
-			pokemonMoveRepository.insertPokemonMove(csv.level(), csv.order());
+			pokemonMoveRepository.insertPokemonMove(csv.getLevel(), csv.getOrder());
 		}
 	}
 
@@ -34,10 +34,10 @@ public class PokemonMoveService implements IPokemonDataLoader {
     public void loadRelationships() {
 		for (CsvPokemonMoves csvPokemonMoves : csvPokemonMovesRepository.getAll()) {
 			pokemonMoveRepository.findAll().forEach(pokemonMove -> {
-				pokemonMoveRepository.linkPokemonMoveToMove(pokemonMove.getId(), csvPokemonMoves.moveId());
-				pokemonMoveRepository.linkPokemonMoveToMoveMethod(pokemonMove.getId(), csvPokemonMoves.moveMethodId());
+				pokemonMoveRepository.linkPokemonMoveToMove(pokemonMove.getId(), csvPokemonMoves.getMoveId());
+				pokemonMoveRepository.linkPokemonMoveToMoveMethod(pokemonMove.getId(), csvPokemonMoves.getMoveMethodId());
 				pokemonMoveRepository.linkPokemonMoveToVersionGroup(pokemonMove.getId(),
-						csvPokemonMoves.versionGroupId());
+						csvPokemonMoves.getVersionGroupId());
 			});
 		}
 	}

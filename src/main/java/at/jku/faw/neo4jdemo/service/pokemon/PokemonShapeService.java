@@ -24,7 +24,7 @@ public class PokemonShapeService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokemonShapeRepository.getAll().forEach(csv -> {
-            pokemonShapeRepository.insertPokemonShape(csv.pokemonShapeId(), csv.name(), csv.awesomeName(), csv.description());
+            pokemonShapeRepository.insertPokemonShape(csv.getPokemonShapeId(), csv.getName(), csv.getAwesomeName(), csv.getDescription());
         });
     }
 

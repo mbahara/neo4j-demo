@@ -27,7 +27,7 @@ public class MoveMetaService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveMetaRepository.getAll().forEach(csv -> {
-            moveMetaRepository.insertMoveMeta(csv.minHits(), csv.maxHits(), csv.minTurns(), csv.maxTurns(), csv.drain(), csv.healing(), csv.critRate(), csv.ailmentChance(), csv.flinchChance(), csv.statChance());
+            moveMetaRepository.insertMoveMeta(csv.getMinHits(), csv.getMaxHits(), csv.getMinTurns(), csv.getMaxTurns(), csv.getDrain(), csv.getHealing(), csv.getCritRate(), csv.getAilmentChance(), csv.getFlinchChance(), csv.getStatChance());
         });
     }
 
@@ -35,15 +35,15 @@ public class MoveMetaService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMoveMetaRepository.getAll().forEach(csvMoveMeta -> {
-            if (csvMoveMeta.metaAilmentId() != null) {
-                moveMetaRepository.findById(csvMoveMeta.metaAilmentId())
+            if (csvMoveMeta.getMetaAilmentId() != null) {
+                moveMetaRepository.findById(csvMoveMeta.getMetaAilmentId())
                         .ifPresent(moveMeta -> {
-                            moveMetaRepository.linkMoveMetaToMoveAilment(moveMeta.getId(), csvMoveMeta.metaAilmentId());
+                            moveMetaRepository.linkMoveMetaToMoveAilment(moveMeta.getId(), csvMoveMeta.getMetaAilmentId());
                         });
             }
-            if (csvMoveMeta.metaCategoryId() != null) {
-                moveCategoryRepository.findById(csvMoveMeta.metaCategoryId())
-                        .ifPresent(moveCategory -> moveMetaRepository.linkMoveMetaToMoveCategory(csvMoveMeta.metaCategoryId(), moveCategory.getId()));
+            if (csvMoveMeta.getMetaCategoryId() != null) {
+                moveCategoryRepository.findById(csvMoveMeta.getMetaCategoryId())
+                        .ifPresent(moveCategory -> moveMetaRepository.linkMoveMetaToMoveCategory(csvMoveMeta.getMetaCategoryId(), moveCategory.getId()));
             }
         });
     }

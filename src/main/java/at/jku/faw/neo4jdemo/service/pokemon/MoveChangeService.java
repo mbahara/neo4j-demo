@@ -31,7 +31,7 @@ public class MoveChangeService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveChangelogRepository.getAll().forEach(csv -> {
-            moveChangeRepository.insertMoveChange(csv.power(), csv.pp(), csv.accuracy(), csv.priority());
+            moveChangeRepository.insertMoveChange(csv.getPower(), csv.getPp(), csv.getAccuracy(), csv.getPriority());
         });
     }
 
@@ -40,19 +40,19 @@ public class MoveChangeService implements IPokemonDataLoader {
     public void loadRelationships() {
         csvMoveChangelogRepository.getAll().forEach(csvMoveChangelog -> {
             moveChangeRepository.findAll().forEach(moveChange -> {
-                if (csvMoveChangelog.versionGroupId() != null) {
-                    moveChangeRepository.linkMoveChangeToVersionGroup(moveChange.getId(), csvMoveChangelog.versionGroupId());
+                if (csvMoveChangelog.getVersionGroupId() != null) {
+                    moveChangeRepository.linkMoveChangeToVersionGroup(moveChange.getId(), csvMoveChangelog.getVersionGroupId());
                 }
-                if (csvMoveChangelog.typeId() != null) {
-                    moveChangeRepository.linkMoveChangeToType(moveChange.getId(), csvMoveChangelog.typeId());
+                if (csvMoveChangelog.getTypeId() != null) {
+                    moveChangeRepository.linkMoveChangeToType(moveChange.getId(), csvMoveChangelog.getTypeId());
                 }
-                if (csvMoveChangelog.effectId() != null) {
-                    moveEffectRepository.findById(csvMoveChangelog.effectId()).ifPresent(moveEffect ->
-                        moveChangeRepository.linkMoveChangeToMoveEffect(moveChange.getId(), moveEffect.getId(), csvMoveChangelog.effectChance())
+                if (csvMoveChangelog.getEffectId() != null) {
+                    moveEffectRepository.findById(csvMoveChangelog.getEffectId()).ifPresent(moveEffect ->
+                        moveChangeRepository.linkMoveChangeToMoveEffect(moveChange.getId(), moveEffect.getId(), csvMoveChangelog.getEffectChance())
                     );
                 }
-                if (csvMoveChangelog.targetId() != null) {
-                    moveTargetRepository.findById(csvMoveChangelog.targetId()).ifPresent(moveTarget ->
+                if (csvMoveChangelog.getTargetId() != null) {
+                    moveTargetRepository.findById(csvMoveChangelog.getTargetId()).ifPresent(moveTarget ->
                         moveChangeRepository.linkMoveChangeToMoveTarget(moveChange.getId(), moveTarget.getId())
                     );
                 }

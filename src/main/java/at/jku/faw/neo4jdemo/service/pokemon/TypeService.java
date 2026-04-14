@@ -38,7 +38,7 @@ public class TypeService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvTypesRepository.getAll().forEach(csv -> {
-            typeRepository.insertType(csv.id(), csv.identifier());
+            typeRepository.insertType(csv.getId(), csv.getIdentifier());
         });
     }
 
@@ -46,17 +46,17 @@ public class TypeService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvTypesRepository.getAll().forEach(csv -> {
-            if (csv.generationId() != null) {
-                typeRepository.linkTypeToGeneration(csv.id(), csv.generationId());
+            if (csv.getGenerationId() != null) {
+                typeRepository.linkTypeToGeneration(csv.getId(), csv.getGenerationId());
             }
 
-            csvTypeEfficacyRepositoryImpl.getByDamageTypeId(csv.id()).forEach(csvTypeEfficacy ->
-                    typeEfficacyRepository.linkTypeToType(csv.id(), csvTypeEfficacy.targetTypeId(), csvTypeEfficacy.damageFactor()));
-            csvTypeGameIndicesRepositoryImpl.getByTypeId(csv.id()).forEach(csvTypeGameIndex ->
-                    gameIndexRepository.linkTypeHasIndex(csvTypeGameIndex.typeId(), csvTypeGameIndex.generationId(), csvTypeGameIndex.gameIndex()));
+            csvTypeEfficacyRepositoryImpl.getByDamageTypeId(csv.getId()).forEach(csvTypeEfficacy ->
+                    typeEfficacyRepository.linkTypeToType(csv.getId(), csvTypeEfficacy.getTargetTypeId(), csvTypeEfficacy.getDamageFactor()));
+            csvTypeGameIndicesRepositoryImpl.getByTypeId(csv.getId()).forEach(csvTypeGameIndex ->
+                    gameIndexRepository.linkTypeHasIndex(csvTypeGameIndex.getTypeId(), csvTypeGameIndex.getGenerationId(), csvTypeGameIndex.getGameIndex()));
 
-            if (csv.damageClassId() != null) {
-                typeRepository.linkTypeToDamageClass(csv.id(), csv.damageClassId());
+            if (csv.getDamageClassId() != null) {
+                typeRepository.linkTypeToDamageClass(csv.getId(), csv.getDamageClassId());
             }
         });
     }

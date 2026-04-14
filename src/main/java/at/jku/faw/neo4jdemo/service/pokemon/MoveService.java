@@ -50,7 +50,7 @@ public class MoveService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveRepository.getAll().forEach(csv -> {
-            moveRepository.insertMove(csv.id(), csv.name(), csv.power(), csv.pp(), csv.accuracy(), csv.priority());
+            moveRepository.insertMove(csv.getId(), csv.getName(), csv.getPower(), csv.getPp(), csv.getAccuracy(), csv.getPriority());
         });
     }
 
@@ -58,48 +58,48 @@ public class MoveService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMoveRepository.getAll().forEach(csvMove -> {
-            if (csvMove.typeId() != null) {
-                moveRepository.linkMoveToType(csvMove.id(), csvMove.typeId());
+            if (csvMove.getTypeId() != null) {
+                moveRepository.linkMoveToType(csvMove.getId(), csvMove.getTypeId());
             }
-            if (csvMove.generationId() != null) {
-                moveRepository.linkMoveToGeneration(csvMove.id(), csvMove.generationId());
+            if (csvMove.getGenerationId() != null) {
+                moveRepository.linkMoveToGeneration(csvMove.getId(), csvMove.getGenerationId());
             }
-            if (csvMove.damageClassId() != null) {
-                moveRepository.linkMoveToDamageClass(csvMove.id(), csvMove.damageClassId());
+            if (csvMove.getDamageClassId() != null) {
+                moveRepository.linkMoveToDamageClass(csvMove.getId(), csvMove.getDamageClassId());
             }
-            if (csvMove.effectId() != null) {
-                effectRepository.linkMoveToMoveEffect(csvMove.id(), csvMove.effectId(), csvMove.effectChance());
+            if (csvMove.getEffectId() != null) {
+                effectRepository.linkMoveToMoveEffect(csvMove.getId(), csvMove.getEffectId(), csvMove.getEffectChance());
             }
-            if (csvMove.targetId() != null) {
-                moveRepository.linkMoveToMoveTarget(csvMove.id(), csvMove.targetId());
+            if (csvMove.getTargetId() != null) {
+                moveRepository.linkMoveToMoveTarget(csvMove.getId(), csvMove.getTargetId());
             }
-            csvMoveFlagMapRepositoryImpl.getByMoveId(csvMove.id()).forEach(csvMoveFlagMap -> {
-                moveRepository.linkMoveToMoveFlag(csvMoveFlagMap.moveId(), csvMoveFlagMap.moveFlagId());
+            csvMoveFlagMapRepositoryImpl.getByMoveId(csvMove.getId()).forEach(csvMoveFlagMap -> {
+                moveRepository.linkMoveToMoveFlag(csvMoveFlagMap.getMoveId(), csvMoveFlagMap.getMoveFlagId());
             });
             moveMetaRepository.findAll().stream()
-                    .filter(moveMeta -> moveMeta.getId().equals(csvMove.id()))
-                    .forEach(moveMeta -> moveRepository.linkMoveToMoveMeta(csvMove.id(), moveMeta.getId()));
+                    .filter(moveMeta -> moveMeta.getId().equals(csvMove.getId()))
+                    .forEach(moveMeta -> moveRepository.linkMoveToMoveMeta(csvMove.getId(), moveMeta.getId()));
 
             moveChangeRepository.findAll().forEach(moveChange ->
-                csvMoveChangelogRepositoryImpl.getByMoveId(csvMove.id()).forEach(csvMoveChangelog -> {
-                    moveRepository.linkMoveToMoveChange(csvMoveChangelog.moveId(), moveChange.getId());
+                csvMoveChangelogRepositoryImpl.getByMoveId(csvMove.getId()).forEach(csvMoveChangelog -> {
+                    moveRepository.linkMoveToMoveChange(csvMoveChangelog.getMoveId(), moveChange.getId());
                 }));
 
-            if (csvMove.contestTypeId() != null) {
-                moveRepository.linkMoveToContestType(csvMove.id(), csvMove.contestTypeId());
+            if (csvMove.getContestTypeId() != null) {
+                moveRepository.linkMoveToContestType(csvMove.getId(), csvMove.getContestTypeId());
             }
 
-            if (csvMove.contestEffectId() != null) {
-                moveRepository.linkMoveToContestEffect(csvMove.id(), csvMove.contestEffectId());
+            if (csvMove.getContestEffectId() != null) {
+                moveRepository.linkMoveToContestEffect(csvMove.getId(), csvMove.getContestEffectId());
             }
 
             csvContestCombosRepositoryImpl.getAll().forEach(contestCombo -> {
-               moveRepository.linkMoveToComboMove(contestCombo.firstMoveId(), contestCombo.secondMoveId());
+               moveRepository.linkMoveToComboMove(contestCombo.getFirstMoveId(), contestCombo.getSecondMoveId());
             });
 
             csvSuperContestCombosRepositoryImpl.getAll().forEach(superContestCombo -> {
-                moveRepository.linkMoveToComboMoveInSuperContest(superContestCombo.firstMoveId(),
-                        superContestCombo.secondMoveId());
+                moveRepository.linkMoveToComboMoveInSuperContest(superContestCombo.getFirstMoveId(),
+                        superContestCombo.getSecondMoveId());
             });
         });
     }

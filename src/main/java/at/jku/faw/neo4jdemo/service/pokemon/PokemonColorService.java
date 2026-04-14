@@ -24,7 +24,7 @@ public class PokemonColorService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokemonColorsRepository.getAll().forEach(csv -> {
-            pokemonColorRepository.insertPokemonColor(csv.id(), csv.identifier());
+            pokemonColorRepository.insertPokemonColor(csv.getId(), csv.getIdentifier());
         });
     }
 

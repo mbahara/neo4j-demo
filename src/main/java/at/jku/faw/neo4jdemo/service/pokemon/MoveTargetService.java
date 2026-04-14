@@ -26,7 +26,7 @@ public class MoveTargetService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveTargetsRepository.getAll().forEach(csv -> {
-            moveTargetRepository.insertMoveTarget(csv.id(), csv.identifier(), csv.name(), csv.description());
+            moveTargetRepository.insertMoveTarget(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getDescription());
         });
     }
 

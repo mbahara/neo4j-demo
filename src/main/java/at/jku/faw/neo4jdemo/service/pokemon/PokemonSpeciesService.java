@@ -59,12 +59,12 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokemonSpeciesRepository.getAll().forEach(csv -> {
-            PokemonSpecies species = pokemonSpeciesRepository.insertPokemonSpecies(csv.id(), csv.name(),
-                    csv.genus(), csv.genderRate(), csv.captureRate(), csv.baseHappiness(), csv.isBaby() != 0,
-                    csv.isLegendary() != 0, csv.isMythical()  != 0, csv.hatchCounter(),
-                    csv.hasGenderDifferences() != 0, csv.formsSwitchable() != 0,
-                    csv.order(), csv.conquestOrder());
-            if (species.isLegendary()) {
+            PokemonSpecies species = pokemonSpeciesRepository.insertPokemonSpecies(csv.getId(), csv.getName(),
+                    csv.getGenus(), csv.getGenderRate(), csv.getCaptureRate(), csv.getBaseHappiness(), csv.getIsBaby() != 0,
+                    csv.getIsLegendary() != 0, csv.getIsMythical()  != 0, csv.getHatchCounter(),
+                    csv.getHasGenderDifferences() != 0, csv.getFormsSwitchable() != 0,
+                    csv.getOrder(), csv.getConquestOrder());
+            if (species.isLegendary) {
                 legendaryRepository.insertLegendary(species.getId());
             }
         });
@@ -75,57 +75,57 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
     public void loadRelationships() {
         csvPokemonSpeciesRepository.getAll().forEach(csvPokemonSpecies -> {
 			for (CsvPokemonEvolution csvPokemonEvolution : csvPokemonEvolutionRepositoryImpl.getByEvolvedSpeciesId(
-					csvPokemonSpecies.id())) {
-				pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(csvPokemonSpecies.id(),
-						csvPokemonEvolution.id());
+					csvPokemonSpecies.getId())) {
+				pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(csvPokemonSpecies.getId(),
+						csvPokemonEvolution.getId());
 			}
 
 			csvEvolutionChainsRepositoryImpl.getAll().forEach(csvEvolutionChain -> {
-                if (csvEvolutionChain.id().equals(csvPokemonSpecies.evolutionChainId())) {
-                    pokemonSpeciesRepository.linkPokemonSpeciesIsPartOfEvolutionChain(csvPokemonSpecies.id(), csvEvolutionChain.id());
+                if (csvEvolutionChain.getId().equals(csvPokemonSpecies.getEvolutionChainId())) {
+                    pokemonSpeciesRepository.linkPokemonSpeciesIsPartOfEvolutionChain(csvPokemonSpecies.getId(), csvEvolutionChain.getId());
                 }
             });
 
-            if (csvPokemonSpecies.evolvesFromSpeciesId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonSpecies(csvPokemonSpecies.id(), csvPokemonSpecies.evolvesFromSpeciesId());
+            if (csvPokemonSpecies.getEvolvesFromSpeciesId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonSpecies(csvPokemonSpecies.getId(), csvPokemonSpecies.getEvolvesFromSpeciesId());
             }
 
-            if (csvPokemonSpecies.colorId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonColor(csvPokemonSpecies.id(), csvPokemonSpecies.colorId());
+            if (csvPokemonSpecies.getColorId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonColor(csvPokemonSpecies.getId(), csvPokemonSpecies.getColorId());
             }
 
-            if (csvPokemonSpecies.generationId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToGeneration(csvPokemonSpecies.id(), csvPokemonSpecies.generationId());
+            if (csvPokemonSpecies.getGenerationId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToGeneration(csvPokemonSpecies.getId(), csvPokemonSpecies.getGenerationId());
             }
 
-            if (csvPokemonSpecies.shapeId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonShape(csvPokemonSpecies.id(), csvPokemonSpecies.shapeId());
+            if (csvPokemonSpecies.getShapeId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonShape(csvPokemonSpecies.getId(), csvPokemonSpecies.getShapeId());
             }
 
-            if (csvPokemonSpecies.habitatId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonHabitat(csvPokemonSpecies.id(), csvPokemonSpecies.habitatId());
+            if (csvPokemonSpecies.getHabitatId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonHabitat(csvPokemonSpecies.getId(), csvPokemonSpecies.getHabitatId());
             }
 
-            if (csvPokemonSpecies.growthRateId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToGrowthRate(csvPokemonSpecies.id(), csvPokemonSpecies.growthRateId());
+            if (csvPokemonSpecies.getGrowthRateId() != null) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToGrowthRate(csvPokemonSpecies.getId(), csvPokemonSpecies.getGrowthRateId());
             }
 
             csvPalParkRepositoryImpl.getAll().forEach(csvPalPark -> {
-                if(csvPalPark.speciesId().equals(csvPokemonSpecies.id())) {
-                    palParkEncounterRepository.linkPokemonSpeciesToPalParkArea(csvPokemonSpecies.id(),
-                            csvPalPark.areaId(), csvPalPark.baseScore(), csvPalPark.rate());
+                if(csvPalPark.getSpeciesId().equals(csvPokemonSpecies.getId())) {
+                    palParkEncounterRepository.linkPokemonSpeciesToPalParkArea(csvPokemonSpecies.getId(),
+                            csvPalPark.getAreaId(), csvPalPark.getBaseScore(), csvPalPark.getRate());
                 }
             });
 
 			for (CsvPokemonDexNumbers csvPokemonDexNumber : csvPokemonDexNumbersRepositoryImpl.getBySpeciesId(
-					csvPokemonSpecies.id())) {
-				pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.id(),
-						csvPokemonDexNumber.pokedexId(), csvPokemonDexNumber.pokedexNumber());
+					csvPokemonSpecies.getId())) {
+				pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.getId(),
+						csvPokemonDexNumber.getPokedexId(), csvPokemonDexNumber.getPokedexNumber());
 			}
 
 			csvPokemonEggGroupsRepositoryImpl.getAll().forEach(csvPokemonEggGroup -> {
-                if (csvPokemonEggGroup.speciesId().equals(csvPokemonSpecies.id())) {
-                    pokemonSpeciesRepository.linkPokemonSpeciesToEggGroup(csvPokemonSpecies.id(), csvPokemonEggGroup.eggGroupId());
+                if (csvPokemonEggGroup.getSpeciesId().equals(csvPokemonSpecies.getId())) {
+                    pokemonSpeciesRepository.linkPokemonSpeciesToEggGroup(csvPokemonSpecies.getId(), csvPokemonEggGroup.getEggGroupId());
                 }
             });
         });

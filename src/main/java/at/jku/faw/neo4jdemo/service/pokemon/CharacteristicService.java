@@ -31,7 +31,7 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertCharacteristic(csv.id(), csv.description());
+            neo4jRepo.insertCharacteristic(csv.getId(), csv.getDescription());
         });
     }
 
@@ -39,8 +39,8 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csvCharacteristics -> {
-            statsRepository.findById(csvCharacteristics.statId()).ifPresent(stats -> {
-                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.id(), stats.getId(), csvCharacteristics.geneMod5());
+            statsRepository.findById(csvCharacteristics.getStatId()).ifPresent(stats -> {
+                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.getId(), stats.getId(), csvCharacteristics.getGeneMod5());
             });
         });
     }

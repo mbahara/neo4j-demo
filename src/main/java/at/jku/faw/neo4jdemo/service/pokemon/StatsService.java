@@ -24,7 +24,7 @@ public class StatsService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvStatsRepository.getAll().forEach(csv -> {
-            statsRepository.insertStats(csv.id(), csv.identifier(), csv.isBattleOnly() != 0, csv.gameIndex());
+            statsRepository.insertStats(csv.getId(), csv.getIdentifier(), csv.getIsBattleOnly() != 0, csv.getGameIndex());
         });
     }
 
@@ -32,8 +32,8 @@ public class StatsService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvStatsRepository.getAll().forEach(csv -> {
-            if (csv.damageClassId() != null) {
-                statsRepository.linkStatsToDamageClass(csv.id(), csv.damageClassId());
+            if (csv.getDamageClassId() != null) {
+                statsRepository.linkStatsToDamageClass(csv.getId(), csv.getDamageClassId());
             }
         });
     }

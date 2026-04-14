@@ -31,24 +31,24 @@ public class VersionGroupService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvVersionGroupRepository.getAll().forEach(csv -> versionGroupRepository.insertVersionGroup(csv.id(), csv.identifier(), csv.order()));
+        csvVersionGroupRepository.getAll().forEach(csv -> versionGroupRepository.insertVersionGroup(csv.getId(), csv.getIdentifier(), csv.getOrder()));
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
         csvVersionGroupRepository.getAll().forEach(csv -> {
-            if (csv.generationId() != null) {
-                versionGroupRepository.linkVersionGroupToGeneration(csv.id(), csv.generationId());
+            if (csv.getGenerationId() != null) {
+                versionGroupRepository.linkVersionGroupToGeneration(csv.getId(), csv.getGenerationId());
             }
 
-            csvVersionGroupRegionsRepositoryImpl.getByVersionGroupId(csv.id()).forEach(regions -> {
-                if (regions.regionId() != null) {
-                    versionGroupRepository.linkVersionGroupToRegion(csv.id(), regions.regionId());
+            csvVersionGroupRegionsRepositoryImpl.getByVersionGroupId(csv.getId()).forEach(regions -> {
+                if (regions.getRegionId() != null) {
+                    versionGroupRepository.linkVersionGroupToRegion(csv.getId(), regions.getRegionId());
                 }
             });
 
-            csvVersionGroupPokemonMoveMethodsRepositoryImpl.getByVersionGroupId(csv.id()).forEach(moveMethods -> versionGroupRepository.linkVersionGroupToMoveMethod(moveMethods.versionGroupId(), moveMethods.pokemonMoveMethodId()));
+            csvVersionGroupPokemonMoveMethodsRepositoryImpl.getByVersionGroupId(csv.getId()).forEach(moveMethods -> versionGroupRepository.linkVersionGroupToMoveMethod(moveMethods.getVersionGroupId(), moveMethods.getPokemonMoveMethodId()));
         });
     }
 }

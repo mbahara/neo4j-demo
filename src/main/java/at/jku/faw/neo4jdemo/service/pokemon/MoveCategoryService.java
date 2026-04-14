@@ -25,7 +25,7 @@ public class MoveCategoryService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveMetaCategoriesRepository.getAll().forEach(csv -> {
-            moveCategoryRepository.insertMoveCategory(csv.id(), csv.identifier(), csv.description());
+            moveCategoryRepository.insertMoveCategory(csv.getId(), csv.getIdentifier(), csv.getDescription());
         });
     }
 

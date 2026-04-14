@@ -32,7 +32,7 @@ public class AreaService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvLocationAreasRepository.getAll().forEach(csv -> {
-            areaRepository.insertArea(csv.id(), csv.identifier(), csv.name());
+            areaRepository.insertArea(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 
@@ -40,15 +40,15 @@ public class AreaService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvLocationAreasRepository.getAll().forEach(locationArea -> {
-            if (locationArea.locationId() != null) {
-                areaRepository.linkAreaToLocation(locationArea.id(), locationArea.locationId());
+            if (locationArea.getLocationId() != null) {
+                areaRepository.linkAreaToLocation(locationArea.getId(), locationArea.getLocationId());
             }
 
-            csvLocationAreaEncounterRatesRepositoryImpl.getByLocationAreaId(locationArea.id()).forEach(
+            csvLocationAreaEncounterRatesRepositoryImpl.getByLocationAreaId(locationArea.getId()).forEach(
               encounterRates ->
-                              areaEncounterRateRepository.linkAreaToEncounterMethod(encounterRates.locationAreaId(),
-                                      encounterRates.encounterMethodId(), encounterRates.rate(),
-                                      encounterRates.versionId())
+                              areaEncounterRateRepository.linkAreaToEncounterMethod(encounterRates.getLocationAreaId(),
+                                      encounterRates.getEncounterMethodId(), encounterRates.getRate(),
+                                      encounterRates.getVersionId())
             );
         });
     }

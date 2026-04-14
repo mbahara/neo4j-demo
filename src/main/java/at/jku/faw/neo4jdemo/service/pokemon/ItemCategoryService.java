@@ -29,7 +29,7 @@ public class ItemCategoryService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertItemCategory(csv.id(), csv.identifier(), csv.name());
+            neo4jRepo.insertItemCategory(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 
@@ -38,8 +38,8 @@ public class ItemCategoryService implements IPokemonDataLoader {
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csv -> {
             csvItemPocketsRepositoryImpl.getAll().forEach(csvItemPocket -> {
-                if (csvItemPocket.id().equals(csv.pocketId())) {
-                    neo4jRepo.linkItemCategoryToItemPocket(csv.id(), csvItemPocket.id());
+                if (csvItemPocket.getId().equals(csv.getPocketId())) {
+                    neo4jRepo.linkItemCategoryToItemPocket(csv.getId(), csvItemPocket.getId());
                 }
             });
         });

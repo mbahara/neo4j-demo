@@ -26,7 +26,7 @@ public class PokemonHabitatService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
 		for (CsvPokemonHabitats csv : csvPokemonHabitatsRepository.getAll()) {
-			pokemonHabitatRepository.insertPokemonHabitat(csv.id(), csv.identifier());
+			pokemonHabitatRepository.insertPokemonHabitat(csv.getId(), csv.getIdentifier());
 		}
 	}
 

@@ -25,7 +25,7 @@ public class EvolutionTriggerService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEvolutionTrigger(csv.id(), csv.identifier());
+            neo4jRepo.insertEvolutionTrigger(csv.getId(), csv.getIdentifier());
         });
     }
 

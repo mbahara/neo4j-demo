@@ -24,7 +24,7 @@ public class GenderService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertGender(csv.id(), csv.identifier());
+            neo4jRepo.insertGender(csv.getId(), csv.getIdentifier());
         });
     }
 

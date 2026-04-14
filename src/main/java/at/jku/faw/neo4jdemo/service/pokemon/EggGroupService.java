@@ -26,7 +26,7 @@ public class EggGroupService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEggGroup(csv.id(), csv.identifier(), csv.name());
+            neo4jRepo.insertEggGroup(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 

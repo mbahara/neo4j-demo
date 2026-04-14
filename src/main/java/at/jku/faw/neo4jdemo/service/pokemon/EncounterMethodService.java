@@ -26,7 +26,7 @@ public class EncounterMethodService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEncounterMethod(csv.id(), csv.identifier(), csv.name(), csv.order());
+            neo4jRepo.insertEncounterMethod(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getOrder());
         });
     }
 

@@ -34,7 +34,7 @@ public class AbilityService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvAbilitiesRepository.getAll().forEach(csv -> {
-            abilityRepository.insertAbility(csv.id(), csv.name(), csv.isMainSeries() != 0, csv.shortEffect(), csv.effect());
+            abilityRepository.insertAbility(csv.getId(), csv.getName(), csv.getIsMainSeries() != 0, csv.getShortEffect(), csv.getEffect());
         });
     }
 
@@ -43,11 +43,11 @@ public class AbilityService implements IPokemonDataLoader {
     public void loadRelationships() {
         csvAbilitiesRepository.getAll().forEach(csv -> {
             csvAbilityGenerationsRepositoryImpl.getAll().stream()
-                    .filter(csvAbilityGeneration -> Objects.equals(csvAbilityGeneration.abilityId(), csv.id()))
-                    .forEach(csvAbilityGeneration -> abilityRepository.linkAbilityToGeneration(csv.id(), csvAbilityGeneration.generationId()));
+                    .filter(csvAbilityGeneration -> Objects.equals(csvAbilityGeneration.getAbilityId(), csv.getId()))
+                    .forEach(csvAbilityGeneration -> abilityRepository.linkAbilityToGeneration(csv.getId(), csvAbilityGeneration.getGenerationId()));
             csvAbilityChangelogRepositoryImpl.getAll().stream()
-                    .filter(csvAbilityChangelog -> Objects.equals(csvAbilityChangelog.abilityId(), csv.id()))
-                    .forEach(csvAbilityChangelog -> abilityRepository.linkAbilityToChangeEvent(csvAbilityChangelog.abilityId(), csvAbilityChangelog.id()));
+                    .filter(csvAbilityChangelog -> Objects.equals(csvAbilityChangelog.getAbilityId(), csv.getId()))
+                    .forEach(csvAbilityChangelog -> abilityRepository.linkAbilityToChangeEvent(csvAbilityChangelog.getAbilityId(), csvAbilityChangelog.getId()));
         });
     }
 }

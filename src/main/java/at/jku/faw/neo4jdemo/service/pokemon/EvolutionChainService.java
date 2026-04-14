@@ -32,7 +32,7 @@ public class EvolutionChainService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEvolutionChain(csv.id());
+            neo4jRepo.insertEvolutionChain(csv.getId());
         });
     }
 
@@ -40,10 +40,10 @@ public class EvolutionChainService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csv -> {
-            CsvItem item = csvItemRepositoryImpl.getById(csv.babyTriggerItemId());
-            neo4jRepo.linkEvolutionChainToItem(csv.id(), item.id());
-            csvPokemonSpeciesRepositoryImpl.getByEvolutionChainId(csv.id()).forEach(
-                    csvPokemonSpecies -> neo4jRepo.linkEvolutionChainToPokemonSpecies(csv.id(), csvPokemonSpecies.id())
+            CsvItem item = csvItemRepositoryImpl.getById(csv.getBabyTriggerItemId());
+            neo4jRepo.linkEvolutionChainToItem(csv.getId(), item.getId());
+            csvPokemonSpeciesRepositoryImpl.getByEvolutionChainId(csv.getId()).forEach(
+                    csvPokemonSpecies -> neo4jRepo.linkEvolutionChainToPokemonSpecies(csv.getId(), csvPokemonSpecies.getId())
             );
         });
     }

@@ -24,7 +24,7 @@ public class MoveMethodService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokemonMoveMethodsRepository.getAll().forEach(csv -> {
-            moveMethodRepository.insertMoveMethod(csv.id(), csv.identifier(), csv.name(), csv.description());
+            moveMethodRepository.insertMoveMethod(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getDescription());
         });
     }
 

@@ -29,7 +29,7 @@ public class EncounterService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEncounter(csv.id(), csv.minLevel(), csv.maxLevel());
+            neo4jRepo.insertEncounter(csv.getId(), csv.getMinLevel(), csv.getMaxLevel());
         });
     }
 
@@ -37,15 +37,15 @@ public class EncounterService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csvEncounters -> {
-            if (csvEncounters.versionId() != null) {
-                neo4jRepo.linkEncounterToVersion(csvEncounters.id(), csvEncounters.versionId());
+            if (csvEncounters.getVersionId() != null) {
+                neo4jRepo.linkEncounterToVersion(csvEncounters.getId(), csvEncounters.getVersionId());
             }
             csvLocationAreaEncounterRatesRepositoryImpl.getAll().stream().filter(rates ->
-                    Objects.equals(rates.locationAreaId(), csvEncounters.locationAreaId()))
+                    Objects.equals(rates.getLocationAreaId(), csvEncounters.getLocationAreaId()))
                     .forEach(encounterRates ->
-                            neo4jRepo.linkEncounterToEncounterMethod(csvEncounters.id(), encounterRates.encounterMethodId()));
-            if (csvEncounters.locationAreaId() != null) {
-                neo4jRepo.linkEncounterToLocationArea(csvEncounters.id(), csvEncounters.locationAreaId());
+                            neo4jRepo.linkEncounterToEncounterMethod(csvEncounters.getId(), encounterRates.getEncounterMethodId()));
+            if (csvEncounters.getLocationAreaId() != null) {
+                neo4jRepo.linkEncounterToLocationArea(csvEncounters.getId(), csvEncounters.getLocationAreaId());
             }
         });
     }

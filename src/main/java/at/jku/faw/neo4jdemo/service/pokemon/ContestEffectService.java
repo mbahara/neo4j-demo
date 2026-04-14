@@ -24,7 +24,7 @@ public class ContestEffectService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertContestEffect(csv.id(), csv.appeal(), csv.jam(), csv.flavorText(), csv.effect());
+            neo4jRepo.insertContestEffect(csv.getId(), csv.getAppeal(), csv.getJam(), csv.getFlavorText(), csv.getEffect());
         });
     }
 

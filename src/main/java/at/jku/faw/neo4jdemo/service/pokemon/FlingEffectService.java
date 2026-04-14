@@ -24,7 +24,7 @@ public class FlingEffectService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvItemFlingEffectsRepository.getAll().forEach(csv -> {
-            flingEffectRepository.insertFlingEffect(csv.id(), csv.identifier(), csv.effect());
+            flingEffectRepository.insertFlingEffect(csv.getId(), csv.getIdentifier(), csv.getEffect());
         });
     }
 

@@ -25,7 +25,7 @@ public class MoveBattleStyleService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertMoveBattleStyle(csv.id(), csv.identifier(), csv.name());
+            neo4jRepo.insertMoveBattleStyle(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 

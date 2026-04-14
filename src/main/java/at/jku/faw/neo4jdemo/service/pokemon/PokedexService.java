@@ -28,7 +28,7 @@ public class PokedexService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokedexesRepository.getAll().forEach(csv -> {
-            pokedexRepository.insertPokedex(csv.id(), csv.identifier(), csv.isMainSeries() != 0);
+            pokedexRepository.insertPokedex(csv.getId(), csv.getIdentifier(), csv.getIsMainSeries() != 0);
         });
     }
 
@@ -36,12 +36,12 @@ public class PokedexService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvPokedexesRepository.getAll().forEach(csv -> {
-            if (csv.regionId() != null) {
-                pokedexRepository.linkPokedexToRegion(csv.id(), csv.regionId());
+            if (csv.getRegionId() != null) {
+                pokedexRepository.linkPokedexToRegion(csv.getId(), csv.getRegionId());
             }
-            csvPokedexVersionGroupsRepositoryImpl.getByPokedexId(csv.id()).forEach(csvVersionGroup -> {
-                if (csvVersionGroup.versionGroupId() != null) {
-                    pokedexRepository.linkPokedexToVersionGroup(csv.id(), csvVersionGroup.versionGroupId());
+            csvPokedexVersionGroupsRepositoryImpl.getByPokedexId(csv.getId()).forEach(csvVersionGroup -> {
+                if (csvVersionGroup.getVersionGroupId() != null) {
+                    pokedexRepository.linkPokedexToVersionGroup(csv.getId(), csvVersionGroup.getVersionGroupId());
                 }
             });
         });

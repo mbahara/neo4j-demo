@@ -24,7 +24,7 @@ public class DamageClassService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertDamageClass(csv.id(), csv.identifier(), csv.name(), csv.description());
+            neo4jRepo.insertDamageClass(csv.getId(), csv.getIdentifier(), csv.getName(), csv.getDescription());
         });
     }
 

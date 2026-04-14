@@ -25,7 +25,7 @@ public class GenerationService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvGenerationsRepository.getAll().forEach(csv -> {
-            generationRepository.insertGeneration(csv.id(), csv.identifier(), csv.name());
+            generationRepository.insertGeneration(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 
@@ -33,8 +33,8 @@ public class GenerationService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvGenerationsRepository.getAll().forEach(generation -> {
-            if (generation.mainRegionId() != null) {
-                generationRepository.linkGenerationToRegion(generation.id(), generation.mainRegionId());
+            if (generation.getMainRegionId() != null) {
+                generationRepository.linkGenerationToRegion(generation.getId(), generation.getMainRegionId());
             }
         });
     }

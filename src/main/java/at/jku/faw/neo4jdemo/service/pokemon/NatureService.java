@@ -40,7 +40,7 @@ public class NatureService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvNatureRepository.getAll().forEach(csv -> {
-            natureRepository.insertNature(csv.id(), csv.identifier());
+            natureRepository.insertNature(csv.getId(), csv.getIdentifier());
         });
     }
 
@@ -48,20 +48,20 @@ public class NatureService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvNatureRepository.getAll().forEach(csvNature -> {
-            if (csvNature.increasedStatId() != null) {
-                natureRepository.linkNatureIncreasesStat(csvNature.id(), csvNature.increasedStatId());
+            if (csvNature.getIncreasedStatId() != null) {
+                natureRepository.linkNatureIncreasesStat(csvNature.getId(), csvNature.getIncreasedStatId());
             }
-            if (csvNature.decreasedStatId() != null) {
-                natureRepository.linkNatureDecreasesStat(csvNature.id(), csvNature.decreasedStatId());
+            if (csvNature.getDecreasedStatId() != null) {
+                natureRepository.linkNatureDecreasesStat(csvNature.getId(), csvNature.getDecreasedStatId());
             }
-            csvNatureBattleStylePreferencesRepositoryImpl.getByNatureId(csvNature.id()).forEach(csvNatureBattleStylePreference -> {
-                natureBattleStylePreferenceRepository.linkNatureToMoveBattleStyle(csvNature.id(), csvNatureBattleStylePreference.moveBattleStyleId(), csvNatureBattleStylePreference.lowHpPreference(), csvNatureBattleStylePreference.highHpPreference());
+            csvNatureBattleStylePreferencesRepositoryImpl.getByNatureId(csvNature.getId()).forEach(csvNatureBattleStylePreference -> {
+                natureBattleStylePreferenceRepository.linkNatureToMoveBattleStyle(csvNature.getId(), csvNatureBattleStylePreference.getMoveBattleStyleId(), csvNatureBattleStylePreference.getLowHpPreference(), csvNatureBattleStylePreference.getHighHpPreference());
             });
 
             csvNaturePokeathlonStatsRepositoryImpl.getAll().stream()
-                .filter(stats -> Objects.equals(stats.natureId(), csvNature.id()))
+                .filter(stats -> Objects.equals(stats.getNatureId(), csvNature.getId()))
                 .forEach(stats ->
-                        pokeathlonStatsModifierRepository.linkNatureToPokeathlonStats(stats.natureId(), stats.pokeathlonStatId(), stats.maxChange()));
+                        pokeathlonStatsModifierRepository.linkNatureToPokeathlonStats(stats.getNatureId(), stats.getPokeathlonStatId(), stats.getMaxChange()));
         });
     }
 }

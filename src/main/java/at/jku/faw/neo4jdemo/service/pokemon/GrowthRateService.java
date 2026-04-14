@@ -36,7 +36,7 @@ public class GrowthRateService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertGrowthRate(csv.id(), csv.identifier(), csv.formula());
+            neo4jRepo.insertGrowthRate(csv.getId(), csv.getIdentifier(), csv.getFormula());
         });
     }
 
@@ -44,9 +44,9 @@ public class GrowthRateService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(rates -> {
-            csvExperienceRepositoryImpl.getByGrowthRateId(rates.id()).forEach(experience -> {
-                Level level = levelRepository.insertLevel(experience.level());
-                levelRequirementRepository.linkGrowthRateToLevel(experience.growthRateId(), level.getId(), experience.experience());
+            csvExperienceRepositoryImpl.getByGrowthRateId(rates.getId()).forEach(experience -> {
+                Level level = levelRepository.insertLevel(experience.getLevel());
+                levelRequirementRepository.linkGrowthRateToLevel(experience.getGrowthRateId(), level.getId(), experience.getExperience());
             });
 
         });

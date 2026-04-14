@@ -24,7 +24,7 @@ public class MachineService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMachineRepository.getAll().forEach(csv -> {
-            machineRepository.insertMachine(csv.machineNumber());
+            machineRepository.insertMachine(csv.getMachineNumber());
         });
     }
 
@@ -32,12 +32,12 @@ public class MachineService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMachineRepository.getAll().forEach(csv -> {
-            if (csv.moveId() != null) {
+            if (csv.getMoveId() != null) {
                 machineRepository.findAll().stream()
-                        .filter(machine -> csv.machineNumber() == machine.getMachineNumber())
+                        .filter(machine -> csv.getMachineNumber() == machine.getMachineNumber())
                         .forEach(machine -> {
-                            machineRepository.linkMachineToMove(machine.getId(), csv.moveId());
-                            machineRepository.linkMachineToVersionGroup(machine.getId(), csv.versionGroupId());
+                            machineRepository.linkMachineToMove(machine.getId(), csv.getMoveId());
+                            machineRepository.linkMachineToVersionGroup(machine.getId(), csv.getVersionGroupId());
                         });
             }
         });

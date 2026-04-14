@@ -26,7 +26,7 @@ public class PokeathlonStatsService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertPokeathlonStats(csv.id(), csv.identifier());
+            neo4jRepo.insertPokeathlonStats(csv.getId(), csv.getIdentifier());
         });
     }
 

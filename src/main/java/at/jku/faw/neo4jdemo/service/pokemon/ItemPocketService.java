@@ -24,7 +24,7 @@ public class ItemPocketService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvItemPocketsRepository.getAll().forEach(csv -> {
-            itemPocketRepository.insertItemPocket(csv.id(), csv.identifier(), csv.name());
+            itemPocketRepository.insertItemPocket(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 

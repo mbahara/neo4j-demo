@@ -24,7 +24,7 @@ public class MoveAilmentService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvMoveMetaAilmentsRepository.getAll().forEach(csv -> {
-            moveAilmentRepository.insertMoveAilment(csv.id(), csv.identifier(), csv.name());
+            moveAilmentRepository.insertMoveAilment(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 

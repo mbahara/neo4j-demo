@@ -24,7 +24,7 @@ public class VersionService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvVersionsRepository.getAll().forEach(csv -> {
-            versionRepository.insertVersion(csv.id(), csv.identifier(), csv.name());
+            versionRepository.insertVersion(csv.getId(), csv.getIdentifier(), csv.getName());
         });
     }
 
@@ -32,8 +32,8 @@ public class VersionService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvVersionsRepository.getAll().forEach(csvVersions -> {
-            if (csvVersions.versionGroupId() != null) {
-                versionRepository.linkVersionToVersionGroup(csvVersions.id(), csvVersions.versionGroupId());
+            if (csvVersions.getVersionGroupId() != null) {
+                versionRepository.linkVersionToVersionGroup(csvVersions.getId(), csvVersions.getVersionGroupId());
             }
         });
     }

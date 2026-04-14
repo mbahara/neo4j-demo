@@ -24,7 +24,7 @@ public class SuperContestEffectService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvSuperContestEffectsRepository.getAll().forEach(csv -> {
-            superContestEffectRepository.insertSuperContestEffect(csv.id(), csv.appeal(), csv.flavorText());
+            superContestEffectRepository.insertSuperContestEffect(csv.getId(), csv.getAppeal(), csv.getFlavorText());
         });
     }
 

@@ -75,9 +75,9 @@ public class PokemonService implements IPokemonDataLoader {
     @Transactional
     public void loadNodes() {
         csvPokemonRepository.getAll().forEach(csv -> {
-            pokemonRepository.insertPokemon(csv.id(), csv.identifier(),
-					csv.height(), csv.weight(), csv.baseExperience(),
-					csv.order(), csv.isDefault() != 0);
+            pokemonRepository.insertPokemon(csv.getId(), csv.getIdentifier(),
+					csv.getHeight(), csv.getWeight(), csv.getBaseExperience(),
+					csv.getOrder(), csv.getIsDefault() != 0);
         });
     }
 
@@ -86,53 +86,53 @@ public class PokemonService implements IPokemonDataLoader {
     public void loadRelationships() {
         csvPokemonRepository.getAll().forEach(csvPokemon -> {
 			// Simple Node Link
-			pokemonRepository.linkPokemonToPokemonSpecies(csvPokemon.id(), csvPokemon.speciesId());
+			pokemonRepository.linkPokemonToPokemonSpecies(csvPokemon.getId(), csvPokemon.getSpeciesId());
 
 			csvPokemonTypeRepositoryImpl.getAll().stream()
 					.filter(csvPokemonType ->
-							Objects.equals(csvPokemonType.pokemonId(), csvPokemon.id()))
+							Objects.equals(csvPokemonType.getPokemonId(), csvPokemon.getId()))
 					.forEach(csvPokemonType ->
-							pokemonTypeRepository.linkPokemonToType(csvPokemon.id(),
-									csvPokemonType.typeId(), csvPokemonType.slot()));
+							pokemonTypeRepository.linkPokemonToType(csvPokemon.getId(),
+									csvPokemonType.getTypeId(), csvPokemonType.getSlot()));
 
 			// Propertied Relationship Link
 			csvPokemonStatsRepositoryImpl.getAll().stream()
-                .filter(m -> Objects.equals(m.pokemonId(), csvPokemon.id()))
+                .filter(m -> Objects.equals(m.getPokemonId(), csvPokemon.getId()))
                 .forEach(stats ->
-						hasStatsRepository.linkPokemonToStats(csvPokemon.id(),
-								stats.statId(), stats.baseStat(), stats.effort()));
+						hasStatsRepository.linkPokemonToStats(csvPokemon.getId(),
+								stats.getStatId(), stats.getBaseStat(), stats.getEffort()));
 
             csvPokemonItemsRepository.getAll().stream()
-                    .filter(m -> Objects.equals(m.pokemonId(), csvPokemon.id()))
+                    .filter(m -> Objects.equals(m.getPokemonId(), csvPokemon.getId()))
                     .forEach(item -> {
-                        HeldItem heldItem = heldItemRepository.insertHeldItem(item.rarity());
-                        pokemonRepository.linkPokemonToHeldItem(item.pokemonId(), heldItem.getId());
-						heldItemRepository.linkHeldItemToItem(heldItem.getId(), item.itemId());
-						heldItemRepository.linkHeldItemToVersion(heldItem.getId(), item.versionId());
+                        HeldItem heldItem = heldItemRepository.insertHeldItem(item.getRarity());
+                        pokemonRepository.linkPokemonToHeldItem(item.getPokemonId(), heldItem.getId());
+						heldItemRepository.linkHeldItemToItem(heldItem.getId(), item.getItemId());
+						heldItemRepository.linkHeldItemToVersion(heldItem.getId(), item.getVersionId());
                     });
 
 			csvPokemonAbilitiesRepositoryImpl.getAll().stream()
-					.filter(csvPokemonAbilities -> Objects.equals(csvPokemonAbilities.pokemonId(), csvPokemon.id()))
+					.filter(csvPokemonAbilities -> Objects.equals(csvPokemonAbilities.getPokemonId(), csvPokemon.getId()))
 					.forEach(abilities ->
-						pokemonAbilityRepository.linkPokemonToAbility(abilities.pokemonId(), abilities.abilityId(), Boolean.TRUE.equals(
-								CsvUtils.extractBoolean(abilities.isHidden())), abilities.slot()));
+						pokemonAbilityRepository.linkPokemonToAbility(abilities.getPokemonId(), abilities.getAbilityId(), Boolean.TRUE.equals(
+								CsvUtils.extractBoolean(abilities.getIsHidden())), abilities.getSlot()));
             csvPokemonGameIndicesRepositoryImpl.getAll().stream()
-					.filter(gi -> Objects.equals(gi.pokemonId(), csvPokemon.id()))
+					.filter(gi -> Objects.equals(gi.getPokemonId(), csvPokemon.getId()))
 					.forEach(index -> {
-						pokemonGameIndexRepository.linkPokemonHasGameIndex(index.pokemonId(), index.versionId(), index.gameIndex());
+						pokemonGameIndexRepository.linkPokemonHasGameIndex(index.getPokemonId(), index.getVersionId(), index.getGameIndex());
 					});
 			csvPokemonMovesRepositoryImpl.getAll().stream()
 					.filter(pokemonMove ->
-							Objects.equals(pokemonMove.pokemonId(), csvPokemon.id()))
+							Objects.equals(pokemonMove.getPokemonId(), csvPokemon.getId()))
 					.forEach(pokemonMove ->
-							pokemonRepository.linkPokemonToPokemonMove(pokemonMove.pokemonId(),
-									pokemonMove.moveId()));
+							pokemonRepository.linkPokemonToPokemonMove(pokemonMove.getPokemonId(),
+									pokemonMove.getMoveId()));
 
 			csvEncountersRepositoryImpl.getAll().stream()
 					.filter(csvEncounter ->
-							Objects.equals(csvEncounter.pokemonId(), csvPokemon.id()))
+							Objects.equals(csvEncounter.getPokemonId(), csvPokemon.getId()))
 					.forEach(csvEncounter ->
-							pokemonRepository.linkPokemonToEncounter(csvEncounter.pokemonId(), csvEncounter.id()));
+							pokemonRepository.linkPokemonToEncounter(csvEncounter.getPokemonId(), csvEncounter.getId()));
         });
     }
 }

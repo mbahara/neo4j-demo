@@ -17,7 +17,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 public class PokemonGameIndex {
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
 
     private int index;
 

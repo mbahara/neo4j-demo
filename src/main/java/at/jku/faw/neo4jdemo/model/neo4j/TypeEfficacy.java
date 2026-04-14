@@ -18,7 +18,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 public class TypeEfficacy {
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
 
     // The 'damage_factor' column (e.g., 200 for Super Effective)
     @Property("damageFactor")

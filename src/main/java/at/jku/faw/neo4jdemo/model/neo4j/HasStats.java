@@ -18,7 +18,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 public class HasStats {
 	@Id
 	@GeneratedValue
-	private String id;
+	private Long id;
 
 	@Property("baseStat")
 	private int baseStat; // from 'base_stat'

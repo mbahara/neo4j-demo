@@ -18,7 +18,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 public class Effect {
 	@Id
 	@GeneratedValue
-	public String id;
+	public Long id;
 
 	@Property("effectChance")
 	public int effectChance;

@@ -17,7 +17,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 public class GameIndex {
     @Id
     @GeneratedValue
-    public String id;
+    public Long id;
 
     private int gameIndex;
 

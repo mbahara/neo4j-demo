@@ -1,5 +1,9 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvItem;
+import at.jku.faw.neo4jdemo.model.csv.CsvItemFlagMap;
+import at.jku.faw.neo4jdemo.model.csv.CsvItemGameIndices;
+import at.jku.faw.neo4jdemo.model.csv.CsvMachine;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemFlagMapRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemGameIndicesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemRepositoryImpl;
@@ -48,44 +52,46 @@ public class ItemService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            itemRepository.insertItem(csv.id(), csv.identifier(), csv.name(), csv.cost(), csv.flingPower(), csv.shortEffect(), csv.effect());
-        });
-    }
+		for (CsvItem csv : csvMainRepo.getAll()) {
+			itemRepository.insertItem(csv.id(), csv.identifier(), csv.name(), csv.cost(), csv.flingPower(),
+					csv.shortEffect(), csv.effect());
+		}
+	}
 
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(csvItem -> {
-            if (csvItem.categoryId() != null) {
-                itemCategoryRepository.findById(csvItem.categoryId()).ifPresent(itemCategory -> {
-                    itemRepository.linkItemToItemCategory(csvItem.id(), itemCategory.getId());
-                });
-            }
-            if (csvItem.flingEffectId() != null) {
-                flingEffectRepository.findById(csvItem.flingEffectId()).ifPresentOrElse(
-                        (flingEffect) -> {
-                            itemRepository.linkItemToFlingEffect(csvItem.id(), flingEffect.getId());
-                        },
-                        () -> {
-                            itemRepository.linkItemToFlingEffect(csvItem.id(),
-                                    csvItem.flingEffectId());
-                        });
-            }
-            csvItemFlagMapRepositoryImpl.getByItemId(csvItem.id()).forEach(csvItemFlagMap -> {
-                itemFlagRepository.findById(csvItemFlagMap.itemFlagId()).ifPresent(itemFlag -> {
-                    itemRepository.linkItemToItemFlag(csvItem.id(), itemFlag.getId());
-                });
-            });
+		for (CsvItem csvItem : csvMainRepo.getAll()) {
+			if (csvItem.categoryId() != null) {
+				itemCategoryRepository.findById(csvItem.categoryId()).ifPresent(itemCategory -> {
+					itemRepository.linkItemToItemCategory(csvItem.id(), itemCategory.getId());
+				});
+			}
+			if (csvItem.flingEffectId() != null) {
+				flingEffectRepository.findById(csvItem.flingEffectId()).ifPresentOrElse(
+						(flingEffect) -> {
+							itemRepository.linkItemToFlingEffect(csvItem.id(), flingEffect.getId());
+						},
+						() -> {
+							itemRepository.linkItemToFlingEffect(csvItem.id(),
+									csvItem.flingEffectId());
+						});
+			}
+			for (CsvItemFlagMap csvItemFlagMap : csvItemFlagMapRepositoryImpl.getByItemId(csvItem.id())) {
+				itemFlagRepository.findById(csvItemFlagMap.itemFlagId()).ifPresent(itemFlag -> {
+					itemRepository.linkItemToItemFlag(csvItem.id(), itemFlag.getId());
+				});
+			}
 
-            csvItemGameIndicesRepositoryImpl.getByItemId(csvItem.id()).forEach(csvItemGameIndices -> {
-               itemRepository.linkItemHasGameIndex(csvItemGameIndices.itemId(), csvItemGameIndices.generationId(), csvItemGameIndices.gameIndex());
-            });
+			for (CsvItemGameIndices csvItemGameIndices : csvItemGameIndicesRepositoryImpl.getByItemId(csvItem.id())) {
+				itemRepository.linkItemHasGameIndex(csvItemGameIndices.itemId(), csvItemGameIndices.generationId(),
+						csvItemGameIndices.gameIndex());
+			}
 
-            csvMachineRepositoryImpl.getByItemId(csvItem.id()).forEach(csvMachine -> {
-                machineRepository.findAll().forEach(machine ->
-                                    itemRepository.linkItemToMachine(csvMachine.itemId(), machine.getId()));
-            });
-        });
-    }
+			for (CsvMachine csvMachine : csvMachineRepositoryImpl.getByItemId(csvItem.id())) {
+				machineRepository.findAll().forEach(machine ->
+						itemRepository.linkItemToMachine(csvMachine.itemId(), machine.getId()));
+			}
+		}
+	}
 }

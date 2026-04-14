@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NatureRepository extends Neo4jRepository<Nature, Long> {
     Optional<Nature> findByIdentifier(String identifier);
-    Optional<Nature> findByName(String name);
 
     @Query("""
         MERGE (n:Nature {id: $id})

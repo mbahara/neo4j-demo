@@ -3,7 +3,6 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreaEncounterRatesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreasRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.AreaRepository;
-import at.jku.faw.neo4jdemo.repository.neo4j.EncounterMethodRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,8 +15,7 @@ public class AreaService implements IPokemonDataLoader {
 
     public AreaService(CsvLocationAreasRepositoryImpl csvLocationAreasRepository,
                        AreaRepository areaRepository,
-                       CsvLocationAreaEncounterRatesRepositoryImpl csvLocationAreaEncounterRatesRepositoryImpl,
-                       EncounterMethodRepository encounterMethodRepository) {
+                       CsvLocationAreaEncounterRatesRepositoryImpl csvLocationAreaEncounterRatesRepositoryImpl) {
         this.csvLocationAreasRepository = csvLocationAreasRepository;
         this.areaRepository = areaRepository;
         this.csvLocationAreaEncounterRatesRepositoryImpl = csvLocationAreaEncounterRatesRepositoryImpl;

@@ -44,7 +44,7 @@ public class NatureService implements IPokemonDataLoader {
                 natureRepository.linkNatureIncreasesStat(csvNature.id(), csvNature.increasedStatId());
             }
             if (csvNature.decreasedStatId() != null) {
-                natureRepository.linkNatureIncreasesStat(csvNature.id(), csvNature.decreasedStatId());
+                natureRepository.linkNatureDecreasesStat(csvNature.id(), csvNature.decreasedStatId());
             }
             csvNatureBattleStylePreferencesRepositoryImpl.getByNatureId(csvNature.id()).forEach(csvNatureBattleStylePreference -> {
                 natureRepository.linkNatureToMoveBattleStyle(csvNature.id(), csvNatureBattleStylePreference.moveBattleStyleId(), csvNatureBattleStylePreference.lowHpPreference(), csvNatureBattleStylePreference.highHpPreference());

@@ -17,7 +17,7 @@ public abstract class GenericCsvRepositoryImpl {
 			throw new IllegalStateException("CSV resource is null. Ensure it is injected before use.");
 		}
 
-		try(CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(csvResource.getGetInputStream())))) {
+		try(CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(csvResource.getInputStream())))) {
 			HeaderColumnNameMappingStrategy<T> mappingStrategy = new HeaderColumnNameMappingStrategy<>();
 			mappingStrategy.setType(entity);
 
@@ -25,9 +25,9 @@ public abstract class GenericCsvRepositoryImpl {
 					.withType(entity)
 					.withMappingStrategy(mappingStrategy)
 					.withFieldAsNull(CSVReaderNullFieldIndicator.BOTH)
-					.getBuild();
+					.build();
 
-			return csvToBean.getParse();
+			return csvToBean.parse();
 		}
 	}
 }

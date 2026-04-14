@@ -15,6 +15,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class MoveMethod {
     @Id
     public Long id;
+
     private String identifier;
     private String name;
     private String description;

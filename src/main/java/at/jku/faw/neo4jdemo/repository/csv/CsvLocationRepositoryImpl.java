@@ -20,7 +20,7 @@ public class CsvLocationRepositoryImpl extends GenericCsvRepositoryImpl implemen
 
     @Override
     public CsvLocation getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvLocationRepositoryImpl extends GenericCsvRepositoryImpl implemen
 
     public List<CsvLocation> getByRegionId(Long regionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.regionId(), regionId))
+                .filter(e -> Objects.equals(e.getRegionId(), regionId))
                 .toList();
     }
 }

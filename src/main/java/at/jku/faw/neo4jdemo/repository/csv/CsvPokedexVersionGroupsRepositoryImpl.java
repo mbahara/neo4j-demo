@@ -37,13 +37,13 @@ public class CsvPokedexVersionGroupsRepositoryImpl extends GenericCsvRepositoryI
 
     public List<CsvPokedexVersionGroups> getByPokedexId(Long pokedexId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokedexId(), pokedexId))
+                .filter(e -> Objects.equals(e.getPokedexId(), pokedexId))
                 .toList();
     }
 
     public List<CsvPokedexVersionGroups> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 }

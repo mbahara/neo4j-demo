@@ -20,7 +20,7 @@ public class CsvItemRepositoryImpl extends GenericCsvRepositoryImpl implements G
 
     @Override
     public CsvItem getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,13 +37,13 @@ public class CsvItemRepositoryImpl extends GenericCsvRepositoryImpl implements G
 
     public List<CsvItem> getByCategoryId(Long categoryId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.categoryId(), categoryId))
+                .filter(e -> Objects.equals(e.getCategoryId(), categoryId))
                 .toList();
     }
 
     public List<CsvItem> getByFlingEffectId(Long flingEffectId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.flingEffectId(), flingEffectId))
+                .filter(e -> Objects.equals(e.getFlingEffectId(), flingEffectId))
                 .toList();
     }
 }

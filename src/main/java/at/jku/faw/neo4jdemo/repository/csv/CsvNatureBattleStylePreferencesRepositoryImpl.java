@@ -37,13 +37,13 @@ public class CsvNatureBattleStylePreferencesRepositoryImpl extends GenericCsvRep
 
     public List<CsvNatureBattleStylePreferences> getByNatureId(Long natureId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.natureId(), natureId))
+                .filter(e -> Objects.equals(e.getNatureId(), natureId))
                 .toList();
     }
 
     public List<CsvNatureBattleStylePreferences> getByMoveBattleStyleId(Long moveBattleStyleId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveBattleStyleId(), moveBattleStyleId))
+                .filter(e -> Objects.equals(e.getMoveBattleStyleId(), moveBattleStyleId))
                 .toList();
     }
 }

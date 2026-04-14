@@ -37,13 +37,13 @@ public class CsvTypeGameIndicesRepositoryImpl extends GenericCsvRepositoryImpl i
 
     public List<CsvTypeGameIndices> getByTypeId(Long typeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.typeId(), typeId))
+                .filter(e -> Objects.equals(e.getTypeId(), typeId))
                 .toList();
     }
 
     public List<CsvTypeGameIndices> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 }

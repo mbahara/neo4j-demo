@@ -37,13 +37,13 @@ public class CsvItemFlagMapRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     public List<CsvItemFlagMap> getByItemId(Long itemId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.itemId(), itemId))
+                .filter(e -> Objects.equals(e.getItemId(), itemId))
                 .toList();
     }
 
     public List<CsvItemFlagMap> getByItemFlagId(Long itemFlagId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.itemFlagId(), itemFlagId))
+                .filter(e -> Objects.equals(e.getItemFlagId(), itemFlagId))
                 .toList();
     }
 }

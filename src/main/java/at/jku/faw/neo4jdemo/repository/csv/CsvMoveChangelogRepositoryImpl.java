@@ -37,31 +37,31 @@ public class CsvMoveChangelogRepositoryImpl extends GenericCsvRepositoryImpl imp
 
     public List<CsvMoveChangelog> getByMoveId(Long moveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveId(), moveId))
+                .filter(e -> Objects.equals(e.getMoveId(), moveId))
                 .toList();
     }
 
     public List<CsvMoveChangelog> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 
     public List<CsvMoveChangelog> getByTypeId(Long typeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.typeId(), typeId))
+                .filter(e -> Objects.equals(e.getTypeId(), typeId))
                 .toList();
     }
 
     public List<CsvMoveChangelog> getByTargetId(Long targetId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.targetId(), targetId))
+                .filter(e -> Objects.equals(e.getTargetId(), targetId))
                 .toList();
     }
 
     public List<CsvMoveChangelog> getByEffectId(Long effectId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.effectId(), effectId))
+                .filter(e -> Objects.equals(e.getEffectId(), effectId))
                 .toList();
     }
 }

@@ -37,13 +37,13 @@ public class CsvPokemonFormGenerationsRepositoryImpl extends GenericCsvRepositor
 
     public List<CsvPokemonFormGenerations> getByPokemonFormId(Long pokemonFormId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonFormId(), pokemonFormId))
+                .filter(e -> Objects.equals(e.getPokemonFormId(), pokemonFormId))
                 .toList();
     }
 
     public List<CsvPokemonFormGenerations> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 }

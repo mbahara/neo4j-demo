@@ -20,7 +20,7 @@ public class CsvPokemonRepositoryImpl extends GenericCsvRepositoryImpl implement
 
     @Override
     public CsvPokemon getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvPokemonRepositoryImpl extends GenericCsvRepositoryImpl implement
 
     public List<CsvPokemon> getBySpeciesId(Long speciesId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.speciesId(), speciesId))
+                .filter(e -> Objects.equals(e.getSpeciesId(), speciesId))
                 .toList();
     }
 }

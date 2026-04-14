@@ -20,7 +20,7 @@ public class CsvPokemonFormRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     @Override
     public CsvPokemonForm getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvPokemonFormRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     public List<CsvPokemonForm> getByPokemonId(Long pokemonId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonId(), pokemonId))
+                .filter(e -> Objects.equals(e.getPokemonId(), pokemonId))
                 .toList();
     }
 }

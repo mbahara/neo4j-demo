@@ -20,7 +20,7 @@ public class CsvMoveRepositoryImpl extends GenericCsvRepositoryImpl implements G
 
     @Override
     public CsvMove getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,31 +37,31 @@ public class CsvMoveRepositoryImpl extends GenericCsvRepositoryImpl implements G
 
     public List<CsvMove> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 
     public List<CsvMove> getByTypeId(Long typeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.typeId(), typeId))
+                .filter(e -> Objects.equals(e.getTypeId(), typeId))
                 .toList();
     }
 
     public List<CsvMove> getByTargetId(Long targetId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.targetId(), targetId))
+                .filter(e -> Objects.equals(e.getTargetId(), targetId))
                 .toList();
     }
 
     public List<CsvMove> getByDamageClassId(Long damageClassId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.damageClassId(), damageClassId))
+                .filter(e -> Objects.equals(e.getDamageClassId(), damageClassId))
                 .toList();
     }
 
     public List<CsvMove> getByEffectId(Long effectId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.effectId(), effectId))
+                .filter(e -> Objects.equals(e.getEffectId(), effectId))
                 .toList();
     }
 }

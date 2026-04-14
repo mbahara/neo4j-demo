@@ -37,13 +37,13 @@ public class CsvVersionGroupPokemonMoveMethodsRepositoryImpl extends GenericCsvR
 
     public List<CsvVersionGroupPokemonMoveMethods> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 
     public List<CsvVersionGroupPokemonMoveMethods> getByPokemonMoveMethodId(Long pokemonMoveMethodId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonMoveMethodId(), pokemonMoveMethodId))
+                .filter(e -> Objects.equals(e.getPokemonMoveMethodId(), pokemonMoveMethodId))
                 .toList();
     }
 }

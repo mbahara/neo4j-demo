@@ -20,7 +20,7 @@ public class CsvNatureRepositoryImpl extends GenericCsvRepositoryImpl implements
 
     @Override
     public CsvNature getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,13 +37,13 @@ public class CsvNatureRepositoryImpl extends GenericCsvRepositoryImpl implements
 
     public List<CsvNature> getByDecreasedStatId(Long decreasedStatId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.decreasedStatId(), decreasedStatId))
+                .filter(e -> Objects.equals(e.getDecreasedStatId(), decreasedStatId))
                 .toList();
     }
 
     public List<CsvNature> getByIncreasedStatId(Long increasedStatId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.increasedStatId(), increasedStatId))
+                .filter(e -> Objects.equals(e.getIncreasedStatId(), increasedStatId))
                 .toList();
     }
 }

@@ -20,7 +20,7 @@ public class CsvEvolutionChainsRepositoryImpl extends GenericCsvRepositoryImpl i
 
     @Override
     public CsvEvolutionChains getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvEvolutionChainsRepositoryImpl extends GenericCsvRepositoryImpl i
 
     public List<CsvEvolutionChains> getByBabyTriggerItemId(Long babyTriggerItemId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.babyTriggerItemId(), babyTriggerItemId))
+                .filter(e -> Objects.equals(e.getBabyTriggerItemId(), babyTriggerItemId))
                 .toList();
     }
 }

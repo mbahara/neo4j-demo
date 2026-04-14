@@ -37,25 +37,25 @@ public class CsvPokemonMovesRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     public List<CsvPokemonMoves> getByPokemonId(Long pokemonId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonId(), pokemonId))
+                .filter(e -> Objects.equals(e.getPokemonId(), pokemonId))
                 .toList();
     }
 
     public List<CsvPokemonMoves> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 
     public List<CsvPokemonMoves> getByMoveId(Long moveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveId(), moveId))
+                .filter(e -> Objects.equals(e.getMoveId(), moveId))
                 .toList();
     }
 
     public List<CsvPokemonMoves> getByMoveMethodId(Long moveMethodId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveMethodId(), moveMethodId))
+                .filter(e -> Objects.equals(e.getMoveMethodId(), moveMethodId))
                 .toList();
     }
 }

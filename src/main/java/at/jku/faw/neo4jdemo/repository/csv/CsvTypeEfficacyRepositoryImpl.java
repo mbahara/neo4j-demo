@@ -37,13 +37,13 @@ public class CsvTypeEfficacyRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     public List<CsvTypeEfficacy> getByDamageTypeId(Long damageTypeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.damageTypeId(), damageTypeId))
+                .filter(e -> Objects.equals(e.getDamageTypeId(), damageTypeId))
                 .toList();
     }
 
     public List<CsvTypeEfficacy> getByTargetTypeId(Long targetTypeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.targetTypeId(), targetTypeId))
+                .filter(e -> Objects.equals(e.getTargetTypeId(), targetTypeId))
                 .toList();
     }
 }

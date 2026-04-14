@@ -37,19 +37,19 @@ public class CsvMoveMetaRepositoryImpl extends GenericCsvRepositoryImpl implemen
 
     public List<CsvMoveMeta> getByMoveId(Long moveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveId(), moveId))
+                .filter(e -> Objects.equals(e.getMoveId(), moveId))
                 .toList();
     }
 
     public List<CsvMoveMeta> getByMetaCategoryId(Long metaCategoryId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.metaCategoryId(), metaCategoryId))
+                .filter(e -> Objects.equals(e.getMetaCategoryId(), metaCategoryId))
                 .toList();
     }
 
     public List<CsvMoveMeta> getByMetaAilmentId(Long metaAilmentId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.metaAilmentId(), metaAilmentId))
+                .filter(e -> Objects.equals(e.getMetaAilmentId(), metaAilmentId))
                 .toList();
     }
 }

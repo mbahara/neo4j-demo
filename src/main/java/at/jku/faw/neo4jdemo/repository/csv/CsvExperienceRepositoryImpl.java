@@ -37,7 +37,7 @@ public class CsvExperienceRepositoryImpl extends GenericCsvRepositoryImpl implem
 
     public List<CsvExperience> getByGrowthRateId(Long growthRateId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.growthRateId(), growthRateId))
+                .filter(e -> Objects.equals(e.getGrowthRateId(), growthRateId))
                 .toList();
     }
 }

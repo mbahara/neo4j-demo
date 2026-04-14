@@ -37,13 +37,13 @@ public class CsvPalParkRepositoryImpl extends GenericCsvRepositoryImpl implement
 
     public List<CsvPalPark> getBySpeciesId(Long speciesId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.speciesId(), speciesId))
+                .filter(e -> Objects.equals(e.getSpeciesId(), speciesId))
                 .toList();
     }
 
     public List<CsvPalPark> getByAreaId(Long areaId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.areaId(), areaId))
+                .filter(e -> Objects.equals(e.getAreaId(), areaId))
                 .toList();
     }
 }

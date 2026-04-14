@@ -20,7 +20,7 @@ public class CsvItemCategoriesRepositoryImpl extends GenericCsvRepositoryImpl im
 
     @Override
     public CsvItemCategories getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvItemCategoriesRepositoryImpl extends GenericCsvRepositoryImpl im
 
     public List<CsvItemCategories> getByPocketId(Long pocketId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pocketId(), pocketId))
+                .filter(e -> Objects.equals(e.getPocketId(), pocketId))
                 .toList();
     }
 }

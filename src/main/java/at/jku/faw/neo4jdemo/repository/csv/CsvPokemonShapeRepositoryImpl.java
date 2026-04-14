@@ -37,7 +37,7 @@ public class CsvPokemonShapeRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     public List<CsvPokemonShape> getByPokemonShapeId(Long pokemonShapeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonShapeId(), pokemonShapeId))
+                .filter(e -> Objects.equals(e.getPokemonShapeId(), pokemonShapeId))
                 .toList();
     }
 }

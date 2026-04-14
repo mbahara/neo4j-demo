@@ -20,7 +20,7 @@ public class CsvTypesRepositoryImpl extends GenericCsvRepositoryImpl implements 
 
     @Override
     public CsvTypes getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,13 +37,13 @@ public class CsvTypesRepositoryImpl extends GenericCsvRepositoryImpl implements 
 
     public List<CsvTypes> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 
     public List<CsvTypes> getByDamageClassId(Long damageClassId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.damageClassId(), damageClassId))
+                .filter(e -> Objects.equals(e.getDamageClassId(), damageClassId))
                 .toList();
     }
 }

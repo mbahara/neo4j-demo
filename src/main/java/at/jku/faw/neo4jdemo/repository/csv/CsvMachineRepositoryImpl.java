@@ -37,19 +37,19 @@ public class CsvMachineRepositoryImpl extends GenericCsvRepositoryImpl implement
 
     public List<CsvMachine> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 
     public List<CsvMachine> getByItemId(Long itemId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.itemId(), itemId))
+                .filter(e -> Objects.equals(e.getItemId(), itemId))
                 .toList();
     }
 
     public List<CsvMachine> getByMoveId(Long moveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.moveId(), moveId))
+                .filter(e -> Objects.equals(e.getMoveId(), moveId))
                 .toList();
     }
 }

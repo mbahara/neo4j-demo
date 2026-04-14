@@ -20,7 +20,7 @@ public class CsvVersionGroupRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     @Override
     public CsvVersionGroup getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvVersionGroupRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     public List<CsvVersionGroup> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 }

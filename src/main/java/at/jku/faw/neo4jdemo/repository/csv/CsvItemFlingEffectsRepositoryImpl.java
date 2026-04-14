@@ -20,7 +20,7 @@ public class CsvItemFlingEffectsRepositoryImpl extends GenericCsvRepositoryImpl 
 
     @Override
     public CsvItemFlingEffects getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override

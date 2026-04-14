@@ -37,13 +37,13 @@ public class CsvVersionGroupRegionsRepositoryImpl extends GenericCsvRepositoryIm
 
     public List<CsvVersionGroupRegions> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 
     public List<CsvVersionGroupRegions> getByRegionId(Long regionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.regionId(), regionId))
+                .filter(e -> Objects.equals(e.getRegionId(), regionId))
                 .toList();
     }
 }

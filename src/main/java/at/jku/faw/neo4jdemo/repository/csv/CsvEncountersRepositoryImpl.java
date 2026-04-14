@@ -20,7 +20,7 @@ public class CsvEncountersRepositoryImpl extends GenericCsvRepositoryImpl implem
 
     @Override
     public CsvEncounters getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,19 +37,19 @@ public class CsvEncountersRepositoryImpl extends GenericCsvRepositoryImpl implem
 
     public List<CsvEncounters> getByVersionId(Long versionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionId(), versionId))
+                .filter(e -> Objects.equals(e.getVersionId(), versionId))
                 .toList();
     }
 
     public List<CsvEncounters> getByLocationAreaId(Long locationAreaId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.locationAreaId(), locationAreaId))
+                .filter(e -> Objects.equals(e.getLocationAreaId(), locationAreaId))
                 .toList();
     }
 
     public List<CsvEncounters> getByPokemonId(Long pokemonId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonId(), pokemonId))
+                .filter(e -> Objects.equals(e.getPokemonId(), pokemonId))
                 .toList();
     }
 }

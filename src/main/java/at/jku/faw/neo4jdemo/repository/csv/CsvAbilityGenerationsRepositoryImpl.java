@@ -25,13 +25,13 @@ public class CsvAbilityGenerationsRepositoryImpl extends GenericCsvRepositoryImp
 
     public List<CsvAbilityGenerations> getByAbilityId(Long abilityId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.abilityId(), abilityId))
+                .filter(e -> Objects.equals(e.getAbilityId(), abilityId))
                 .toList();
     }
 
     public List<CsvAbilityGenerations> getByGenerationId(Long genId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), genId))
+                .filter(e -> Objects.equals(e.getGenerationId(), genId))
                 .toList();
     }
 

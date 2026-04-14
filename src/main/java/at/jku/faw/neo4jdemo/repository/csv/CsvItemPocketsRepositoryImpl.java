@@ -20,7 +20,7 @@ public class CsvItemPocketsRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     @Override
     public CsvItemPockets getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override

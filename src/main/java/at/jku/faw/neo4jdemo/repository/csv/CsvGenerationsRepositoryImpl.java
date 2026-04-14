@@ -20,7 +20,7 @@ public class CsvGenerationsRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     @Override
     public CsvGenerations getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CsvGenerationsRepositoryImpl extends GenericCsvRepositoryImpl imple
 
     public List<CsvGenerations> getByMainRegionId(Long mainRegionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.mainRegionId(), mainRegionId))
+                .filter(e -> Objects.equals(e.getMainRegionId(), mainRegionId))
                 .toList();
     }
 }

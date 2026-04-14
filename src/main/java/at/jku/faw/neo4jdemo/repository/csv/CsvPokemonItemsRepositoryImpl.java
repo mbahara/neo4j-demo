@@ -37,19 +37,19 @@ public class CsvPokemonItemsRepositoryImpl extends GenericCsvRepositoryImpl impl
 
     public List<CsvPokemonItems> getByPokemonId(Long pokemonId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokemonId(), pokemonId))
+                .filter(e -> Objects.equals(e.getPokemonId(), pokemonId))
                 .toList();
     }
 
     public List<CsvPokemonItems> getByVersionId(Long versionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionId(), versionId))
+                .filter(e -> Objects.equals(e.getVersionId(), versionId))
                 .toList();
     }
 
     public List<CsvPokemonItems> getByItemId(Long itemId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.itemId(), itemId))
+                .filter(e -> Objects.equals(e.getItemId(), itemId))
                 .toList();
     }
 }

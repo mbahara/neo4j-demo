@@ -37,13 +37,13 @@ public class CsvLocationGameIndicesRepositoryImpl extends GenericCsvRepositoryIm
 
     public List<CsvLocationGameIndices> getByLocationId(Long locationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.locationId(), locationId))
+                .filter(e -> Objects.equals(e.getLocationId(), locationId))
                 .toList();
     }
 
     public List<CsvLocationGameIndices> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 }

@@ -37,19 +37,19 @@ public class CsvLocationAreaEncounterRatesRepositoryImpl extends GenericCsvRepos
 
     public List<CsvLocationAreaEncounterRates> getByLocationAreaId(Long locationAreaId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.locationAreaId(), locationAreaId))
+                .filter(e -> Objects.equals(e.getLocationAreaId(), locationAreaId))
                 .toList();
     }
 
     public List<CsvLocationAreaEncounterRates> getByEncounterMethodId(Long encounterMethodId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.encounterMethodId(), encounterMethodId))
+                .filter(e -> Objects.equals(e.getEncounterMethodId(), encounterMethodId))
                 .toList();
     }
 
     public List<CsvLocationAreaEncounterRates> getByVersionId(Long versionId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionId(), versionId))
+                .filter(e -> Objects.equals(e.getVersionId(), versionId))
                 .toList();
     }
 }

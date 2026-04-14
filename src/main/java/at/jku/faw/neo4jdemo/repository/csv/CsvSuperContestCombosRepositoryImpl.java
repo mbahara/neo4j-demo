@@ -37,13 +37,13 @@ public class CsvSuperContestCombosRepositoryImpl extends GenericCsvRepositoryImp
 
     public List<CsvSuperContestCombos> getByFirstMoveId(Long firstMoveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.firstMoveId(), firstMoveId))
+                .filter(e -> Objects.equals(e.getFirstMoveId(), firstMoveId))
                 .toList();
     }
 
     public List<CsvSuperContestCombos> getBySecondMoveId(Long secondMoveId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.secondMoveId(), secondMoveId))
+                .filter(e -> Objects.equals(e.getSecondMoveId(), secondMoveId))
                 .toList();
     }
 }

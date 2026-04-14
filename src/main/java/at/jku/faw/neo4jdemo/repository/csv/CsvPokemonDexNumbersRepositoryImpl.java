@@ -37,13 +37,13 @@ public class CsvPokemonDexNumbersRepositoryImpl extends GenericCsvRepositoryImpl
 
     public List<CsvPokemonDexNumbers> getBySpeciesId(Long speciesId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.speciesId(), speciesId))
+                .filter(e -> Objects.equals(e.getSpeciesId(), speciesId))
                 .toList();
     }
 
     public List<CsvPokemonDexNumbers> getByPokedexId(Long pokedexId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.pokedexId(), pokedexId))
+                .filter(e -> Objects.equals(e.getPokedexId(), pokedexId))
                 .toList();
     }
 }

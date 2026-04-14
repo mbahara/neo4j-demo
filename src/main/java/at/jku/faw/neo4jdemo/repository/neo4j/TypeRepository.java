@@ -39,9 +39,9 @@ public interface TypeRepository extends Neo4jRepository<Type, Long> {
     @Query("""
         MATCH (s:Type {id: $typeId})
         MATCH (t:Generation {id: $generationId})
-        MERGE (s)-[:HAS_INDEX {index: $index}]->(t)
+        MERGE (s)-[:HAS_INDEX {gameIndex: $gameIndex}]->(t)
         """)
-    void linkTypeHasIndex(@Param("typeId") Long typeId, @Param("generationId") Long generationId, @Param("index") int index);
+    void linkTypeHasIndex(@Param("typeId") Long typeId, @Param("generationId") Long generationId, @Param("gameIndex") int gameIndex);
 
 
     @Query("""

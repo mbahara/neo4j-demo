@@ -38,7 +38,7 @@ public interface PokemonFormRepository extends Neo4jRepository<PokemonForm, Long
     @Query("""
         MATCH (s:PokemonForm {id: $pokemonFormId})
         MATCH (t:Generation {id: $generationId})
-        MERGE (s)-[:APPEARS_IN {index: $index}]->(t)
+        MERGE (s)-[:APPEARS_IN {gameIndex: $gameIndex}]->(t)
         """)
-    void linkPokemonFormHasGameIndex(@Param("pokemonFormId") Long pokemonFormId, @Param("generationId") Long generationId, @Param("index") int index);
+    void linkPokemonFormHasGameIndex(@Param("pokemonFormId") Long pokemonFormId, @Param("generationId") Long generationId, @Param("gameIndex") int gameIndex);
 }

@@ -48,9 +48,9 @@ public interface ItemRepository extends Neo4jRepository<Item, Long> {
     @Query("""
         MATCH (s:Item {id: $itemId})
         MATCH (t:Generation {id: $generationId})
-        MERGE (s)-[:HAS_GAME_INDEX {index: $index}]->(t)
+        MERGE (s)-[:HAS_GAME_INDEX {gameIndex: $gameIndex}]->(t)
         """)
-    void linkItemHasGameIndex(@Param("itemId") Long itemId, @Param("generationId") Long generationId, @Param("index") int index);
+    void linkItemHasGameIndex(@Param("itemId") Long itemId, @Param("generationId") Long generationId, @Param("gameIndex") int gameIndex);
 
     @Query("""
         MATCH (s:Item {id: $itemId})

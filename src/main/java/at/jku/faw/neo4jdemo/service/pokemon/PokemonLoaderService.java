@@ -47,14 +47,23 @@ public class PokemonLoaderService {
 	}
 
 	private void executeImport() {
+		List<String> enabledServices = List.of(
+				"Ability",
+				"Generation"
+				// "PokeathlonStat" <- Add this next to see if it breaks
+		);
+
+		List<IPokemonDataLoader> activeLoaders = pokemonDataLoaders.stream()
+				.filter(loader -> enabledServices.contains(loader.getEntityName()))
+				.toList();
 		log.info("--- Creating Nodes ---");
-		pokemonDataLoaders.forEach(IPokemonDataLoader::loadNodes);
+		activeLoaders.forEach(IPokemonDataLoader::loadNodes);
 
 		log.info("--- Creating Constraints and Indexes ---");
 		createConstraintsAndIndexes();
 
 		log.info("--- Creating Relationships ---");
-		pokemonDataLoaders.forEach(IPokemonDataLoader::loadRelationships);
+		//activeLoaders.forEach(IPokemonDataLoader::loadRelationships);
 
 		log.info("Pokémon Data Import Finished Successfully.");
 	}

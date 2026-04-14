@@ -1,10 +1,18 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvPokedexes(
-    @CsvBindByName(column = "id") Long id,
-    @CsvBindByName(column = "region_id") Long regionId,
-    @CsvBindByName(column = "identifier") String identifier,
-    @CsvBindByName(column = "is_main_series") int isMainSeries
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvPokedexes {
+    @CsvBindByName(column = "id") private Long id;
+    @CsvBindByName(column = "region_id") private Long regionId;
+    @CsvBindByName(column = "identifier") private String identifier;
+    @CsvBindByName(column = "is_main_series") private int isMainSeries;
+}

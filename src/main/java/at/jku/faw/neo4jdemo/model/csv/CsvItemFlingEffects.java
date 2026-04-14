@@ -1,9 +1,17 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvItemFlingEffects(
-    @CsvBindByName(column = "id") Long id,
-    @CsvBindByName(column = "identifier") String identifier,
-    @CsvBindByName(column = "effect") String effect
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvItemFlingEffects {
+    @CsvBindByName(column = "id") private Long id;
+    @CsvBindByName(column = "identifier") private String identifier;
+    @CsvBindByName(column = "effect") private String effect;
+}

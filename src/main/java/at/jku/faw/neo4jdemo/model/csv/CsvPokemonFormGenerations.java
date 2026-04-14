@@ -1,9 +1,17 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvPokemonFormGenerations(
-    @CsvBindByName(column = "pokemon_form_id") Long pokemonFormId,
-    @CsvBindByName(column = "generation_id") Long generationId,
-    @CsvBindByName(column = "game_index") int gameIndex
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvPokemonFormGenerations {
+    @CsvBindByName(column = "pokemon_form_id") private Long pokemonFormId;
+    @CsvBindByName(column = "generation_id") private Long generationId;
+    @CsvBindByName(column = "game_index") private int gameIndex;
+}

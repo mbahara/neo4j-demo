@@ -1,10 +1,18 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvGenerations(
-    @CsvBindByName(column = "id") Long id,
-	@CsvBindByName(column = "identifier") String identifier,
-	@CsvBindByName(column = "name") String name,
-	@CsvBindByName(column = "main_region_id") Long mainRegionId
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvGenerations {
+    @CsvBindByName(column = "id") private Long id;
+    @CsvBindByName(column = "identifier") private String identifier;
+    @CsvBindByName(column = "name") private String name;
+    @CsvBindByName(column = "main_region_id") private Long mainRegionId;
+}

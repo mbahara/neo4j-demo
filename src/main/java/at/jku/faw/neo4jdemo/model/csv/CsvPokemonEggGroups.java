@@ -1,8 +1,16 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvPokemonEggGroups(
-    @CsvBindByName(column = "species_id") Long speciesId,
-    @CsvBindByName(column = "egg_group_id") Long eggGroupId
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvPokemonEggGroups {
+    @CsvBindByName(column = "species_id") private Long speciesId;
+    @CsvBindByName(column = "egg_group_id") private Long eggGroupId;
+}

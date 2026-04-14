@@ -1,13 +1,20 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvEncounters(
-		@CsvBindByName(column = "id") Long id,
-		@CsvBindByName(column = "version_id") Long versionId,
-		@CsvBindByName(column = "location_area_id") Long locationAreaId,
-		@CsvBindByName(column = "pokemon_id") Long pokemonId,
-		@CsvBindByName(column = "min_level") int minLevel,
-		@CsvBindByName(column = "max_level") int maxLevel
-) {
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvEncounters {
+    @CsvBindByName(column = "id") private Long id;
+    @CsvBindByName(column = "version_id") private Long versionId;
+    @CsvBindByName(column = "location_area_id") private Long locationAreaId;
+    @CsvBindByName(column = "pokemon_id") private Long pokemonId;
+    @CsvBindByName(column = "min_level") private int minLevel;
+    @CsvBindByName(column = "max_level") private int maxLevel;
 }

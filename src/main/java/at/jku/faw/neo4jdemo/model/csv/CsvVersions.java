@@ -1,10 +1,18 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvVersions(
-    @CsvBindByName(column = "id") Long id,
-    @CsvBindByName(column = "version_group_id") Long versionGroupId,
-    @CsvBindByName(column = "identifier") String identifier,
-    @CsvBindByName(column = "name") String name
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvVersions {
+    @CsvBindByName(column = "id") private Long id;
+    @CsvBindByName(column = "version_group_id") private Long versionGroupId;
+    @CsvBindByName(column = "identifier") private String identifier;
+    @CsvBindByName(column = "name") private String name;
+}

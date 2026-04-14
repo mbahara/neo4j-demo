@@ -1,8 +1,16 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvContestCombos(
-    @CsvBindByName(column = "first_move_id") Long firstMoveId,
-    @CsvBindByName(column = "second_move_id") Long secondMoveId
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvContestCombos {
+    @CsvBindByName(column = "first_move_id") private Long firstMoveId;
+    @CsvBindByName(column = "second_move_id") private Long secondMoveId;
+}

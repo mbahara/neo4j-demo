@@ -1,9 +1,17 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvLocationGameIndices(
-    @CsvBindByName(column = "location_id") Long locationId,
-    @CsvBindByName(column = "generation_id") Long generationId,
-    @CsvBindByName(column = "game_index") int gameIndex
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvLocationGameIndices {
+    @CsvBindByName(column = "location_id") private Long locationId;
+    @CsvBindByName(column = "generation_id") private Long generationId;
+    @CsvBindByName(column = "game_index") private int gameIndex;
+}

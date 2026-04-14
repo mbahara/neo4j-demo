@@ -1,10 +1,18 @@
 package at.jku.faw.neo4jdemo.model.csv;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CsvPokemonShape(
-    @CsvBindByName(column = "pokemon_shape_id") Long pokemonShapeId,
-    @CsvBindByName(column = "name") String name,
-    @CsvBindByName(column = "awesome_name") int awesomeName,
-    @CsvBindByName(column = "description") String description
-) {}
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CsvPokemonShape {
+    @CsvBindByName(column = "pokemon_shape_id") private Long pokemonShapeId;
+    @CsvBindByName(column = "name") private String name;
+    @CsvBindByName(column = "awesome_name") private int awesomeName;
+    @CsvBindByName(column = "description") private String description;
+}

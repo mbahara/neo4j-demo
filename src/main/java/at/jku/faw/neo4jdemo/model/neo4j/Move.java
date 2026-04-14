@@ -19,7 +19,6 @@ public class Move {
 	private int pp;
 	private int accuracy;
 	private int priority;
-	private int effectChance;
 
 	@Relationship(type = "HAS_TYPE")
 	private Type type;
@@ -31,7 +30,7 @@ public class Move {
 	private DamageClass damageClass;
 
 	@Relationship(type = "HAS_EFFECT")
-	private MoveEffect effect;
+	private Effect effect;
 
 	@Relationship(type = "TARGETS")
 	private MoveTarget target;

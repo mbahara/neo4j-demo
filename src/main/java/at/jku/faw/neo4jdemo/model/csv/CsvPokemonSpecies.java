@@ -14,10 +14,15 @@ public record CsvPokemonSpecies(
 		@CsvBindByName(column = "identifier") String identifier,
 		@CsvBindByName(column = "gender_rate") int genderRate,
 		@CsvBindByName(column = "capture_rate") int captureRate,
+		@CsvBindByName(column = "base_happiness") int baseHappiness,
 		@CsvBindByName(column = "is_baby") int isBaby, // 0 or 1
 		@CsvBindByName(column = "is_legendary") int isLegendary,
 		@CsvBindByName(column = "is_mythical") int isMythical,
+		@CsvBindByName(column = "hatch_counter") int hatchCounter,
+		@CsvBindByName(column = "has_gender_differences") int hasGenderDifferences,
+		@CsvBindByName(column = "forms_switchable") int formsSwitchable,
 		@CsvBindByName(column = "order") int order,
+		@CsvBindByName(column = "conquest_order") int conquestOrder,
 		@CsvBindByName(column = "name") String name,
 		@CsvBindByName(column = "genus") String genus
 ) {}

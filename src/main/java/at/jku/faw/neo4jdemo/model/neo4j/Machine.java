@@ -22,7 +22,4 @@ public class Machine {
 
 	@Relationship(type = "IN_VERSION_GROUP")
 	private VersionGroup versionGroup;
-
-	@Relationship(type = "REPRESENTED_BY", direction = Relationship.Direction.INCOMING)
-	private Item item;
 }

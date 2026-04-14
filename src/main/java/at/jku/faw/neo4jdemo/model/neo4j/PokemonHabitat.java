@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
-import org.springframework.data.neo4j.core.schema.Relationship;
 
 @Getter
 @Setter
@@ -14,7 +13,4 @@ public class PokemonHabitat {
     public Long id;
 
     private String identifier;
-
-    @Relationship(type = "LOCATED_IN")
-    private Region region;
 }

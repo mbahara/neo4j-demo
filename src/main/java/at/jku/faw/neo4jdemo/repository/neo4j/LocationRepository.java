@@ -31,14 +31,6 @@ public interface LocationRepository extends Neo4jRepository<Location, Long> {
 
     @Query("""
         MATCH (s:Location {id: $locationId})
-        MATCH (t:Area {id: $areaId})
-        MERGE (t)-[:PART_OF]->(s)
-        """)
-    void linkLocationToArea(@Param("locationId") Long locationId,
-                        @Param("areaId") Long areaId);
-
-    @Query("""
-        MATCH (s:Location {id: $locationId})
         MATCH (t:Generation {id: $generationId})
         MERGE (s)-[:HAS_GAME_INDEX {index: $index}]->(t)
         """)

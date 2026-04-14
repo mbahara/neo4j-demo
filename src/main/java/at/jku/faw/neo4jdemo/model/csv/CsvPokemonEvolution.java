@@ -11,7 +11,7 @@ public record CsvPokemonEvolution(
     @CsvBindByName(column = "gender_id") Long genderId,
     @CsvBindByName(column = "location_id") Long locationId,
     @CsvBindByName(column = "held_item_id") Long heldItemId,
-    @CsvBindByName(column = "time_of_day") int timeOfDay,
+    @CsvBindByName(column = "time_of_day") String timeOfDay,
     @CsvBindByName(column = "known_move_id") Long knownMoveId,
     @CsvBindByName(column = "known_move_type_id") Long knownMoveTypeId,
     @CsvBindByName(column = "minimum_happiness") int minimumHappiness,

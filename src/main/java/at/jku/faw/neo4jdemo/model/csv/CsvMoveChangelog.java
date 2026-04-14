@@ -12,5 +12,5 @@ public record CsvMoveChangelog(
 		@CsvBindByName(column = "priority") int priority,
 		@CsvBindByName(column = "target_id") Long targetId,
 		@CsvBindByName(column = "effect_id") Long effectId,
-		@CsvBindByName(column = "effect_change") Integer effectChange
+		@CsvBindByName(column = "effect_chance") Integer effectChance
 ) {}

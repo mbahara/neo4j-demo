@@ -1,6 +1,5 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.service.IDataLoader;
 import java.util.List;
 import org.neo4j.annotations.service.Service;
 import org.slf4j.Logger;
@@ -11,29 +10,29 @@ import org.springframework.data.neo4j.core.Neo4jClient;
 public class PokemonLoaderService {
 	private static final Logger log = LoggerFactory.getLogger(PokemonLoaderService.class);
 
-	private final List<IDataLoader> allLoaders;
+	private final List<IPokemonDataLoader> pokemonDataLoaders;
 	private final Neo4jClient neo4jClient;
 
-	public PokemonLoaderService(List<IDataLoader> allLoaders, Neo4jClient neo4jClient) {
-		this.allLoaders = allLoaders;
+	public PokemonLoaderService(List<IPokemonDataLoader> allLoaders, Neo4jClient neo4jClient) {
+		this.pokemonDataLoaders = allLoaders;
 		this.neo4jClient = neo4jClient;
 	}
 
 	public void loadPokemonData() {
 		log.info("--- Creating Nodes ---");
-		allLoaders.forEach(IDataLoader::loadNodes);
+		pokemonDataLoaders.forEach(IPokemonDataLoader::loadNodes);
 
 		log.info("--- Creating Constraints and Indexes ---");
 		createConstraintsAndIndexes();
 
 		log.info("--- Creating Relationships ---");
-		allLoaders.forEach(IDataLoader::loadRelationships);
+		pokemonDataLoaders.forEach(IPokemonDataLoader::loadRelationships);
 
 		log.info("Pokémon Data Import Finished Successfully.");
 	}
 
 	private void createConstraintsAndIndexes() {
-		allLoaders.forEach(loader -> {
+		pokemonDataLoaders.forEach(loader -> {
 			String label = loader.getEntityName();
 			log.info("Creating uniqueness constraint for label: {}", label);
 

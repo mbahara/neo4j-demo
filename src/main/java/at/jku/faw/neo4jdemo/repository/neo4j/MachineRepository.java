@@ -8,15 +8,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MachineRepository extends Neo4jRepository<Machine, Long> {
-
     @Query("""
-        MERGE (n:Machine {id: $id})
+        MERGE (n:Machine
         ON CREATE SET n.machineNumber = $machineNumber
         ON MATCH  SET n.machineNumber = $machineNumber
         RETURN n
         """)
-    Machine insertMachine(@Param("id") Long id, @Param("machineNumber") int machineNumber);
-
+    Machine insertMachine(@Param("machineNumber") int machineNumber);
 
     @Query("""
         MATCH (s:Machine {id: $machineId})
@@ -34,11 +32,4 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     void linkMachineToVersionGroup(@Param("machineId") Long machineId,
                         @Param("versionGroupId") Long versionGroupId);
 
-    @Query("""
-        MATCH (s:Machine {id: $machineId})
-        MATCH (t:Item {id: $itemId})
-        MERGE (t)-[:REPRESENTED_BY]->(s)
-        """)
-    void linkMachineToItem(@Param("machineId") Long machineId,
-                        @Param("itemId") Long itemId);
 }

@@ -14,5 +14,9 @@ public record CsvMove(
 		@CsvBindByName(column = "target_id") Long targetId,
 		@CsvBindByName(column = "damage_class_id") Long damageClassId,
 		@CsvBindByName(column = "effect_id") Long effectId,
+		@CsvBindByName(column = "effect_chance") int effectChance,
+		@CsvBindByName(column = "contest_type_id") Long contestTypeId,
+		@CsvBindByName(column = "contest_effect_id") Long contestEffectId,
+		@CsvBindByName(column = "super_contest_effect_id") Long superContestEffectId,
 		@CsvBindByName(column = "name") String name
 ) {}

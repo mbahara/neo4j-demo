@@ -86,12 +86,12 @@ public interface PokemonSpeciesRepository extends Neo4jRepository<PokemonSpecies
 
     @Query("""
         MATCH (s:PokemonSpecies {id: $pokemonSpeciesId})
-        MATCH (t:PalParkArea {id: $palParkAreaId})
+        MATCH (t:Area {id: $areaId})
         MERGE (s)-[r:FOUND_IN_PAL_PARK]->(t)
         SET r.baseScore = $baseScore, r.rate = $rate
         """)
     void linkPokemonSpeciesToPalParkArea(@Param("pokemonSpeciesId") Long pokemonSpeciesId,
-                                         @Param("palParkAreaId") Long palParkAreaId,
+                                         @Param("areaId") Long areaId,
                                          @Param("baseScore") int baseScore,
                                          @Param("rate") int rate);
 

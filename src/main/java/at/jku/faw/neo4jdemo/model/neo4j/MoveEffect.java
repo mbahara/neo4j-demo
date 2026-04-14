@@ -12,6 +12,6 @@ public class MoveEffect {
     @Id
     public Long id;
 
-    private int shortEffect;
+    private String shortEffect;
     private String effect;
 }

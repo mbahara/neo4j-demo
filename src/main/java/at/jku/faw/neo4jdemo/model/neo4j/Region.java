@@ -1,6 +1,5 @@
 package at.jku.faw.neo4jdemo.model.neo4j;
 
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.neo4j.core.schema.Id;
@@ -17,7 +16,4 @@ public class Region {
 
     @Relationship(type = "MAIN_REGION", direction = Relationship.Direction.INCOMING)
     private Generation generation;
-
-    @Relationship(type = "LOCATED_IN", direction = Relationship.Direction.INCOMING)
-    private List<PokemonHabitat> habitats;
 }

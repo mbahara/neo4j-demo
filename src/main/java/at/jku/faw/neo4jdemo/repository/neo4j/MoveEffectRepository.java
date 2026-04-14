@@ -15,5 +15,5 @@ public interface MoveEffectRepository extends Neo4jRepository<MoveEffect, Long> 
         ON MATCH  SET n.shortEffect = $shortEffect, n.effect = $effect
         RETURN n
         """)
-    MoveEffect insertMoveEffect(@Param("id") Long id, @Param("shortEffect") int shortEffect, @Param("effect") String effect);
+    MoveEffect insertMoveEffect(@Param("id") Long id, @Param("shortEffect") String shortEffect, @Param("effect") String effect);
 }

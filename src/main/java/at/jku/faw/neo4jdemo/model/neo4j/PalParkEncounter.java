@@ -19,5 +19,5 @@ public class PalParkEncounter {
     private int rate;
 
     @TargetNode
-    private PalParkArea area;
+    private Area area;
 }

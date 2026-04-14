@@ -21,7 +21,7 @@ public interface CharacteristicRepository extends Neo4jRepository<Characteristic
     @Query("""
         MATCH (s:Characteristic {id: $characteristicId})
         MATCH (t:Stat {id: $statId})
-        MERGE (s)-[:HIGHLIGHTS {geneMod5: $geneMod5, stat: $stat}]->(t)
+        MERGE (s)-[:HIGHLIGHTS {geneMod5: $geneMod5}]->(t)
         """)
     void linkCharacteristicToStat(@Param("characteristicId") Long characteristicId, @Param("statId") Long statId, @Param("geneMod5") int geneMod5);
 }

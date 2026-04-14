@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> {
 
     @Query("""
-        MERGE (n:MoveChange {id: $id})
-        ON CREATE SET n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority, n.effectChance = $effectChance
-        ON MATCH  SET n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority, n.effectChance = $effectChance
+        MERGE (n:MoveChange)
+        ON CREATE SET n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority
+        ON MATCH  SET n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority
         RETURN n
         """)
-    MoveChange insertMoveChange(@Param("id") Long id, @Param("power") int power, @Param("pp") int pp, @Param("accuracy") int accuracy, @Param("priority") int priority, @Param("effectChance") int effectChance);
+    MoveChange insertMoveChange(@Param("power") int power, @Param("pp") int pp, @Param("accuracy") int accuracy, @Param("priority") int priority);
 
 
     @Query("""
@@ -37,10 +37,10 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
     @Query("""
         MATCH (s:MoveChange {id: $moveChangeId})
         MATCH (t:MoveEffect {id: $moveEffectId})
-        MERGE (s)-[:HAS_EFFECT]->(t)
+        MERGE (s)-[:HAS_EFFECT {effectChance: $effectChance}]->(t)
         """)
     void linkMoveChangeToMoveEffect(@Param("moveChangeId") Long moveChangeId,
-                        @Param("moveEffectId") Long moveEffectId);
+                        @Param("moveEffectId") Long moveEffectId, @Param("effectChance") int effectChance);
 
     @Query("""
         MATCH (s:MoveChange {id: $moveChangeId})

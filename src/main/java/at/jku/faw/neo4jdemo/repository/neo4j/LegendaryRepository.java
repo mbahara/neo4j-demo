@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface LegendaryRepository extends Neo4jRepository<Legendary, Long> {
 
     @Query("""
-        MERGE (n:Legendary {id: $id})
+        MERGE (n:Legendary)
         ON MATCH  SET n.id = $id
         RETURN n
         """)

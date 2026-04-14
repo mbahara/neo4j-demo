@@ -36,9 +36,9 @@ public interface EncounterRepository extends Neo4jRepository<Encounter, Long> {
 
     @Query("""
         MATCH (s:Encounter {id: $encounterId})
-        MATCH (t:Location {id: $locationId})
-        MERGE (s)-[:AT_LOCATION]->(t)
+        MATCH (t:Location {id: $locationAreaId})
+        MERGE (s)-[:AT_LOCATION_AREA]->(t)
         """)
-    void linkEncounterToLocation(@Param("encounterId") Long encounterId,
-                        @Param("locationId") Long locationId);
+    void linkEncounterToLocationArea(@Param("encounterId") Long encounterId,
+                                     @Param("locationAreaId") Long locationAreaId);
 }

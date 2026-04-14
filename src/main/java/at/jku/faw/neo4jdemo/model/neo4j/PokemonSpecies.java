@@ -31,8 +31,6 @@ public class PokemonSpecies {
 
 	// --- RELATIONSHIPS ---
 
-	// Points to the move FORWARD in the chain
-	// The intuitive direction: Base -> Step -> Evolved
 	@Relationship(type = "HAS_EVOLUTION_STEP")
 	private List<EvolutionStep> evolutionSteps;
 

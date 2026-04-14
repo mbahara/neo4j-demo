@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long> {
 
     @Query("""
-        MERGE (n:PokemonMove {id: $id})
+        MERGE (n:PokemonMove)
         ON CREATE SET n.level = $level, n.order = $order
         ON MATCH  SET n.level = $level, n.order = $order
         RETURN n
         """)
-    PokemonMove insertPokemonMove(@Param("id") Long id, @Param("level") int level, @Param("order") int order);
+    PokemonMove insertPokemonMove(@Param("level") int level, @Param("order") int order);
 
 
     @Query("""

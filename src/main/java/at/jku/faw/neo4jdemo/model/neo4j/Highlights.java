@@ -2,7 +2,6 @@ package at.jku.faw.neo4jdemo.model.neo4j;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.neo4j.internal.batchimport.stats.Stat;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.RelationshipId;
 import org.springframework.data.neo4j.core.schema.RelationshipProperties;
@@ -18,5 +17,5 @@ public class Highlights {
 	private int geneMod5;
 
 	@TargetNode
-	private Stat stat;
+	private Stats stat;
 }

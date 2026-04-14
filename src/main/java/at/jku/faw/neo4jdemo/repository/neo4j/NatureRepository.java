@@ -14,11 +14,11 @@ public interface NatureRepository extends Neo4jRepository<Nature, Long> {
 
     @Query("""
         MERGE (n:Nature {id: $id})
-        ON CREATE SET n.identifier = $identifier, n.name = $name
-        ON MATCH  SET n.identifier = $identifier, n.name = $name
+        ON CREATE SET n.identifier = $identifier
+        ON MATCH  SET n.identifier = $identifier
         RETURN n
         """)
-    Nature insertNature(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
+    Nature insertNature(@Param("id") Long id, @Param("identifier") String identifier);
 
 
     @Query("""

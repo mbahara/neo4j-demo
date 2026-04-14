@@ -22,6 +22,6 @@ public class Encounter {
 	@Relationship(type = "VIA_METHOD")
 	private EncounterMethod method;
 
-	@Relationship(type = "AT_LOCATION")
-	private Location location;
+	@Relationship(type = "AT_LOCATION_AREA")
+	private Area locationArea;
 }

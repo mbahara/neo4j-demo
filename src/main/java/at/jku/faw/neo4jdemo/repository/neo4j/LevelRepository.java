@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 public interface LevelRepository extends Neo4jRepository<Level, Long> {
 
     @Query("""
-        MERGE (n:Level {id: $id})
+        MERGE (n:Level)
         ON CREATE SET n.value = $value
         ON MATCH  SET n.value = $value
         RETURN n
         """)
-    Level insertLevel(@Param("id") Long id, @Param("value") int value);
+    Level insertLevel(@Param("value") int value);
 }

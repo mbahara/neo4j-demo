@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 public interface FormPokeathlonStatsRepository extends Neo4jRepository<FormPokeathlonStats, Long> {
 
     @Query("""
-        MERGE (n:FormPokeathlonStats {id: $id})
+        MERGE (n:FormPokeathlonStats)
         ON CREATE SET n.minimumStat = $minimumStat, n.baseStat = $baseStat, n.maximumStat = $maximumStat
         ON MATCH  SET n.minimumStat = $minimumStat, n.baseStat = $baseStat, n.maximumStat = $maximumStat
         RETURN n
         """)
-    FormPokeathlonStats insertFormPokeathlonStats(@Param("id") Long id, @Param("minimumStat") int minimumStat, @Param("baseStat") int baseStat, @Param("maximumStat") int maximumStat);
+    FormPokeathlonStats insertFormPokeathlonStats(@Param("minimumStat") int minimumStat, @Param("baseStat") int baseStat, @Param("maximumStat") int maximumStat);
 }

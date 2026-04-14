@@ -1,4 +1,4 @@
-package at.jku.faw.neo4jdemo.service;
+package at.jku.faw.neo4jdemo.service.movie;
 
 import org.springframework.stereotype.Service;
 

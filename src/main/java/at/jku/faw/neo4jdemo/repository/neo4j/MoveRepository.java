@@ -13,11 +13,11 @@ public interface MoveRepository extends Neo4jRepository<Move, Long> {
 
     @Query("""
         MERGE (n:Move {id: $id})
-        ON CREATE SET n.name = $name, n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority, n.effectChance = $effectChance
-        ON MATCH  SET n.name = $name, n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority, n.effectChance = $effectChance
+        ON CREATE SET n.name = $name, n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority
+        ON MATCH  SET n.name = $name, n.power = $power, n.pp = $pp, n.accuracy = $accuracy, n.priority = $priority
         RETURN n
         """)
-    Move insertMove(@Param("id") Long id, @Param("name") String name, @Param("power") int power, @Param("pp") int pp, @Param("accuracy") int accuracy, @Param("priority") int priority, @Param("effectChance") int effectChance);
+    Move insertMove(@Param("id") Long id, @Param("name") String name, @Param("power") int power, @Param("pp") int pp, @Param("accuracy") int accuracy, @Param("priority") int priority);
 
 
     @Query("""
@@ -47,10 +47,10 @@ public interface MoveRepository extends Neo4jRepository<Move, Long> {
     @Query("""
         MATCH (s:Move {id: $moveId})
         MATCH (t:MoveEffect {id: $moveEffectId})
-        MERGE (s)-[:HAS_EFFECT]->(t)
+        MERGE (s)-[:HAS_EFFECT {effectChance: $effectChance}]->(t)
         """)
     void linkMoveToMoveEffect(@Param("moveId") Long moveId,
-                        @Param("moveEffectId") Long moveEffectId);
+                        @Param("moveEffectId") Long moveEffectId, @Param("effectChance") int effectChance);
 
     @Query("""
         MATCH (s:Move {id: $moveId})

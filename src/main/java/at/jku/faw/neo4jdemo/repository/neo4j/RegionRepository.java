@@ -18,21 +18,4 @@ public interface RegionRepository extends Neo4jRepository<Region, Long> {
         RETURN n
         """)
     Region insertRegion(@Param("id") Long id, @Param("identifier") String identifier);
-
-
-    @Query("""
-        MATCH (s:Region {id: $regionId})
-        MATCH (t:Generation {id: $generationId})
-        MERGE (s)<-[:MAIN_REGION]-(t)
-        """)
-    void linkRegionToGeneration(@Param("regionId") Long regionId,
-                        @Param("generationId") Long generationId);
-
-    @Query("""
-        MATCH (s:Region {id: $regionId})
-        MATCH (t:PokemonHabitat {id: $pokemonHabitatId})
-        MERGE (s)<-[:LOCATED_IN]-(t)
-        """)
-    void linkRegionToPokemonHabitat(@Param("regionId") Long regionId,
-                        @Param("pokemonHabitatId") Long pokemonHabitatId);
 }

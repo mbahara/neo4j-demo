@@ -20,7 +20,7 @@ public class CsvAbilityChangelogRepositoryImpl extends GenericCsvRepositoryImpl 
 
     @Override
     public CsvAbilityChangelog getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,13 +37,13 @@ public class CsvAbilityChangelogRepositoryImpl extends GenericCsvRepositoryImpl 
 
     public List<CsvAbilityChangelog> getByAbilityId(Long abilityId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.abilityId(), abilityId))
+                .filter(e -> Objects.equals(e.getAbilityId(), abilityId))
                 .toList();
     }
 
     public List<CsvAbilityChangelog> getByVersionGroupId(Long versionGroupId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.versionGroupId(), versionGroupId))
+                .filter(e -> Objects.equals(e.getVersionGroupId(), versionGroupId))
                 .toList();
     }
 }

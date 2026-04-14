@@ -20,7 +20,7 @@ public class CsvPokemonSpeciesRepositoryImpl extends GenericCsvRepositoryImpl im
 
     @Override
     public CsvPokemonSpecies getById(Long id) {
-        return getAll().stream().filter(e -> Objects.equals(e.id(), id)).findFirst().orElse(null);
+        return getAll().stream().filter(e -> Objects.equals(e.getId(), id)).findFirst().orElse(null);
     }
 
     @Override
@@ -37,43 +37,43 @@ public class CsvPokemonSpeciesRepositoryImpl extends GenericCsvRepositoryImpl im
 
     public List<CsvPokemonSpecies> getByGenerationId(Long generationId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.generationId(), generationId))
+                .filter(e -> Objects.equals(e.getGenerationId(), generationId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByEvolvesFromSpeciesId(Long evolvesFromSpeciesId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.evolvesFromSpeciesId(), evolvesFromSpeciesId))
+                .filter(e -> Objects.equals(e.getEvolvesFromSpeciesId(), evolvesFromSpeciesId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByEvolutionChainId(Long evolutionChainId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.evolutionChainId(), evolutionChainId))
+                .filter(e -> Objects.equals(e.getEvolutionChainId(), evolutionChainId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByColorId(Long colorId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.colorId(), colorId))
+                .filter(e -> Objects.equals(e.getColorId(), colorId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByShapeId(Long shapeId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.shapeId(), shapeId))
+                .filter(e -> Objects.equals(e.getShapeId(), shapeId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByHabitatId(Long habitatId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.habitatId(), habitatId))
+                .filter(e -> Objects.equals(e.getHabitatId(), habitatId))
                 .toList();
     }
 
     public List<CsvPokemonSpecies> getByGrowthRateId(Long growthRateId) {
         return getAll().stream()
-                .filter(e -> Objects.equals(e.growthRateId(), growthRateId))
+                .filter(e -> Objects.equals(e.getGrowthRateId(), growthRateId))
                 .toList();
     }
 }

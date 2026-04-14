@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.EncounterMethod;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -11,6 +13,16 @@ import org.springframework.stereotype.Repository;
 public interface EncounterMethodRepository extends Neo4jRepository<EncounterMethod, Long> {
     Optional<EncounterMethod> findByIdentifier(String identifier);
     Optional<EncounterMethod> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:EncounterMethod {id: row.id})
+    SET n.identifier = row.identifier,
+        n.name = row.name,
+        n.order = row.order
+    """)
+    void batchInsertEncounterMethods(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EncounterMethod {id: $id})

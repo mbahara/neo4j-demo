@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.PokemonColor;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PokemonColorRepository extends Neo4jRepository<PokemonColor, Long> {
     Optional<PokemonColor> findByIdentifier(String identifier);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:PokemonColor {id: row.id})
+    SET n.identifier = row.identifier
+    """)
+    void batchInsertPokemonColors(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonColor {id: $id})

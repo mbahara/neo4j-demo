@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Location;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -11,6 +13,16 @@ import org.springframework.stereotype.Repository;
 public interface LocationRepository extends Neo4jRepository<Location, Long> {
     Optional<Location> findByIdentifier(String identifier);
     Optional<Location> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Location {id: row.id})
+    SET n.identifier = row.identifier,
+        n.name = row.name,
+        n.subtitle = row.subtitle
+    """)
+    void batchInsertLocations(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Location {id: $id})

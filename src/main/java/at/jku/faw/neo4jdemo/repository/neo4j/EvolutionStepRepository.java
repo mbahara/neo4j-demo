@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.EvolutionStep;
+import java.util.List;
+import java.util.Map;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,6 +10,21 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EvolutionStepRepository extends Neo4jRepository<EvolutionStep, Long> {
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:EvolutionStep {id: row.id})
+    SET n.minimumLevel = row.minimumLevel,
+        n.minimumHappiness = row.minimumHappiness,
+        n.timeOfDay = row.timeOfDay,
+        n.relativePhysicalStats = row.relativePhysicalStats,
+        n.needsOverworldRain = row.needsOverworldRain,
+        n.turnUpsideDown = row.turnUpsideDown,
+        n.minimumBeauty = row.minimumBeauty,
+        n.minimumAffection = row.minimumAffection
+    """)
+    void batchInsertEvolutionSteps(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EvolutionStep {id: $id})

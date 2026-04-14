@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Nature;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NatureRepository extends Neo4jRepository<Nature, Long> {
     Optional<Nature> findByIdentifier(String identifier);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Nature {id: row.id})
+    SET n.identifier = row.identifier
+    """)
+    void batchInsertNatures(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Nature {id: $id})

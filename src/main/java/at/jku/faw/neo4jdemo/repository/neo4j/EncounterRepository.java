@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Encounter;
+import java.util.List;
+import java.util.Map;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,6 +10,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EncounterRepository extends Neo4jRepository<Encounter, Long> {
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Encounter {id: row.id})
+    SET n.minLevel = row.minLevel,
+        n.maxLevel = row.maxLevel
+    """)
+    void batchInsertEncounters(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Encounter {id: $id})

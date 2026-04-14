@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.ItemCategory;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -11,6 +13,15 @@ import org.springframework.stereotype.Repository;
 public interface ItemCategoryRepository extends Neo4jRepository<ItemCategory, Long> {
     Optional<ItemCategory> findByIdentifier(String identifier);
     Optional<ItemCategory> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:ItemCategory {id: row.id})
+    SET n.identifier = row.identifier,
+        n.name = row.name
+    """)
+    void batchInsertItemCategories(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ItemCategory {id: $id})

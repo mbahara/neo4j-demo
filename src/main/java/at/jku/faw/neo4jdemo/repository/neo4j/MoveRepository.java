@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Move;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MoveRepository extends Neo4jRepository<Move, Long> {
     Optional<Move> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Move {id: row.id})
+    SET n.name = row.name,
+        n.power = row.power,
+        n.pp = row.pp,
+        n.accuracy = row.accuracy,
+        n.priority = row.priority
+    """)
+    void batchInsertMoves(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Move {id: $id})

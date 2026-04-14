@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Generation;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -11,6 +13,15 @@ import org.springframework.stereotype.Repository;
 public interface GenerationRepository extends Neo4jRepository<Generation, Long> {
     Optional<Generation> findByIdentifier(String identifier);
     Optional<Generation> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Generation {id: row.id})
+    SET n.identifier = row.identifier,
+        n.name = row.name
+    """)
+    void batchInsertGenerations(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Generation {id: $id})

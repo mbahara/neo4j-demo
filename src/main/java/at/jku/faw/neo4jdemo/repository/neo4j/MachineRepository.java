@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     @Query("""
-        MERGE (n:Machine
+        MERGE (n:Machine)
         ON CREATE SET n.machineNumber = $machineNumber
         ON MATCH  SET n.machineNumber = $machineNumber
         RETURN n

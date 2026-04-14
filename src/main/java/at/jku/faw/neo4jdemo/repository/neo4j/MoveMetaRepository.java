@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.MoveMeta;
+import java.util.List;
+import java.util.Map;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,6 +10,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MoveMetaRepository extends Neo4jRepository<MoveMeta, Long> {
+
+    @Query("""
+        UNWIND $rows AS row
+        MERGE (n:MoveMeta)
+        SET n.minHits = row.minHits, n.maxHits = row.maxHits, n.minTurns = row.minTurns, n.maxTurns = row.maxTurns, n.drain = row.drain, n.healing = row.healing, n.critRate = row.critRate, n.ailmentChance = row.ailmentChance, n.flinchChance = row.flinchChance, n.statChance = row.statChance
+        """)
+    void batchInsertMoveMeta(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveMeta)

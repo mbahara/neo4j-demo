@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.VersionGroup;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VersionGroupRepository extends Neo4jRepository<VersionGroup, Long> {
     Optional<VersionGroup> findByIdentifier(String identifier);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:VersionGroup {id: row.id})
+    SET n.identifier = row.identifier,
+        n.order = row.order
+    """)
+    void batchInsertVersionGroups(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:VersionGroup {id: $id})

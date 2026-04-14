@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.ContestType;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContestTypeRepository extends Neo4jRepository<ContestType, Long> {
     Optional<ContestType> findByIdentifier(String identifier);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:ContestType {id: row.id})
+    SET n.identifier = row.identifier
+    """)
+    void batchInsertContestTypes(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ContestType {id: $id})

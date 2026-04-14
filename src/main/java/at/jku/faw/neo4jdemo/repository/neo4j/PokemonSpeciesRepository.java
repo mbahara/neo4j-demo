@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.PokemonSpecies;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,26 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PokemonSpeciesRepository extends Neo4jRepository<PokemonSpecies, Long> {
     Optional<PokemonSpecies> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:PokemonSpecies {id: row.id})
+    SET n.name = row.name,
+        n.genus = row.genus,
+        n.genderRate = row.genderRate,
+        n.captureRate = row.captureRate,
+        n.baseHappiness = row.baseHappiness,
+        n.isBaby = row.isBaby,
+        n.isLegendary = row.isLegendary,
+        n.isMythical = row.isMythical,
+        n.hatchCounter = row.hatchCounter,
+        n.hasGenderDifferences = row.hasGenderDifferences,
+        n.formsSwitchable = row.formsSwitchable,
+        n.order = row.order,
+        n.conquestOrder = row.conquestOrder
+    """)
+    void batchInsertPokemonSpecies(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonSpecies {id: $id})

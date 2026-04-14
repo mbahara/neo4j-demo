@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.PokemonForm;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -10,6 +12,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PokemonFormRepository extends Neo4jRepository<PokemonForm, Long> {
     Optional<PokemonForm> findByIdentifier(String identifier);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:PokemonForm {id: row.id})
+    SET n.identifier = row.identifier,
+        n.isDefault = row.isDefault,
+        n.isMega = row.isMega,
+        n.isBattleOnly = row.isBattleOnly
+    """)
+    void batchInsertPokemonForms(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonForm {id: $id})

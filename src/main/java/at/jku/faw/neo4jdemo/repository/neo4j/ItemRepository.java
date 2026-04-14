@@ -1,6 +1,8 @@
 package at.jku.faw.neo4jdemo.repository.neo4j;
 
 import at.jku.faw.neo4jdemo.model.neo4j.Item;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -11,6 +13,19 @@ import org.springframework.stereotype.Repository;
 public interface ItemRepository extends Neo4jRepository<Item, Long> {
     Optional<Item> findByIdentifier(String identifier);
     Optional<Item> findByName(String name);
+
+    
+    @Query("""
+    UNWIND $rows AS row
+    MERGE (n:Item {id: row.id})
+    SET n.identifier = row.identifier,
+        n.name = row.name,
+        n.cost = row.cost,
+        n.flingPower = row.flingPower,
+        n.shortEffect = row.shortEffect,
+        n.effect = row.effect
+    """)
+    void batchInsertItems(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Item {id: $id})

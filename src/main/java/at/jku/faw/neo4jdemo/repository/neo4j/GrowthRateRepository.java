@@ -18,12 +18,4 @@ public interface GrowthRateRepository extends Neo4jRepository<GrowthRate, Long> 
         RETURN n
         """)
     GrowthRate insertGrowthRate(@Param("id") Long id, @Param("identifier") String identifier, @Param("formula") String formula);
-
-
-    @Query("""
-        MATCH (s:GrowthRate {id: $growthRateId})
-        MATCH (t:Level {id: $levelId})
-        MERGE (s)-[:REQUIRES_EXP {experience: $experience}]->(t)
-        """)
-    void linkGrowthRateToLevel(@Param("growthRateId") Long growthRateId, @Param("levelId") Long levelId, @Param("experience") int experience);
 }

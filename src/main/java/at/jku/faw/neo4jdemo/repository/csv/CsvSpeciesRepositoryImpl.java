@@ -23,7 +23,7 @@ public class CsvSpeciesRepositoryImpl extends GenericCsvRepositoryImpl implement
 
 	@Override
 	public CsvPokemonSpecies getById(Long id) {
-		return csvSpecies.stream().filter(p -> Objects.equals(p.id(), id)).findFirst().orElse(null);
+		return getAll().stream().filter(p -> Objects.equals(p.id(), id)).findFirst().orElse(null);
 	}
 
 	@Override

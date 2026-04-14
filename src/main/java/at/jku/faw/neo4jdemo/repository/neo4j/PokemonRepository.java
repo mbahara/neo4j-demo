@@ -19,14 +19,6 @@ public interface PokemonRepository extends Neo4jRepository<Pokemon, Long> {
         """)
     Pokemon insertPokemon(@Param("id") Long id, @Param("identifier") String identifier, @Param("height") int height, @Param("weight") int weight, @Param("baseExperience") int baseExperience, @Param("order") int order, @Param("isDefault") boolean isDefault);
 
-
-    @Query("""
-        MATCH (s:Pokemon {id: $pokemonId})
-        MATCH (t:Stats {id: $statsId})
-        MERGE (s)-[:HAS_STAT {baseStat: $baseStat, effort: $effort}]->(t)
-        """)
-    void linkPokemonToStats(@Param("pokemonId") Long pokemonId, @Param("statsId") Long statsId, @Param("baseStat") int baseStat, @Param("effort") int effort);
-
     @Query("""
         MATCH (s:Pokemon {id: $pokemonId})
         MATCH (t:HeldItem {id: $heldItemId})
@@ -34,14 +26,6 @@ public interface PokemonRepository extends Neo4jRepository<Pokemon, Long> {
         """)
     void linkPokemonToHeldItem(@Param("pokemonId") Long pokemonId,
                         @Param("heldItemId") Long heldItemId);
-
-    @Query("""
-        MATCH (s:Pokemon {id: $pokemonId})
-        MATCH (t:Ability {id: $abilityId})
-        MERGE (s)-[:CAN_HAVE {isHidden: $isHidden, slot: $slot}]->(t)
-        """)
-    void linkPokemonToAbility(@Param("pokemonId") Long pokemonId, @Param("abilityId") Long abilityId, @Param("isHidden") boolean isHidden, @Param("slot") int slot);
-
 
     @Query("""
         MATCH (s:Pokemon {id: $pokemonId})
@@ -66,18 +50,4 @@ public interface PokemonRepository extends Neo4jRepository<Pokemon, Long> {
         """)
     void linkPokemonToEncounter(@Param("pokemonId") Long pokemonId,
                         @Param("encounterId") Long encounterId);
-
-    @Query("""
-        MATCH (s:Pokemon {id: $pokemonId})
-        MATCH (t:Version {id: $versionId})
-        MERGE (s)-[:HAS_GAME_INDEX {index: $index}]->(t)
-        """)
-    void linkPokemonHasGameIndex(@Param("pokemonId") Long pokemonId, @Param("versionId") Long versionId, @Param("index") int index);
-
-    @Query("""
-        MATCH (s:Pokemon {id: $pokemonId})
-        MATCH (t:Type {id: $typeId})
-        MERGE (s)-[:HAS_TYPE {slot: $slot}]->(t)
-        """)
-    void linkPokemonToType(@Param("pokemonId") Long pokemonId, @Param("typeId") Long typeId, @Param("slot") int slot);
 }

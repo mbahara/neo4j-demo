@@ -1,8 +1,8 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.model.neo4j.Highlights;
 import at.jku.faw.neo4jdemo.repository.csv.CsvCharacteristicsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.CharacteristicRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.HighlightsRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.StatsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,12 +13,15 @@ public class CharacteristicService implements IPokemonDataLoader {
     private final CsvCharacteristicsRepositoryImpl csvMainRepo;
     private final CharacteristicRepository neo4jRepo;
     private final StatsRepository statsRepository;
+    private final HighlightsRepository highlightsRepository;
 
     public CharacteristicService(CsvCharacteristicsRepositoryImpl csvMainRepo,
-                                 CharacteristicRepository neo4jRepo, StatsRepository statsRepository) {
+                                 CharacteristicRepository neo4jRepo, StatsRepository statsRepository,
+                                 HighlightsRepository highlightsRepository) {
         this.csvMainRepo = csvMainRepo;
         this.neo4jRepo = neo4jRepo;
         this.statsRepository = statsRepository;
+        this.highlightsRepository = highlightsRepository;
     }
 
     @Override
@@ -36,11 +39,8 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Transactional
     public void loadRelationships() {
         csvMainRepo.getAll().forEach(csvCharacteristics -> {
-            Highlights highlights = new Highlights();
-            highlights.setGeneMod5(csvCharacteristics.geneMod5());
             statsRepository.findById(csvCharacteristics.statId()).ifPresent(stats -> {
-                highlights.setStat(stats);
-                neo4jRepo.linkCharacteristicToStat(csvCharacteristics.id(), stats.getId(), highlights.getGeneMod5());
+                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.id(), stats.getId(), csvCharacteristics.geneMod5());
             });
         });
     }

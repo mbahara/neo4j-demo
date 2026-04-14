@@ -34,11 +34,4 @@ public interface PokemonFormRepository extends Neo4jRepository<PokemonForm, Long
         MERGE (s)-[:POKEATHLON_PERFORMANCE {minimumStat: $minimumStat, baseStat: $baseStat, maximumStat: $maximumStat}]->(t)
         """)
     void linkPokemonFormToPokeathlonStats(@Param("pokemonFormId") Long pokemonFormId, @Param("pokeathlonStatsId") Long pokeathlonStatsId, @Param("minimumStat") int minimumStat, @Param("baseStat") int baseStat, @Param("maximumStat") int maximumStat);
-
-    @Query("""
-        MATCH (s:PokemonForm {id: $pokemonFormId})
-        MATCH (t:Generation {id: $generationId})
-        MERGE (s)-[:APPEARS_IN {gameIndex: $gameIndex}]->(t)
-        """)
-    void linkPokemonFormHasGameIndex(@Param("pokemonFormId") Long pokemonFormId, @Param("generationId") Long generationId, @Param("gameIndex") int gameIndex);
 }

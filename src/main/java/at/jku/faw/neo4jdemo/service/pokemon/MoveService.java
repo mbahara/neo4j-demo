@@ -5,6 +5,7 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvMoveChangelogRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMoveFlagMapRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMoveRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvSuperContestCombosRepositoryImpl;
+import at.jku.faw.neo4jdemo.repository.neo4j.EffectRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveChangeRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveMetaRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveRepository;
@@ -22,6 +23,7 @@ public class MoveService implements IPokemonDataLoader {
     private final CsvMoveChangelogRepositoryImpl csvMoveChangelogRepositoryImpl;
     private final CsvSuperContestCombosRepositoryImpl csvSuperContestCombosRepositoryImpl;
     private final CsvContestCombosRepositoryImpl csvContestCombosRepositoryImpl;
+    private final EffectRepository effectRepository;
 
     public MoveService(CsvMoveRepositoryImpl csvMoveRepository,
                        MoveRepository moveRepository, CsvMoveFlagMapRepositoryImpl csvMoveFlagMapRepositoryImpl,
@@ -29,7 +31,7 @@ public class MoveService implements IPokemonDataLoader {
                        MoveChangeRepository moveChangeRepository,
                        CsvMoveChangelogRepositoryImpl csvMoveChangelogRepositoryImpl,
                        CsvSuperContestCombosRepositoryImpl csvSuperContestCombosRepositoryImpl,
-                       CsvContestCombosRepositoryImpl csvContestCombosRepositoryImpl) {
+                       CsvContestCombosRepositoryImpl csvContestCombosRepositoryImpl, EffectRepository effectRepository) {
         this.csvMoveRepository = csvMoveRepository;
         this.moveRepository = moveRepository;
         this.csvMoveFlagMapRepositoryImpl = csvMoveFlagMapRepositoryImpl;
@@ -38,6 +40,7 @@ public class MoveService implements IPokemonDataLoader {
         this.csvMoveChangelogRepositoryImpl = csvMoveChangelogRepositoryImpl;
         this.csvSuperContestCombosRepositoryImpl = csvSuperContestCombosRepositoryImpl;
         this.csvContestCombosRepositoryImpl = csvContestCombosRepositoryImpl;
+        this.effectRepository = effectRepository;
     }
 
     @Override
@@ -65,7 +68,7 @@ public class MoveService implements IPokemonDataLoader {
                 moveRepository.linkMoveToDamageClass(csvMove.id(), csvMove.damageClassId());
             }
             if (csvMove.effectId() != null) {
-                moveRepository.linkMoveToMoveEffect(csvMove.id(), csvMove.effectId(), csvMove.effectChance());
+                effectRepository.linkMoveToMoveEffect(csvMove.id(), csvMove.effectId(), csvMove.effectChance());
             }
             if (csvMove.targetId() != null) {
                 moveRepository.linkMoveToMoveTarget(csvMove.id(), csvMove.targetId());

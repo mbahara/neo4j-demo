@@ -29,10 +29,4 @@ public interface AreaRepository extends Neo4jRepository<Area, Long> {
     void linkAreaToLocation(@Param("areaId") Long areaId,
                         @Param("locationId") Long locationId);
 
-    @Query("""
-        MATCH (s:Area {id: $areaId})
-        MATCH (t:EncounterMethod {id: $encounterMethodId})
-        MERGE (s)-[:HAS_ENCOUNTER_RATE {rate: $rate, versionId: $versionId}]->(t)
-        """)
-    void linkAreaToEncounterMethod(@Param("areaId") Long areaId, @Param("encounterMethodId") Long encounterMethodId, @Param("rate") int rate, @Param("versionId") Long versionId);
 }

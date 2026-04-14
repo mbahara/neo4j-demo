@@ -10,6 +10,8 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonEggGroupsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonEvolutionRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonSpeciesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.LegendaryRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.PalParkEncounterRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.PokedexEntryRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonSpeciesRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,8 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
     private final CsvPokemonDexNumbersRepositoryImpl csvPokemonDexNumbersRepositoryImpl;
     private final CsvPokemonEggGroupsRepositoryImpl csvPokemonEggGroupsRepositoryImpl;
     private final CsvPokemonEvolutionRepositoryImpl csvPokemonEvolutionRepositoryImpl;
+    private final PalParkEncounterRepository palParkEncounterRepository;
+    private final PokedexEntryRepository pokedexEntryRepository;
 
     public PokemonSpeciesService(CsvPokemonSpeciesRepositoryImpl csvPokemonSpeciesRepository,
                                  PokemonSpeciesRepository pokemonSpeciesRepository,
@@ -33,7 +37,9 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
                                  CsvPalParkRepositoryImpl csvPalParkRepositoryImpl,
                                  CsvPokemonDexNumbersRepositoryImpl csvPokemonDexNumbersRepositoryImpl,
                                  CsvPokemonEggGroupsRepositoryImpl csvPokemonEggGroupsRepositoryImpl,
-                                 CsvPokemonEvolutionRepositoryImpl csvPokemonEvolutionRepositoryImpl) {
+                                 CsvPokemonEvolutionRepositoryImpl csvPokemonEvolutionRepositoryImpl,
+                                 PalParkEncounterRepository palParkEncounterRepository,
+                                 PokedexEntryRepository pokedexEntryRepository) {
         this.csvPokemonSpeciesRepository = csvPokemonSpeciesRepository;
         this.pokemonSpeciesRepository = pokemonSpeciesRepository;
         this.legendaryRepository = legendaryRepository;
@@ -42,6 +48,8 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
         this.csvPokemonDexNumbersRepositoryImpl = csvPokemonDexNumbersRepositoryImpl;
         this.csvPokemonEggGroupsRepositoryImpl = csvPokemonEggGroupsRepositoryImpl;
         this.csvPokemonEvolutionRepositoryImpl = csvPokemonEvolutionRepositoryImpl;
+        this.palParkEncounterRepository = palParkEncounterRepository;
+        this.pokedexEntryRepository = pokedexEntryRepository;
     }
 
     @Override
@@ -104,14 +112,14 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
 
             csvPalParkRepositoryImpl.getAll().forEach(csvPalPark -> {
                 if(csvPalPark.speciesId().equals(csvPokemonSpecies.id())) {
-                    pokemonSpeciesRepository.linkPokemonSpeciesToPalParkArea(csvPokemonSpecies.id(),
+                    palParkEncounterRepository.linkPokemonSpeciesToPalParkArea(csvPokemonSpecies.id(),
                             csvPalPark.areaId(), csvPalPark.baseScore(), csvPalPark.rate());
                 }
             });
 
 			for (CsvPokemonDexNumbers csvPokemonDexNumber : csvPokemonDexNumbersRepositoryImpl.getBySpeciesId(
 					csvPokemonSpecies.id())) {
-				pokemonSpeciesRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.id(),
+				pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.id(),
 						csvPokemonDexNumber.pokedexId(), csvPokemonDexNumber.pokedexNumber());
 			}
 

@@ -35,19 +35,4 @@ public interface NatureRepository extends Neo4jRepository<Nature, Long> {
         """)
     void linkNatureDecreasesStat(@Param("natureId") Long natureId,
                         @Param("statId") Long statId);
-
-    @Query("""
-        MATCH (s:Nature {id: $natureId})
-        MATCH (t:MoveBattleStyle {id: $moveBattleStyleId})
-        MERGE (s)-[:PREFERRED_BATTLE_STYLE {lowHpPreference: $lowHpPreference, highHpPreference: $highHpPreference}]->(t)
-        """)
-    void linkNatureToMoveBattleStyle(@Param("natureId") Long natureId, @Param("moveBattleStyleId") Long moveBattleStyleId, @Param("lowHpPreference") int lowHpPreference, @Param("highHpPreference") int highHpPreference);
-
-
-    @Query("""
-        MATCH (s:Nature {id: $natureId})
-        MATCH (t:PokeathlonStats {id: $pokeathlonStatsId})
-        MERGE (s)-[:POKEATHLON_MODIFIER {maxChange: $maxChange}]->(t)
-        """)
-    void linkNatureToPokeathlonStats(@Param("natureId") Long natureId, @Param("pokeathlonStatsId") Long pokeathlonStatsId, @Param("maxChange") int maxChange);
 }

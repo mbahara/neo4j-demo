@@ -9,6 +9,7 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvItemGameIndicesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMachineRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.FlingEffectRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.GameIndexRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.ItemCategoryRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.ItemFlagRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.ItemRepository;
@@ -28,13 +29,15 @@ public class ItemService implements IPokemonDataLoader {
     private final CsvMachineRepositoryImpl csvMachineRepositoryImpl;
     private final MachineRepository machineRepository;
     private final CsvItemGameIndicesRepositoryImpl csvItemGameIndicesRepositoryImpl;
+	private final GameIndexRepository gameIndexRepository;
 
-    public ItemService(CsvItemRepositoryImpl csvMainRepo,
-                       ItemRepository neo4jRepo, ItemCategoryRepository itemCategoryRepository,
-                       FlingEffectRepository flingEffectRepository,
-                       CsvItemFlagMapRepositoryImpl csvItemFlagMapRepositoryImpl, ItemFlagRepository itemFlagRepository,
-                       CsvMachineRepositoryImpl csvMachineRepositoryImpl, MachineRepository machineRepository,
-                       CsvItemGameIndicesRepositoryImpl csvItemGameIndicesRepositoryImpl) {
+	public ItemService(CsvItemRepositoryImpl csvMainRepo,
+					   ItemRepository neo4jRepo, ItemCategoryRepository itemCategoryRepository,
+					   FlingEffectRepository flingEffectRepository,
+					   CsvItemFlagMapRepositoryImpl csvItemFlagMapRepositoryImpl, ItemFlagRepository itemFlagRepository,
+					   CsvMachineRepositoryImpl csvMachineRepositoryImpl, MachineRepository machineRepository,
+					   CsvItemGameIndicesRepositoryImpl csvItemGameIndicesRepositoryImpl,
+					   GameIndexRepository gameIndexRepository) {
         this.csvMainRepo = csvMainRepo;
         this.itemRepository = neo4jRepo;
         this.itemCategoryRepository = itemCategoryRepository;
@@ -44,7 +47,8 @@ public class ItemService implements IPokemonDataLoader {
         this.csvMachineRepositoryImpl = csvMachineRepositoryImpl;
         this.machineRepository = machineRepository;
         this.csvItemGameIndicesRepositoryImpl = csvItemGameIndicesRepositoryImpl;
-    }
+		this.gameIndexRepository = gameIndexRepository;
+	}
 
     @Override
     public String getEntityName() { return "Item"; }
@@ -84,7 +88,7 @@ public class ItemService implements IPokemonDataLoader {
 			}
 
 			for (CsvItemGameIndices csvItemGameIndices : csvItemGameIndicesRepositoryImpl.getByItemId(csvItem.id())) {
-				itemRepository.linkItemHasGameIndex(csvItemGameIndices.itemId(), csvItemGameIndices.generationId(),
+				gameIndexRepository.linkItemHasGameIndex(csvItemGameIndices.itemId(), csvItemGameIndices.generationId(),
 						csvItemGameIndices.gameIndex());
 			}
 

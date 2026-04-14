@@ -46,14 +46,6 @@ public interface MoveRepository extends Neo4jRepository<Move, Long> {
 
     @Query("""
         MATCH (s:Move {id: $moveId})
-        MATCH (t:MoveEffect {id: $moveEffectId})
-        MERGE (s)-[:HAS_EFFECT {effectChance: $effectChance}]->(t)
-        """)
-    void linkMoveToMoveEffect(@Param("moveId") Long moveId,
-                        @Param("moveEffectId") Long moveEffectId, @Param("effectChance") int effectChance);
-
-    @Query("""
-        MATCH (s:Move {id: $moveId})
         MATCH (t:MoveTarget {id: $moveTargetId})
         MERGE (s)-[:TARGETS]->(t)
         """)

@@ -86,28 +86,6 @@ public interface PokemonSpeciesRepository extends Neo4jRepository<PokemonSpecies
 
     @Query("""
         MATCH (s:PokemonSpecies {id: $pokemonSpeciesId})
-        MATCH (t:Area {id: $areaId})
-        MERGE (s)-[r:FOUND_IN_PAL_PARK]->(t)
-        SET r.baseScore = $baseScore, r.rate = $rate
-        """)
-    void linkPokemonSpeciesToPalParkArea(@Param("pokemonSpeciesId") Long pokemonSpeciesId,
-                                         @Param("areaId") Long areaId,
-                                         @Param("baseScore") int baseScore,
-                                         @Param("rate") int rate);
-
-
-    @Query("""
-        MATCH (s:PokemonSpecies {id: $pokemonSpeciesId})
-        MATCH (t:Pokedex {id: $pokedexId})
-        MERGE (s)-[:HAS_POKEDEX {pokedexNr: $pokedexNr}]->(t)
-        """)
-    void linkPokemonSpeciesToPokedex(@Param("pokemonSpeciesId") Long pokemonSpeciesId,
-                                     @Param("pokedexId") Long pokedexId,
-                                     @Param("pokedexNr") int pokedexNr);
-
-
-    @Query("""
-        MATCH (s:PokemonSpecies {id: $pokemonSpeciesId})
         MATCH (t:EggGroup {id: $eggGroupId})
         MERGE (s)-[:BELONGS_TO_EGG_GROUP]->(t)
         """)

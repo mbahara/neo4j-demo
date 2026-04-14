@@ -13,8 +13,11 @@ import org.springframework.core.io.Resource;
 
 public abstract class GenericCsvRepositoryImpl {
 	protected <T> List<T> getCsvEntities(Resource csvResource, Class<T> entity) throws IOException {
-		try(CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(csvResource.getInputStream())))) {
+		if (csvResource == null) {
+			throw new IllegalStateException("CSV resource is null. Ensure it is injected before use.");
+		}
 
+		try(CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(csvResource.getInputStream())))) {
 			HeaderColumnNameMappingStrategy<T> mappingStrategy = new HeaderColumnNameMappingStrategy<>();
 			mappingStrategy.setType(entity);
 

@@ -7,6 +7,7 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonFormGenerationsRepositoryIm
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonFormPokeathlonStatsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonFormRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.FormPokeathlonStatsRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.GameIndexRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokeathlonStatsRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonFormRepository;
 import java.util.Objects;
@@ -23,19 +24,21 @@ public class PokemonFormService implements IPokemonDataLoader {
     private final FormPokeathlonStatsRepository formPokeathlonStatsRepository;
     private final PokeathlonStatsRepository pokeathlonStatsRepository;
     private final CsvPokemonFormGenerationsRepositoryImpl csvPokemonFormGenerationsRepositoryImpl;
+    private final GameIndexRepository gameIndexRepository;
 
     public PokemonFormService(CsvPokemonFormRepositoryImpl csvPokemonFormRepository,
                               CsvPokemonFormPokeathlonStatsRepositoryImpl csvPokemonFormPokeathlonStatsRepositoryImpl,
                               FormPokeathlonStatsRepository formPokeathlonStatsRepository,
                               PokeathlonStatsRepository pokeathlonStatsRepository,
                               CsvPokemonFormGenerationsRepositoryImpl csvPokemonFormGenerationsRepositoryImpl,
-                              PokemonFormRepository pokemonFormRepository) {
+                              PokemonFormRepository pokemonFormRepository, GameIndexRepository gameIndexRepository) {
         this.csvPokemonFormRepository = csvPokemonFormRepository;
         this.pokemonFormRepository = pokemonFormRepository;
         this.csvPokemonFormPokeathlonStatsRepositoryImpl = csvPokemonFormPokeathlonStatsRepositoryImpl;
         this.formPokeathlonStatsRepository = formPokeathlonStatsRepository;
         this.pokeathlonStatsRepository = pokeathlonStatsRepository;
         this.csvPokemonFormGenerationsRepositoryImpl = csvPokemonFormGenerationsRepositoryImpl;
+        this.gameIndexRepository = gameIndexRepository;
     }
 
     @Override
@@ -59,7 +62,7 @@ public class PokemonFormService implements IPokemonDataLoader {
             }
             csvPokemonFormGenerationsRepositoryImpl.getByPokemonFormId(csvPokemonForm.id()).forEach(
                     csvPokemonFormGenerations ->
-                        pokemonFormRepository.linkPokemonFormHasGameIndex(csvPokemonForm.id(), csvPokemonFormGenerations.generationId(), csvPokemonFormGenerations.gameIndex())
+                        gameIndexRepository.linkPokemonFormHasGameIndex(csvPokemonForm.id(), csvPokemonFormGenerations.generationId(), csvPokemonFormGenerations.gameIndex())
                         );
 
             csvPokemonFormPokeathlonStatsRepositoryImpl.getAll().stream()

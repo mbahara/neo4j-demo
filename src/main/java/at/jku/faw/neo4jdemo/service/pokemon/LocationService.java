@@ -2,6 +2,7 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationGameIndicesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationRepositoryImpl;
+import at.jku.faw.neo4jdemo.repository.neo4j.GameIndexRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.LocationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,13 +13,16 @@ public class LocationService implements IPokemonDataLoader {
     private final CsvLocationRepositoryImpl csvLocationRepository;
     private final LocationRepository locationRepository;
     private final CsvLocationGameIndicesRepositoryImpl csvLocationGameIndicesRepositoryImpl;
+    private final GameIndexRepository gameIndexRepository;
 
     public LocationService(CsvLocationRepositoryImpl csvLocationRepository,
                            LocationRepository neo4jRepo,
-                           CsvLocationGameIndicesRepositoryImpl csvLocationGameIndicesRepositoryImpl) {
+                           CsvLocationGameIndicesRepositoryImpl csvLocationGameIndicesRepositoryImpl,
+                           GameIndexRepository gameIndexRepository) {
         this.csvLocationRepository = csvLocationRepository;
         this.locationRepository = neo4jRepo;
         this.csvLocationGameIndicesRepositoryImpl = csvLocationGameIndicesRepositoryImpl;
+        this.gameIndexRepository = gameIndexRepository;
     }
 
     @Override
@@ -41,7 +45,7 @@ public class LocationService implements IPokemonDataLoader {
             }
 
             csvLocationGameIndicesRepositoryImpl.getByLocationId(csv.id()).forEach(csvGameIndex -> {
-                locationRepository.linkLocationHasGameIndex(csvGameIndex.locationId(), csvGameIndex.generationId(), csvGameIndex.gameIndex());
+                gameIndexRepository.linkLocationHasGameIndex(csvGameIndex.locationId(), csvGameIndex.generationId(), csvGameIndex.gameIndex());
             });
         });
     }

@@ -9,8 +9,12 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonMovesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonStatsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonTypeRepositoryImpl;
+import at.jku.faw.neo4jdemo.repository.neo4j.HasStatsRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.HeldItemRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.PokemonAbilityRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.PokemonGameIndexRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonRepository;
+import at.jku.faw.neo4jdemo.repository.neo4j.PokemonTypeRepository;
 import at.jku.faw.neo4jdemo.utils.CsvUtils;
 import java.util.Objects;
 import org.springframework.stereotype.Service;
@@ -29,9 +33,13 @@ public class PokemonService implements IPokemonDataLoader {
     private final CsvPokemonGameIndicesRepositoryImpl csvPokemonGameIndicesRepositoryImpl;
     private final CsvPokemonMovesRepositoryImpl csvPokemonMovesRepositoryImpl;
     private final CsvEncountersRepositoryImpl csvEncountersRepositoryImpl;
+	private final HasStatsRepository hasStatsRepository;
+	private final PokemonAbilityRepository pokemonAbilityRepository;
+	private final PokemonTypeRepository pokemonTypeRepository;
+	private final PokemonGameIndexRepository pokemonGameIndexRepository;
 
 
-    public PokemonService(CsvPokemonRepositoryImpl csvMainRepo,
+	public PokemonService(CsvPokemonRepositoryImpl csvMainRepo,
 						  PokemonRepository neo4jRepo,
 						  CsvPokemonStatsRepositoryImpl csvPokemonStatsRepositoryImpl,
 						  CsvPokemonTypeRepositoryImpl csvPokemonTypeRepositoryImpl,
@@ -40,7 +48,10 @@ public class PokemonService implements IPokemonDataLoader {
 						  CsvPokemonAbilitiesRepositoryImpl csvPokemonAbilitiesRepositoryImpl,
 						  CsvPokemonGameIndicesRepositoryImpl csvPokemonGameIndicesRepositoryImpl,
 						  CsvPokemonMovesRepositoryImpl csvPokemonMovesRepositoryImpl,
-						  CsvEncountersRepositoryImpl csvEncountersRepositoryImpl) {
+						  CsvEncountersRepositoryImpl csvEncountersRepositoryImpl,
+						  HasStatsRepository hasStatsRepository, PokemonAbilityRepository pokemonAbilityRepository,
+						  PokemonTypeRepository pokemonTypeRepository,
+						  PokemonGameIndexRepository pokemonGameIndexRepository) {
         this.csvPokemonRepository = csvMainRepo;
         this.pokemonRepository = neo4jRepo;
         this.csvPokemonStatsRepositoryImpl = csvPokemonStatsRepositoryImpl;
@@ -51,6 +62,10 @@ public class PokemonService implements IPokemonDataLoader {
 		this.csvPokemonGameIndicesRepositoryImpl = csvPokemonGameIndicesRepositoryImpl;
 		this.csvPokemonMovesRepositoryImpl = csvPokemonMovesRepositoryImpl;
 		this.csvEncountersRepositoryImpl = csvEncountersRepositoryImpl;
+		this.hasStatsRepository = hasStatsRepository;
+		this.pokemonAbilityRepository = pokemonAbilityRepository;
+		this.pokemonTypeRepository = pokemonTypeRepository;
+		this.pokemonGameIndexRepository = pokemonGameIndexRepository;
 	}
 
     @Override
@@ -77,14 +92,14 @@ public class PokemonService implements IPokemonDataLoader {
 					.filter(csvPokemonType ->
 							Objects.equals(csvPokemonType.pokemonId(), csvPokemon.id()))
 					.forEach(csvPokemonType ->
-							pokemonRepository.linkPokemonToType(csvPokemon.id(),
+							pokemonTypeRepository.linkPokemonToType(csvPokemon.id(),
 									csvPokemonType.typeId(), csvPokemonType.slot()));
 
 			// Propertied Relationship Link
 			csvPokemonStatsRepositoryImpl.getAll().stream()
                 .filter(m -> Objects.equals(m.pokemonId(), csvPokemon.id()))
                 .forEach(stats ->
-						pokemonRepository.linkPokemonToStats(csvPokemon.id(),
+						hasStatsRepository.linkPokemonToStats(csvPokemon.id(),
 								stats.statId(), stats.baseStat(), stats.effort()));
 
             csvPokemonItemsRepository.getAll().stream()
@@ -99,12 +114,12 @@ public class PokemonService implements IPokemonDataLoader {
 			csvPokemonAbilitiesRepositoryImpl.getAll().stream()
 					.filter(csvPokemonAbilities -> Objects.equals(csvPokemonAbilities.pokemonId(), csvPokemon.id()))
 					.forEach(abilities ->
-						pokemonRepository.linkPokemonToAbility(abilities.pokemonId(), abilities.abilityId(), Boolean.TRUE.equals(
+						pokemonAbilityRepository.linkPokemonToAbility(abilities.pokemonId(), abilities.abilityId(), Boolean.TRUE.equals(
 								CsvUtils.extractBoolean(abilities.isHidden())), abilities.slot()));
             csvPokemonGameIndicesRepositoryImpl.getAll().stream()
 					.filter(gi -> Objects.equals(gi.pokemonId(), csvPokemon.id()))
 					.forEach(index -> {
-						pokemonRepository.linkPokemonHasGameIndex(index.pokemonId(), index.versionId(), index.gameIndex());
+						pokemonGameIndexRepository.linkPokemonHasGameIndex(index.pokemonId(), index.versionId(), index.gameIndex());
 					});
 			csvPokemonMovesRepositoryImpl.getAll().stream()
 					.filter(pokemonMove ->

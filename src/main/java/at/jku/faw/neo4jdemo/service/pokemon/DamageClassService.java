@@ -39,7 +39,8 @@ public class DamageClassService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertDamageClass(rows);
+            Integer count = neo4jRepo.batchInsertDamageClass(rows);
+            System.out.println("Successfully loaded " + count + " DamageClass nodes.");
         }
     }
 

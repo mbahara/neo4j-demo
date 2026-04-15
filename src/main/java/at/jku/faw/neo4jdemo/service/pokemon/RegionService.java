@@ -37,7 +37,8 @@ public class RegionService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            regionRepository.batchInsertRegions(rows);
+            Integer count = regionRepository.batchInsertRegions(rows);
+            System.out.println("Successfully loaded " + count + " Regions nodes.");
         }
     }
 

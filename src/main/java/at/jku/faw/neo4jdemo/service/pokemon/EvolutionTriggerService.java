@@ -38,7 +38,8 @@ public class EvolutionTriggerService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertEvolutionTriggers(rows);
+            Integer count = neo4jRepo.batchInsertEvolutionTriggers(rows);
+            System.out.println("Successfully loaded " + count + " EvolutionTriggers nodes.");
         }
     }
 

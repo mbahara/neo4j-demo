@@ -38,7 +38,8 @@ public class SuperContestEffectService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            superContestEffectRepository.batchInsertSuperContestEffects(rows);
+            Integer count = superContestEffectRepository.batchInsertSuperContestEffects(rows);
+            System.out.println("Successfully loaded " + count + " SuperContestEffects nodes.");
         }
     }
 

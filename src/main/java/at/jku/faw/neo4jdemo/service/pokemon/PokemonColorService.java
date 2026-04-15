@@ -37,7 +37,8 @@ public class PokemonColorService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokemonColorRepository.batchInsertPokemonColors(rows);
+            Integer count = pokemonColorRepository.batchInsertPokemonColors(rows);
+            System.out.println("Successfully loaded " + count + " PokemonColors nodes.");
         }
     }
 

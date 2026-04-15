@@ -37,7 +37,8 @@ public class MachineService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            machineRepository.batchInsertMachines(rows);
+            Integer count = machineRepository.batchInsertMachines(rows);
+            System.out.println("Successfully loaded " + count + " Machines nodes.");
         }
     }
 

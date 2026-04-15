@@ -49,7 +49,8 @@ public class MoveMetaService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveMetaRepository.batchInsertMoveMeta(rows);
+            Integer count = moveMetaRepository.batchInsertMoveMeta(rows);
+            System.out.println("Successfully loaded " + count + " MoveMeta nodes.");
         }
     }
 

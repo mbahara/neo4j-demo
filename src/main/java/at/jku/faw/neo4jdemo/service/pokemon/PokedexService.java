@@ -43,7 +43,8 @@ public class PokedexService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokedexRepository.batchInsertPokedexs(rows);
+            Integer count = pokedexRepository.batchInsertPokedexs(rows);
+            System.out.println("Successfully loaded " + count + " Pokedexs nodes.");
         }
     }
 

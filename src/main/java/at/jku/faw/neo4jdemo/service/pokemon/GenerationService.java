@@ -39,7 +39,8 @@ public class GenerationService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            generationRepository.batchInsertGenerations(rows);
+            Integer count = generationRepository.batchInsertGenerations(rows);
+            System.out.println("Successfully loaded " + count + " Generations nodes.");
         }
     }
 

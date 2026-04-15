@@ -38,7 +38,8 @@ public class EggGroupService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertEggGroups(rows);
+            Integer count = neo4jRepo.batchInsertEggGroups(rows);
+            System.out.println("Successfully loaded " + count + " EggGroups nodes.");
         }
     }
 

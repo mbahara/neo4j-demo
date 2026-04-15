@@ -65,7 +65,8 @@ public class ItemService implements IPokemonDataLoader {
 				.collect(Collectors.toList());
 
 		if (!rows.isEmpty()) {
-			itemRepository.batchInsertItems(rows);
+			Integer count = itemRepository.batchInsertItems(rows);
+			System.out.println("Successfully loaded " + count + " Items nodes.");
 		}
 	}
 

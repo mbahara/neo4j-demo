@@ -47,7 +47,8 @@ public class AreaService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            areaRepository.batchInsertAreas(rows);
+            Integer count = areaRepository.batchInsertAreas(rows);
+            System.out.println("Successfully loaded " + count + " Areas nodes.");
         }
     }
 

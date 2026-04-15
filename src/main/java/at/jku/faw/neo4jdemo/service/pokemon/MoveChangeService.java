@@ -40,7 +40,8 @@ public class MoveChangeService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveChangeRepository.batchInsertMoveChanges(rows);
+            Integer count = moveChangeRepository.batchInsertMoveChanges(rows);
+            System.out.println("Successfully loaded " + count + " MoveChanges nodes.");
         }
     }
 

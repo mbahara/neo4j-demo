@@ -51,7 +51,8 @@ public class AbilityService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            abilityRepository.batchInsertAbilities(rows);
+            Integer count = abilityRepository.batchInsertAbilities(rows);
+            System.out.println("Successfully loaded " + count + " Abilities nodes.");
         }
     }
 

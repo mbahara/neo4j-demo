@@ -48,7 +48,8 @@ public class LocationService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            locationRepository.batchInsertLocations(rows);
+            Integer count = locationRepository.batchInsertLocations(rows);
+            System.out.println("Successfully loaded " + count + " Locations nodes.");
         }
     }
 

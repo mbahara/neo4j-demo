@@ -43,7 +43,8 @@ public class EncounterService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertEncounters(rows);
+            Integer count = neo4jRepo.batchInsertEncounters(rows);
+            System.out.println("Successfully loaded " + count + " Encounters nodes.");
         }
     }
 

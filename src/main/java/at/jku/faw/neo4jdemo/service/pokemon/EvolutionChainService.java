@@ -44,7 +44,8 @@ public class EvolutionChainService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertEvolutionChains(rows);
+            Integer count = neo4jRepo.batchInsertEvolutionChains(rows);
+            System.out.println("Successfully loaded " + count + " EvolutionChains nodes.");
         }
     }
 

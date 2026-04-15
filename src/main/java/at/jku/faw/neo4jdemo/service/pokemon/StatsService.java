@@ -39,7 +39,8 @@ public class StatsService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            statsRepository.batchInsertStats(rows);
+            Integer count = statsRepository.batchInsertStats(rows);
+            System.out.println("Successfully loaded " + count + " Stats nodes.");
         }
     }
 

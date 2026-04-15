@@ -39,7 +39,8 @@ public class MoveMethodService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveMethodRepository.batchInsertMoveMethods(rows);
+            Integer count = moveMethodRepository.batchInsertMoveMethods(rows);
+            System.out.println("Successfully loaded " + count + " MoveMethods nodes.");
         }
     }
 

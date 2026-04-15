@@ -58,7 +58,8 @@ public class PokemonFormService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokemonFormRepository.batchInsertPokemonForms(rows);
+            Integer count = pokemonFormRepository.batchInsertPokemonForms(rows);
+            System.out.println("Successfully loaded " + count + " PokemonForms nodes.");
         }
 	}
 

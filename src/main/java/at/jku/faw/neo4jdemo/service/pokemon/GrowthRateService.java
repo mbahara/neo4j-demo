@@ -50,7 +50,8 @@ public class GrowthRateService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertGrowthRates(rows);
+            Integer count = neo4jRepo.batchInsertGrowthRates(rows);
+            System.out.println("Successfully loaded " + count + " GrowthRates nodes.");
         }
     }
 

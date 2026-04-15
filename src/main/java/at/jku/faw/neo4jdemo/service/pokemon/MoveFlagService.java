@@ -38,7 +38,8 @@ public class MoveFlagService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveFlagRepository.batchInsertMoveFlags(rows);
+            Integer count = moveFlagRepository.batchInsertMoveFlags(rows);
+            System.out.println("Successfully loaded " + count + " MoveFlags nodes.");
         }
     }
 

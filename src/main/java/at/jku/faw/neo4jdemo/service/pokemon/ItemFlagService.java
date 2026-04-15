@@ -39,7 +39,8 @@ public class ItemFlagService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertItemFlags(rows);
+            Integer count = neo4jRepo.batchInsertItemFlags(rows);
+            System.out.println("Successfully loaded " + count + " ItemFlags nodes.");
         }
     }
 

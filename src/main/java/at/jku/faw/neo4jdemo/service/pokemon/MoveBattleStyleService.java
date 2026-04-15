@@ -38,7 +38,8 @@ public class MoveBattleStyleService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveBattleStyleRepository.batchInsertMoveBattleStyles(rows);
+            Integer count = moveBattleStyleRepository.batchInsertMoveBattleStyles(rows);
+            System.out.println("Successfully loaded " + count + " MoveBattleStyles nodes.");
         }
     }
 

@@ -38,7 +38,8 @@ public class ContestTypeService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            contestTypeRepository.batchInsertContestTypes(rows);
+            Integer count = contestTypeRepository.batchInsertContestTypes(rows);
+            System.out.println("Successfully loaded " + count + " ContestTypes nodes.");
         }
     }
 

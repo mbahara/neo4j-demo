@@ -38,7 +38,8 @@ public class PokemonHabitatService implements IPokemonDataLoader {
 				.collect(Collectors.toList());
 
 		if (!rows.isEmpty()) {
-			pokemonHabitatRepository.batchInsertPokemonHabitats(rows);
+			Integer count = pokemonHabitatRepository.batchInsertPokemonHabitats(rows);
+			System.out.println("Successfully loaded " + count + " PokemonHabitats nodes.");
 		}
 	}
 

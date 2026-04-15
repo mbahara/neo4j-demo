@@ -39,7 +39,8 @@ public class PokemonShapeService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokemonShapeRepository.batchInsertPokemonShapes(rows);
+            Integer count = pokemonShapeRepository.batchInsertPokemonShapes(rows);
+            System.out.println("Successfully loaded " + count + " PokemonShapes nodes.");
         }
     }
 

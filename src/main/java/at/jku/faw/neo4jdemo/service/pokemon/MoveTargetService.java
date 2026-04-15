@@ -41,7 +41,8 @@ public class MoveTargetService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveTargetRepository.batchInsertMoveTargets(rows);
+            Integer count = moveTargetRepository.batchInsertMoveTargets(rows);
+            System.out.println("Successfully loaded " + count + " MoveTargets nodes.");
         }
     }
 

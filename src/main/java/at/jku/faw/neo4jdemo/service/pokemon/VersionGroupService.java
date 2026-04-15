@@ -48,7 +48,8 @@ public class VersionGroupService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            versionGroupRepository.batchInsertVersionGroups(rows);
+            Integer count = versionGroupRepository.batchInsertVersionGroups(rows);
+            System.out.println("Successfully loaded " + count + " VersionGroups nodes.");
         }
     }
 

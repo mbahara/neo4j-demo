@@ -40,7 +40,8 @@ public class ContestEffectService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            contestEffectRepository.batchInsertContestEffects(rows);
+            Integer count = contestEffectRepository.batchInsertContestEffects(rows);
+            System.out.println("Successfully loaded " + count + " ContestEffects nodes.");
         }
     }
 

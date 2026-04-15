@@ -38,7 +38,8 @@ public class MoveAilmentService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveAilmentRepository.batchInsertMoveAilments(rows);
+            Integer count = moveAilmentRepository.batchInsertMoveAilments(rows);
+            System.out.println("Successfully loaded " + count + " MoveAilments nodes.");
         }
     }
 

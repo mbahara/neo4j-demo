@@ -99,7 +99,8 @@ public class PokemonService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokemonRepository.batchInsertPokemons(rows);
+            Integer count = pokemonRepository.batchInsertPokemons(rows);
+            System.out.println("Successfully loaded " + count + " Pokemons nodes.");
         }
     }
 

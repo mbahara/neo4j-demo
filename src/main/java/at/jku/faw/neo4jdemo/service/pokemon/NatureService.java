@@ -54,7 +54,8 @@ public class NatureService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            natureRepository.batchInsertNatures(rows);
+            Integer count = natureRepository.batchInsertNatures(rows);
+            System.out.println("Successfully loaded " + count + " Natures nodes.");
         }
     }
 

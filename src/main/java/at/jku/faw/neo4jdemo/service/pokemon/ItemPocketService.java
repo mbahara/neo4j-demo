@@ -38,7 +38,8 @@ public class ItemPocketService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            itemPocketRepository.batchInsertItemPockets(rows);
+            Integer count = itemPocketRepository.batchInsertItemPockets(rows);
+            System.out.println("Successfully loaded " + count + " ItemPockets nodes.");
         }
     }
 

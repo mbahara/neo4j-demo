@@ -39,7 +39,8 @@ public class MoveEffectService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveEffectRepository.batchInsertMoveEffects(rows);
+            Integer count = moveEffectRepository.batchInsertMoveEffects(rows);
+            System.out.println("Successfully loaded " + count + " MoveEffects nodes.");
         }
     }
 

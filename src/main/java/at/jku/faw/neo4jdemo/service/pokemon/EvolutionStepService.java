@@ -44,7 +44,8 @@ public class EvolutionStepService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertEvolutionSteps(rows);
+            Integer count = neo4jRepo.batchInsertEvolutionSteps(rows);
+            System.out.println("Successfully loaded " + count + " EvolutionSteps nodes.");
         }
     }
 

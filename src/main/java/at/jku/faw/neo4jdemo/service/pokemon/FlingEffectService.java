@@ -38,7 +38,8 @@ public class FlingEffectService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            flingEffectRepository.batchInsertFlingEffects(rows);
+            Integer count = flingEffectRepository.batchInsertFlingEffects(rows);
+            System.out.println("Successfully loaded " + count + " FlingEffects nodes.");
         }
     }
 

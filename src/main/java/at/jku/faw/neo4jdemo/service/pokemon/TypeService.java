@@ -53,7 +53,8 @@ public class TypeService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            typeRepository.batchInsertTypes(rows);
+            Integer count = typeRepository.batchInsertTypes(rows);
+            System.out.println("Successfully loaded " + count + " Types nodes.");
         }
     }
 

@@ -91,7 +91,8 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            pokemonSpeciesRepository.batchInsertPokemonSpecies(rows);
+            Integer count = pokemonSpeciesRepository.batchInsertPokemonSpecies(rows);
+            System.out.println("Successfully loaded " + count + " PokemonSpecies nodes.");
         }
 
         if (!legendaryIds.isEmpty()) {

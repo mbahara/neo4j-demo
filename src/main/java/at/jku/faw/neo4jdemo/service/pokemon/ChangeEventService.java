@@ -37,7 +37,8 @@ public class ChangeEventService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertChangeEvents(rows);
+            Integer count = neo4jRepo.batchInsertChangeEvents(rows);
+            System.out.println("Successfully loaded " + count + " ChangeEvents nodes.");
         }
     }
 

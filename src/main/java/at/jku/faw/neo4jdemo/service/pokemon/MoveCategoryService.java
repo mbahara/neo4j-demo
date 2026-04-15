@@ -39,7 +39,8 @@ public class MoveCategoryService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            moveCategoryRepository.batchInsertMoveCategories(rows);
+            Integer count = moveCategoryRepository.batchInsertMoveCategories(rows);
+            System.out.println("Successfully loaded " + count + " MoveCategories nodes.");
         }
     }
 

@@ -43,7 +43,8 @@ public class ItemCategoryService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertItemCategories(rows);
+            Integer count = neo4jRepo.batchInsertItemCategories(rows);
+            System.out.println("Successfully loaded " + count + " ItemCategories nodes.");
         }
     }
 

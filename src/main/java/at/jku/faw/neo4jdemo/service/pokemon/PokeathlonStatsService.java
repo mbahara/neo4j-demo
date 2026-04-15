@@ -39,7 +39,8 @@ public class PokeathlonStatsService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertPokeathlonStats(rows);
+            Integer count = neo4jRepo.batchInsertPokeathlonStats(rows);
+            System.out.println("Successfully loaded " + count + " PokeathlonStats nodes.");
         }
     }
 

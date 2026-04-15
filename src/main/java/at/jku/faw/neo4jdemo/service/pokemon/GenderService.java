@@ -37,7 +37,8 @@ public class GenderService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            neo4jRepo.batchInsertGenders(rows);
+            Integer count = neo4jRepo.batchInsertGenders(rows);
+            System.out.println("Successfully loaded " + count + " Genders nodes.");
         }
     }
 

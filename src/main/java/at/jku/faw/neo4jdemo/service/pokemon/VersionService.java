@@ -38,7 +38,8 @@ public class VersionService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            versionRepository.batchInsertVersions(rows);
+            Integer count = versionRepository.batchInsertVersions(rows);
+            System.out.println("Successfully loaded " + count + " Versions nodes.");
         }
     }
 

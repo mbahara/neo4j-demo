@@ -38,7 +38,8 @@ public class PokemonMoveService implements IPokemonDataLoader {
 				.collect(Collectors.toList());
 
 		if (!rows.isEmpty()) {
-			pokemonMoveRepository.batchInsertPokemonMoves(rows);
+			Integer count = pokemonMoveRepository.batchInsertPokemonMoves(rows);
+			System.out.println("Successfully loaded " + count + " PokemonMoves nodes.");
 		}
 	}
 

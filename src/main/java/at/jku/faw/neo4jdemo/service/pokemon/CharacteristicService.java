@@ -44,7 +44,8 @@ public class CharacteristicService implements IPokemonDataLoader {
                 .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
-            characteristicRepository.batchInsertCharacteristics(rows);
+            Integer count = characteristicRepository.batchInsertCharacteristics(rows);
+            System.out.println("Successfully loaded " + count + " Characteristics nodes.");
         }
     }
 

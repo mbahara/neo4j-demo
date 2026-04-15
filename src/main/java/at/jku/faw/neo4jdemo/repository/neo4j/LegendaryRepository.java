@@ -20,6 +20,7 @@ public interface LegendaryRepository extends Neo4jRepository<Legendary, Long> {
     @Query("""
         UNWIND $ids AS id
         MERGE (l:Legendary {id: id})
+        RETURN count(l)
     """)
     Integer batchInsertLegendary(List<Long> ids);
 }

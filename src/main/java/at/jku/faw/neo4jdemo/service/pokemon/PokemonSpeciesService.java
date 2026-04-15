@@ -96,7 +96,8 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
         }
 
         if (!legendaryIds.isEmpty()) {
-            legendaryRepository.batchInsertLegendary(legendaryIds);
+            Integer count = legendaryRepository.batchInsertLegendary(legendaryIds);
+            System.out.println("Successfully loaded " + count + " Legendary nodes.");
         }
     }
 

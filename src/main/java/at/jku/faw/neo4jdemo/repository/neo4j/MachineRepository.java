@@ -13,7 +13,7 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     @Query("""
     UNWIND $rows AS row
     MERGE (n:Machine)
-    SET SET n.machineNumber = row.machineNumber
+    SET n.machineNumber = row.machineNumber
     RETURN count(n)
     """)
     Integer batchInsertMachines(@Param("rows") List<Map<String, Object>> rows);

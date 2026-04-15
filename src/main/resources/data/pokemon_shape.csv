@@ -1,15 +1,15 @@
 pokemon_shape_id,name,awesome_name,description
-1,Ball,Pomaceous,Pokémon consisting of only a head
-2,Squiggle,Caudal,Pokémon with serpentine bodies
-3,Fish,Ichthyic,Pokémon with fins
-4,Arms,Brachial,Pokémon consisting of a head and arms
-5,Blob,Alvine,Pokémon consisting of a head and a base
-6,Upright,Sciurine,"Pokémon with a bipedal, tailed form"
-7,Legs,Crural,Pokémon consisting of a head and legs
-8,Quadruped,Mensal,Pokémon with a quadruped body
-9,Wings,Alar,Pokémon with a single pair of wings
-10,Tentacles,Cilial,Pokémon with tentacles or a multiped body
-11,Heads,Polycephalic,Pokémon consisting of multiple bodies
-12,Humanoid,Anthropomorphic,"Pokémon with a bipedal, tailless form"
-13,Bug wings,Lepidopterous,Pokémon with two or more pairs of wings
-14,Armor,Chitinous,Pokémon with an insectoid body
+1,Ball,Pomaceous,Pokemon consisting of only a head
+2,Squiggle,Caudal,Pokemon with serpentine bodies
+3,Fish,Ichthyic,Pokemon with fins
+4,Arms,Brachial,Pokemon consisting of a head and arms
+5,Blob,Alvine,Pokemon consisting of a head and a base
+6,Upright,Sciurine,Pokemon with a bipedal tailed form
+7,Legs,Crural,Pokemon consisting of a head and legs
+8,Quadruped,Mensal,Pokemon with a quadruped body
+9,Wings,Alar,Pokemon with a single pair of wings
+10,Tentacles,Cilial,Pokemon with tentacles or a multiped body
+11,Heads,Polycephalic,Pokemon consisting of multiple bodies
+"12,Humanoid,Anthropomorphic,""Pokemon with a bipedal, tailless form"""
+13,Bug wings,Lepidopterous,Pokemon with two or more pairs of wings
+14,Armor,Chitinous,Pokemon with an insectoid body

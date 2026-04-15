@@ -50,12 +50,12 @@ public class ItemCategoryService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(csv -> {
+        csvMainRepo.getAll().forEach(csv ->
             csvItemPocketsRepositoryImpl.getAll().forEach(csvItemPocket -> {
                 if (csvItemPocket.getId().equals(csv.getPocketId())) {
                     neo4jRepo.linkItemCategoryToItemPocket(csv.getId(), csvItemPocket.getId());
                 }
-            });
-        });
+            })
+        );
     }
 }

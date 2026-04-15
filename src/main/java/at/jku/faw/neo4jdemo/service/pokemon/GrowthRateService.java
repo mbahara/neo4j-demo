@@ -57,12 +57,12 @@ public class GrowthRateService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(rates -> {
+        csvMainRepo.getAll().forEach(rates ->
             csvExperienceRepositoryImpl.getByGrowthRateId(rates.getId()).forEach(experience -> {
                 Level level = levelRepository.insertLevel(experience.getLevel());
-                levelRequirementRepository.linkGrowthRateToLevel(experience.getGrowthRateId(), level.getId(), experience.getExperience());
-            });
-
-        });
+                levelRequirementRepository.linkGrowthRateToLevel(experience.getGrowthRateId(), level.getId(),
+                        experience.getExperience());
+            })
+        );
     }
 }

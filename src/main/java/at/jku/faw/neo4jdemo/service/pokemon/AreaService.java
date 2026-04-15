@@ -64,11 +64,11 @@ public class AreaService implements IPokemonDataLoader {
             }
             List<CsvLocationAreaEncounterRates> encounterRates = rates.get(locationArea.getId());
             if (encounterRates != null) {
-                encounterRates.forEach(encounterRate -> {
+                encounterRates.forEach(encounterRate ->
                     areaEncounterRateRepository.linkAreaToEncounterMethod(encounterRate.getLocationAreaId(),
                             encounterRate.getEncounterMethodId(), encounterRate.getRate(),
-                            encounterRate.getVersionId());
-                });
+                            encounterRate.getVersionId())
+                );
             }
         });
     }

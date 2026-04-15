@@ -51,10 +51,10 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvCharacteristicsRepository.getAll().forEach(csvCharacteristics -> {
-            statsRepository.findById(csvCharacteristics.getStatId()).ifPresent(stats -> {
-                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.getId(), stats.getId(), csvCharacteristics.getGeneMod5());
-            });
-        });
+        csvCharacteristicsRepository.getAll().forEach(csvCharacteristics ->
+            statsRepository.findById(csvCharacteristics.getStatId()).ifPresent(stats ->
+                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.getId(), stats.getId(), csvCharacteristics.getGeneMod5())
+            )
+        );
     }
 }

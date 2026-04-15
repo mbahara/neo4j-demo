@@ -59,9 +59,9 @@ public class MoveMetaService implements IPokemonDataLoader {
         csvMoveMetaRepository.getAll().forEach(csvMoveMeta -> {
             if (csvMoveMeta.getMetaAilmentId() != null) {
                 moveMetaRepository.findById(csvMoveMeta.getMetaAilmentId())
-                        .ifPresent(moveMeta -> {
-                            moveMetaRepository.linkMoveMetaToMoveAilment(moveMeta.getId(), csvMoveMeta.getMetaAilmentId());
-                        });
+                        .ifPresent(moveMeta ->
+                            moveMetaRepository.linkMoveMetaToMoveAilment(moveMeta.getId(), csvMoveMeta.getMetaAilmentId())
+                        );
             }
             if (csvMoveMeta.getMetaCategoryId() != null) {
                 moveCategoryRepository.findById(csvMoveMeta.getMetaCategoryId())

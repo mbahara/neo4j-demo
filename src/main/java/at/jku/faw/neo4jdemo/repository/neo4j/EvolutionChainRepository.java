@@ -15,7 +15,6 @@ public interface EvolutionChainRepository extends Neo4jRepository<EvolutionChain
     @Query("""
     UNWIND $rows AS row
     MERGE (n:EvolutionChain {id: row.id})
-    SET 
     """)
     void batchInsertEvolutionChains(@Param("rows") List<Map<String, Object>> rows);
 

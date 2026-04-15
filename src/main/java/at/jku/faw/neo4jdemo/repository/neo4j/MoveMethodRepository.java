@@ -21,8 +21,9 @@ public interface MoveMethodRepository extends Neo4jRepository<MoveMethod, Long> 
     SET n.identifier = row.identifier,
         n.name = row.name,
         n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertMoveMethods(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveMethods(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveMethod {id: $id})

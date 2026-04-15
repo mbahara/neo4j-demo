@@ -20,8 +20,9 @@ public interface MoveBattleStyleRepository extends Neo4jRepository<MoveBattleSty
     MERGE (n:MoveBattleStyle {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertMoveBattleStyles(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveBattleStyles(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveBattleStyle {id: $id})

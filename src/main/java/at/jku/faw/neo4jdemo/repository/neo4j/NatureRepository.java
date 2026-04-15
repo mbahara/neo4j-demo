@@ -18,8 +18,9 @@ public interface NatureRepository extends Neo4jRepository<Nature, Long> {
     UNWIND $rows AS row
     MERGE (n:Nature {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertNatures(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertNatures(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Nature {id: $id})

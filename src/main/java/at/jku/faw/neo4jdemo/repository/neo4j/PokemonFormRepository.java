@@ -21,8 +21,9 @@ public interface PokemonFormRepository extends Neo4jRepository<PokemonForm, Long
         n.isDefault = row.isDefault,
         n.isMega = row.isMega,
         n.isBattleOnly = row.isBattleOnly
+    RETURN count(n)
     """)
-    void batchInsertPokemonForms(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemonForms(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonForm {id: $id})

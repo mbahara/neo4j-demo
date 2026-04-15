@@ -14,8 +14,9 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     UNWIND $rows AS row
     MERGE (n:Machine)
     SET SET n.machineNumber = row.machineNumber
+    RETURN count(n)
     """)
-    void batchInsertMachines(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMachines(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Machine)

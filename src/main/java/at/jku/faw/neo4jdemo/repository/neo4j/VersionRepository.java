@@ -19,8 +19,9 @@ public interface VersionRepository extends Neo4jRepository<Version, Long> {
     MERGE (n:Version {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertVersions(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertVersions(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Version {id: $id})

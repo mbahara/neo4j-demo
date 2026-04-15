@@ -19,8 +19,9 @@ public interface PokemonShapeRepository extends Neo4jRepository<PokemonShape, Lo
     SET n.name = row.name,
         n.awesomeName = row.awesomeName,
         n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertPokemonShapes(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemonShapes(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonShape {id: $id})

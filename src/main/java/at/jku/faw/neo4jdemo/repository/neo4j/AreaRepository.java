@@ -20,8 +20,9 @@ public interface AreaRepository extends Neo4jRepository<Area, Long> {
     MERGE (n:Area {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertAreas(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertAreas(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Area {id: $id})

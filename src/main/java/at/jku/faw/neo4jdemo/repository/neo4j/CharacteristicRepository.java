@@ -16,8 +16,9 @@ public interface CharacteristicRepository extends Neo4jRepository<Characteristic
     UNWIND $rows AS row
     MERGE (n:Characteristic {id: row.id})
     SET n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertCharacteristics(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertCharacteristics(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Characteristic {id: $id})

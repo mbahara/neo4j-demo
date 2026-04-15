@@ -23,8 +23,9 @@ public interface PokemonRepository extends Neo4jRepository<Pokemon, Long> {
         n.baseExperience = row.baseExperience,
         n.order = row.order,
         n.isDefault = row.isDefault
+    RETURN count(n)
     """)
-    void batchInsertPokemons(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemons(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Pokemon {id: $id})

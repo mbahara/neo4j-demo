@@ -20,8 +20,9 @@ public interface AbilityRepository extends Neo4jRepository<Ability, Long> {
         n.isMainSeries = row.isMainSeries,
         n.shortEffect = row.shortEffect,
         n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertAbilities(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertAbilities(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Ability {id: $id})

@@ -22,8 +22,9 @@ public interface MoveRepository extends Neo4jRepository<Move, Long> {
         n.pp = row.pp,
         n.accuracy = row.accuracy,
         n.priority = row.priority
+    RETURN count(n)
     """)
-    void batchInsertMoves(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoves(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Move {id: $id})

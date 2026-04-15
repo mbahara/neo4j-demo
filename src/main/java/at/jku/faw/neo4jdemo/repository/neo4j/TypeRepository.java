@@ -18,8 +18,9 @@ public interface TypeRepository extends Neo4jRepository<Type, Long> {
     UNWIND $rows AS row
     MERGE (n:Type {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertTypes(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertTypes(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Type {id: $id})

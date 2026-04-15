@@ -18,8 +18,9 @@ public interface EvolutionTriggerRepository extends Neo4jRepository<EvolutionTri
     UNWIND $rows AS row
     MERGE (n:EvolutionTrigger {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertEvolutionTriggers(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertEvolutionTriggers(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EvolutionTrigger {id: $id})

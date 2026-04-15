@@ -20,8 +20,9 @@ public interface ItemCategoryRepository extends Neo4jRepository<ItemCategory, Lo
     MERGE (n:ItemCategory {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertItemCategories(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertItemCategories(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ItemCategory {id: $id})

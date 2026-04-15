@@ -20,8 +20,9 @@ public interface EggGroupRepository extends Neo4jRepository<EggGroup, Long> {
     MERGE (n:EggGroup {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertEggGroups(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertEggGroups(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EggGroup {id: $id})

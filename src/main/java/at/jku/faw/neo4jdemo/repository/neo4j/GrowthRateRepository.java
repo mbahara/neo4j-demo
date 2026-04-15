@@ -19,8 +19,9 @@ public interface GrowthRateRepository extends Neo4jRepository<GrowthRate, Long> 
     MERGE (n:GrowthRate {id: row.id})
     SET n.identifier = row.identifier,
         n.formula = row.formula
+    RETURN count(n)
     """)
-    void batchInsertGrowthRates(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertGrowthRates(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:GrowthRate {id: $id})

@@ -23,8 +23,9 @@ public interface EvolutionStepRepository extends Neo4jRepository<EvolutionStep, 
         n.turnUpsideDown = row.turnUpsideDown,
         n.minimumBeauty = row.minimumBeauty,
         n.minimumAffection = row.minimumAffection
+    RETURN count(n)
     """)
-    void batchInsertEvolutionSteps(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertEvolutionSteps(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EvolutionStep {id: $id})

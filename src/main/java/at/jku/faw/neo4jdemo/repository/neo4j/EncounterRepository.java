@@ -17,8 +17,9 @@ public interface EncounterRepository extends Neo4jRepository<Encounter, Long> {
     MERGE (n:Encounter {id: row.id})
     SET n.minLevel = row.minLevel,
         n.maxLevel = row.maxLevel
+    RETURN count(n)
     """)
-    void batchInsertEncounters(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertEncounters(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Encounter {id: $id})

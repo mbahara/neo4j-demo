@@ -19,8 +19,9 @@ public interface MoveCategoryRepository extends Neo4jRepository<MoveCategory, Lo
     MERGE (n:MoveCategory {id: row.id})
     SET n.identifier = row.identifier,
         n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertMoveCategories(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveCategories(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveCategory {id: $id})

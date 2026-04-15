@@ -15,8 +15,9 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
         UNWIND $rows AS row
         MERGE (n:PokemonMove)
         SET n.level = row.level, n.order = row.order
-        """)
-    void batchInsertPokemonMoves(@Param("rows") List<Map<String, Object>> rows);
+    RETURN count(n)
+    """)
+    Integer batchInsertPokemonMoves(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonMove)

@@ -15,8 +15,9 @@ public interface MoveMetaRepository extends Neo4jRepository<MoveMeta, Long> {
         UNWIND $rows AS row
         MERGE (n:MoveMeta {moveId: row.moveId})
         SET n.minHits = row.minHits, n.maxHits = row.maxHits, n.minTurns = row.minTurns, n.maxTurns = row.maxTurns, n.drain = row.drain, n.healing = row.healing, n.critRate = row.critRate, n.ailmentChance = row.ailmentChance, n.flinchChance = row.flinchChance, n.statChance = row.statChance
-        """)
-    void batchInsertMoveMeta(@Param("rows") List<Map<String, Object>> rows);
+    RETURN count(n)
+    """)
+    Integer batchInsertMoveMeta(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveMeta {moveId: row.moveId})

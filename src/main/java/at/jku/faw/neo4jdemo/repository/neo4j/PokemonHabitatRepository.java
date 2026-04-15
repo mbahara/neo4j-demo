@@ -17,8 +17,9 @@ public interface PokemonHabitatRepository extends Neo4jRepository<PokemonHabitat
     UNWIND $rows AS row
     MERGE (n:PokemonHabitat {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertPokemonHabitats(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemonHabitats(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonHabitat {id: $id})

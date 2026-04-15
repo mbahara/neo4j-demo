@@ -30,8 +30,9 @@ public interface PokemonSpeciesRepository extends Neo4jRepository<PokemonSpecies
         n.formsSwitchable = row.formsSwitchable,
         n.order = row.order,
         n.conquestOrder = row.conquestOrder
+    RETURN count(n)
     """)
-    void batchInsertPokemonSpecies(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemonSpecies(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonSpecies {id: $id})

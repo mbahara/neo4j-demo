@@ -21,8 +21,9 @@ public interface DamageClassRepository extends Neo4jRepository<DamageClass, Long
     SET n.identifier = row.identifier,
         n.name = row.name,
         n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertDamageClass(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertDamageClass(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:DamageClass {id: $id})

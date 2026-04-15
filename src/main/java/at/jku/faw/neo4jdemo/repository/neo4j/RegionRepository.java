@@ -18,8 +18,9 @@ public interface RegionRepository extends Neo4jRepository<Region, Long> {
     UNWIND $rows AS row
     MERGE (n:Region {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertRegions(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertRegions(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Region {id: $id})

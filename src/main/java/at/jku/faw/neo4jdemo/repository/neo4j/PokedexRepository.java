@@ -19,8 +19,9 @@ public interface PokedexRepository extends Neo4jRepository<Pokedex, Long> {
     MERGE (n:Pokedex {id: row.id})
     SET n.identifier = row.identifier,
         n.isMainSeries = row.isMainSeries
+    RETURN count(n)
     """)
-    void batchInsertPokedexs(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokedexs(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Pokedex {id: $id})

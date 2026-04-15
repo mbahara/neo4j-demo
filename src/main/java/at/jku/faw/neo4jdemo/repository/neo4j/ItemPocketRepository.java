@@ -20,8 +20,9 @@ public interface ItemPocketRepository extends Neo4jRepository<ItemPocket, Long> 
     MERGE (n:ItemPocket {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertItemPockets(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertItemPockets(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ItemPocket {id: $id})

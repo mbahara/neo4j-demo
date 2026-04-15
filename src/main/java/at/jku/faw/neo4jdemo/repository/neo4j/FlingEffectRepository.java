@@ -19,8 +19,9 @@ public interface FlingEffectRepository extends Neo4jRepository<FlingEffect, Long
     MERGE (n:FlingEffect {id: row.id})
     SET n.identifier = row.identifier,
         n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertFlingEffects(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertFlingEffects(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:FlingEffect {id: $id})

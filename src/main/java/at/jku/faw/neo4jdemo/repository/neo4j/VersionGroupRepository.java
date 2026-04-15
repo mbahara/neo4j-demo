@@ -19,8 +19,9 @@ public interface VersionGroupRepository extends Neo4jRepository<VersionGroup, Lo
     MERGE (n:VersionGroup {id: row.id})
     SET n.identifier = row.identifier,
         n.order = row.order
+    RETURN count(n)
     """)
-    void batchInsertVersionGroups(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertVersionGroups(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:VersionGroup {id: $id})

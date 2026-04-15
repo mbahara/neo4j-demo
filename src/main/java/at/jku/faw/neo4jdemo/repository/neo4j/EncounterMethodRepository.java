@@ -21,8 +21,9 @@ public interface EncounterMethodRepository extends Neo4jRepository<EncounterMeth
     SET n.identifier = row.identifier,
         n.name = row.name,
         n.order = row.order
+    RETURN count(n)
     """)
-    void batchInsertEncounterMethods(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertEncounterMethods(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:EncounterMethod {id: $id})

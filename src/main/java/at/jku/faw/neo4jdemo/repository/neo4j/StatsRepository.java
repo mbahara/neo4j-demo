@@ -20,8 +20,9 @@ public interface StatsRepository extends Neo4jRepository<Stats, Long> {
     SET n.identifier = row.identifier,
         n.isBattleOnly = row.isBattleOnly,
         n.gameIndex = row.gameIndex
+    RETURN count(n)
     """)
-    void batchInsertStats(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertStats(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Stats {id: $id})

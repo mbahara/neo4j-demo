@@ -20,8 +20,9 @@ public interface MoveAilmentRepository extends Neo4jRepository<MoveAilment, Long
     MERGE (n:MoveAilment {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertMoveAilments(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveAilments(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveAilment {id: $id})

@@ -16,8 +16,9 @@ public interface ChangeEventRepository extends Neo4jRepository<ChangeEvent, Long
     UNWIND $rows AS row
     MERGE (n:ChangeEvent {id: row.id})
     SET n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertChangeEvents(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertChangeEvents(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ChangeEvent {id: $id})

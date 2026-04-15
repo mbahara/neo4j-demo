@@ -18,8 +18,9 @@ public interface PokemonColorRepository extends Neo4jRepository<PokemonColor, Lo
     UNWIND $rows AS row
     MERGE (n:PokemonColor {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertPokemonColors(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokemonColors(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokemonColor {id: $id})

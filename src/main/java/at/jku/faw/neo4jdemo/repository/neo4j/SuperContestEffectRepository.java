@@ -17,8 +17,9 @@ public interface SuperContestEffectRepository extends Neo4jRepository<SuperConte
     MERGE (n:SuperContestEffect {id: row.id})
     SET n.appeal = row.appeal,
         n.flavorText = row.flavorText
+    RETURN count(n)
     """)
-    void batchInsertSuperContestEffects(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertSuperContestEffects(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:SuperContestEffect {id: $id})

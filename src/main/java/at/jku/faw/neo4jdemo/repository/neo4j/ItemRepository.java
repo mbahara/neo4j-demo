@@ -24,8 +24,9 @@ public interface ItemRepository extends Neo4jRepository<Item, Long> {
         n.flingPower = row.flingPower,
         n.shortEffect = row.shortEffect,
         n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertItems(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertItems(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Item {id: $id})

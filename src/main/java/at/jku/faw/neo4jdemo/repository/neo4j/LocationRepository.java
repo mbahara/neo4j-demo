@@ -21,8 +21,9 @@ public interface LocationRepository extends Neo4jRepository<Location, Long> {
     SET n.identifier = row.identifier,
         n.name = row.name,
         n.subtitle = row.subtitle
+    RETURN count(n)
     """)
-    void batchInsertLocations(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertLocations(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Location {id: $id})

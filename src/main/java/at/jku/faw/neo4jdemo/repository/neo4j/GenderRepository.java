@@ -18,8 +18,9 @@ public interface GenderRepository extends Neo4jRepository<Gender, Long> {
     UNWIND $rows AS row
     MERGE (n:Gender {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertGenders(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertGenders(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Gender {id: $id})

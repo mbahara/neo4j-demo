@@ -18,8 +18,9 @@ public interface ContestTypeRepository extends Neo4jRepository<ContestType, Long
     UNWIND $rows AS row
     MERGE (n:ContestType {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertContestTypes(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertContestTypes(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ContestType {id: $id})

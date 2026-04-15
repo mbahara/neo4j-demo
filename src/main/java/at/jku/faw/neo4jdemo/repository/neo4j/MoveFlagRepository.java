@@ -18,8 +18,9 @@ public interface MoveFlagRepository extends Neo4jRepository<MoveFlag, Long> {
     UNWIND $rows AS row
     MERGE (n:MoveFlag {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertMoveFlags(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveFlags(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveFlag {id: $id})

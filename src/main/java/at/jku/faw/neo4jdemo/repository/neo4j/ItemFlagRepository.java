@@ -21,8 +21,9 @@ public interface ItemFlagRepository extends Neo4jRepository<ItemFlag, Long> {
     SET n.identifier = row.identifier,
         n.name = row.name,
         n.description = row.description
+    RETURN count(n)
     """)
-    void batchInsertItemFlags(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertItemFlags(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ItemFlag {id: $id})

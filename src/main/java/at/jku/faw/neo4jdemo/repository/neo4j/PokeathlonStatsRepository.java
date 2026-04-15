@@ -18,8 +18,9 @@ public interface PokeathlonStatsRepository extends Neo4jRepository<PokeathlonSta
     UNWIND $rows AS row
     MERGE (n:PokeathlonStats {id: row.id})
     SET n.identifier = row.identifier
+    RETURN count(n)
     """)
-    void batchInsertPokeathlonStats(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertPokeathlonStats(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:PokeathlonStats {id: $id})

@@ -16,8 +16,9 @@ public interface MoveEffectRepository extends Neo4jRepository<MoveEffect, Long> 
     MERGE (n:MoveEffect {id: row.id})
     SET n.shortEffect = row.shortEffect,
         n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertMoveEffects(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertMoveEffects(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveEffect {id: $id})

@@ -20,8 +20,9 @@ public interface GenerationRepository extends Neo4jRepository<Generation, Long> 
     MERGE (n:Generation {id: row.id})
     SET n.identifier = row.identifier,
         n.name = row.name
+    RETURN count(n)
     """)
-    void batchInsertGenerations(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertGenerations(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:Generation {id: $id})

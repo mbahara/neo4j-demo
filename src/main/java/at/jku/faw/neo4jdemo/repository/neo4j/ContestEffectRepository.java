@@ -19,8 +19,9 @@ public interface ContestEffectRepository extends Neo4jRepository<ContestEffect, 
         n.jam = row.jam,
         n.flavorText = row.flavorText,
         n.effect = row.effect
+    RETURN count(n)
     """)
-    void batchInsertContestEffects(@Param("rows") List<Map<String, Object>> rows);
+    Integer batchInsertContestEffects(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:ContestEffect {id: $id})

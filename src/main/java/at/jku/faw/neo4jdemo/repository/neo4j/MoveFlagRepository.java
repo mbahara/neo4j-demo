@@ -29,4 +29,7 @@ public interface MoveFlagRepository extends Neo4jRepository<MoveFlag, Long> {
         RETURN n
         """)
     MoveFlag insertMoveFlag(@Param("id") Long id, @Param("identifier") String identifier);
+
+    @Query("CREATE INDEX moveflag_id_idx IF NOT EXISTS FOR (n:MoveFlag) ON (n.id)")
+    void createIdIndex();
 }

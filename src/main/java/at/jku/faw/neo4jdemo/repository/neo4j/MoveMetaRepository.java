@@ -43,4 +43,7 @@ public interface MoveMetaRepository extends Neo4jRepository<MoveMeta, Long> {
         """)
     void linkMoveMetaToMoveCategory(@Param("moveMetaId") Long moveMetaId,
                         @Param("moveCategoryId") Long moveCategoryId);
+
+    @Query("CREATE INDEX movemeta_id_idx IF NOT EXISTS FOR (n:MoveMeta) ON (n.id)")
+    void createIdIndex();
 }

@@ -46,4 +46,7 @@ public interface NatureRepository extends Neo4jRepository<Nature, Long> {
         """)
     void linkNatureDecreasesStat(@Param("natureId") Long natureId,
                         @Param("statId") Long statId);
+
+    @Query("CREATE INDEX nature_id_idx IF NOT EXISTS FOR (n:Nature) ON (n.id)")
+    void createIdIndex();
 }

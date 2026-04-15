@@ -29,4 +29,7 @@ public interface RegionRepository extends Neo4jRepository<Region, Long> {
         RETURN n
         """)
     Region insertRegion(@Param("id") Long id, @Param("identifier") String identifier);
+
+    @Query("CREATE INDEX region_id_idx IF NOT EXISTS FOR (n:Region) ON (n.id)")
+    void createIdIndex();
 }

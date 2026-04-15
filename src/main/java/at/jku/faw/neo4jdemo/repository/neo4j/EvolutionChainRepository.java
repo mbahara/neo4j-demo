@@ -42,4 +42,7 @@ public interface EvolutionChainRepository extends Neo4jRepository<EvolutionChain
         """)
     void linkEvolutionChainToPokemonSpecies(@Param("evolutionChainId") Long evolutionChainId,
                         @Param("pokemonSpeciesId") Long pokemonSpeciesId);
+
+    @Query("CREATE INDEX evolutionchain_id_idx IF NOT EXISTS FOR (n:EvolutionChain) ON (n.id)")
+    void createIdIndex();
 }

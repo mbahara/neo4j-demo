@@ -32,4 +32,7 @@ public interface MoveTargetRepository extends Neo4jRepository<MoveTarget, Long> 
         RETURN n
         """)
     MoveTarget insertMoveTarget(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name, @Param("description") String description);
+
+    @Query("CREATE INDEX movetarget_id_idx IF NOT EXISTS FOR (n:MoveTarget) ON (n.id)")
+    void createIdIndex();
 }

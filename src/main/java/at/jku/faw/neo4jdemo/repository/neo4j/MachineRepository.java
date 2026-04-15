@@ -42,4 +42,7 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     void linkMachineToVersionGroup(@Param("machineId") Long machineId,
                         @Param("versionGroupId") Long versionGroupId);
 
+
+    @Query("CREATE INDEX machine_id_idx IF NOT EXISTS FOR (n:Machine) ON (n.id)")
+    void createIdIndex();
 }

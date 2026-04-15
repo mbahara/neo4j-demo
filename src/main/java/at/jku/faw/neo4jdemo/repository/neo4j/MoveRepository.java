@@ -122,4 +122,7 @@ public interface MoveRepository extends Neo4jRepository<Move, Long> {
         """)
     void linkMoveToComboMoveInSuperContest(@Param("firstMoveId") Long firstMoveId,
                                            @Param("secondMoveId") Long secondMoveId);
+
+    @Query("CREATE INDEX move_id_idx IF NOT EXISTS FOR (n:Move) ON (n.id)")
+    void createIdIndex();
 }

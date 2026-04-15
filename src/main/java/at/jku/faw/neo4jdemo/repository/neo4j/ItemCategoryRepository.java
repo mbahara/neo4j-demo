@@ -40,4 +40,7 @@ public interface ItemCategoryRepository extends Neo4jRepository<ItemCategory, Lo
         """)
     void linkItemCategoryToItemPocket(@Param("itemCategoryId") Long itemCategoryId,
                         @Param("itemPocketId") Long itemPocketId);
+
+    @Query("CREATE INDEX itemcategory_id_idx IF NOT EXISTS FOR (n:ItemCategory) ON (n.id)")
+    void createIdIndex();
 }

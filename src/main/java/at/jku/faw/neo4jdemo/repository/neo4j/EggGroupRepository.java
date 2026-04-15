@@ -31,4 +31,7 @@ public interface EggGroupRepository extends Neo4jRepository<EggGroup, Long> {
         RETURN n
         """)
     EggGroup insertEggGroup(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
+
+    @Query("CREATE INDEX egggroup_id_idx IF NOT EXISTS FOR (n:EggGroup) ON (n.id)")
+    void createIdIndex();
 }

@@ -59,4 +59,7 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
         """)
     void linkMoveChangeToMoveTarget(@Param("moveChangeId") Long moveChangeId,
                         @Param("moveTargetId") Long moveTargetId);
+
+    @Query("CREATE INDEX movechange_id_idx IF NOT EXISTS FOR (n:MoveChange) ON (n.id)")
+    void createIdIndex();
 }

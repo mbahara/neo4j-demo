@@ -23,4 +23,7 @@ public interface LegendaryRepository extends Neo4jRepository<Legendary, Long> {
         RETURN count(l)
     """)
     Integer batchInsertLegendary(List<Long> ids);
+
+    @Query("CREATE INDEX legendary_id_idx IF NOT EXISTS FOR (n:Legendary) ON (n.id)")
+    void createIdIndex();
 }

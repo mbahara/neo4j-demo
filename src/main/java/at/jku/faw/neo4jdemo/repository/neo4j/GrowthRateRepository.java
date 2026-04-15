@@ -30,4 +30,7 @@ public interface GrowthRateRepository extends Neo4jRepository<GrowthRate, Long> 
         RETURN n
         """)
     GrowthRate insertGrowthRate(@Param("id") Long id, @Param("identifier") String identifier, @Param("formula") String formula);
+
+    @Query("CREATE INDEX growthrate_id_idx IF NOT EXISTS FOR (n:GrowthRate) ON (n.id)")
+    void createIdIndex();
 }

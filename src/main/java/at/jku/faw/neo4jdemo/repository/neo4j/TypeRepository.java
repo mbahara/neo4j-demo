@@ -46,4 +46,7 @@ public interface TypeRepository extends Neo4jRepository<Type, Long> {
         """)
     void linkTypeToDamageClass(@Param("typeId") Long typeId,
                         @Param("damageClassId") Long damageClassId);
+
+    @Query("CREATE INDEX type_id_idx IF NOT EXISTS FOR (n:Type) ON (n.id)")
+    void createIdIndex();
 }

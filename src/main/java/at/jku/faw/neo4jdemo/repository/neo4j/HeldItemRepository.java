@@ -33,4 +33,7 @@ public interface HeldItemRepository extends Neo4jRepository<HeldItem, Long> {
         """)
     void linkHeldItemToVersion(@Param("heldItemId") Long heldItemId,
                         @Param("versionId") Long versionId);
+
+    @Query("CREATE INDEX helditem_id_idx IF NOT EXISTS FOR (n:HeldItem) ON (n.id)")
+    void createIdIndex();
 }

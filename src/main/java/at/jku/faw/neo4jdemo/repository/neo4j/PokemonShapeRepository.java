@@ -30,4 +30,7 @@ public interface PokemonShapeRepository extends Neo4jRepository<PokemonShape, Lo
         RETURN n
         """)
     PokemonShape insertPokemonShape(@Param("id") Long id, @Param("name") String name, @Param("awesomeName") int awesomeName, @Param("description") String description);
+
+    @Query("CREATE INDEX pokemonshape_id_idx IF NOT EXISTS FOR (n:PokemonShape) ON (n.id)")
+    void createIdIndex();
 }

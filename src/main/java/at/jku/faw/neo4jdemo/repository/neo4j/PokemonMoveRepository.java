@@ -51,4 +51,7 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
         """)
     void linkPokemonMoveToVersionGroup(@Param("pokemonMoveId") Long pokemonMoveId,
                         @Param("versionGroupId") Long versionGroupId);
+
+    @Query("CREATE INDEX pokemonmove_id_idx IF NOT EXISTS FOR (n:PokemonMove) ON (n.id)")
+    void createIdIndex();
 }

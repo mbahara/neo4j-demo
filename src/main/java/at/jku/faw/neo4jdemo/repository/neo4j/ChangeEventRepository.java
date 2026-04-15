@@ -36,4 +36,7 @@ public interface ChangeEventRepository extends Neo4jRepository<ChangeEvent, Long
         """)
     void linkChangeEventToVersionGroup(@Param("changeEventId") Long changeEventId,
                         @Param("versionGroupId") Long versionGroupId);
+
+    @Query("CREATE INDEX changeevent_id_idx IF NOT EXISTS FOR (n:ChangeEvent) ON (n.id)")
+    void createIdIndex();
 }

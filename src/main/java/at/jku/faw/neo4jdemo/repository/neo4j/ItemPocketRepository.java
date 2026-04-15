@@ -31,4 +31,7 @@ public interface ItemPocketRepository extends Neo4jRepository<ItemPocket, Long> 
         RETURN n
         """)
     ItemPocket insertItemPocket(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
+
+    @Query("CREATE INDEX itempocket_id_idx IF NOT EXISTS FOR (n:ItemPocket) ON (n.id)")
+    void createIdIndex();
 }

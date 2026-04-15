@@ -68,4 +68,7 @@ public interface ItemRepository extends Neo4jRepository<Item, Long> {
         """)
     void linkItemToMachine(@Param("itemId") Long itemId,
                         @Param("machineId") Long machineId);
+
+    @Query("CREATE INDEX item_id_idx IF NOT EXISTS FOR (n:Item) ON (n.id)")
+    void createIdIndex();
 }

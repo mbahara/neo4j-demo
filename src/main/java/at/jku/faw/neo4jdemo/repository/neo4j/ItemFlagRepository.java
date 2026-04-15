@@ -32,4 +32,7 @@ public interface ItemFlagRepository extends Neo4jRepository<ItemFlag, Long> {
         RETURN n
         """)
     ItemFlag insertItemFlag(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name, @Param("description") String description);
+
+    @Query("CREATE INDEX itemflag_id_idx IF NOT EXISTS FOR (n:ItemFlag) ON (n.id)")
+    void createIdIndex();
 }

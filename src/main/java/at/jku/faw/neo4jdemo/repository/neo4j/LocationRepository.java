@@ -41,4 +41,7 @@ public interface LocationRepository extends Neo4jRepository<Location, Long> {
         """)
     void linkLocationToRegion(@Param("locationId") Long locationId,
                         @Param("regionId") Long regionId);
+
+    @Query("CREATE INDEX location_id_idx IF NOT EXISTS FOR (n:Location) ON (n.id)")
+    void createIdIndex();
 }

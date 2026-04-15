@@ -13,6 +13,6 @@ import lombok.Setter;
 public class CsvPokemonShape {
     @CsvBindByName(column = "pokemon_shape_id") private Long pokemonShapeId;
     @CsvBindByName(column = "name") private String name;
-    @CsvBindByName(column = "awesome_name") private int awesomeName;
+    @CsvBindByName(column = "awesome_name") private String awesomeName;
     @CsvBindByName(column = "description") private String description;
 }

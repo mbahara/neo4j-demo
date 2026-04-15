@@ -29,5 +29,5 @@ public interface PokemonShapeRepository extends Neo4jRepository<PokemonShape, Lo
         ON MATCH  SET n.name = $name, n.awesomeName = $awesomeName, n.description = $description
         RETURN n
         """)
-    PokemonShape insertPokemonShape(@Param("id") Long id, @Param("name") String name, @Param("awesomeName") int awesomeName, @Param("description") String description);
+    PokemonShape insertPokemonShape(@Param("id") Long id, @Param("name") String name, @Param("awesomeName") String awesomeName, @Param("description") String description);
 }

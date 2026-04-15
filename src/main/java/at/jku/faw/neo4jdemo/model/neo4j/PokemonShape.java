@@ -17,6 +17,6 @@ public class PokemonShape {
     public Long id;
 
     private String name;
-    private int awesomeName;
+    private String awesomeName;
     private String description;
 }

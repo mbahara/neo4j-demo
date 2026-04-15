@@ -6,6 +6,10 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvGrowthRatesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.GrowthRateRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.LevelRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.LevelRequirementRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,9 +39,19 @@ public class GrowthRateService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertGrowthRate(csv.getId(), csv.getIdentifier(), csv.getFormula());
-        });
+        List<Map<String, Object>> rows = csvMainRepo.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("formula", csv.getFormula());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            neo4jRepo.batchInsertGrowthRates(rows);
+        }
     }
 
     @Override

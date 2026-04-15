@@ -5,6 +5,10 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvEvolutionChainsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonSpeciesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.EvolutionChainRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,9 +35,17 @@ public class EvolutionChainService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEvolutionChain(csv.getId());
-        });
+        List<Map<String, Object>> rows = csvMainRepo.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            neo4jRepo.batchInsertEvolutionChains(rows);
+        }
     }
 
     @Override

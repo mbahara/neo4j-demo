@@ -1,8 +1,13 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvPokedexVersionGroups;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokedexVersionGroupsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokedexesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokedexRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,23 +32,41 @@ public class PokedexService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvPokedexesRepository.getAll().forEach(csv -> {
-            pokedexRepository.insertPokedex(csv.getId(), csv.getIdentifier(), csv.getIsMainSeries() != 0);
-        });
+        List<Map<String, Object>> rows = csvPokedexesRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("isMainSeries", csv.getIsMainSeries() != 0);
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            pokedexRepository.batchInsertPokedexs(rows);
+        }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
+        Map<Long, List<CsvPokedexVersionGroups>> versionGroupMap =
+                csvPokedexVersionGroupsRepositoryImpl.getAll().stream()
+                        .collect(Collectors.groupingBy(CsvPokedexVersionGroups::getPokedexId));
+
         csvPokedexesRepository.getAll().forEach(csv -> {
+            Long pokedexId = csv.getId();
             if (csv.getRegionId() != null) {
-                pokedexRepository.linkPokedexToRegion(csv.getId(), csv.getRegionId());
+                pokedexRepository.linkPokedexToRegion(pokedexId, csv.getRegionId());
             }
-            csvPokedexVersionGroupsRepositoryImpl.getByPokedexId(csv.getId()).forEach(csvVersionGroup -> {
-                if (csvVersionGroup.getVersionGroupId() != null) {
-                    pokedexRepository.linkPokedexToVersionGroup(csv.getId(), csvVersionGroup.getVersionGroupId());
-                }
-            });
+            List<CsvPokedexVersionGroups> linkedGroups = versionGroupMap.get(pokedexId);
+            if (linkedGroups != null) {
+                linkedGroups.forEach(vg -> {
+                    if (vg.getVersionGroupId() != null) {
+                        pokedexRepository.linkPokedexToVersionGroup(pokedexId, vg.getVersionGroupId());
+                    }
+                });
+            }
         });
     }
 }

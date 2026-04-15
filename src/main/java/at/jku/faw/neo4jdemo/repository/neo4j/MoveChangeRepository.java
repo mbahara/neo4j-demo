@@ -16,7 +16,7 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
     MERGE (n:MoveChange)
     SET n.power = row.power, n.pp = row.pp, n.accuracy = row.accuracy, n.priority = row.priority
     """)
-    void batchInsertMoveChange(@Param("rows") List<Map<String, Object>> rows);
+    void batchInsertMoveChanges(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
         MERGE (n:MoveChange)

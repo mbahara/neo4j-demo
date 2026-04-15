@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonColorsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonColorRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +27,18 @@ public class PokemonColorService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvPokemonColorsRepository.getAll().forEach(csv -> {
-            pokemonColorRepository.insertPokemonColor(csv.getId(), csv.getIdentifier());
-        });
+        List<Map<String, Object>> rows = csvPokemonColorsRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            pokemonColorRepository.batchInsertPokemonColors(rows);
+        }
     }
 
     @Override

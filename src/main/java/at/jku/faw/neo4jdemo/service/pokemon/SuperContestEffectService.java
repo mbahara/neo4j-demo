@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvSuperContestEffectsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.SuperContestEffectRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +27,19 @@ public class SuperContestEffectService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvSuperContestEffectsRepository.getAll().forEach(csv -> {
-            superContestEffectRepository.insertSuperContestEffect(csv.getId(), csv.getAppeal(), csv.getFlavorText());
-        });
+        List<Map<String, Object>> rows = csvSuperContestEffectsRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("appeal", csv.getAppeal());
+                    row.put("flavorText", csv.getFlavorText());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            superContestEffectRepository.batchInsertSuperContestEffects(rows);
+        }
     }
 
     @Override

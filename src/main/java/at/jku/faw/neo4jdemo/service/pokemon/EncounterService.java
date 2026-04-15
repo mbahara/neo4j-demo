@@ -3,7 +3,11 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 import at.jku.faw.neo4jdemo.repository.csv.CsvEncountersRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreaEncounterRatesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.EncounterRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,9 +32,19 @@ public class EncounterService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEncounter(csv.getId(), csv.getMinLevel(), csv.getMaxLevel());
-        });
+        List<Map<String, Object>> rows = csvMainRepo.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("minLevel", csv.getMinLevel());
+                    row.put("maxLevel", csv.getMaxLevel());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            neo4jRepo.batchInsertEncounters(rows);
+        }
     }
 
     @Override

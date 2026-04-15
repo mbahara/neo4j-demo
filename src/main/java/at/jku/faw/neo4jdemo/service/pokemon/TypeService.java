@@ -1,11 +1,17 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvTypeEfficacy;
+import at.jku.faw.neo4jdemo.model.csv.CsvTypeGameIndices;
 import at.jku.faw.neo4jdemo.repository.csv.CsvTypeEfficacyRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvTypeGameIndicesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvTypesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.GameIndexRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.TypeEfficacyRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.TypeRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,26 +43,50 @@ public class TypeService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvTypesRepository.getAll().forEach(csv -> {
-            typeRepository.insertType(csv.getId(), csv.getIdentifier());
-        });
+        List<Map<String, Object>> rows = csvTypesRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            typeRepository.batchInsertTypes(rows);
+        }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
+        Map<Long, List<CsvTypeEfficacy>> efficacyMap = csvTypeEfficacyRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvTypeEfficacy::getDamageTypeId));
+
+        Map<Long, List<CsvTypeGameIndices>> gameIndexMap = csvTypeGameIndicesRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvTypeGameIndices::getTypeId));
+
         csvTypesRepository.getAll().forEach(csv -> {
+            Long typeId = csv.getId();
+
             if (csv.getGenerationId() != null) {
-                typeRepository.linkTypeToGeneration(csv.getId(), csv.getGenerationId());
+                typeRepository.linkTypeToGeneration(typeId, csv.getGenerationId());
             }
 
-            csvTypeEfficacyRepositoryImpl.getByDamageTypeId(csv.getId()).forEach(csvTypeEfficacy ->
-                    typeEfficacyRepository.linkTypeToType(csv.getId(), csvTypeEfficacy.getTargetTypeId(), csvTypeEfficacy.getDamageFactor()));
-            csvTypeGameIndicesRepositoryImpl.getByTypeId(csv.getId()).forEach(csvTypeGameIndex ->
-                    gameIndexRepository.linkTypeHasIndex(csvTypeGameIndex.getTypeId(), csvTypeGameIndex.getGenerationId(), csvTypeGameIndex.getGameIndex()));
-
             if (csv.getDamageClassId() != null) {
-                typeRepository.linkTypeToDamageClass(csv.getId(), csv.getDamageClassId());
+                typeRepository.linkTypeToDamageClass(typeId, csv.getDamageClassId());
+            }
+
+            List<CsvTypeEfficacy> efficacyList = efficacyMap.get(typeId);
+            if (efficacyList != null) {
+                efficacyList.forEach(eff ->
+                        typeEfficacyRepository.linkTypeToType(typeId, eff.getTargetTypeId(), eff.getDamageFactor()));
+            }
+
+            List<CsvTypeGameIndices> indices = gameIndexMap.get(typeId);
+            if (indices != null) {
+                indices.forEach(idx ->
+                        gameIndexRepository.linkTypeHasIndex(typeId, idx.getGenerationId(), idx.getGameIndex()));
             }
         });
     }

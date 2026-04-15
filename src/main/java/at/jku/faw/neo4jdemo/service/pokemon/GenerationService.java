@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvGenerationsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.GenerationRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,9 +28,19 @@ public class GenerationService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvGenerationsRepository.getAll().forEach(csv -> {
-            generationRepository.insertGeneration(csv.getId(), csv.getIdentifier(), csv.getName());
-        });
+        List<Map<String, Object>> rows = csvGenerationsRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("name", csv.getName());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            generationRepository.batchInsertGenerations(rows);
+        }
     }
 
     @Override

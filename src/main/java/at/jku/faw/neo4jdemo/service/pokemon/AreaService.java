@@ -1,9 +1,14 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvLocationAreaEncounterRates;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreaEncounterRatesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreasRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.AreaEncounterRateRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.AreaRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,25 +36,40 @@ public class AreaService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvLocationAreasRepository.getAll().forEach(csv -> {
-            areaRepository.insertArea(csv.getId(), csv.getIdentifier(), csv.getName());
-        });
+        List<Map<String, Object>> rows = csvLocationAreasRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("name", csv.getName());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            areaRepository.batchInsertAreas(rows);
+        }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
+        var rates = csvLocationAreaEncounterRatesRepositoryImpl.getAll().stream().collect(Collectors.groupingBy(
+                CsvLocationAreaEncounterRates::getLocationAreaId));
+
+
         csvLocationAreasRepository.getAll().forEach(locationArea -> {
             if (locationArea.getLocationId() != null) {
                 areaRepository.linkAreaToLocation(locationArea.getId(), locationArea.getLocationId());
             }
-
-            csvLocationAreaEncounterRatesRepositoryImpl.getByLocationAreaId(locationArea.getId()).forEach(
-              encounterRates ->
-                              areaEncounterRateRepository.linkAreaToEncounterMethod(encounterRates.getLocationAreaId(),
-                                      encounterRates.getEncounterMethodId(), encounterRates.getRate(),
-                                      encounterRates.getVersionId())
-            );
+            List<CsvLocationAreaEncounterRates> encounterRates = rates.get(locationArea.getId());
+            if (encounterRates != null) {
+                encounterRates.forEach(encounterRate -> {
+                    areaEncounterRateRepository.linkAreaToEncounterMethod(encounterRate.getLocationAreaId(),
+                            encounterRate.getEncounterMethodId(), encounterRate.getRate(),
+                            encounterRate.getVersionId());
+                });
+            }
         });
     }
 }

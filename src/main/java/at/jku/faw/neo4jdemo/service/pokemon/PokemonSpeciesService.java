@@ -2,7 +2,6 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.model.csv.CsvPokemonDexNumbers;
 import at.jku.faw.neo4jdemo.model.csv.CsvPokemonEvolution;
-import at.jku.faw.neo4jdemo.model.neo4j.PokemonSpecies;
 import at.jku.faw.neo4jdemo.repository.csv.CsvEvolutionChainsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPalParkRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonDexNumbersRepositoryImpl;
@@ -13,6 +12,11 @@ import at.jku.faw.neo4jdemo.repository.neo4j.LegendaryRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PalParkEncounterRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokedexEntryRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonSpeciesRepository;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,29 +62,54 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvPokemonSpeciesRepository.getAll().forEach(csv -> {
-            PokemonSpecies species = pokemonSpeciesRepository.insertPokemonSpecies(csv.getId(), csv.getName(),
-                    csv.getGenus(), csv.getGenderRate(), csv.getCaptureRate(), csv.getBaseHappiness(), csv.getIsBaby() != 0,
-                    csv.getIsLegendary() != 0, csv.getIsMythical()  != 0, csv.getHatchCounter(),
-                    csv.getHasGenderDifferences() != 0, csv.getFormsSwitchable() != 0,
-                    csv.getOrder(), csv.getConquestOrder());
-            if (species.isLegendary) {
-                legendaryRepository.insertLegendary(species.getId());
-            }
-        });
+        List<Long> legendaryIds = new ArrayList<>();
+
+        List<Map<String, Object>> rows = csvPokemonSpeciesRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("name", csv.getName());
+                    row.put("genus", csv.getGenus());
+                    row.put("genderRate", csv.getGenderRate());
+                    row.put("captureRate", csv.getCaptureRate());
+                    row.put("baseHappiness", csv.getBaseHappiness());
+                    row.put("isBaby", csv.getIsBaby() != 0);
+                    row.put("isLegendary", csv.getIsLegendary() != 0);
+                    row.put("isMythical", csv.getIsMythical() != 0);
+                    row.put("hatchCounter", csv.getHatchCounter());
+                    row.put("hasGenderDifferences", csv.getHasGenderDifferences() != 0);
+                    row.put("formsSwitchable", csv.getFormsSwitchable() != 0);
+                    row.put("order", csv.getOrder());
+                    row.put("conquestOrder", csv.getConquestOrder());
+
+                    if (csv.getIsLegendary() != 0) {
+                        legendaryIds.add(csv.getId());
+                    }
+
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            pokemonSpeciesRepository.batchInsertPokemonSpecies(rows);
+        }
+
+        if (!legendaryIds.isEmpty()) {
+            legendaryRepository.batchInsertLegendary(legendaryIds);
+        }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
         csvPokemonSpeciesRepository.getAll().forEach(csvPokemonSpecies -> {
-			for (CsvPokemonEvolution csvPokemonEvolution : csvPokemonEvolutionRepositoryImpl.getByEvolvedSpeciesId(
-					csvPokemonSpecies.getId())) {
-				pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(csvPokemonSpecies.getId(),
-						csvPokemonEvolution.getId());
-			}
+            for (CsvPokemonEvolution csvPokemonEvolution : csvPokemonEvolutionRepositoryImpl.getByEvolvedSpeciesId(
+                    csvPokemonSpecies.getId())) {
+                pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(csvPokemonSpecies.getId(),
+                        csvPokemonEvolution.getId());
+            }
 
-			csvEvolutionChainsRepositoryImpl.getAll().forEach(csvEvolutionChain -> {
+            csvEvolutionChainsRepositoryImpl.getAll().forEach(csvEvolutionChain -> {
                 if (csvEvolutionChain.getId().equals(csvPokemonSpecies.getEvolutionChainId())) {
                     pokemonSpeciesRepository.linkPokemonSpeciesIsPartOfEvolutionChain(csvPokemonSpecies.getId(), csvEvolutionChain.getId());
                 }
@@ -117,13 +146,13 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
                 }
             });
 
-			for (CsvPokemonDexNumbers csvPokemonDexNumber : csvPokemonDexNumbersRepositoryImpl.getBySpeciesId(
-					csvPokemonSpecies.getId())) {
-				pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.getId(),
-						csvPokemonDexNumber.getPokedexId(), csvPokemonDexNumber.getPokedexNumber());
-			}
+            for (CsvPokemonDexNumbers csvPokemonDexNumber : csvPokemonDexNumbersRepositoryImpl.getBySpeciesId(
+                    csvPokemonSpecies.getId())) {
+                pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.getId(),
+                        csvPokemonDexNumber.getPokedexId(), csvPokemonDexNumber.getPokedexNumber());
+            }
 
-			csvPokemonEggGroupsRepositoryImpl.getAll().forEach(csvPokemonEggGroup -> {
+            csvPokemonEggGroupsRepositoryImpl.getAll().forEach(csvPokemonEggGroup -> {
                 if (csvPokemonEggGroup.getSpeciesId().equals(csvPokemonSpecies.getId())) {
                     pokemonSpeciesRepository.linkPokemonSpeciesToEggGroup(csvPokemonSpecies.getId(), csvPokemonEggGroup.getEggGroupId());
                 }

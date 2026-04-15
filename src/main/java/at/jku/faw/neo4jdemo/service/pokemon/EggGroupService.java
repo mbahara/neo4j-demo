@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvEggGroupsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.EggGroupRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,12 +15,10 @@ public class EggGroupService implements IPokemonDataLoader {
     private final CsvEggGroupsRepositoryImpl csvMainRepo;
     private final EggGroupRepository neo4jRepo;
 
-
     public EggGroupService(CsvEggGroupsRepositoryImpl csvMainRepo,
                            EggGroupRepository neo4jRepo) {
         this.csvMainRepo = csvMainRepo;
         this.neo4jRepo = neo4jRepo;
-
     }
 
     @Override
@@ -25,9 +27,19 @@ public class EggGroupService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertEggGroup(csv.getId(), csv.getIdentifier(), csv.getName());
-        });
+        List<Map<String, Object>> rows = csvMainRepo.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("name", csv.getName());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            neo4jRepo.batchInsertEggGroups(rows);
+        }
     }
 
     @Override

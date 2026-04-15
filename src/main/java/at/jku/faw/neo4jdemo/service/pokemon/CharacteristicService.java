@@ -4,22 +4,26 @@ import at.jku.faw.neo4jdemo.repository.csv.CsvCharacteristicsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.CharacteristicRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.HighlightsRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.StatsRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CharacteristicService implements IPokemonDataLoader {
 
-    private final CsvCharacteristicsRepositoryImpl csvMainRepo;
-    private final CharacteristicRepository neo4jRepo;
+    private final CsvCharacteristicsRepositoryImpl csvCharacteristicsRepository;
+    private final CharacteristicRepository characteristicRepository;
     private final StatsRepository statsRepository;
     private final HighlightsRepository highlightsRepository;
 
-    public CharacteristicService(CsvCharacteristicsRepositoryImpl csvMainRepo,
-                                 CharacteristicRepository neo4jRepo, StatsRepository statsRepository,
+    public CharacteristicService(CsvCharacteristicsRepositoryImpl csvCharacteristicsRepository,
+                                 CharacteristicRepository characteristicRepository, StatsRepository statsRepository,
                                  HighlightsRepository highlightsRepository) {
-        this.csvMainRepo = csvMainRepo;
-        this.neo4jRepo = neo4jRepo;
+        this.csvCharacteristicsRepository = csvCharacteristicsRepository;
+        this.characteristicRepository = characteristicRepository;
         this.statsRepository = statsRepository;
         this.highlightsRepository = highlightsRepository;
     }
@@ -30,15 +34,24 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMainRepo.getAll().forEach(csv -> {
-            neo4jRepo.insertCharacteristic(csv.getId(), csv.getDescription());
-        });
+        List<Map<String, Object>> rows = csvCharacteristicsRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("description", csv.getDescription());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            characteristicRepository.batchInsertCharacteristics(rows);
+        }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(csvCharacteristics -> {
+        csvCharacteristicsRepository.getAll().forEach(csvCharacteristics -> {
             statsRepository.findById(csvCharacteristics.getStatId()).ifPresent(stats -> {
                 highlightsRepository.linkCharacteristicToStat(csvCharacteristics.getId(), stats.getId(), csvCharacteristics.getGeneMod5());
             });

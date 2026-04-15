@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvMoveMetaCategoriesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveCategoryRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,9 +28,19 @@ public class MoveCategoryService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMoveMetaCategoriesRepository.getAll().forEach(csv -> {
-            moveCategoryRepository.insertMoveCategory(csv.getId(), csv.getIdentifier(), csv.getDescription());
-        });
+        List<Map<String, Object>> rows = csvMoveMetaCategoriesRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("description", csv.getDescription());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            moveCategoryRepository.batchInsertMoveCategories(rows);
+        }
     }
 
     @Override

@@ -1,8 +1,11 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.model.csv.CsvPokemonHabitats;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonHabitatsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonHabitatRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +28,17 @@ public class PokemonHabitatService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-		for (CsvPokemonHabitats csv : csvPokemonHabitatsRepository.getAll()) {
-			pokemonHabitatRepository.insertPokemonHabitat(csv.getId(), csv.getIdentifier());
+		List<Map<String, Object>> rows = csvPokemonHabitatsRepository.getAll().stream()
+				.map(csvPokemonHabitats -> {
+					Map<String, Object> row = new HashMap<>();
+						row.put("id", csvPokemonHabitats.getId());
+						row.put("identifier", csvPokemonHabitats.getIdentifier());
+						return row;
+				})
+				.collect(Collectors.toList());
+
+		if (!rows.isEmpty()) {
+			pokemonHabitatRepository.batchInsertPokemonHabitats(rows);
 		}
 	}
 

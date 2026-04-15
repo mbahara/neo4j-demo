@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemPocketsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.ItemPocketRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +27,19 @@ public class ItemPocketService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvItemPocketsRepository.getAll().forEach(csv -> {
-            itemPocketRepository.insertItemPocket(csv.getId(), csv.getIdentifier(), csv.getName());
-        });
+        List<Map<String, Object>> rows = csvItemPocketsRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("identifier", csv.getIdentifier());
+                    row.put("name", csv.getName());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            itemPocketRepository.batchInsertItemPockets(rows);
+        }
     }
 
     @Override

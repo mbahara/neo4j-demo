@@ -2,6 +2,10 @@ package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.repository.csv.CsvMoveEffectRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveEffectRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,9 +28,19 @@ public class MoveEffectService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMoveEffectRepository.getAll().forEach(csv -> {
-            moveEffectRepository.insertMoveEffect(csv.getId(), csv.getShortEffect(), csv.getEffect());
-        });
+        List<Map<String, Object>> rows = csvMoveEffectRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("shortEffect", csv.getShortEffect());
+                    row.put("effect", csv.getEffect());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            moveEffectRepository.batchInsertMoveEffects(rows);
+        }
     }
 
     @Override

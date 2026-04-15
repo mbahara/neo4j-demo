@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PokemonHabitatRepository extends Neo4jRepository<PokemonHabitat, Long> {
     Optional<PokemonHabitat> findByIdentifier(String identifier);
-
     
     @Query("""
     UNWIND $rows AS row

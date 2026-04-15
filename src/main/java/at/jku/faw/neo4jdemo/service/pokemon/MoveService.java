@@ -9,6 +9,10 @@ import at.jku.faw.neo4jdemo.repository.neo4j.EffectRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveChangeRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveMetaRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,9 +53,22 @@ public class MoveService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        csvMoveRepository.getAll().forEach(csv -> {
-            moveRepository.insertMove(csv.getId(), csv.getName(), csv.getPower(), csv.getPp(), csv.getAccuracy(), csv.getPriority());
-        });
+        List<Map<String, Object>> rows = csvMoveRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("id", csv.getId());
+                    row.put("name", csv.getName());
+                    row.put("power", csv.getPower());
+                    row.put("pp", csv.getPp());
+                    row.put("accuracy", csv.getAccuracy());
+                    row.put("priority", csv.getPriority());
+                    return row;
+                })
+                .collect(Collectors.toList());
+
+        if (!rows.isEmpty()) {
+            moveRepository.batchInsertMoves(rows);
+        }
     }
 
     @Override

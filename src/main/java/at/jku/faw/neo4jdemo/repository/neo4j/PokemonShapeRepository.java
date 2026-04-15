@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 public interface PokemonShapeRepository extends Neo4jRepository<PokemonShape, Long> {
     Optional<PokemonShape> findByName(String name);
 
-    
     @Query("""
     UNWIND $rows AS row
     MERGE (n:PokemonShape {id: row.id})

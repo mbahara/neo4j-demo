@@ -13,18 +13,18 @@ public interface MoveMetaRepository extends Neo4jRepository<MoveMeta, Long> {
 
     @Query("""
         UNWIND $rows AS row
-        MERGE (n:MoveMeta)
+        MERGE (n:MoveMeta {moveId: row.moveId})
         SET n.minHits = row.minHits, n.maxHits = row.maxHits, n.minTurns = row.minTurns, n.maxTurns = row.maxTurns, n.drain = row.drain, n.healing = row.healing, n.critRate = row.critRate, n.ailmentChance = row.ailmentChance, n.flinchChance = row.flinchChance, n.statChance = row.statChance
         """)
     void batchInsertMoveMeta(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
-        MERGE (n:MoveMeta)
+        MERGE (n:MoveMeta {moveId: row.moveId})
         ON CREATE SET n.minHits = $minHits, n.maxHits = $maxHits, n.minTurns = $minTurns, n.maxTurns = $maxTurns, n.drain = $drain, n.healing = $healing, n.critRate = $critRate, n.ailmentChance = $ailmentChance, n.flinchChance = $flinchChance, n.statChance = $statChance
         ON MATCH  SET n.minHits = $minHits, n.maxHits = $maxHits, n.minTurns = $minTurns, n.maxTurns = $maxTurns, n.drain = $drain, n.healing = $healing, n.critRate = $critRate, n.ailmentChance = $ailmentChance, n.flinchChance = $flinchChance, n.statChance = $statChance
         RETURN n
         """)
-    MoveMeta insertMoveMeta(@Param("minHits") int minHits, @Param("maxHits") int maxHits, @Param("minTurns") int minTurns, @Param("maxTurns") int maxTurns, @Param("drain") int drain, @Param("healing") int healing, @Param("critRate") int critRate, @Param("ailmentChance") int ailmentChance, @Param("flinchChance") int flinchChance, @Param("statChance") int statChance);
+    MoveMeta insertMoveMeta(@Param("moveId") int moveId, @Param("minHits") int minHits, @Param("maxHits") int maxHits, @Param("minTurns") int minTurns, @Param("maxTurns") int maxTurns, @Param("drain") int drain, @Param("healing") int healing, @Param("critRate") int critRate, @Param("ailmentChance") int ailmentChance, @Param("flinchChance") int flinchChance, @Param("statChance") int statChance);
 
 
     @Query("""

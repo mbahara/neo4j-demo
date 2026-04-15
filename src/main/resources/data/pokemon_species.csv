@@ -1,896 +1,896 @@
 id,identifier,generation_id,evolves_from_species_id,evolution_chain_id,color_id,shape_id,habitat_id,gender_rate,capture_rate,base_happiness,is_baby,hatch_counter,has_gender_differences,growth_rate_id,forms_switchable,is_legendary,is_mythical,order,conquest_order,name,genus
-1,bulbasaur,1,,1,5,8.0,3.0,1,45,50,0,20,0,4,0,0,0,1,,Bulbasaur,Seed Pokémon
-2,ivysaur,1,1.0,1,5,8.0,3.0,1,45,50,0,20,0,4,0,0,0,2,,Ivysaur,Seed Pokémon
-3,venusaur,1,2.0,1,5,8.0,3.0,1,45,50,0,20,1,4,1,0,0,3,,Venusaur,Seed Pokémon
-4,charmander,1,,2,8,6.0,4.0,1,45,50,0,20,0,4,0,0,0,4,109.0,Charmander,Lizard Pokémon
-5,charmeleon,1,4.0,2,8,6.0,4.0,1,45,50,0,20,0,4,0,0,0,5,110.0,Charmeleon,Flame Pokémon
-6,charizard,1,5.0,2,8,6.0,4.0,1,45,50,0,20,0,4,1,0,0,6,111.0,Charizard,Flame Pokémon
-7,squirtle,1,,3,2,6.0,9.0,1,45,50,0,20,0,4,0,0,0,7,,Squirtle,Tiny Turtle Pokémon
-8,wartortle,1,7.0,3,2,6.0,9.0,1,45,50,0,20,0,4,0,0,0,8,,Wartortle,Turtle Pokémon
-9,blastoise,1,8.0,3,2,6.0,9.0,1,45,50,0,20,0,4,1,0,0,9,,Blastoise,Shellfish Pokémon
-10,caterpie,1,,4,5,14.0,2.0,4,255,50,0,15,0,2,0,0,0,10,,Caterpie,Worm Pokémon
-11,metapod,1,10.0,4,5,2.0,2.0,4,120,50,0,15,0,2,0,0,0,11,,Metapod,Cocoon Pokémon
-12,butterfree,1,11.0,4,9,13.0,2.0,4,45,50,0,15,1,2,0,0,0,12,,Butterfree,Butterfly Pokémon
-13,weedle,1,,5,3,14.0,2.0,4,255,70,0,15,0,2,0,0,0,13,,Weedle,Hairy Bug Pokémon
-14,kakuna,1,13.0,5,10,2.0,2.0,4,120,70,0,15,0,2,0,0,0,14,,Kakuna,Cocoon Pokémon
-15,beedrill,1,14.0,5,10,13.0,2.0,4,45,70,0,15,0,2,1,0,0,15,177.0,Beedrill,Poison Bee Pokémon
-16,pidgey,1,,6,3,9.0,2.0,4,255,70,0,15,0,4,0,0,0,16,,Pidgey,Tiny Bird Pokémon
-17,pidgeotto,1,16.0,6,3,9.0,2.0,4,120,70,0,15,0,4,0,0,0,17,,Pidgeotto,Bird Pokémon
-18,pidgeot,1,17.0,6,3,9.0,2.0,4,45,70,0,15,0,4,1,0,0,18,,Pidgeot,Bird Pokémon
-19,rattata,1,,7,7,8.0,3.0,4,255,70,0,15,1,2,0,0,0,19,,Rattata,Mouse Pokémon
-20,raticate,1,19.0,7,3,8.0,3.0,4,127,70,0,15,1,2,0,0,0,20,,Raticate,Mouse Pokémon
-21,spearow,1,,8,3,9.0,6.0,4,255,70,0,15,0,2,0,0,0,21,,Spearow,Tiny Bird Pokémon
-22,fearow,1,21.0,8,3,9.0,6.0,4,90,70,0,15,0,2,0,0,0,22,,Fearow,Beak Pokémon
-23,ekans,1,,9,7,2.0,3.0,4,255,70,0,20,0,2,0,0,0,23,54.0,Ekans,Snake Pokémon
-24,arbok,1,23.0,9,7,2.0,3.0,4,90,70,0,20,0,2,0,0,0,24,55.0,Arbok,Cobra Pokémon
-25,pikachu,1,172.0,10,10,8.0,2.0,4,190,50,0,10,1,2,0,0,0,26,16.0,Pikachu,Mouse Pokémon
-26,raichu,1,25.0,10,10,6.0,2.0,4,75,50,0,10,1,2,0,0,0,27,17.0,Raichu,Mouse Pokémon
-27,sandshrew,1,,11,10,6.0,6.0,4,255,50,0,20,0,2,0,0,0,28,,Sandshrew,Mouse Pokémon
-28,sandslash,1,27.0,11,10,6.0,6.0,4,90,50,0,20,0,2,0,0,0,29,,Sandslash,Mouse Pokémon
-29,nidoran-f,1,,12,2,8.0,3.0,8,235,50,0,20,0,4,0,0,0,30,,Nidoran♀,Poison Pin Pokémon
-30,nidorina,1,29.0,12,2,8.0,3.0,8,120,50,0,20,0,4,0,0,0,31,,Nidorina,Poison Pin Pokémon
-31,nidoqueen,1,30.0,12,2,6.0,3.0,8,45,50,0,20,0,4,0,0,0,32,,Nidoqueen,Drill Pokémon
-32,nidoran-m,1,,13,7,8.0,3.0,0,235,50,0,20,0,4,0,0,0,33,,Nidoran♂,Poison Pin Pokémon
-33,nidorino,1,32.0,13,7,8.0,3.0,0,120,50,0,20,0,4,0,0,0,34,,Nidorino,Poison Pin Pokémon
-34,nidoking,1,33.0,13,7,6.0,3.0,0,45,50,0,20,0,4,0,0,0,35,,Nidoking,Drill Pokémon
-35,clefairy,1,173.0,14,6,6.0,4.0,6,150,140,0,10,0,3,0,0,0,37,,Clefairy,Fairy Pokémon
-36,clefable,1,35.0,14,6,6.0,4.0,6,25,140,0,10,0,3,0,0,0,38,,Clefable,Fairy Pokémon
-37,vulpix,1,,15,3,8.0,3.0,6,190,50,0,20,0,2,0,0,0,39,,Vulpix,Fox Pokémon
-38,ninetales,1,37.0,15,10,8.0,3.0,6,75,50,0,20,0,2,0,0,0,40,,Ninetales,Fox Pokémon
-39,jigglypuff,1,174.0,16,6,12.0,3.0,6,170,50,0,10,0,3,0,0,0,42,21.0,Jigglypuff,Balloon Pokémon
-40,wigglytuff,1,39.0,16,6,12.0,3.0,6,50,50,0,10,0,3,0,0,0,43,22.0,Wigglytuff,Balloon Pokémon
-41,zubat,1,,17,7,9.0,1.0,4,255,50,0,15,1,2,0,0,0,44,23.0,Zubat,Bat Pokémon
-42,golbat,1,41.0,17,7,9.0,1.0,4,90,50,0,15,1,2,0,0,0,45,24.0,Golbat,Bat Pokémon
-43,oddish,1,,18,2,7.0,3.0,4,255,50,0,20,0,4,0,0,0,47,,Oddish,Weed Pokémon
-44,gloom,1,43.0,18,2,12.0,3.0,4,120,50,0,20,1,4,0,0,0,48,,Gloom,Weed Pokémon
-45,vileplume,1,44.0,18,8,12.0,3.0,4,45,50,0,20,1,4,0,0,0,49,,Vileplume,Flower Pokémon
-46,paras,1,,19,8,14.0,2.0,4,190,70,0,20,0,2,0,0,0,51,,Paras,Mushroom Pokémon
-47,parasect,1,46.0,19,8,14.0,2.0,4,75,70,0,20,0,2,0,0,0,52,,Parasect,Mushroom Pokémon
-48,venonat,1,,20,7,12.0,2.0,4,190,70,0,20,0,2,0,0,0,53,,Venonat,Insect Pokémon
-49,venomoth,1,48.0,20,7,13.0,2.0,4,75,70,0,20,0,2,0,0,0,54,,Venomoth,Poison Moth Pokémon
-50,diglett,1,,21,3,5.0,1.0,4,255,50,0,20,0,2,0,0,0,55,,Diglett,Mole Pokémon
-51,dugtrio,1,50.0,21,3,11.0,1.0,4,50,50,0,20,0,2,0,0,0,56,,Dugtrio,Mole Pokémon
-52,meowth,1,,22,10,8.0,8.0,4,255,50,0,20,0,2,0,0,0,57,58.0,Meowth,Scratch Cat Pokémon
-53,persian,1,52.0,22,10,8.0,8.0,4,90,50,0,20,0,2,0,0,0,58,59.0,Persian,Classy Cat Pokémon
-54,psyduck,1,,23,10,6.0,9.0,4,190,50,0,20,0,2,0,0,0,59,,Psyduck,Duck Pokémon
-55,golduck,1,54.0,23,2,6.0,9.0,4,75,50,0,20,0,2,0,0,0,60,,Golduck,Duck Pokémon
-56,mankey,1,,24,3,6.0,4.0,4,190,70,0,20,0,2,0,0,0,61,,Mankey,Pig Monkey Pokémon
-57,primeape,1,56.0,24,3,6.0,4.0,4,75,70,0,20,0,2,0,0,0,62,,Primeape,Pig Monkey Pokémon
-58,growlithe,1,,25,3,8.0,3.0,2,190,50,0,20,0,1,0,0,0,63,,Growlithe,Puppy Pokémon
-59,arcanine,1,58.0,25,3,8.0,3.0,2,75,50,0,20,0,1,0,0,0,64,,Arcanine,Legendary Pokémon
-60,poliwag,1,,26,2,7.0,9.0,4,255,50,0,20,0,4,0,0,0,65,,Poliwag,Tadpole Pokémon
-61,poliwhirl,1,60.0,26,2,12.0,9.0,4,120,50,0,20,0,4,0,0,0,66,,Poliwhirl,Tadpole Pokémon
-62,poliwrath,1,61.0,26,2,12.0,9.0,4,45,50,0,20,0,4,0,0,0,67,,Poliwrath,Tadpole Pokémon
-63,abra,1,,27,3,6.0,8.0,2,200,50,0,20,0,4,0,0,0,69,127.0,Abra,Psi Pokémon
-64,kadabra,1,63.0,27,3,6.0,8.0,2,100,50,0,20,1,4,0,0,0,70,128.0,Kadabra,Psi Pokémon
-65,alakazam,1,64.0,27,3,12.0,8.0,2,50,50,0,20,1,4,1,0,0,71,129.0,Alakazam,Psi Pokémon
-66,machop,1,,28,4,6.0,4.0,2,180,50,0,20,0,4,0,0,0,72,98.0,Machop,Superpower Pokémon
-67,machoke,1,66.0,28,4,12.0,4.0,2,90,50,0,20,0,4,0,0,0,73,99.0,Machoke,Superpower Pokémon
-68,machamp,1,67.0,28,4,12.0,4.0,2,45,50,0,20,0,4,0,0,0,74,100.0,Machamp,Superpower Pokémon
-69,bellsprout,1,,29,5,12.0,2.0,4,255,70,0,20,0,4,0,0,0,75,,Bellsprout,Flower Pokémon
-70,weepinbell,1,69.0,29,5,5.0,2.0,4,120,70,0,20,0,4,0,0,0,76,,Weepinbell,Flycatcher Pokémon
-71,victreebel,1,70.0,29,5,5.0,2.0,4,45,70,0,20,0,4,0,0,0,77,,Victreebel,Flycatcher Pokémon
-72,tentacool,1,,30,2,10.0,7.0,4,190,50,0,20,0,1,0,0,0,78,,Tentacool,Jellyfish Pokémon
-73,tentacruel,1,72.0,30,2,10.0,7.0,4,60,50,0,20,0,1,0,0,0,79,,Tentacruel,Jellyfish Pokémon
-74,geodude,1,,31,3,4.0,4.0,4,255,70,0,15,0,4,0,0,0,80,,Geodude,Rock Pokémon
-75,graveler,1,74.0,31,3,12.0,4.0,4,120,70,0,15,0,4,0,0,0,81,,Graveler,Rock Pokémon
-76,golem,1,75.0,31,3,12.0,4.0,4,45,70,0,15,0,4,0,0,0,82,,Golem,Megaton Pokémon
-77,ponyta,1,,32,10,8.0,3.0,4,190,50,0,20,0,2,0,0,0,83,,Ponyta,Fire Horse Pokémon
-78,rapidash,1,77.0,32,10,8.0,3.0,4,60,50,0,20,0,2,0,0,0,84,,Rapidash,Fire Horse Pokémon
-79,slowpoke,1,,33,6,8.0,9.0,4,190,50,0,20,0,2,0,0,0,85,,Slowpoke,Dopey Pokémon
-80,slowbro,1,79.0,33,6,6.0,9.0,4,75,50,0,20,0,2,1,0,0,86,,Slowbro,Hermit Crab Pokémon
-81,magnemite,1,,34,4,4.0,6.0,-1,190,50,0,20,0,2,0,0,0,88,,Magnemite,Magnet Pokémon
-82,magneton,1,81.0,34,4,11.0,6.0,-1,60,50,0,20,0,2,0,0,0,89,,Magneton,Magnet Pokémon
-83,farfetchd,1,,35,3,9.0,3.0,4,45,50,0,20,0,2,0,0,0,91,,Farfetch’d,Wild Duck Pokémon
-84,doduo,1,,36,3,7.0,3.0,4,190,70,0,20,1,2,0,0,0,92,,Doduo,Twin Bird Pokémon
-85,dodrio,1,84.0,36,3,7.0,3.0,4,45,70,0,20,1,2,0,0,0,93,,Dodrio,Triple Bird Pokémon
-86,seel,1,,37,9,3.0,7.0,4,190,70,0,20,0,2,0,0,0,94,,Seel,Sea Lion Pokémon
-87,dewgong,1,86.0,37,9,3.0,7.0,4,75,70,0,20,0,2,0,0,0,95,,Dewgong,Sea Lion Pokémon
-88,grimer,1,,38,7,4.0,8.0,4,190,70,0,20,0,2,0,0,0,96,,Grimer,Sludge Pokémon
-89,muk,1,88.0,38,7,4.0,8.0,4,75,70,0,20,0,2,0,0,0,97,,Muk,Sludge Pokémon
-90,shellder,1,,39,7,1.0,7.0,4,190,50,0,20,0,1,0,0,0,98,,Shellder,Bivalve Pokémon
-91,cloyster,1,90.0,39,7,1.0,7.0,4,60,50,0,20,0,1,0,0,0,99,,Cloyster,Bivalve Pokémon
-92,gastly,1,,40,7,1.0,1.0,4,190,50,0,20,0,4,0,0,0,100,112.0,Gastly,Gas Pokémon
-93,haunter,1,92.0,40,7,4.0,1.0,4,90,50,0,20,0,4,0,0,0,101,113.0,Haunter,Gas Pokémon
-94,gengar,1,93.0,40,7,6.0,1.0,4,45,50,0,20,0,4,1,0,0,102,114.0,Gengar,Shadow Pokémon
-95,onix,1,,41,4,2.0,1.0,4,45,50,0,25,0,2,0,0,0,103,175.0,Onix,Rock Snake Pokémon
-96,drowzee,1,,42,10,12.0,3.0,4,190,70,0,20,0,2,0,0,0,105,,Drowzee,Hypnosis Pokémon
-97,hypno,1,96.0,42,10,12.0,3.0,4,75,70,0,20,1,2,0,0,0,106,,Hypno,Hypnosis Pokémon
-98,krabby,1,,43,8,14.0,9.0,4,225,50,0,20,0,2,0,0,0,107,,Krabby,River Crab Pokémon
-99,kingler,1,98.0,43,8,14.0,9.0,4,60,50,0,20,0,2,0,0,0,108,,Kingler,Pincer Pokémon
-100,voltorb,1,,44,8,1.0,8.0,-1,190,70,0,20,0,2,0,0,0,109,,Voltorb,Ball Pokémon
-101,electrode,1,100.0,44,8,1.0,8.0,-1,60,70,0,20,0,2,0,0,0,110,,Electrode,Ball Pokémon
-102,exeggcute,1,,45,6,11.0,2.0,4,90,50,0,20,0,1,0,0,0,111,,Exeggcute,Egg Pokémon
-103,exeggutor,1,102.0,45,10,7.0,2.0,4,45,50,0,20,0,1,0,0,0,112,,Exeggutor,Coconut Pokémon
-104,cubone,1,,46,3,6.0,4.0,4,190,50,0,20,0,2,0,0,0,113,,Cubone,Lonely Pokémon
-105,marowak,1,104.0,46,3,6.0,4.0,4,75,50,0,20,0,2,0,0,0,114,,Marowak,Bone Keeper Pokémon
-106,hitmonlee,1,236.0,47,3,12.0,8.0,0,45,50,0,25,0,2,0,0,0,116,,Hitmonlee,Kicking Pokémon
-107,hitmonchan,1,236.0,47,3,12.0,8.0,0,45,50,0,25,0,2,0,0,0,117,,Hitmonchan,Punching Pokémon
-108,lickitung,1,,48,6,6.0,3.0,4,45,50,0,20,0,2,0,0,0,119,,Lickitung,Licking Pokémon
-109,koffing,1,,49,7,1.0,8.0,4,190,50,0,20,0,2,0,0,0,121,,Koffing,Poison Gas Pokémon
-110,weezing,1,109.0,49,7,11.0,8.0,4,60,50,0,20,0,2,0,0,0,122,,Weezing,Poison Gas Pokémon
-111,rhyhorn,1,,50,4,8.0,6.0,4,120,50,0,20,1,1,0,0,0,123,160.0,Rhyhorn,Spikes Pokémon
-112,rhydon,1,111.0,50,4,6.0,6.0,4,60,50,0,20,1,1,0,0,0,124,161.0,Rhydon,Drill Pokémon
-113,chansey,1,440.0,51,6,6.0,8.0,8,30,140,0,40,0,3,0,0,0,127,,Chansey,Egg Pokémon
-114,tangela,1,,52,2,7.0,3.0,4,45,50,0,20,0,2,0,0,0,129,,Tangela,Vine Pokémon
-115,kangaskhan,1,,53,3,6.0,3.0,8,45,50,0,20,0,2,1,0,0,131,,Kangaskhan,Parent Pokémon
-116,horsea,1,,54,2,5.0,7.0,4,225,50,0,20,0,2,0,0,0,132,,Horsea,Dragon Pokémon
-117,seadra,1,116.0,54,2,5.0,7.0,4,75,50,0,20,0,2,0,0,0,133,,Seadra,Dragon Pokémon
-118,goldeen,1,,55,8,3.0,9.0,4,225,50,0,20,1,2,0,0,0,135,,Goldeen,Goldfish Pokémon
-119,seaking,1,118.0,55,8,3.0,9.0,4,60,50,0,20,1,2,0,0,0,136,,Seaking,Goldfish Pokémon
-120,staryu,1,,56,3,5.0,7.0,-1,225,50,0,20,0,1,0,0,0,137,,Staryu,Star Shape Pokémon
-121,starmie,1,120.0,56,7,5.0,7.0,-1,60,50,0,20,0,1,0,0,0,138,,Starmie,Mysterious Pokémon
-122,mr-mime,1,439.0,57,6,12.0,8.0,4,45,50,0,25,0,2,0,0,0,140,,Mr. Mime,Barrier Pokémon
-123,scyther,1,,58,5,13.0,3.0,4,45,50,0,25,1,2,0,0,0,141,188.0,Scyther,Mantis Pokémon
-124,jynx,1,238.0,59,8,12.0,8.0,8,45,50,0,25,0,2,0,0,0,144,,Jynx,Human Shape Pokémon
-125,electabuzz,1,239.0,60,10,6.0,3.0,2,45,50,0,25,0,2,0,0,0,146,,Electabuzz,Electric Pokémon
-126,magmar,1,240.0,61,8,6.0,4.0,2,45,50,0,25,0,2,0,0,0,149,,Magmar,Spitfire Pokémon
-127,pinsir,1,,62,3,12.0,2.0,4,45,50,0,25,0,1,1,0,0,151,,Pinsir,Stag Beetle Pokémon
-128,tauros,1,,63,3,8.0,3.0,0,45,50,0,20,0,1,0,0,0,152,,Tauros,Wild Bull Pokémon
-129,magikarp,1,,64,8,3.0,9.0,4,255,50,0,5,1,1,0,0,0,153,13.0,Magikarp,Fish Pokémon
-130,gyarados,1,129.0,64,2,2.0,9.0,4,45,50,0,5,1,1,1,0,0,154,14.0,Gyarados,Atrocious Pokémon
-131,lapras,1,,65,2,3.0,7.0,4,45,50,0,40,0,1,0,0,0,155,190.0,Lapras,Transport Pokémon
-132,ditto,1,,66,7,1.0,8.0,-1,35,50,0,20,0,2,0,0,0,156,,Ditto,Transform Pokémon
-133,eevee,1,,67,3,8.0,8.0,1,45,50,0,35,0,2,0,0,0,157,1.0,Eevee,Evolution Pokémon
-134,vaporeon,1,133.0,67,2,8.0,8.0,1,45,50,0,35,0,2,0,0,0,158,2.0,Vaporeon,Bubble Jet Pokémon
-135,jolteon,1,133.0,67,10,8.0,8.0,1,45,50,0,35,0,2,0,0,0,159,3.0,Jolteon,Lightning Pokémon
-136,flareon,1,133.0,67,8,8.0,8.0,1,45,50,0,35,0,2,0,0,0,160,4.0,Flareon,Flame Pokémon
-137,porygon,1,,68,6,7.0,8.0,-1,45,50,0,20,0,2,0,0,0,166,,Porygon,Virtual Pokémon
-138,omanyte,1,,69,2,10.0,7.0,1,45,50,0,30,0,2,0,0,0,169,,Omanyte,Spiral Pokémon
-139,omastar,1,138.0,69,2,10.0,7.0,1,45,50,0,30,0,2,0,0,0,170,,Omastar,Spiral Pokémon
-140,kabuto,1,,70,3,14.0,7.0,1,45,50,0,30,0,2,0,0,0,171,,Kabuto,Shellfish Pokémon
-141,kabutops,1,140.0,70,3,6.0,7.0,1,45,50,0,30,0,2,0,0,0,172,,Kabutops,Shellfish Pokémon
-142,aerodactyl,1,,71,7,9.0,4.0,1,45,50,0,35,0,1,1,0,0,173,,Aerodactyl,Fossil Pokémon
-143,snorlax,1,446.0,72,1,12.0,4.0,1,25,50,0,40,0,1,0,0,0,175,179.0,Snorlax,Sleeping Pokémon
-144,articuno,1,,73,2,9.0,5.0,-1,3,35,0,80,0,1,0,1,0,176,192.0,Articuno,Freeze Pokémon
-145,zapdos,1,,74,10,9.0,5.0,-1,3,35,0,80,0,1,0,1,0,177,,Zapdos,Electric Pokémon
-146,moltres,1,,75,10,9.0,5.0,-1,3,35,0,80,0,1,0,1,0,178,,Moltres,Flame Pokémon
-147,dratini,1,,76,2,2.0,9.0,4,45,35,0,40,0,1,0,0,0,179,76.0,Dratini,Dragon Pokémon
-148,dragonair,1,147.0,76,2,2.0,9.0,4,45,35,0,40,0,1,0,0,0,180,77.0,Dragonair,Dragon Pokémon
-149,dragonite,1,148.0,76,3,6.0,9.0,4,45,35,0,40,0,1,0,0,0,181,78.0,Dragonite,Dragon Pokémon
-150,mewtwo,1,,77,7,6.0,5.0,-1,3,0,0,120,0,1,1,1,0,182,196.0,Mewtwo,Genetic Pokémon
-151,mew,1,,78,6,6.0,5.0,-1,45,100,0,120,0,4,0,0,1,183,,Mew,New Species Pokémon
-152,chikorita,2,,79,5,8.0,3.0,1,45,70,0,20,0,4,0,0,0,184,,Chikorita,Leaf Pokémon
-153,bayleef,2,152.0,79,5,8.0,3.0,1,45,70,0,20,0,4,0,0,0,185,,Bayleef,Leaf Pokémon
-154,meganium,2,153.0,79,5,8.0,3.0,1,45,70,0,20,1,4,0,0,0,186,,Meganium,Herb Pokémon
-155,cyndaquil,2,,80,10,12.0,3.0,1,45,70,0,20,0,4,0,0,0,187,,Cyndaquil,Fire Mouse Pokémon
-156,quilava,2,155.0,80,10,8.0,3.0,1,45,70,0,20,0,4,0,0,0,188,,Quilava,Volcano Pokémon
-157,typhlosion,2,156.0,80,10,8.0,3.0,1,45,70,0,20,0,4,0,0,0,189,,Typhlosion,Volcano Pokémon
-158,totodile,2,,81,2,6.0,9.0,1,45,70,0,20,0,4,0,0,0,190,,Totodile,Big Jaw Pokémon
-159,croconaw,2,158.0,81,2,6.0,9.0,1,45,70,0,20,0,4,0,0,0,191,,Croconaw,Big Jaw Pokémon
-160,feraligatr,2,159.0,81,2,6.0,9.0,1,45,70,0,20,0,4,0,0,0,192,,Feraligatr,Big Jaw Pokémon
-161,sentret,2,,82,3,8.0,3.0,4,255,70,0,15,0,2,0,0,0,193,,Sentret,Scout Pokémon
-162,furret,2,161.0,82,3,8.0,3.0,4,90,70,0,15,0,2,0,0,0,194,,Furret,Long Body Pokémon
-163,hoothoot,2,,83,3,9.0,2.0,4,255,50,0,15,0,2,0,0,0,195,,Hoothoot,Owl Pokémon
-164,noctowl,2,163.0,83,3,9.0,2.0,4,90,50,0,15,0,2,0,0,0,196,,Noctowl,Owl Pokémon
-165,ledyba,2,,84,8,9.0,2.0,4,255,70,0,15,1,3,0,0,0,197,,Ledyba,Five Star Pokémon
-166,ledian,2,165.0,84,8,9.0,2.0,4,90,70,0,15,1,3,0,0,0,198,,Ledian,Five Star Pokémon
-167,spinarak,2,,85,5,14.0,2.0,4,255,70,0,15,0,3,0,0,0,199,,Spinarak,String Spit Pokémon
-168,ariados,2,167.0,85,8,14.0,2.0,4,90,70,0,15,0,3,0,0,0,200,,Ariados,Long Leg Pokémon
-169,crobat,2,42.0,17,7,13.0,1.0,4,90,50,0,15,0,2,0,0,0,46,25.0,Crobat,Bat Pokémon
-170,chinchou,2,,86,2,3.0,7.0,4,190,50,0,20,0,1,0,0,0,201,,Chinchou,Angler Pokémon
-171,lanturn,2,170.0,86,2,3.0,7.0,4,75,50,0,20,0,1,0,0,0,202,,Lanturn,Light Pokémon
-172,pichu,2,,10,10,8.0,2.0,4,190,50,1,10,0,2,0,0,0,25,15.0,Pichu,Tiny Mouse Pokémon
-173,cleffa,2,,14,6,6.0,4.0,6,150,140,1,10,0,3,0,0,0,36,,Cleffa,Star Shape Pokémon
-174,igglybuff,2,,16,6,12.0,3.0,6,170,50,1,10,0,3,0,0,0,41,20.0,Igglybuff,Balloon Pokémon
-175,togepi,2,,87,9,12.0,2.0,1,190,50,1,10,0,3,0,0,0,203,,Togepi,Spike Ball Pokémon
-176,togetic,2,175.0,87,9,12.0,2.0,1,75,50,0,10,0,3,0,0,0,204,,Togetic,Happiness Pokémon
-177,natu,2,,88,5,9.0,2.0,4,190,50,0,20,0,2,0,0,0,206,,Natu,Tiny Bird Pokémon
-178,xatu,2,177.0,88,5,9.0,2.0,4,75,50,0,20,1,2,0,0,0,207,,Xatu,Mystic Pokémon
-179,mareep,2,,89,9,8.0,3.0,4,235,70,0,20,0,4,0,0,0,208,45.0,Mareep,Wool Pokémon
-180,flaaffy,2,179.0,89,6,6.0,3.0,4,120,70,0,20,0,4,0,0,0,209,46.0,Flaaffy,Wool Pokémon
-181,ampharos,2,180.0,89,10,6.0,3.0,4,45,70,0,20,0,4,1,0,0,210,47.0,Ampharos,Light Pokémon
-182,bellossom,2,44.0,18,5,12.0,3.0,4,45,50,0,20,0,4,0,0,0,50,,Bellossom,Flower Pokémon
-183,marill,2,298.0,90,2,6.0,9.0,4,190,50,0,10,0,3,0,0,0,212,,Marill,Aqua Mouse Pokémon
-184,azumarill,2,183.0,90,2,6.0,9.0,4,75,50,0,10,0,3,0,0,0,213,,Azumarill,Aqua Rabbit Pokémon
-185,sudowoodo,2,438.0,91,3,12.0,2.0,4,65,50,0,20,1,2,0,0,0,215,,Sudowoodo,Imitation Pokémon
-186,politoed,2,61.0,26,5,12.0,9.0,4,45,50,0,20,1,4,0,0,0,68,,Politoed,Frog Pokémon
-187,hoppip,2,,92,6,6.0,3.0,4,255,70,0,20,0,4,0,0,0,216,,Hoppip,Cottonweed Pokémon
-188,skiploom,2,187.0,92,5,6.0,3.0,4,120,70,0,20,0,4,0,0,0,217,,Skiploom,Cottonweed Pokémon
-189,jumpluff,2,188.0,92,2,6.0,3.0,4,45,70,0,20,0,4,0,0,0,218,,Jumpluff,Cottonweed Pokémon
-190,aipom,2,,93,7,6.0,2.0,4,45,70,0,20,1,3,0,0,0,219,,Aipom,Long Tail Pokémon
-191,sunkern,2,,94,10,1.0,3.0,4,235,70,0,20,0,4,0,0,0,221,,Sunkern,Seed Pokémon
-192,sunflora,2,191.0,94,10,12.0,3.0,4,120,70,0,20,0,4,0,0,0,222,,Sunflora,Sun Pokémon
-193,yanma,2,,95,8,13.0,2.0,4,75,70,0,20,0,2,0,0,0,223,,Yanma,Clear Wing Pokémon
-194,wooper,2,,96,2,7.0,9.0,4,255,50,0,20,1,2,0,0,0,225,18.0,Wooper,Water Fish Pokémon
-195,quagsire,2,194.0,96,2,6.0,9.0,4,90,50,0,20,1,2,0,0,0,226,19.0,Quagsire,Water Fish Pokémon
-196,espeon,2,133.0,67,7,8.0,8.0,1,45,50,0,35,0,2,0,0,0,161,5.0,Espeon,Sun Pokémon
-197,umbreon,2,133.0,67,1,8.0,8.0,1,45,35,0,35,0,2,0,0,0,162,6.0,Umbreon,Moonlight Pokémon
-198,murkrow,2,,97,1,9.0,2.0,4,30,35,0,20,1,4,0,0,0,227,,Murkrow,Darkness Pokémon
-199,slowking,2,79.0,33,6,6.0,9.0,4,70,50,0,20,0,2,0,0,0,87,,Slowking,Royal Pokémon
-200,misdreavus,2,,98,4,1.0,1.0,4,45,35,0,25,0,3,0,0,0,229,183.0,Misdreavus,Screech Pokémon
-201,unown,2,,99,1,1.0,5.0,-1,225,70,0,40,0,2,0,0,0,231,,Unown,Symbol Pokémon
-202,wobbuffet,2,360.0,100,2,5.0,1.0,4,45,50,0,20,1,2,0,0,0,233,,Wobbuffet,Patient Pokémon
-203,girafarig,2,,101,10,8.0,3.0,4,60,70,0,20,1,2,0,0,0,234,,Girafarig,Long Neck Pokémon
-204,pineco,2,,102,4,1.0,2.0,4,190,70,0,20,0,2,0,0,0,235,56.0,Pineco,Bagworm Pokémon
-205,forretress,2,204.0,102,7,1.0,2.0,4,75,70,0,20,0,2,0,0,0,236,57.0,Forretress,Bagworm Pokémon
-206,dunsparce,2,,103,10,2.0,1.0,4,190,50,0,20,0,2,0,0,0,237,,Dunsparce,Land Snake Pokémon
-207,gligar,2,,104,7,9.0,4.0,4,60,70,0,20,1,4,0,0,0,238,,Gligar,Fly Scorpion Pokémon
-208,steelix,2,95.0,41,4,2.0,1.0,4,25,50,0,25,1,2,1,0,0,104,176.0,Steelix,Iron Snake Pokémon
-209,snubbull,2,,105,6,12.0,8.0,6,190,70,0,20,0,3,0,0,0,240,,Snubbull,Fairy Pokémon
-210,granbull,2,209.0,105,7,6.0,8.0,6,75,70,0,20,0,3,0,0,0,241,,Granbull,Fairy Pokémon
-211,qwilfish,2,,106,4,3.0,7.0,4,45,50,0,20,0,2,0,0,0,242,,Qwilfish,Balloon Pokémon
-212,scizor,2,123.0,58,8,13.0,3.0,4,25,50,0,25,1,2,1,0,0,142,189.0,Scizor,Pincer Pokémon
-213,shuckle,2,,107,10,14.0,4.0,4,190,50,0,20,0,4,0,0,0,243,,Shuckle,Mold Pokémon
-214,heracross,2,,108,2,12.0,2.0,4,45,50,0,25,1,1,1,0,0,244,,Heracross,Single Horn Pokémon
-215,sneasel,2,,109,1,6.0,2.0,4,60,35,0,20,1,4,0,0,0,245,181.0,Sneasel,Sharp Claw Pokémon
-216,teddiursa,2,,110,3,6.0,4.0,4,120,70,0,20,0,2,0,0,0,247,,Teddiursa,Little Bear Pokémon
-217,ursaring,2,216.0,110,3,6.0,4.0,4,60,70,0,20,1,2,0,0,0,248,,Ursaring,Hibernator Pokémon
-218,slugma,2,,111,8,2.0,4.0,4,190,70,0,20,0,2,0,0,0,249,,Slugma,Lava Pokémon
-219,magcargo,2,218.0,111,8,2.0,4.0,4,75,70,0,20,0,2,0,0,0,250,,Magcargo,Lava Pokémon
-220,swinub,2,,112,3,8.0,1.0,4,225,50,0,20,0,1,0,0,0,251,,Swinub,Pig Pokémon
-221,piloswine,2,220.0,112,3,8.0,1.0,4,75,50,0,20,1,1,0,0,0,252,,Piloswine,Swine Pokémon
-222,corsola,2,,113,6,14.0,7.0,6,60,50,0,20,0,3,0,0,0,254,,Corsola,Coral Pokémon
-223,remoraid,2,,114,4,3.0,7.0,4,190,50,0,20,0,2,0,0,0,255,,Remoraid,Jet Pokémon
-224,octillery,2,223.0,114,8,10.0,7.0,4,75,50,0,20,1,2,0,0,0,256,,Octillery,Jet Pokémon
-225,delibird,2,,115,8,9.0,4.0,4,45,50,0,20,0,3,0,0,0,257,,Delibird,Delivery Pokémon
-226,mantine,2,458.0,116,7,9.0,7.0,4,25,50,0,25,0,1,0,0,0,259,,Mantine,Kite Pokémon
-227,skarmory,2,,117,4,9.0,6.0,4,25,50,0,25,0,1,0,0,0,260,,Skarmory,Armor Bird Pokémon
-228,houndour,2,,118,1,8.0,6.0,4,120,35,0,20,0,1,0,0,0,261,,Houndour,Dark Pokémon
-229,houndoom,2,228.0,118,1,8.0,6.0,4,45,35,0,20,1,1,1,0,0,262,,Houndoom,Dark Pokémon
-230,kingdra,2,117.0,54,2,5.0,7.0,4,45,50,0,20,0,2,0,0,0,134,,Kingdra,Dragon Pokémon
-231,phanpy,2,,119,2,8.0,6.0,4,120,70,0,20,0,2,0,0,0,263,,Phanpy,Long Nose Pokémon
-232,donphan,2,231.0,119,4,8.0,6.0,4,60,70,0,20,1,2,0,0,0,264,,Donphan,Armor Pokémon
-233,porygon2,2,137.0,68,8,7.0,8.0,-1,45,50,0,20,0,2,0,0,0,167,,Porygon2,Virtual Pokémon
-234,stantler,2,,120,3,8.0,2.0,4,45,70,0,20,0,1,0,0,0,265,,Stantler,Big Horn Pokémon
-235,smeargle,2,,121,9,6.0,8.0,4,45,70,0,20,0,3,0,0,0,266,,Smeargle,Painter Pokémon
-236,tyrogue,2,,47,7,12.0,8.0,0,75,50,1,25,0,2,0,0,0,115,,Tyrogue,Scuffle Pokémon
-237,hitmontop,2,236.0,47,3,6.0,8.0,0,45,50,0,25,0,2,0,0,0,118,,Hitmontop,Handstand Pokémon
-238,smoochum,2,,59,6,12.0,8.0,8,45,50,1,25,0,2,0,0,0,143,,Smoochum,Kiss Pokémon
-239,elekid,2,,60,10,12.0,3.0,2,45,50,1,25,0,2,0,0,0,145,,Elekid,Electric Pokémon
-240,magby,2,,61,8,6.0,4.0,2,45,50,1,25,0,2,0,0,0,148,,Magby,Live Coal Pokémon
-241,miltank,2,,122,6,6.0,3.0,8,45,50,0,20,0,1,0,0,0,267,,Miltank,Milk Cow Pokémon
-242,blissey,2,113.0,51,6,12.0,8.0,8,30,140,0,40,0,3,0,0,0,128,,Blissey,Happiness Pokémon
-243,raikou,2,,123,10,8.0,3.0,-1,3,35,0,80,0,1,0,1,0,268,,Raikou,Thunder Pokémon
-244,entei,2,,124,3,8.0,3.0,-1,3,35,0,80,0,1,0,1,0,269,,Entei,Volcano Pokémon
-245,suicune,2,,125,2,8.0,3.0,-1,3,35,0,80,0,1,0,1,0,270,,Suicune,Aurora Pokémon
-246,larvitar,2,,126,5,6.0,4.0,4,45,35,0,40,0,1,0,0,0,271,79.0,Larvitar,Rock Skin Pokémon
-247,pupitar,2,246.0,126,4,2.0,4.0,4,45,35,0,40,0,1,0,0,0,272,80.0,Pupitar,Hard Shell Pokémon
-248,tyranitar,2,247.0,126,5,6.0,4.0,4,45,35,0,40,0,1,1,0,0,273,81.0,Tyranitar,Armor Pokémon
-249,lugia,2,,127,9,9.0,5.0,-1,3,0,0,120,0,1,0,1,0,274,,Lugia,Diving Pokémon
-250,ho-oh,2,,128,8,9.0,5.0,-1,3,0,0,120,0,1,0,1,0,275,,Ho-Oh,Rainbow Pokémon
-251,celebi,2,,129,5,12.0,2.0,-1,45,100,0,120,0,4,0,0,1,276,,Celebi,Time Travel Pokémon
-252,treecko,3,,130,5,6.0,2.0,1,45,50,0,20,0,4,0,0,0,277,130.0,Treecko,Wood Gecko Pokémon
-253,grovyle,3,252.0,130,5,6.0,2.0,1,45,50,0,20,0,4,0,0,0,278,131.0,Grovyle,Wood Gecko Pokémon
-254,sceptile,3,253.0,130,5,6.0,2.0,1,45,50,0,20,0,4,1,0,0,279,132.0,Sceptile,Forest Pokémon
-255,torchic,3,,131,8,7.0,3.0,1,45,50,0,20,1,4,0,0,0,280,,Torchic,Chick Pokémon
-256,combusken,3,255.0,131,8,6.0,3.0,1,45,50,0,20,1,4,0,0,0,281,,Combusken,Young Fowl Pokémon
-257,blaziken,3,256.0,131,8,6.0,3.0,1,45,50,0,20,1,4,1,0,0,282,,Blaziken,Blaze Pokémon
-258,mudkip,3,,132,2,8.0,9.0,1,45,50,0,20,0,4,0,0,0,283,,Mudkip,Mud Fish Pokémon
-259,marshtomp,3,258.0,132,2,6.0,9.0,1,45,50,0,20,0,4,0,0,0,284,,Marshtomp,Mud Fish Pokémon
-260,swampert,3,259.0,132,2,6.0,9.0,1,45,50,0,20,0,4,1,0,0,285,,Swampert,Mud Fish Pokémon
-261,poochyena,3,,133,4,8.0,3.0,4,255,70,0,15,0,2,0,0,0,286,,Poochyena,Bite Pokémon
-262,mightyena,3,261.0,133,4,8.0,3.0,4,127,70,0,15,0,2,0,0,0,287,,Mightyena,Bite Pokémon
-263,zigzagoon,3,,134,3,8.0,3.0,4,255,50,0,15,0,2,0,0,0,288,,Zigzagoon,Tiny Raccoon Pokémon
-264,linoone,3,263.0,134,9,8.0,3.0,4,90,50,0,15,0,2,0,0,0,289,,Linoone,Rushing Pokémon
-265,wurmple,3,,135,8,14.0,2.0,4,255,70,0,15,0,2,0,0,0,290,,Wurmple,Worm Pokémon
-266,silcoon,3,265.0,135,9,1.0,2.0,4,120,70,0,15,0,2,0,0,0,291,,Silcoon,Cocoon Pokémon
-267,beautifly,3,266.0,135,10,13.0,2.0,4,45,70,0,15,1,2,0,0,0,292,,Beautifly,Butterfly Pokémon
-268,cascoon,3,265.0,135,7,1.0,2.0,4,120,70,0,15,0,2,0,0,0,293,,Cascoon,Cocoon Pokémon
-269,dustox,3,268.0,135,5,13.0,2.0,4,45,70,0,15,1,2,0,0,0,294,,Dustox,Poison Moth Pokémon
-270,lotad,3,,136,5,14.0,9.0,4,255,50,0,15,0,4,0,0,0,295,,Lotad,Water Weed Pokémon
-271,lombre,3,270.0,136,5,12.0,9.0,4,120,50,0,15,0,4,0,0,0,296,,Lombre,Jolly Pokémon
-272,ludicolo,3,271.0,136,5,12.0,9.0,4,45,50,0,15,1,4,0,0,0,297,,Ludicolo,Carefree Pokémon
-273,seedot,3,,137,3,7.0,2.0,4,255,50,0,15,0,4,0,0,0,298,,Seedot,Acorn Pokémon
-274,nuzleaf,3,273.0,137,3,12.0,2.0,4,120,50,0,15,1,4,0,0,0,299,,Nuzleaf,Wily Pokémon
-275,shiftry,3,274.0,137,3,12.0,2.0,4,45,50,0,15,1,4,0,0,0,300,,Shiftry,Wicked Pokémon
-276,taillow,3,,138,2,9.0,3.0,4,200,70,0,15,0,4,0,0,0,301,,Taillow,Tiny Swallow Pokémon
-277,swellow,3,276.0,138,2,9.0,3.0,4,45,70,0,15,0,4,0,0,0,302,,Swellow,Swallow Pokémon
-278,wingull,3,,139,9,9.0,7.0,4,190,50,0,20,0,2,0,0,0,303,,Wingull,Seagull Pokémon
-279,pelipper,3,278.0,139,10,9.0,7.0,4,45,50,0,20,0,2,0,0,0,304,,Pelipper,Water Bird Pokémon
-280,ralts,3,,140,9,12.0,8.0,4,235,35,0,20,0,1,0,0,0,305,9.0,Ralts,Feeling Pokémon
-281,kirlia,3,280.0,140,9,12.0,8.0,4,120,35,0,20,0,1,0,0,0,306,10.0,Kirlia,Emotion Pokémon
-282,gardevoir,3,281.0,140,9,12.0,8.0,4,45,35,0,20,0,1,1,0,0,307,11.0,Gardevoir,Embrace Pokémon
-283,surskit,3,,141,2,14.0,9.0,4,200,70,0,15,0,2,0,0,0,309,,Surskit,Pond Skater Pokémon
-284,masquerain,3,283.0,141,2,13.0,9.0,4,75,70,0,15,0,2,0,0,0,310,,Masquerain,Eyeball Pokémon
-285,shroomish,3,,142,3,7.0,2.0,4,255,70,0,15,0,6,0,0,0,311,,Shroomish,Mushroom Pokémon
-286,breloom,3,285.0,142,5,6.0,2.0,4,90,70,0,15,0,6,0,0,0,312,,Breloom,Mushroom Pokémon
-287,slakoth,3,,143,3,8.0,2.0,4,255,70,0,15,0,1,0,0,0,313,,Slakoth,Slacker Pokémon
-288,vigoroth,3,287.0,143,9,6.0,2.0,4,120,70,0,15,0,1,0,0,0,314,,Vigoroth,Wild Monkey Pokémon
-289,slaking,3,288.0,143,3,12.0,2.0,4,45,70,0,15,0,1,0,0,0,315,,Slaking,Lazy Pokémon
-290,nincada,3,,144,4,14.0,2.0,4,255,50,0,15,0,5,0,0,0,316,,Nincada,Trainee Pokémon
-291,ninjask,3,290.0,144,10,13.0,2.0,4,120,50,0,15,0,5,0,0,0,317,,Ninjask,Ninja Pokémon
-292,shedinja,3,290.0,144,3,5.0,2.0,-1,45,50,0,15,0,5,0,0,0,318,,Shedinja,Shed Pokémon
-293,whismur,3,,145,6,6.0,1.0,4,190,50,0,20,0,4,0,0,0,319,,Whismur,Whisper Pokémon
-294,loudred,3,293.0,145,2,6.0,1.0,4,120,50,0,20,0,4,0,0,0,320,,Loudred,Big Voice Pokémon
-295,exploud,3,294.0,145,2,6.0,1.0,4,45,50,0,20,0,4,0,0,0,321,,Exploud,Loud Noise Pokémon
-296,makuhita,3,,146,10,12.0,4.0,2,180,70,0,20,0,6,0,0,0,322,,Makuhita,Guts Pokémon
-297,hariyama,3,296.0,146,3,12.0,4.0,2,200,70,0,20,0,6,0,0,0,323,,Hariyama,Arm Thrust Pokémon
-298,azurill,3,,90,2,7.0,9.0,6,150,50,1,10,0,3,0,0,0,211,,Azurill,Polka Dot Pokémon
-299,nosepass,3,,147,4,12.0,1.0,4,255,70,0,20,0,2,0,0,0,324,,Nosepass,Compass Pokémon
-300,skitty,3,,148,6,8.0,2.0,6,255,70,0,15,0,3,0,0,0,326,,Skitty,Kitten Pokémon
-301,delcatty,3,300.0,148,7,8.0,2.0,6,60,70,0,15,0,3,0,0,0,327,,Delcatty,Prim Pokémon
-302,sableye,3,,149,7,12.0,1.0,4,45,35,0,25,0,4,1,0,0,328,,Sableye,Darkness Pokémon
-303,mawile,3,,150,1,12.0,1.0,4,45,50,0,20,0,3,1,0,0,329,,Mawile,Deceiver Pokémon
-304,aron,3,,151,4,8.0,4.0,4,180,35,0,35,0,1,0,0,0,330,149.0,Aron,Iron Armor Pokémon
-305,lairon,3,304.0,151,4,8.0,4.0,4,90,35,0,35,0,1,0,0,0,331,150.0,Lairon,Iron Armor Pokémon
-306,aggron,3,305.0,151,4,6.0,4.0,4,45,35,0,35,0,1,1,0,0,332,151.0,Aggron,Iron Armor Pokémon
-307,meditite,3,,152,2,12.0,4.0,4,180,70,0,20,1,2,0,0,0,333,,Meditite,Meditate Pokémon
-308,medicham,3,307.0,152,8,12.0,4.0,4,90,70,0,20,1,2,1,0,0,334,,Medicham,Meditate Pokémon
-309,electrike,3,,153,5,8.0,3.0,4,120,50,0,20,0,1,0,0,0,335,,Electrike,Lightning Pokémon
-310,manectric,3,309.0,153,10,8.0,3.0,4,45,50,0,20,0,1,1,0,0,336,,Manectric,Discharge Pokémon
-311,plusle,3,,154,10,6.0,3.0,4,200,70,0,20,0,2,0,0,0,337,,Plusle,Cheering Pokémon
-312,minun,3,,155,10,6.0,3.0,4,200,70,0,20,0,2,0,0,0,338,,Minun,Cheering Pokémon
-313,volbeat,3,,156,4,6.0,2.0,0,150,70,0,15,0,5,0,0,0,339,,Volbeat,Firefly Pokémon
-314,illumise,3,,157,7,12.0,2.0,8,150,70,0,15,0,6,0,0,0,340,,Illumise,Firefly Pokémon
-315,roselia,3,406.0,158,5,12.0,3.0,4,150,50,0,20,1,4,0,0,0,342,,Roselia,Thorn Pokémon
-316,gulpin,3,,159,5,4.0,3.0,4,225,70,0,20,1,6,0,0,0,344,,Gulpin,Stomach Pokémon
-317,swalot,3,316.0,159,7,4.0,3.0,4,75,70,0,20,1,6,0,0,0,345,,Swalot,Poison Bag Pokémon
-318,carvanha,3,,160,8,3.0,7.0,4,225,35,0,20,0,1,0,0,0,346,,Carvanha,Savage Pokémon
-319,sharpedo,3,318.0,160,2,3.0,7.0,4,60,35,0,20,0,1,1,0,0,347,,Sharpedo,Brutal Pokémon
-320,wailmer,3,,161,2,3.0,7.0,4,125,50,0,40,0,6,0,0,0,348,,Wailmer,Ball Whale Pokémon
-321,wailord,3,320.0,161,2,3.0,7.0,4,60,50,0,40,0,6,0,0,0,349,,Wailord,Float Whale Pokémon
-322,numel,3,,162,10,8.0,4.0,4,255,70,0,20,1,2,0,0,0,350,,Numel,Numb Pokémon
-323,camerupt,3,322.0,162,8,8.0,4.0,4,150,70,0,20,1,2,1,0,0,351,,Camerupt,Eruption Pokémon
-324,torkoal,3,,163,3,8.0,4.0,4,90,50,0,20,0,2,0,0,0,352,,Torkoal,Coal Pokémon
-325,spoink,3,,164,1,4.0,4.0,4,255,70,0,20,0,3,0,0,0,353,,Spoink,Bounce Pokémon
-326,grumpig,3,325.0,164,7,6.0,4.0,4,60,70,0,20,0,3,0,0,0,354,,Grumpig,Manipulate Pokémon
-327,spinda,3,,165,3,6.0,4.0,4,255,70,0,15,0,3,0,0,0,355,,Spinda,Spot Panda Pokémon
-328,trapinch,3,,166,3,14.0,6.0,4,255,50,0,20,0,4,0,0,0,356,,Trapinch,Ant Pit Pokémon
-329,vibrava,3,328.0,166,5,13.0,6.0,4,120,50,0,20,0,4,0,0,0,357,,Vibrava,Vibration Pokémon
-330,flygon,3,329.0,166,5,9.0,6.0,4,45,50,0,20,0,4,0,0,0,358,,Flygon,Mystic Pokémon
-331,cacnea,3,,167,5,12.0,6.0,4,190,35,0,20,0,4,0,0,0,359,,Cacnea,Cactus Pokémon
-332,cacturne,3,331.0,167,5,12.0,6.0,4,60,35,0,20,1,4,0,0,0,360,,Cacturne,Scarecrow Pokémon
-333,swablu,3,,168,2,9.0,2.0,4,255,50,0,20,0,5,0,0,0,361,,Swablu,Cotton Bird Pokémon
-334,altaria,3,333.0,168,2,9.0,2.0,4,45,50,0,20,0,5,1,0,0,362,,Altaria,Humming Pokémon
-335,zangoose,3,,169,9,6.0,3.0,4,90,70,0,20,0,5,0,0,0,363,,Zangoose,Cat Ferret Pokémon
-336,seviper,3,,170,1,2.0,3.0,4,90,70,0,20,0,6,0,0,0,364,,Seviper,Fang Snake Pokémon
-337,lunatone,3,,171,10,1.0,1.0,-1,45,50,0,25,0,3,0,0,0,365,,Lunatone,Meteorite Pokémon
-338,solrock,3,,172,8,1.0,1.0,-1,45,50,0,25,0,3,0,0,0,366,,Solrock,Meteorite Pokémon
-339,barboach,3,,173,4,3.0,9.0,4,190,50,0,20,0,2,0,0,0,367,,Barboach,Whiskers Pokémon
-340,whiscash,3,339.0,173,2,3.0,9.0,4,75,50,0,20,0,2,0,0,0,368,,Whiscash,Whiskers Pokémon
-341,corphish,3,,174,8,14.0,9.0,4,205,50,0,15,0,6,0,0,0,369,,Corphish,Ruffian Pokémon
-342,crawdaunt,3,341.0,174,8,14.0,9.0,4,155,50,0,15,0,6,0,0,0,370,,Crawdaunt,Rogue Pokémon
-343,baltoy,3,,175,3,4.0,6.0,-1,255,50,0,20,0,2,0,0,0,371,,Baltoy,Clay Doll Pokémon
-344,claydol,3,343.0,175,1,4.0,6.0,-1,90,50,0,20,0,2,0,0,0,372,,Claydol,Clay Doll Pokémon
-345,lileep,3,,176,7,5.0,7.0,1,45,50,0,30,0,5,0,0,0,373,,Lileep,Sea Lily Pokémon
-346,cradily,3,345.0,176,5,5.0,7.0,1,45,50,0,30,0,5,0,0,0,374,,Cradily,Barnacle Pokémon
-347,anorith,3,,177,4,14.0,9.0,1,45,50,0,30,0,5,0,0,0,375,171.0,Anorith,Old Shrimp Pokémon
-348,armaldo,3,347.0,177,4,6.0,9.0,1,45,50,0,30,0,5,0,0,0,376,172.0,Armaldo,Plate Pokémon
-349,feebas,3,,178,3,3.0,9.0,4,255,50,0,20,0,5,0,0,0,377,,Feebas,Fish Pokémon
-350,milotic,3,349.0,178,6,2.0,9.0,4,60,50,0,20,1,5,0,0,0,378,,Milotic,Tender Pokémon
-351,castform,3,,179,4,1.0,3.0,4,45,70,0,25,0,2,1,0,0,379,,Castform,Weather Pokémon
-352,kecleon,3,,180,5,6.0,2.0,4,200,70,0,20,0,4,0,0,0,380,,Kecleon,Color Swap Pokémon
-353,shuppet,3,,181,1,1.0,8.0,4,225,35,0,25,0,3,0,0,0,381,,Shuppet,Puppet Pokémon
-354,banette,3,353.0,181,1,6.0,8.0,4,45,35,0,25,0,3,1,0,0,382,,Banette,Marionette Pokémon
-355,duskull,3,,182,1,4.0,2.0,4,190,35,0,25,0,3,0,0,0,383,69.0,Duskull,Requiem Pokémon
-356,dusclops,3,355.0,182,1,12.0,2.0,4,90,35,0,25,0,3,0,0,0,384,70.0,Dusclops,Beckon Pokémon
-357,tropius,3,,183,5,8.0,2.0,4,200,70,0,25,0,1,0,0,0,386,,Tropius,Fruit Pokémon
-358,chimecho,3,433.0,184,2,4.0,3.0,4,45,70,0,25,0,3,0,0,0,388,53.0,Chimecho,Wind Chime Pokémon
-359,absol,3,,185,9,8.0,4.0,4,30,35,0,25,0,4,1,0,0,389,,Absol,Disaster Pokémon
-360,wynaut,3,,100,2,6.0,1.0,4,125,50,1,20,0,2,0,0,0,232,,Wynaut,Bright Pokémon
-361,snorunt,3,,186,4,12.0,1.0,4,190,50,0,20,0,2,0,0,0,390,93.0,Snorunt,Snow Hat Pokémon
-362,glalie,3,361.0,186,4,1.0,1.0,4,75,50,0,20,0,2,1,0,0,391,94.0,Glalie,Face Pokémon
-363,spheal,3,,187,2,3.0,7.0,4,255,50,0,20,0,4,0,0,0,393,60.0,Spheal,Clap Pokémon
-364,sealeo,3,363.0,187,2,3.0,7.0,4,120,50,0,20,0,4,0,0,0,394,61.0,Sealeo,Ball Roll Pokémon
-365,walrein,3,364.0,187,2,8.0,7.0,4,45,50,0,20,0,4,0,0,0,395,62.0,Walrein,Ice Break Pokémon
-366,clamperl,3,,188,2,1.0,7.0,4,255,70,0,20,0,5,0,0,0,396,,Clamperl,Bivalve Pokémon
-367,huntail,3,366.0,188,2,2.0,7.0,4,60,70,0,20,0,5,0,0,0,397,,Huntail,Deep Sea Pokémon
-368,gorebyss,3,366.0,188,6,2.0,7.0,4,60,70,0,20,0,5,0,0,0,398,,Gorebyss,South Sea Pokémon
-369,relicanth,3,,189,4,3.0,7.0,1,25,50,0,40,1,1,0,0,0,399,,Relicanth,Longevity Pokémon
-370,luvdisc,3,,190,6,3.0,7.0,6,225,70,0,20,0,3,0,0,0,400,,Luvdisc,Rendezvous Pokémon
-371,bagon,3,,191,2,12.0,6.0,4,45,35,0,40,0,1,0,0,0,401,,Bagon,Rock Head Pokémon
-372,shelgon,3,371.0,191,9,8.0,6.0,4,45,35,0,40,0,1,0,0,0,402,,Shelgon,Endurance Pokémon
-373,salamence,3,372.0,191,2,8.0,6.0,4,45,35,0,40,0,1,1,0,0,403,,Salamence,Dragon Pokémon
-374,beldum,3,,192,2,5.0,6.0,-1,3,35,0,40,0,1,0,0,0,404,82.0,Beldum,Iron Ball Pokémon
-375,metang,3,374.0,192,2,4.0,6.0,-1,3,35,0,40,0,1,0,0,0,405,83.0,Metang,Iron Claw Pokémon
-376,metagross,3,375.0,192,2,11.0,6.0,-1,3,35,0,40,0,1,1,0,0,406,84.0,Metagross,Iron Leg Pokémon
-377,regirock,3,,193,3,12.0,1.0,-1,3,35,0,80,0,1,0,1,0,407,,Regirock,Rock Peak Pokémon
-378,regice,3,,194,2,12.0,1.0,-1,3,35,0,80,0,1,0,1,0,408,,Regice,Iceberg Pokémon
-379,registeel,3,,195,4,12.0,1.0,-1,3,35,0,80,0,1,0,1,0,409,193.0,Registeel,Iron Pokémon
-380,latias,3,,196,8,9.0,9.0,8,3,90,0,120,0,1,1,1,0,410,,Latias,Eon Pokémon
-381,latios,3,,197,2,9.0,9.0,0,3,90,0,120,0,1,1,1,0,411,,Latios,Eon Pokémon
-382,kyogre,3,,198,2,3.0,7.0,-1,3,0,0,120,0,1,1,1,0,412,,Kyogre,Sea Basin Pokémon
-383,groudon,3,,199,8,6.0,6.0,-1,3,0,0,120,0,1,1,1,0,413,194.0,Groudon,Continent Pokémon
-384,rayquaza,3,,200,5,2.0,5.0,-1,45,0,0,120,0,1,1,1,0,414,200.0,Rayquaza,Sky High Pokémon
-385,jirachi,3,,201,10,12.0,4.0,-1,3,100,0,120,0,1,0,0,1,415,,Jirachi,Wish Pokémon
-386,deoxys,3,,202,8,12.0,5.0,-1,3,0,0,120,0,1,1,0,1,416,,Deoxys,DNA Pokémon
-387,turtwig,4,,203,5,8.0,,1,45,70,0,20,0,4,0,0,0,417,,Turtwig,Tiny Leaf Pokémon
-388,grotle,4,387.0,203,5,8.0,,1,45,70,0,20,0,4,0,0,0,418,,Grotle,Grove Pokémon
-389,torterra,4,388.0,203,5,8.0,,1,45,70,0,20,0,4,0,0,0,419,,Torterra,Continent Pokémon
-390,chimchar,4,,204,3,6.0,,1,45,70,0,20,0,4,0,0,0,420,115.0,Chimchar,Chimp Pokémon
-391,monferno,4,390.0,204,3,6.0,,1,45,70,0,20,0,4,0,0,0,421,116.0,Monferno,Playful Pokémon
-392,infernape,4,391.0,204,3,6.0,,1,45,70,0,20,0,4,0,0,0,422,117.0,Infernape,Flame Pokémon
-393,piplup,4,,205,2,12.0,,1,45,70,0,20,0,4,0,0,0,423,133.0,Piplup,Penguin Pokémon
-394,prinplup,4,393.0,205,2,6.0,,1,45,70,0,20,0,4,0,0,0,424,134.0,Prinplup,Penguin Pokémon
-395,empoleon,4,394.0,205,2,6.0,,1,45,70,0,20,0,4,0,0,0,425,135.0,Empoleon,Emperor Pokémon
-396,starly,4,,206,3,9.0,,4,255,70,0,15,1,4,0,0,0,426,26.0,Starly,Starling Pokémon
-397,staravia,4,396.0,206,3,9.0,,4,120,70,0,15,1,4,0,0,0,427,27.0,Staravia,Starling Pokémon
-398,staraptor,4,397.0,206,3,9.0,,4,45,70,0,15,1,4,0,0,0,428,28.0,Staraptor,Predator Pokémon
-399,bidoof,4,,207,3,8.0,,4,255,70,0,15,1,2,0,0,0,429,29.0,Bidoof,Plump Mouse Pokémon
-400,bibarel,4,399.0,207,3,6.0,,4,127,70,0,15,1,2,0,0,0,430,30.0,Bibarel,Beaver Pokémon
-401,kricketot,4,,208,8,12.0,,4,255,70,0,15,1,4,0,0,0,431,,Kricketot,Cricket Pokémon
-402,kricketune,4,401.0,208,8,13.0,,4,45,70,0,15,1,4,0,0,0,432,,Kricketune,Cricket Pokémon
-403,shinx,4,,209,2,8.0,,4,235,50,0,20,1,4,0,0,0,433,34.0,Shinx,Flash Pokémon
-404,luxio,4,403.0,209,2,8.0,,4,120,100,0,20,1,4,0,0,0,434,35.0,Luxio,Spark Pokémon
-405,luxray,4,404.0,209,2,8.0,,4,45,50,0,20,1,4,0,0,0,435,36.0,Luxray,Gleam Eyes Pokémon
-406,budew,4,,158,5,12.0,,4,255,50,1,20,0,4,0,0,0,341,,Budew,Bud Pokémon
-407,roserade,4,315.0,158,5,12.0,,4,75,50,0,20,1,4,0,0,0,343,,Roserade,Bouquet Pokémon
-408,cranidos,4,,211,2,6.0,,1,45,70,0,30,0,5,0,0,0,436,,Cranidos,Head Butt Pokémon
-409,rampardos,4,408.0,211,2,6.0,,1,45,70,0,30,0,5,0,0,0,437,,Rampardos,Head Butt Pokémon
-410,shieldon,4,,212,4,8.0,,1,45,70,0,30,0,5,0,0,0,438,163.0,Shieldon,Shield Pokémon
-411,bastiodon,4,410.0,212,4,8.0,,1,45,70,0,30,0,5,0,0,0,439,164.0,Bastiodon,Shield Pokémon
-412,burmy,4,,213,5,5.0,,4,120,70,0,15,0,2,1,0,0,440,,Burmy,Bagworm Pokémon
-413,wormadam,4,412.0,213,5,5.0,,8,45,70,0,15,0,2,0,0,0,441,,Wormadam,Bagworm Pokémon
-414,mothim,4,412.0,213,10,13.0,,0,45,70,0,15,0,2,0,0,0,442,,Mothim,Moth Pokémon
-415,combee,4,,214,10,11.0,,1,120,50,0,15,1,4,0,0,0,443,,Combee,Tiny Bee Pokémon
-416,vespiquen,4,415.0,214,10,13.0,,8,45,50,0,15,0,4,0,0,0,444,,Vespiquen,Beehive Pokémon
-417,pachirisu,4,,215,9,8.0,,4,200,100,0,10,1,2,0,0,0,445,,Pachirisu,EleSquirrel Pokémon
-418,buizel,4,,216,3,8.0,,4,190,70,0,20,1,2,0,0,0,446,,Buizel,Sea Weasel Pokémon
-419,floatzel,4,418.0,216,3,8.0,,4,75,70,0,20,1,2,0,0,0,447,,Floatzel,Sea Weasel Pokémon
-420,cherubi,4,,217,6,11.0,,4,190,50,0,20,0,2,0,0,0,448,,Cherubi,Cherry Pokémon
-421,cherrim,4,420.0,217,7,7.0,,4,75,50,0,20,0,2,1,0,0,449,,Cherrim,Blossom Pokémon
-422,shellos,4,,218,7,2.0,,4,190,50,0,20,0,2,0,0,0,450,,Shellos,Sea Slug Pokémon
-423,gastrodon,4,422.0,218,7,2.0,,4,75,50,0,20,0,2,0,0,0,451,,Gastrodon,Sea Slug Pokémon
-424,ambipom,4,190.0,93,7,6.0,,4,45,100,0,20,1,3,0,0,0,220,,Ambipom,Long Tail Pokémon
-425,drifloon,4,,219,7,4.0,,4,125,50,0,30,0,6,0,0,0,452,167.0,Drifloon,Balloon Pokémon
-426,drifblim,4,425.0,219,7,4.0,,4,60,50,0,30,0,6,0,0,0,453,168.0,Drifblim,Blimp Pokémon
-427,buneary,4,,220,3,6.0,,4,190,0,0,20,0,2,0,0,0,454,,Buneary,Rabbit Pokémon
-428,lopunny,4,427.0,220,3,6.0,,4,60,140,0,20,0,2,1,0,0,455,,Lopunny,Rabbit Pokémon
-429,mismagius,4,200.0,98,7,1.0,,4,45,35,0,25,0,3,0,0,0,230,184.0,Mismagius,Magical Pokémon
-430,honchkrow,4,198.0,97,1,9.0,,4,30,35,0,20,0,4,0,0,0,228,,Honchkrow,Big Boss Pokémon
-431,glameow,4,,221,4,8.0,,6,190,70,0,20,0,3,0,0,0,456,,Glameow,Catty Pokémon
-432,purugly,4,431.0,221,4,8.0,,6,75,70,0,20,0,3,0,0,0,457,,Purugly,Tiger Cat Pokémon
-433,chingling,4,,184,10,12.0,,4,120,70,1,25,0,3,0,0,0,387,52.0,Chingling,Bell Pokémon
-434,stunky,4,,223,7,8.0,,4,225,50,0,20,0,2,0,0,0,458,,Stunky,Skunk Pokémon
-435,skuntank,4,434.0,223,7,8.0,,4,60,50,0,20,0,2,0,0,0,459,,Skuntank,Skunk Pokémon
-436,bronzor,4,,224,5,1.0,,-1,255,50,0,20,0,2,0,0,0,460,,Bronzor,Bronze Pokémon
-437,bronzong,4,436.0,224,5,4.0,,-1,90,50,0,20,0,2,0,0,0,461,,Bronzong,Bronze Bell Pokémon
-438,bonsly,4,,91,3,7.0,,4,255,50,1,20,0,2,0,0,0,214,,Bonsly,Bonsai Pokémon
-439,mime-jr,4,,57,6,12.0,,4,145,50,1,25,0,2,0,0,0,139,,Mime Jr.,Mime Pokémon
-440,happiny,4,,51,6,12.0,,8,130,140,1,40,0,3,0,0,0,126,,Happiny,Playhouse Pokémon
-441,chatot,4,,228,1,9.0,,4,30,35,0,20,0,4,0,0,0,462,,Chatot,Music Note Pokémon
-442,spiritomb,4,,229,7,5.0,,4,100,50,0,30,0,2,0,0,0,463,187.0,Spiritomb,Forbidden Pokémon
-443,gible,4,,230,2,6.0,,4,45,50,0,40,1,1,0,0,0,464,85.0,Gible,Land Shark Pokémon
-444,gabite,4,443.0,230,2,6.0,,4,45,50,0,40,1,1,0,0,0,465,86.0,Gabite,Cave Pokémon
-445,garchomp,4,444.0,230,2,6.0,,4,45,50,0,40,1,1,1,0,0,466,87.0,Garchomp,Mach Pokémon
-446,munchlax,4,,72,1,12.0,,1,50,50,1,40,0,1,0,0,0,174,178.0,Munchlax,Big Eater Pokémon
-447,riolu,4,,232,2,6.0,,1,75,50,1,25,0,4,0,0,0,467,50.0,Riolu,Emanation Pokémon
-448,lucario,4,447.0,232,2,6.0,,1,45,50,0,25,0,4,1,0,0,468,51.0,Lucario,Aura Pokémon
-449,hippopotas,4,,233,3,8.0,,4,140,50,0,30,1,1,0,0,0,469,,Hippopotas,Hippo Pokémon
-450,hippowdon,4,449.0,233,3,8.0,,4,60,50,0,30,1,1,0,0,0,470,,Hippowdon,Heavyweight Pokémon
-451,skorupi,4,,234,7,14.0,,4,120,50,0,20,0,1,0,0,0,471,156.0,Skorupi,Scorpion Pokémon
-452,drapion,4,451.0,234,7,14.0,,4,45,50,0,20,0,1,0,0,0,472,157.0,Drapion,Ogre Scorpion Pokémon
-453,croagunk,4,,235,2,12.0,,4,140,100,0,10,1,2,0,0,0,473,88.0,Croagunk,Toxic Mouth Pokémon
-454,toxicroak,4,453.0,235,2,12.0,,4,75,50,0,20,1,2,0,0,0,474,89.0,Toxicroak,Toxic Mouth Pokémon
-455,carnivine,4,,236,5,10.0,,4,200,70,0,25,0,1,0,0,0,475,186.0,Carnivine,Bug Catcher Pokémon
-456,finneon,4,,237,2,3.0,,4,190,70,0,20,1,5,0,0,0,476,,Finneon,Wing Fish Pokémon
-457,lumineon,4,456.0,237,2,3.0,,4,75,70,0,20,1,5,0,0,0,477,,Lumineon,Neon Pokémon
-458,mantyke,4,,116,2,9.0,,4,25,50,1,25,0,1,0,0,0,258,,Mantyke,Kite Pokémon
-459,snover,4,,239,9,6.0,,4,120,50,0,20,1,1,0,0,0,478,,Snover,Frost Tree Pokémon
-460,abomasnow,4,459.0,239,9,6.0,,4,60,50,0,20,1,1,1,0,0,479,,Abomasnow,Frost Tree Pokémon
-461,weavile,4,215.0,109,1,6.0,,4,45,35,0,20,1,4,0,0,0,246,182.0,Weavile,Sharp Claw Pokémon
-462,magnezone,4,82.0,34,4,4.0,,-1,30,50,0,20,0,2,0,0,0,90,,Magnezone,Magnet Area Pokémon
-463,lickilicky,4,108.0,48,6,12.0,,4,30,50,0,20,0,2,0,0,0,120,,Lickilicky,Licking Pokémon
-464,rhyperior,4,112.0,50,4,6.0,,4,30,50,0,20,1,1,0,0,0,125,162.0,Rhyperior,Drill Pokémon
-465,tangrowth,4,114.0,52,2,12.0,,4,30,50,0,20,1,2,0,0,0,130,,Tangrowth,Vine Pokémon
-466,electivire,4,125.0,60,10,6.0,,2,30,50,0,25,0,2,0,0,0,147,,Electivire,Thunderbolt Pokémon
-467,magmortar,4,126.0,61,8,6.0,,2,30,50,0,25,0,2,0,0,0,150,,Magmortar,Blast Pokémon
-468,togekiss,4,176.0,87,9,9.0,,1,30,50,0,10,0,3,0,0,0,205,,Togekiss,Jubilee Pokémon
-469,yanmega,4,193.0,95,5,13.0,,4,30,70,0,20,0,2,0,0,0,224,,Yanmega,Ogre Darner Pokémon
-470,leafeon,4,133.0,67,5,8.0,,1,45,35,0,35,0,2,0,0,0,163,7.0,Leafeon,Verdant Pokémon
-471,glaceon,4,133.0,67,2,8.0,,1,45,35,0,35,0,2,0,0,0,164,8.0,Glaceon,Fresh Snow Pokémon
-472,gliscor,4,207.0,104,7,9.0,,4,30,70,0,20,0,4,0,0,0,239,,Gliscor,Fang Scorpion Pokémon
-473,mamoswine,4,221.0,112,3,8.0,,4,50,50,0,20,1,1,0,0,0,253,,Mamoswine,Twin Tusk Pokémon
-474,porygon-z,4,233.0,68,8,4.0,,-1,30,50,0,20,0,2,0,0,0,168,,Porygon-Z,Virtual Pokémon
-475,gallade,4,281.0,140,9,12.0,,0,45,35,0,20,0,1,1,0,0,308,12.0,Gallade,Blade Pokémon
-476,probopass,4,299.0,147,4,11.0,,4,60,70,0,20,0,2,0,0,0,325,,Probopass,Compass Pokémon
-477,dusknoir,4,356.0,182,1,4.0,,4,45,35,0,25,0,3,0,0,0,385,71.0,Dusknoir,Gripper Pokémon
-478,froslass,4,361.0,186,9,4.0,,8,75,50,0,20,0,2,0,0,0,392,95.0,Froslass,Snow Land Pokémon
-479,rotom,4,,240,8,1.0,,-1,45,50,0,20,0,2,1,0,0,480,,Rotom,Plasma Pokémon
-480,uxie,4,,241,10,6.0,,-1,3,140,0,80,0,1,0,1,0,481,,Uxie,Knowledge Pokémon
-481,mesprit,4,,242,6,6.0,,-1,3,140,0,80,0,1,0,1,0,482,,Mesprit,Emotion Pokémon
-482,azelf,4,,243,2,6.0,,-1,3,140,0,80,0,1,0,1,0,483,,Azelf,Willpower Pokémon
-483,dialga,4,,244,9,8.0,,-1,3,0,0,120,0,1,0,1,0,484,195.0,Dialga,Temporal Pokémon
-484,palkia,4,,245,7,6.0,,-1,3,0,0,120,0,1,0,1,0,485,,Palkia,Spatial Pokémon
-485,heatran,4,,246,3,8.0,,4,3,100,0,10,0,1,0,1,0,486,,Heatran,Lava Dome Pokémon
-486,regigigas,4,,247,9,12.0,,-1,3,0,0,120,0,1,0,1,0,487,,Regigigas,Colossal Pokémon
-487,giratina,4,,248,1,10.0,,-1,3,0,0,120,0,1,1,1,0,488,,Giratina,Renegade Pokémon
-488,cresselia,4,,249,10,2.0,,8,3,100,0,120,0,1,0,1,0,489,,Cresselia,Lunar Pokémon
-489,phione,4,,250,2,4.0,,-1,30,70,0,40,0,1,0,0,1,490,,Phione,Sea Drifter Pokémon
-490,manaphy,4,,250,2,12.0,,-1,3,70,0,10,0,1,0,0,1,491,,Manaphy,Seafaring Pokémon
-491,darkrai,4,,252,1,12.0,,-1,3,0,0,120,0,1,0,0,1,492,,Darkrai,Pitch-Black Pokémon
-492,shaymin,4,,253,5,8.0,,-1,45,100,0,120,0,4,1,0,1,493,,Shaymin,Gratitude Pokémon
-493,arceus,4,,254,9,8.0,,-1,3,0,0,120,0,1,1,0,1,494,199.0,Arceus,Alpha Pokémon
-494,victini,5,,255,10,12.0,,-1,3,100,0,120,0,1,0,0,1,495,,Victini,Victory Pokémon
-495,snivy,5,,256,5,6.0,,1,45,70,0,20,0,4,0,0,0,496,118.0,Snivy,Grass Snake Pokémon
-496,servine,5,495.0,256,5,6.0,,1,45,70,0,20,0,4,0,0,0,497,119.0,Servine,Grass Snake Pokémon
-497,serperior,5,496.0,256,5,2.0,,1,45,70,0,20,0,4,0,0,0,498,120.0,Serperior,Regal Pokémon
-498,tepig,5,,257,8,8.0,,1,45,70,0,20,0,4,0,0,0,499,121.0,Tepig,Fire Pig Pokémon
-499,pignite,5,498.0,257,8,6.0,,1,45,70,0,20,0,4,0,0,0,500,122.0,Pignite,Fire Pig Pokémon
-500,emboar,5,499.0,257,8,6.0,,1,45,70,0,20,0,4,0,0,0,501,123.0,Emboar,Mega Fire Pig Pokémon
-501,oshawott,5,,258,2,6.0,,1,45,70,0,20,0,4,0,0,0,502,106.0,Oshawott,Sea Otter Pokémon
-502,dewott,5,501.0,258,2,6.0,,1,45,70,0,20,0,4,0,0,0,503,107.0,Dewott,Discipline Pokémon
-503,samurott,5,502.0,258,2,8.0,,1,45,70,0,20,0,4,0,0,0,504,108.0,Samurott,Formidable Pokémon
-504,patrat,5,,259,3,8.0,,4,255,70,0,15,0,2,0,0,0,505,,Patrat,Scout Pokémon
-505,watchog,5,504.0,259,3,6.0,,4,255,70,0,20,0,2,0,0,0,506,,Watchog,Lookout Pokémon
-506,lillipup,5,,260,3,8.0,,4,255,50,0,15,0,4,0,0,0,507,,Lillipup,Puppy Pokémon
-507,herdier,5,506.0,260,4,8.0,,4,120,50,0,15,0,4,0,0,0,508,,Herdier,Loyal Dog Pokémon
-508,stoutland,5,507.0,260,4,8.0,,4,45,50,0,15,0,4,0,0,0,509,,Stoutland,Big-Hearted Pokémon
-509,purrloin,5,,261,7,8.0,,4,255,50,0,20,0,2,0,0,0,510,,Purrloin,Devious Pokémon
-510,liepard,5,509.0,261,7,8.0,,4,90,50,0,20,0,2,0,0,0,511,,Liepard,Cruel Pokémon
-511,pansage,5,,262,5,6.0,,1,190,70,0,20,0,2,0,0,0,512,136.0,Pansage,Grass Monkey Pokémon
-512,simisage,5,511.0,262,5,6.0,,1,75,70,0,20,0,2,0,0,0,513,137.0,Simisage,Thorn Monkey Pokémon
-513,pansear,5,,263,8,6.0,,1,190,70,0,20,0,2,0,0,0,514,138.0,Pansear,High Temp Pokémon
-514,simisear,5,513.0,263,8,6.0,,1,75,70,0,20,0,2,0,0,0,515,139.0,Simisear,Ember Pokémon
-515,panpour,5,,264,2,6.0,,1,190,70,0,20,0,2,0,0,0,516,140.0,Panpour,Spray Pokémon
-516,simipour,5,515.0,264,2,6.0,,1,75,70,0,20,0,2,0,0,0,517,141.0,Simipour,Geyser Pokémon
-517,munna,5,,265,6,8.0,,4,190,50,0,10,0,3,0,0,0,518,72.0,Munna,Dream Eater Pokémon
-518,musharna,5,517.0,265,6,12.0,,4,75,50,0,10,0,3,0,0,0,519,73.0,Musharna,Drowsing Pokémon
-519,pidove,5,,266,4,9.0,,4,255,50,0,15,0,4,0,0,0,520,,Pidove,Tiny Pigeon Pokémon
-520,tranquill,5,519.0,266,4,9.0,,4,120,50,0,15,0,4,0,0,0,521,,Tranquill,Wild Pigeon Pokémon
-521,unfezant,5,520.0,266,4,9.0,,4,45,50,0,15,1,4,0,0,0,522,,Unfezant,Proud Pokémon
-522,blitzle,5,,267,1,8.0,,4,190,70,0,20,0,2,0,0,0,523,74.0,Blitzle,Electrified Pokémon
-523,zebstrika,5,522.0,267,1,8.0,,4,75,70,0,20,0,2,0,0,0,524,75.0,Zebstrika,Thunderbolt Pokémon
-524,roggenrola,5,,268,2,7.0,,4,255,50,0,15,0,4,0,0,0,525,40.0,Roggenrola,Mantle Pokémon
-525,boldore,5,524.0,268,2,10.0,,4,120,50,0,15,0,4,0,0,0,526,41.0,Boldore,Ore Pokémon
-526,gigalith,5,525.0,268,2,10.0,,4,45,50,0,15,0,4,0,0,0,527,42.0,Gigalith,Compressed Pokémon
-527,woobat,5,,269,2,9.0,,4,190,50,0,15,0,2,0,0,0,528,,Woobat,Bat Pokémon
-528,swoobat,5,527.0,269,2,9.0,,4,45,50,0,15,0,2,0,0,0,529,,Swoobat,Courting Pokémon
-529,drilbur,5,,270,4,6.0,,4,120,50,0,20,0,2,0,0,0,530,152.0,Drilbur,Mole Pokémon
-530,excadrill,5,529.0,270,4,12.0,,4,60,50,0,20,0,2,0,0,0,531,153.0,Excadrill,Subterrene Pokémon
-531,audino,5,,271,6,6.0,,4,255,50,0,20,0,3,1,0,0,532,185.0,Audino,Hearing Pokémon
-532,timburr,5,,272,4,12.0,,2,180,70,0,20,0,4,0,0,0,533,101.0,Timburr,Muscular Pokémon
-533,gurdurr,5,532.0,272,4,12.0,,2,90,50,0,20,0,4,0,0,0,534,102.0,Gurdurr,Muscular Pokémon
-534,conkeldurr,5,533.0,272,3,12.0,,2,45,50,0,20,0,4,0,0,0,535,103.0,Conkeldurr,Muscular Pokémon
-535,tympole,5,,273,2,3.0,,4,255,50,0,20,0,4,0,0,0,536,,Tympole,Tadpole Pokémon
-536,palpitoad,5,535.0,273,2,6.0,,4,120,50,0,20,0,4,0,0,0,537,,Palpitoad,Vibration Pokémon
-537,seismitoad,5,536.0,273,2,12.0,,4,45,50,0,20,0,4,0,0,0,538,,Seismitoad,Vibration Pokémon
-538,throh,5,,274,8,12.0,,0,45,50,0,20,0,2,0,0,0,539,,Throh,Judo Pokémon
-539,sawk,5,,275,2,12.0,,0,45,50,0,20,0,2,0,0,0,540,,Sawk,Karate Pokémon
-540,sewaddle,5,,276,10,14.0,,4,255,70,0,15,0,4,0,0,0,541,124.0,Sewaddle,Sewing Pokémon
-541,swadloon,5,540.0,276,5,4.0,,4,120,70,0,15,0,4,0,0,0,542,125.0,Swadloon,Leaf-Wrapped Pokémon
-542,leavanny,5,541.0,276,10,12.0,,4,45,70,0,15,0,4,0,0,0,543,126.0,Leavanny,Nurturing Pokémon
-543,venipede,5,,277,8,14.0,,4,255,50,0,15,0,4,0,0,0,544,31.0,Venipede,Centipede Pokémon
-544,whirlipede,5,543.0,277,4,1.0,,4,120,50,0,15,0,4,0,0,0,545,32.0,Whirlipede,Curlipede Pokémon
-545,scolipede,5,544.0,277,8,14.0,,4,45,50,0,20,0,4,0,0,0,546,33.0,Scolipede,Megapede Pokémon
-546,cottonee,5,,278,5,1.0,,4,190,50,0,20,0,2,0,0,0,547,48.0,Cottonee,Cotton Puff Pokémon
-547,whimsicott,5,546.0,278,5,12.0,,4,75,50,0,20,0,2,0,0,0,548,49.0,Whimsicott,Windveiled Pokémon
-548,petilil,5,,279,5,5.0,,8,190,50,0,20,0,2,0,0,0,549,43.0,Petilil,Bulb Pokémon
-549,lilligant,5,548.0,279,5,5.0,,8,75,50,0,20,0,2,0,0,0,550,44.0,Lilligant,Flowering Pokémon
-550,basculin,5,,280,5,3.0,,4,25,50,0,40,0,2,0,0,0,551,,Basculin,Hostile Pokémon
-551,sandile,5,,281,3,8.0,,4,180,50,0,20,0,4,0,0,0,552,66.0,Sandile,Desert Croc Pokémon
-552,krokorok,5,551.0,281,3,8.0,,4,90,50,0,20,0,4,0,0,0,553,67.0,Krokorok,Desert Croc Pokémon
-553,krookodile,5,552.0,281,8,6.0,,4,45,50,0,20,0,4,0,0,0,554,68.0,Krookodile,Intimidation Pokémon
-554,darumaka,5,,282,8,12.0,,4,120,50,0,20,0,4,0,0,0,555,142.0,Darumaka,Zen Charm Pokémon
-555,darmanitan,5,554.0,282,8,8.0,,4,60,50,0,20,0,4,1,0,0,556,143.0,Darmanitan,Blazing Pokémon
-556,maractus,5,,283,5,5.0,,4,255,50,0,20,0,2,0,0,0,557,,Maractus,Cactus Pokémon
-557,dwebble,5,,284,8,14.0,,4,190,50,0,20,0,2,0,0,0,558,,Dwebble,Rock Inn Pokémon
-558,crustle,5,557.0,284,8,14.0,,4,75,50,0,20,0,2,0,0,0,559,,Crustle,Stone Home Pokémon
-559,scraggy,5,,285,10,6.0,,4,180,35,0,15,0,2,0,0,0,560,165.0,Scraggy,Shedding Pokémon
-560,scrafty,5,559.0,285,8,6.0,,4,90,50,0,15,0,2,0,0,0,561,166.0,Scrafty,Hoodlum Pokémon
-561,sigilyph,5,,286,1,9.0,,4,45,50,0,20,0,2,0,0,0,562,,Sigilyph,Avianoid Pokémon
-562,yamask,5,,287,1,4.0,,4,190,50,0,25,0,2,0,0,0,563,,Yamask,Spirit Pokémon
-563,cofagrigus,5,562.0,287,10,5.0,,4,90,50,0,25,0,2,0,0,0,564,,Cofagrigus,Coffin Pokémon
-564,tirtouga,5,,288,2,8.0,,1,45,50,0,30,0,2,0,0,0,565,,Tirtouga,Prototurtle Pokémon
-565,carracosta,5,564.0,288,2,6.0,,1,45,50,0,30,0,2,0,0,0,566,,Carracosta,Prototurtle Pokémon
-566,archen,5,,289,10,9.0,,1,45,50,0,30,0,2,0,0,0,567,,Archen,First Bird Pokémon
-567,archeops,5,566.0,289,10,9.0,,1,45,50,0,30,0,2,0,0,0,568,,Archeops,First Bird Pokémon
-568,trubbish,5,,290,5,12.0,,4,190,50,0,20,0,2,0,0,0,569,,Trubbish,Trash Bag Pokémon
-569,garbodor,5,568.0,290,5,12.0,,4,60,50,0,20,0,2,0,0,0,570,,Garbodor,Trash Heap Pokémon
-570,zorua,5,,291,4,8.0,,1,75,50,0,25,0,4,0,0,0,571,154.0,Zorua,Tricky Fox Pokémon
-571,zoroark,5,570.0,291,4,6.0,,1,45,50,0,20,0,4,0,0,0,572,155.0,Zoroark,Illusion Fox Pokémon
-572,minccino,5,,292,4,8.0,,6,255,50,0,15,0,3,0,0,0,573,96.0,Minccino,Chinchilla Pokémon
-573,cinccino,5,572.0,292,4,8.0,,6,60,50,0,15,0,3,0,0,0,574,97.0,Cinccino,Scarf Pokémon
-574,gothita,5,,293,7,12.0,,6,200,50,0,20,0,4,0,0,0,575,63.0,Gothita,Fixation Pokémon
-575,gothorita,5,574.0,293,7,12.0,,6,100,50,0,20,0,4,0,0,0,576,64.0,Gothorita,Manipulate Pokémon
-576,gothitelle,5,575.0,293,7,12.0,,6,50,50,0,20,0,4,0,0,0,577,65.0,Gothitelle,Astral Body Pokémon
-577,solosis,5,,294,5,1.0,,4,200,50,0,20,0,4,0,0,0,578,,Solosis,Cell Pokémon
-578,duosion,5,577.0,294,5,1.0,,4,100,50,0,20,0,4,0,0,0,579,,Duosion,Mitosis Pokémon
-579,reuniclus,5,578.0,294,5,4.0,,4,50,50,0,20,0,4,0,0,0,580,,Reuniclus,Multiplying Pokémon
-580,ducklett,5,,295,2,9.0,,4,190,70,0,20,0,2,0,0,0,581,,Ducklett,Water Bird Pokémon
-581,swanna,5,580.0,295,9,9.0,,4,45,70,0,20,0,2,0,0,0,582,,Swanna,White Bird Pokémon
-582,vanillite,5,,296,9,5.0,,4,255,50,0,20,0,1,0,0,0,583,,Vanillite,Fresh Snow Pokémon
-583,vanillish,5,582.0,296,9,5.0,,4,120,50,0,20,0,1,0,0,0,584,,Vanillish,Icy Snow Pokémon
-584,vanilluxe,5,583.0,296,9,11.0,,4,45,50,0,20,0,1,0,0,0,585,,Vanilluxe,Snowstorm Pokémon
-585,deerling,5,,297,6,8.0,,4,190,70,0,20,0,2,1,0,0,586,,Deerling,Season Pokémon
-586,sawsbuck,5,585.0,297,3,8.0,,4,75,70,0,20,0,2,1,0,0,587,,Sawsbuck,Season Pokémon
-587,emolga,5,,298,9,8.0,,4,200,50,0,20,0,2,0,0,0,588,180.0,Emolga,Sky Squirrel Pokémon
-588,karrablast,5,,299,2,12.0,,4,200,50,0,15,0,2,0,0,0,589,,Karrablast,Clamping Pokémon
-589,escavalier,5,588.0,299,4,4.0,,4,75,50,0,15,0,2,0,0,0,590,,Escavalier,Cavalry Pokémon
-590,foongus,5,,300,9,4.0,,4,190,50,0,20,0,2,0,0,0,591,,Foongus,Mushroom Pokémon
-591,amoonguss,5,590.0,300,9,4.0,,4,75,50,0,20,0,2,0,0,0,592,,Amoonguss,Mushroom Pokémon
-592,frillish,5,,301,9,10.0,,4,190,50,0,20,1,2,0,0,0,593,,Frillish,Floating Pokémon
-593,jellicent,5,592.0,301,9,10.0,,4,60,50,0,20,1,2,0,0,0,594,,Jellicent,Floating Pokémon
-594,alomomola,5,,302,6,3.0,,4,75,70,0,40,0,3,0,0,0,595,,Alomomola,Caring Pokémon
-595,joltik,5,,303,10,14.0,,4,190,50,0,20,0,2,0,0,0,596,147.0,Joltik,Attaching Pokémon
-596,galvantula,5,595.0,303,10,14.0,,4,75,50,0,20,0,2,0,0,0,597,148.0,Galvantula,EleSpider Pokémon
-597,ferroseed,5,,304,4,1.0,,4,255,50,0,20,0,2,0,0,0,598,,Ferroseed,Thorn Seed Pokémon
-598,ferrothorn,5,597.0,304,4,10.0,,4,90,50,0,20,0,2,0,0,0,599,,Ferrothorn,Thorn Pod Pokémon
-599,klink,5,,305,4,11.0,,-1,130,50,0,20,0,4,0,0,0,600,,Klink,Gear Pokémon
-600,klang,5,599.0,305,4,11.0,,-1,60,50,0,20,0,4,0,0,0,601,,Klang,Gear Pokémon
-601,klinklang,5,600.0,305,4,11.0,,-1,30,50,0,20,0,4,0,0,0,602,,Klinklang,Gear Pokémon
-602,tynamo,5,,306,9,3.0,,4,190,70,0,20,0,1,0,0,0,603,,Tynamo,EleFish Pokémon
-603,eelektrik,5,602.0,306,2,3.0,,4,60,70,0,20,0,1,0,0,0,604,,Eelektrik,EleFish Pokémon
-604,eelektross,5,603.0,306,2,3.0,,4,30,70,0,20,0,1,0,0,0,605,,Eelektross,EleFish Pokémon
-605,elgyem,5,,307,2,6.0,,4,255,50,0,20,0,2,0,0,0,606,,Elgyem,Cerebral Pokémon
-606,beheeyem,5,605.0,307,3,12.0,,4,90,50,0,20,0,2,0,0,0,607,,Beheeyem,Cerebral Pokémon
-607,litwick,5,,308,9,5.0,,4,190,50,0,20,0,4,0,0,0,608,37.0,Litwick,Candle Pokémon
-608,lampent,5,607.0,308,1,4.0,,4,90,50,0,20,0,4,0,0,0,609,38.0,Lampent,Lamp Pokémon
-609,chandelure,5,608.0,308,1,4.0,,4,45,50,0,20,0,4,0,0,0,610,39.0,Chandelure,Luring Pokémon
-610,axew,5,,309,5,6.0,,4,75,35,0,40,0,1,0,0,0,611,144.0,Axew,Tusk Pokémon
-611,fraxure,5,610.0,309,5,6.0,,4,60,35,0,40,0,1,0,0,0,612,145.0,Fraxure,Axe Jaw Pokémon
-612,haxorus,5,611.0,309,10,6.0,,4,45,35,0,40,0,1,0,0,0,613,146.0,Haxorus,Axe Jaw Pokémon
-613,cubchoo,5,,310,9,6.0,,4,120,50,0,20,0,2,0,0,0,614,104.0,Cubchoo,Chill Pokémon
-614,beartic,5,613.0,310,9,8.0,,4,60,50,0,20,0,2,0,0,0,615,105.0,Beartic,Freezing Pokémon
-615,cryogonal,5,,311,2,1.0,,-1,25,50,0,25,0,2,0,0,0,616,,Cryogonal,Crystallizing Pokémon
-616,shelmet,5,,312,8,1.0,,4,200,50,0,15,0,2,0,0,0,617,,Shelmet,Snail Pokémon
-617,accelgor,5,616.0,312,8,4.0,,4,75,50,0,15,0,2,0,0,0,618,,Accelgor,Shell Out Pokémon
-618,stunfisk,5,,313,3,3.0,,4,75,70,0,20,0,2,0,0,0,619,,Stunfisk,Trap Pokémon
-619,mienfoo,5,,314,10,6.0,,4,180,50,0,25,0,4,0,0,0,620,,Mienfoo,Martial Arts Pokémon
-620,mienshao,5,619.0,314,7,6.0,,4,45,50,0,25,0,4,0,0,0,621,,Mienshao,Martial Arts Pokémon
-621,druddigon,5,,315,8,6.0,,4,45,50,0,30,0,2,0,0,0,622,,Druddigon,Cave Pokémon
-622,golett,5,,316,5,12.0,,-1,190,50,0,25,0,2,0,0,0,623,,Golett,Automaton Pokémon
-623,golurk,5,622.0,316,5,12.0,,-1,90,50,0,25,0,2,0,0,0,624,,Golurk,Automaton Pokémon
-624,pawniard,5,,317,8,12.0,,4,120,35,0,20,0,2,0,0,0,625,158.0,Pawniard,Sharp Blade Pokémon
-625,bisharp,5,624.0,317,8,12.0,,4,45,35,0,20,0,2,0,0,0,626,159.0,Bisharp,Sword Blade Pokémon
-626,bouffalant,5,,318,3,8.0,,4,45,50,0,20,0,2,0,0,0,627,,Bouffalant,Bash Buffalo Pokémon
-627,rufflet,5,,319,9,9.0,,0,190,50,0,20,0,1,0,0,0,628,169.0,Rufflet,Eaglet Pokémon
-628,braviary,5,627.0,319,8,9.0,,0,60,50,0,20,0,1,0,0,0,629,170.0,Braviary,Valiant Pokémon
-629,vullaby,5,,320,3,9.0,,8,190,35,0,20,0,1,0,0,0,630,,Vullaby,Diapered Pokémon
-630,mandibuzz,5,629.0,320,3,9.0,,8,60,35,0,20,0,1,0,0,0,631,,Mandibuzz,Bone Vulture Pokémon
-631,heatmor,5,,321,8,6.0,,4,90,50,0,20,0,2,0,0,0,632,,Heatmor,Anteater Pokémon
-632,durant,5,,322,4,14.0,,4,90,50,0,20,0,2,0,0,0,633,,Durant,Iron Ant Pokémon
-633,deino,5,,323,2,8.0,,4,45,35,0,40,0,1,0,0,0,634,90.0,Deino,Irate Pokémon
-634,zweilous,5,633.0,323,2,8.0,,4,45,35,0,40,0,1,0,0,0,635,91.0,Zweilous,Hostile Pokémon
-635,hydreigon,5,634.0,323,2,6.0,,4,45,35,0,40,0,1,0,0,0,636,92.0,Hydreigon,Brutal Pokémon
-636,larvesta,5,,324,9,14.0,,4,45,50,0,40,0,1,0,0,0,637,173.0,Larvesta,Torch Pokémon
-637,volcarona,5,636.0,324,9,13.0,,4,15,50,0,40,0,1,0,0,0,638,174.0,Volcarona,Sun Pokémon
-638,cobalion,5,,325,2,8.0,,-1,3,35,0,80,0,1,0,1,0,639,,Cobalion,Iron Will Pokémon
-639,terrakion,5,,326,4,8.0,,-1,3,35,0,80,0,1,0,1,0,640,191.0,Terrakion,Cavern Pokémon
-640,virizion,5,,327,5,8.0,,-1,3,35,0,80,0,1,0,1,0,641,,Virizion,Grassland Pokémon
-641,tornadus,5,,328,5,4.0,,0,3,90,0,120,0,1,1,1,0,642,,Tornadus,Cyclone Pokémon
-642,thundurus,5,,329,2,4.0,,0,3,90,0,120,0,1,1,1,0,643,,Thundurus,Bolt Strike Pokémon
-643,reshiram,5,,330,9,9.0,,-1,3,0,0,120,0,1,0,1,0,644,197.0,Reshiram,Vast White Pokémon
-644,zekrom,5,,331,1,6.0,,-1,3,0,0,120,0,1,0,1,0,645,198.0,Zekrom,Deep Black Pokémon
-645,landorus,5,,332,3,4.0,,0,3,90,0,120,0,1,1,1,0,646,,Landorus,Abundance Pokémon
-646,kyurem,5,,333,4,6.0,,-1,3,0,0,120,0,1,1,1,0,647,,Kyurem,Boundary Pokémon
-647,keldeo,5,,334,10,8.0,,-1,3,35,0,80,0,1,1,0,1,648,,Keldeo,Colt Pokémon
-648,meloetta,5,,335,9,12.0,,-1,3,100,0,120,0,1,1,0,1,649,,Meloetta,Melody Pokémon
-649,genesect,5,,336,7,12.0,,-1,3,0,0,120,0,1,1,0,1,650,,Genesect,Paleozoic Pokémon
-650,chespin,6,,337,5,6.0,,1,45,70,0,20,0,4,0,0,0,651,,Chespin,Spiny Nut Pokémon
-651,quilladin,6,650.0,337,5,6.0,,1,45,70,0,20,0,4,0,0,0,652,,Quilladin,Spiny Armor Pokémon
-652,chesnaught,6,651.0,337,5,6.0,,1,45,70,0,20,0,4,0,0,0,653,,Chesnaught,Spiny Armor Pokémon
-653,fennekin,6,,338,8,8.0,,1,45,70,0,20,0,4,0,0,0,654,,Fennekin,Fox Pokémon
-654,braixen,6,653.0,338,8,6.0,,1,45,70,0,20,0,4,0,0,0,655,,Braixen,Fox Pokémon
-655,delphox,6,654.0,338,8,6.0,,1,45,70,0,20,0,4,0,0,0,656,,Delphox,Fox Pokémon
-656,froakie,6,,339,2,8.0,,1,45,70,0,20,0,4,0,0,0,657,,Froakie,Bubble Frog Pokémon
-657,frogadier,6,656.0,339,2,12.0,,1,45,70,0,20,0,4,0,0,0,658,,Frogadier,Bubble Frog Pokémon
-658,greninja,6,657.0,339,2,12.0,,1,45,70,0,20,0,4,0,0,0,659,,Greninja,Ninja Pokémon
-659,bunnelby,6,,340,3,6.0,,4,255,50,0,15,0,2,0,0,0,660,,Bunnelby,Digging Pokémon
-660,diggersby,6,659.0,340,3,6.0,,4,127,50,0,15,0,2,0,0,0,661,,Diggersby,Digging Pokémon
-661,fletchling,6,,341,8,9.0,,4,255,50,0,15,0,4,0,0,0,662,,Fletchling,Tiny Robin Pokémon
-662,fletchinder,6,661.0,341,8,9.0,,4,120,50,0,15,0,4,0,0,0,663,,Fletchinder,Ember Pokémon
-663,talonflame,6,662.0,341,8,9.0,,4,45,50,0,15,0,4,0,0,0,664,,Talonflame,Scorching Pokémon
-664,scatterbug,6,,342,1,14.0,,4,255,70,0,15,0,2,0,0,0,665,,Scatterbug,Scatterdust Pokémon
-665,spewpa,6,664.0,342,1,5.0,,4,120,70,0,15,0,2,0,0,0,666,,Spewpa,Scatterdust Pokémon
-666,vivillon,6,665.0,342,9,13.0,,4,45,70,0,15,0,2,0,0,0,667,,Vivillon,Scale Pokémon
-667,litleo,6,,343,3,8.0,,7,220,70,0,20,0,4,0,0,0,668,,Litleo,Lion Cub Pokémon
-668,pyroar,6,667.0,343,3,8.0,,7,65,70,0,20,1,4,0,0,0,669,,Pyroar,Royal Pokémon
-669,flabebe,6,,344,9,4.0,,8,225,70,0,20,0,2,0,0,0,670,,Flabébé,Single Bloom Pokémon
-670,floette,6,669.0,344,9,4.0,,8,120,70,0,20,0,2,0,0,0,671,,Floette,Single Bloom Pokémon
-671,florges,6,670.0,344,9,4.0,,8,45,70,0,20,0,2,0,0,0,672,,Florges,Garden Pokémon
-672,skiddo,6,,345,3,8.0,,4,200,70,0,20,0,2,0,0,0,673,,Skiddo,Mount Pokémon
-673,gogoat,6,672.0,345,3,8.0,,4,45,70,0,20,0,2,0,0,0,674,,Gogoat,Mount Pokémon
-674,pancham,6,,346,9,6.0,,4,220,50,0,25,0,2,0,0,0,675,,Pancham,Playful Pokémon
-675,pangoro,6,674.0,346,9,12.0,,4,65,50,0,25,0,2,0,0,0,676,,Pangoro,Daunting Pokémon
-676,furfrou,6,,347,9,8.0,,4,160,70,0,20,0,2,1,0,0,677,,Furfrou,Poodle Pokémon
-677,espurr,6,,348,4,6.0,,4,190,50,0,20,0,2,0,0,0,678,,Espurr,Restraint Pokémon
-678,meowstic,6,677.0,348,2,6.0,,0,75,50,0,20,1,2,0,0,0,679,,Meowstic,Constraint Pokémon
-679,honedge,6,,349,3,5.0,,4,180,50,0,20,0,2,0,0,0,680,,Honedge,Sword Pokémon
-680,doublade,6,679.0,349,3,11.0,,4,90,50,0,20,0,2,0,0,0,681,,Doublade,Sword Pokémon
-681,aegislash,6,680.0,349,3,5.0,,4,45,50,0,20,0,2,1,0,0,682,,Aegislash,Royal Sword Pokémon
-682,spritzee,6,,350,6,4.0,,4,200,50,0,20,0,2,0,0,0,683,,Spritzee,Perfume Pokémon
-683,aromatisse,6,682.0,350,6,12.0,,4,140,50,0,20,0,2,0,0,0,684,,Aromatisse,Fragrance Pokémon
-684,swirlix,6,,351,9,7.0,,4,200,50,0,20,0,2,0,0,0,685,,Swirlix,Cotton Candy Pokémon
-685,slurpuff,6,684.0,351,9,12.0,,4,140,50,0,20,0,2,0,0,0,686,,Slurpuff,Meringue Pokémon
-686,inkay,6,,352,2,10.0,,4,190,50,0,20,0,2,0,0,0,687,,Inkay,Revolving Pokémon
-687,malamar,6,686.0,352,2,5.0,,4,80,50,0,20,0,2,0,0,0,688,,Malamar,Overturning Pokémon
-688,binacle,6,,353,3,11.0,,4,120,50,0,20,0,2,0,0,0,689,,Binacle,Two-Handed Pokémon
-689,barbaracle,6,688.0,353,3,11.0,,4,45,50,0,20,0,2,0,0,0,690,,Barbaracle,Collective Pokémon
-690,skrelp,6,,354,3,5.0,,4,225,50,0,20,0,2,0,0,0,691,,Skrelp,Mock Kelp Pokémon
-691,dragalge,6,690.0,354,3,5.0,,4,55,50,0,20,0,2,0,0,0,692,,Dragalge,Mock Kelp Pokémon
-692,clauncher,6,,355,2,14.0,,4,225,50,0,15,0,1,0,0,0,693,,Clauncher,Water Gun Pokémon
-693,clawitzer,6,692.0,355,2,2.0,,4,55,50,0,15,0,1,0,0,0,694,,Clawitzer,Howitzer Pokémon
-694,helioptile,6,,356,10,6.0,,4,190,50,0,20,0,2,0,0,0,695,,Helioptile,Generator Pokémon
-695,heliolisk,6,694.0,356,10,6.0,,4,75,50,0,20,0,2,0,0,0,696,,Heliolisk,Generator Pokémon
-696,tyrunt,6,,357,3,6.0,,1,45,50,0,30,0,2,0,0,0,697,,Tyrunt,Royal Heir Pokémon
-697,tyrantrum,6,696.0,357,8,6.0,,1,45,50,0,30,0,2,0,0,0,698,,Tyrantrum,Despot Pokémon
-698,amaura,6,,358,2,8.0,,1,45,50,0,30,0,2,0,0,0,699,,Amaura,Tundra Pokémon
-699,aurorus,6,698.0,358,2,8.0,,1,45,50,0,30,0,2,0,0,0,700,,Aurorus,Tundra Pokémon
-700,sylveon,6,133.0,67,6,8.0,,1,45,50,0,35,0,2,0,0,0,165,,Sylveon,Intertwining Pokémon
-701,hawlucha,6,,359,5,12.0,,4,100,50,0,20,0,2,0,0,0,701,,Hawlucha,Wrestling Pokémon
-702,dedenne,6,,360,10,6.0,,4,180,50,0,20,0,2,0,0,0,702,,Dedenne,Antenna Pokémon
-703,carbink,6,,361,4,1.0,,-1,60,50,0,25,0,1,0,0,0,703,,Carbink,Jewel Pokémon
-704,goomy,6,,362,7,2.0,,4,45,35,0,40,0,1,0,0,0,704,,Goomy,Soft Tissue Pokémon
-705,sliggoo,6,704.0,362,7,2.0,,4,45,35,0,40,0,1,0,0,0,705,,Sliggoo,Soft Tissue Pokémon
-706,goodra,6,705.0,362,7,6.0,,4,45,35,0,40,0,1,0,0,0,706,,Goodra,Dragon Pokémon
-707,klefki,6,,363,4,1.0,,4,75,50,0,20,0,3,0,0,0,707,,Klefki,Key Ring Pokémon
-708,phantump,6,,364,3,4.0,,4,120,50,0,20,0,2,0,0,0,708,,Phantump,Stump Pokémon
-709,trevenant,6,708.0,364,3,10.0,,4,60,50,0,20,0,2,0,0,0,709,,Trevenant,Elder Tree Pokémon
-710,pumpkaboo,6,,365,3,1.0,,4,120,50,0,20,0,2,0,0,0,710,,Pumpkaboo,Pumpkin Pokémon
-711,gourgeist,6,710.0,365,3,5.0,,4,60,50,0,20,0,2,0,0,0,711,,Gourgeist,Pumpkin Pokémon
-712,bergmite,6,,366,2,8.0,,4,190,50,0,20,0,2,0,0,0,712,,Bergmite,Ice Chunk Pokémon
-713,avalugg,6,712.0,366,2,8.0,,4,55,50,0,20,0,2,0,0,0,713,,Avalugg,Iceberg Pokémon
-714,noibat,6,,367,7,9.0,,4,190,50,0,20,0,2,0,0,0,714,,Noibat,Sound Wave Pokémon
-715,noivern,6,714.0,367,7,9.0,,4,45,50,0,20,0,2,0,0,0,715,,Noivern,Sound Wave Pokémon
-716,xerneas,6,,368,2,8.0,,-1,45,0,0,120,0,1,1,1,0,716,,Xerneas,Life Pokémon
-717,yveltal,6,,369,8,9.0,,-1,45,0,0,120,0,1,0,1,0,717,,Yveltal,Destruction Pokémon
-718,zygarde,6,,370,5,2.0,,-1,3,0,0,120,0,1,0,1,0,718,,Zygarde,Order Pokémon
-719,diancie,6,,371,6,4.0,,-1,3,50,0,25,0,1,1,0,1,719,,Diancie,Jewel Pokémon
-720,hoopa,6,,372,7,4.0,,-1,3,100,0,120,0,1,0,0,1,720,,Hoopa,Mischief Pokémon
-721,volcanion,6,,373,3,8.0,,-1,3,100,0,120,0,1,0,0,1,721,,Volcanion,Steam Pokémon
-722,rowlet,7,,374,3,9.0,,1,45,50,0,15,0,4,0,0,0,722,,Rowlet,Grass Quill Pokémon
-723,dartrix,7,722.0,374,3,9.0,,1,45,50,0,15,0,4,0,0,0,723,,Dartrix,Blade Quill Pokémon
-724,decidueye,7,723.0,374,3,9.0,,1,45,50,0,15,0,4,0,0,0,724,,Decidueye,Arrow Quill Pokémon
-725,litten,7,,375,8,8.0,,1,45,50,0,15,0,4,0,0,0,725,,Litten,Fire Cat Pokémon
-726,torracat,7,725.0,375,8,8.0,,1,45,50,0,15,0,4,0,0,0,726,,Torracat,Fire Cat Pokémon
-727,incineroar,7,726.0,375,8,6.0,,1,45,50,0,15,0,4,0,0,0,727,,Incineroar,Heel Pokémon
-728,popplio,7,,376,2,3.0,,1,45,50,0,15,0,4,0,0,0,728,,Popplio,Sea Lion Pokémon
-729,brionne,7,728.0,376,2,3.0,,1,45,50,0,15,0,4,0,0,0,729,,Brionne,Pop Star Pokémon
-730,primarina,7,729.0,376,2,3.0,,1,45,50,0,15,0,4,0,0,0,730,,Primarina,Soloist Pokémon
-731,pikipek,7,,377,1,9.0,,4,255,70,0,15,0,2,0,0,0,731,,Pikipek,Woodpecker Pokémon
-732,trumbeak,7,731.0,377,1,9.0,,4,120,70,0,15,0,2,0,0,0,732,,Trumbeak,Bugle Beak Pokémon
-733,toucannon,7,732.0,377,1,9.0,,4,45,70,0,15,0,2,0,0,0,733,,Toucannon,Cannon Pokémon
-734,yungoos,7,,378,3,8.0,,4,255,70,0,15,0,2,0,0,0,734,,Yungoos,Loitering Pokémon
-735,gumshoos,7,734.0,378,3,8.0,,4,127,70,0,15,0,2,0,0,0,735,,Gumshoos,Stakeout Pokémon
-736,grubbin,7,,379,4,14.0,,4,255,50,0,15,0,2,0,0,0,736,,Grubbin,Larva Pokémon
-737,charjabug,7,736.0,379,5,2.0,,4,120,50,0,15,0,2,0,0,0,737,,Charjabug,Battery Pokémon
-738,vikavolt,7,737.0,379,2,14.0,,4,45,50,0,15,0,2,0,0,0,738,,Vikavolt,Stag Beetle Pokémon
-739,crabrawler,7,,380,7,14.0,,4,225,70,0,20,0,2,0,0,0,739,,Crabrawler,Boxing Pokémon
-740,crabominable,7,739.0,380,9,14.0,,4,60,70,0,20,0,2,0,0,0,740,,Crabominable,Woolly Crab Pokémon
-741,oricorio,7,,381,8,9.0,,6,45,70,0,20,0,2,0,0,0,741,,Oricorio,Dancing Pokémon
-742,cutiefly,7,,382,10,14.0,,4,190,50,0,20,0,2,0,0,0,742,,Cutiefly,Bee Fly Pokémon
-743,ribombee,7,742.0,382,10,13.0,,4,75,50,0,20,0,2,0,0,0,743,,Ribombee,Bee Fly Pokémon
-744,rockruff,7,,383,3,8.0,,4,190,50,0,15,0,2,0,0,0,744,,Rockruff,Puppy Pokémon
-745,lycanroc,7,744.0,383,3,8.0,,4,90,50,0,15,0,2,0,0,0,745,,Lycanroc,Wolf Pokémon
-746,wishiwashi,7,,384,2,3.0,,4,60,50,0,15,0,3,0,0,0,746,,Wishiwashi,Small Fry Pokémon
-747,mareanie,7,,385,2,5.0,,4,190,50,0,20,0,2,0,0,0,747,,Mareanie,Brutal Star Pokémon
-748,toxapex,7,747.0,385,2,10.0,,4,75,50,0,20,0,2,0,0,0,748,,Toxapex,Brutal Star Pokémon
-749,mudbray,7,,386,3,8.0,,4,190,50,0,20,0,2,0,0,0,749,,Mudbray,Donkey Pokémon
-750,mudsdale,7,749.0,386,3,8.0,,4,60,50,0,20,0,2,0,0,0,750,,Mudsdale,Draft Horse Pokémon
-751,dewpider,7,,387,5,7.0,,4,200,50,0,15,0,2,0,0,0,751,,Dewpider,Water Bubble Pokémon
-752,araquanid,7,751.0,387,5,14.0,,4,100,50,0,15,0,2,0,0,0,752,,Araquanid,Water Bubble Pokémon
-753,fomantis,7,,388,6,6.0,,4,190,50,0,20,0,2,0,0,0,753,,Fomantis,Sickle Grass Pokémon
-754,lurantis,7,753.0,388,6,12.0,,4,75,50,0,20,0,2,0,0,0,754,,Lurantis,Bloom Sickle Pokémon
-755,morelull,7,,389,7,5.0,,4,190,50,0,20,0,2,0,0,0,755,,Morelull,Illuminating Pokémon
-756,shiinotic,7,755.0,389,7,12.0,,4,75,50,0,20,0,2,0,0,0,756,,Shiinotic,Illuminating Pokémon
-757,salandit,7,,390,1,8.0,,1,120,50,0,20,0,2,0,0,0,757,,Salandit,Toxic Lizard Pokémon
-758,salazzle,7,757.0,390,1,8.0,,8,45,50,0,20,0,2,0,0,0,758,,Salazzle,Toxic Lizard Pokémon
-759,stufful,7,,391,6,8.0,,4,140,50,0,15,0,2,0,0,0,759,,Stufful,Flailing Pokémon
-760,bewear,7,759.0,391,6,6.0,,4,70,50,0,15,0,2,0,0,0,760,,Bewear,Strong Arm Pokémon
-761,bounsweet,7,,392,7,7.0,,8,235,50,0,20,0,4,0,0,0,761,,Bounsweet,Fruit Pokémon
-762,steenee,7,761.0,392,7,12.0,,8,120,50,0,20,0,4,0,0,0,762,,Steenee,Fruit Pokémon
-763,tsareena,7,762.0,392,7,12.0,,8,45,50,0,20,0,4,0,0,0,763,,Tsareena,Fruit Pokémon
-764,comfey,7,,393,5,1.0,,6,60,50,0,20,0,3,0,0,0,764,,Comfey,Posy Picker Pokémon
-765,oranguru,7,,394,9,12.0,,4,45,50,0,20,0,1,0,0,0,765,,Oranguru,Sage Pokémon
-766,passimian,7,,395,9,6.0,,4,45,50,0,20,0,1,0,0,0,766,,Passimian,Teamwork Pokémon
-767,wimpod,7,,396,4,10.0,,4,90,50,0,20,0,2,0,0,0,767,,Wimpod,Turn Tail Pokémon
-768,golisopod,7,767.0,396,4,12.0,,4,45,50,0,20,0,2,0,0,0,768,,Golisopod,Hard Scale Pokémon
-769,sandygast,7,,397,3,2.0,,4,140,50,0,15,0,2,0,0,0,769,,Sandygast,Sand Heap Pokémon
-770,palossand,7,769.0,397,3,2.0,,4,60,50,0,15,0,2,0,0,0,770,,Palossand,Sand Castle Pokémon
-771,pyukumuku,7,,398,1,2.0,,4,60,50,0,15,0,3,0,0,0,771,,Pyukumuku,Sea Cucumber Pokémon
-772,type-null,7,,399,4,8.0,,-1,3,0,0,120,0,1,0,0,0,772,,Type: Null,Synthetic Pokémon
-773,silvally,7,772.0,399,4,8.0,,-1,3,0,0,120,0,1,0,0,0,773,,Silvally,Synthetic Pokémon
-774,minior,7,,400,3,1.0,,-1,30,70,0,25,0,4,0,0,0,774,,Minior,Meteor Pokémon
-775,komala,7,,401,2,12.0,,4,45,70,0,20,0,1,0,0,0,775,,Komala,Drowsing Pokémon
-776,turtonator,7,,402,8,6.0,,4,70,50,0,20,0,2,0,0,0,776,,Turtonator,Blast Turtle Pokémon
-777,togedemaru,7,,403,4,6.0,,4,180,50,0,10,0,2,0,0,0,777,,Togedemaru,Roly-Poly Pokémon
-778,mimikyu,7,,404,10,2.0,,4,45,50,0,20,0,2,0,0,0,778,,Mimikyu,Disguise Pokémon
-779,bruxish,7,,405,6,3.0,,4,80,70,0,15,0,2,0,0,0,779,,Bruxish,Gnash Teeth Pokémon
-780,drampa,7,,406,9,2.0,,4,70,50,0,20,0,2,0,0,0,780,,Drampa,Placid Pokémon
-781,dhelmise,7,,407,5,5.0,,-1,25,50,0,25,0,2,0,0,0,781,,Dhelmise,Sea Creeper Pokémon
-782,jangmo-o,7,,408,4,8.0,,4,45,50,0,40,0,1,0,0,0,782,,Jangmo-o,Scaly Pokémon
-783,hakamo-o,7,782.0,408,4,6.0,,4,45,50,0,40,0,1,0,0,0,783,,Hakamo-o,Scaly Pokémon
-784,kommo-o,7,783.0,408,4,6.0,,4,45,50,0,40,0,1,0,0,0,784,,Kommo-o,Scaly Pokémon
-785,tapu-koko,7,,409,10,4.0,,-1,3,50,0,15,0,1,0,1,0,785,,Tapu Koko,Land Spirit Pokémon
-786,tapu-lele,7,,410,6,4.0,,-1,3,50,0,15,0,1,0,1,0,786,,Tapu Lele,Land Spirit Pokémon
-787,tapu-bulu,7,,411,8,4.0,,-1,3,50,0,15,0,1,0,1,0,787,,Tapu Bulu,Land Spirit Pokémon
-788,tapu-fini,7,,412,7,4.0,,-1,3,50,0,15,0,1,0,1,0,788,,Tapu Fini,Land Spirit Pokémon
-789,cosmog,7,,413,2,1.0,,-1,45,0,0,120,0,1,0,1,0,789,,Cosmog,Nebula Pokémon
-790,cosmoem,7,789.0,413,2,1.0,,-1,45,0,0,120,0,1,0,1,0,790,,Cosmoem,Protostar Pokémon
-791,solgaleo,7,790.0,413,9,8.0,,-1,45,0,0,120,0,1,0,1,0,791,,Solgaleo,Sunne Pokémon
-792,lunala,7,790.0,413,7,9.0,,-1,45,0,0,120,0,1,0,1,0,792,,Lunala,Moone Pokémon
-793,nihilego,7,,414,9,10.0,,-1,45,0,0,120,0,1,0,0,0,793,,Nihilego,Parasite Pokémon
-794,buzzwole,7,,415,8,10.0,,-1,45,0,0,120,0,1,0,0,0,794,,Buzzwole,Swollen Pokémon
-795,pheromosa,7,,416,9,12.0,,-1,45,0,0,120,0,1,0,0,0,795,,Pheromosa,Lissome Pokémon
-796,xurkitree,7,,417,1,6.0,,-1,45,0,0,120,0,1,0,0,0,796,,Xurkitree,Glowing Pokémon
-797,celesteela,7,,418,5,12.0,,-1,45,0,0,120,0,1,0,0,0,797,,Celesteela,Launch Pokémon
-798,kartana,7,,419,9,12.0,,-1,45,0,0,120,0,1,0,0,0,798,,Kartana,Drawn Sword Pokémon
-799,guzzlord,7,,420,1,6.0,,-1,45,0,0,120,0,1,0,0,0,799,,Guzzlord,Junkivore Pokémon
-800,necrozma,7,,421,1,4.0,,-1,255,0,0,120,0,1,0,1,0,800,,Necrozma,Prism Pokémon
-801,magearna,7,,422,4,12.0,,-1,3,0,0,120,0,1,0,0,1,801,,Magearna,Artificial Pokémon
-802,marshadow,7,,423,4,12.0,,-1,3,0,0,120,0,1,0,0,1,802,,Marshadow,Gloomdweller Pokémon
-803,poipole,7,,424,7,6.0,,-1,45,0,0,120,0,1,0,0,0,803,,Poipole,Poison Pin Pokémon
-804,naganadel,7,803.0,424,7,9.0,,-1,45,0,0,120,0,1,0,0,0,804,,Naganadel,Poison Pin Pokémon
-805,stakataka,7,,425,4,8.0,,-1,30,0,0,120,0,1,0,0,0,805,,Stakataka,Rampart Pokémon
-806,blacephalon,7,,426,9,12.0,,-1,30,0,0,120,0,1,0,0,0,806,,Blacephalon,Fireworks Pokémon
-807,zeraora,7,,427,10,12.0,,-1,3,0,0,120,0,1,0,0,1,807,,Zeraora,Thunderclap Pokémon
+1,bulbasaur,1,,1,5,8,3,1,45,50,0,20,0,4,0,0,0,1,,Bulbasaur,Seed Pokémon
+2,ivysaur,1,1,1,5,8,3,1,45,50,0,20,0,4,0,0,0,2,,Ivysaur,Seed Pokémon
+3,venusaur,1,2,1,5,8,3,1,45,50,0,20,1,4,1,0,0,3,,Venusaur,Seed Pokémon
+4,charmander,1,,2,8,6,4,1,45,50,0,20,0,4,0,0,0,4,109,Charmander,Lizard Pokémon
+5,charmeleon,1,4,2,8,6,4,1,45,50,0,20,0,4,0,0,0,5,110,Charmeleon,Flame Pokémon
+6,charizard,1,5,2,8,6,4,1,45,50,0,20,0,4,1,0,0,6,111,Charizard,Flame Pokémon
+7,squirtle,1,,3,2,6,9,1,45,50,0,20,0,4,0,0,0,7,,Squirtle,Tiny Turtle Pokémon
+8,wartortle,1,7,3,2,6,9,1,45,50,0,20,0,4,0,0,0,8,,Wartortle,Turtle Pokémon
+9,blastoise,1,8,3,2,6,9,1,45,50,0,20,0,4,1,0,0,9,,Blastoise,Shellfish Pokémon
+10,caterpie,1,,4,5,14,2,4,255,50,0,15,0,2,0,0,0,10,,Caterpie,Worm Pokémon
+11,metapod,1,10,4,5,2,2,4,120,50,0,15,0,2,0,0,0,11,,Metapod,Cocoon Pokémon
+12,butterfree,1,11,4,9,13,2,4,45,50,0,15,1,2,0,0,0,12,,Butterfree,Butterfly Pokémon
+13,weedle,1,,5,3,14,2,4,255,70,0,15,0,2,0,0,0,13,,Weedle,Hairy Bug Pokémon
+14,kakuna,1,13,5,10,2,2,4,120,70,0,15,0,2,0,0,0,14,,Kakuna,Cocoon Pokémon
+15,beedrill,1,14,5,10,13,2,4,45,70,0,15,0,2,1,0,0,15,177,Beedrill,Poison Bee Pokémon
+16,pidgey,1,,6,3,9,2,4,255,70,0,15,0,4,0,0,0,16,,Pidgey,Tiny Bird Pokémon
+17,pidgeotto,1,16,6,3,9,2,4,120,70,0,15,0,4,0,0,0,17,,Pidgeotto,Bird Pokémon
+18,pidgeot,1,17,6,3,9,2,4,45,70,0,15,0,4,1,0,0,18,,Pidgeot,Bird Pokémon
+19,rattata,1,,7,7,8,3,4,255,70,0,15,1,2,0,0,0,19,,Rattata,Mouse Pokémon
+20,raticate,1,19,7,3,8,3,4,127,70,0,15,1,2,0,0,0,20,,Raticate,Mouse Pokémon
+21,spearow,1,,8,3,9,6,4,255,70,0,15,0,2,0,0,0,21,,Spearow,Tiny Bird Pokémon
+22,fearow,1,21,8,3,9,6,4,90,70,0,15,0,2,0,0,0,22,,Fearow,Beak Pokémon
+23,ekans,1,,9,7,2,3,4,255,70,0,20,0,2,0,0,0,23,54,Ekans,Snake Pokémon
+24,arbok,1,23,9,7,2,3,4,90,70,0,20,0,2,0,0,0,24,55,Arbok,Cobra Pokémon
+25,pikachu,1,172,10,10,8,2,4,190,50,0,10,1,2,0,0,0,26,16,Pikachu,Mouse Pokémon
+26,raichu,1,25,10,10,6,2,4,75,50,0,10,1,2,0,0,0,27,17,Raichu,Mouse Pokémon
+27,sandshrew,1,,11,10,6,6,4,255,50,0,20,0,2,0,0,0,28,,Sandshrew,Mouse Pokémon
+28,sandslash,1,27,11,10,6,6,4,90,50,0,20,0,2,0,0,0,29,,Sandslash,Mouse Pokémon
+29,nidoran-f,1,,12,2,8,3,8,235,50,0,20,0,4,0,0,0,30,,Nidoran♀,Poison Pin Pokémon
+30,nidorina,1,29,12,2,8,3,8,120,50,0,20,0,4,0,0,0,31,,Nidorina,Poison Pin Pokémon
+31,nidoqueen,1,30,12,2,6,3,8,45,50,0,20,0,4,0,0,0,32,,Nidoqueen,Drill Pokémon
+32,nidoran-m,1,,13,7,8,3,0,235,50,0,20,0,4,0,0,0,33,,Nidoran♂,Poison Pin Pokémon
+33,nidorino,1,32,13,7,8,3,0,120,50,0,20,0,4,0,0,0,34,,Nidorino,Poison Pin Pokémon
+34,nidoking,1,33,13,7,6,3,0,45,50,0,20,0,4,0,0,0,35,,Nidoking,Drill Pokémon
+35,clefairy,1,173,14,6,6,4,6,150,140,0,10,0,3,0,0,0,37,,Clefairy,Fairy Pokémon
+36,clefable,1,35,14,6,6,4,6,25,140,0,10,0,3,0,0,0,38,,Clefable,Fairy Pokémon
+37,vulpix,1,,15,3,8,3,6,190,50,0,20,0,2,0,0,0,39,,Vulpix,Fox Pokémon
+38,ninetales,1,37,15,10,8,3,6,75,50,0,20,0,2,0,0,0,40,,Ninetales,Fox Pokémon
+39,jigglypuff,1,174,16,6,12,3,6,170,50,0,10,0,3,0,0,0,42,21,Jigglypuff,Balloon Pokémon
+40,wigglytuff,1,39,16,6,12,3,6,50,50,0,10,0,3,0,0,0,43,22,Wigglytuff,Balloon Pokémon
+41,zubat,1,,17,7,9,1,4,255,50,0,15,1,2,0,0,0,44,23,Zubat,Bat Pokémon
+42,golbat,1,41,17,7,9,1,4,90,50,0,15,1,2,0,0,0,45,24,Golbat,Bat Pokémon
+43,oddish,1,,18,2,7,3,4,255,50,0,20,0,4,0,0,0,47,,Oddish,Weed Pokémon
+44,gloom,1,43,18,2,12,3,4,120,50,0,20,1,4,0,0,0,48,,Gloom,Weed Pokémon
+45,vileplume,1,44,18,8,12,3,4,45,50,0,20,1,4,0,0,0,49,,Vileplume,Flower Pokémon
+46,paras,1,,19,8,14,2,4,190,70,0,20,0,2,0,0,0,51,,Paras,Mushroom Pokémon
+47,parasect,1,46,19,8,14,2,4,75,70,0,20,0,2,0,0,0,52,,Parasect,Mushroom Pokémon
+48,venonat,1,,20,7,12,2,4,190,70,0,20,0,2,0,0,0,53,,Venonat,Insect Pokémon
+49,venomoth,1,48,20,7,13,2,4,75,70,0,20,0,2,0,0,0,54,,Venomoth,Poison Moth Pokémon
+50,diglett,1,,21,3,5,1,4,255,50,0,20,0,2,0,0,0,55,,Diglett,Mole Pokémon
+51,dugtrio,1,50,21,3,11,1,4,50,50,0,20,0,2,0,0,0,56,,Dugtrio,Mole Pokémon
+52,meowth,1,,22,10,8,8,4,255,50,0,20,0,2,0,0,0,57,58,Meowth,Scratch Cat Pokémon
+53,persian,1,52,22,10,8,8,4,90,50,0,20,0,2,0,0,0,58,59,Persian,Classy Cat Pokémon
+54,psyduck,1,,23,10,6,9,4,190,50,0,20,0,2,0,0,0,59,,Psyduck,Duck Pokémon
+55,golduck,1,54,23,2,6,9,4,75,50,0,20,0,2,0,0,0,60,,Golduck,Duck Pokémon
+56,mankey,1,,24,3,6,4,4,190,70,0,20,0,2,0,0,0,61,,Mankey,Pig Monkey Pokémon
+57,primeape,1,56,24,3,6,4,4,75,70,0,20,0,2,0,0,0,62,,Primeape,Pig Monkey Pokémon
+58,growlithe,1,,25,3,8,3,2,190,50,0,20,0,1,0,0,0,63,,Growlithe,Puppy Pokémon
+59,arcanine,1,58,25,3,8,3,2,75,50,0,20,0,1,0,0,0,64,,Arcanine,Legendary Pokémon
+60,poliwag,1,,26,2,7,9,4,255,50,0,20,0,4,0,0,0,65,,Poliwag,Tadpole Pokémon
+61,poliwhirl,1,60,26,2,12,9,4,120,50,0,20,0,4,0,0,0,66,,Poliwhirl,Tadpole Pokémon
+62,poliwrath,1,61,26,2,12,9,4,45,50,0,20,0,4,0,0,0,67,,Poliwrath,Tadpole Pokémon
+63,abra,1,,27,3,6,8,2,200,50,0,20,0,4,0,0,0,69,127,Abra,Psi Pokémon
+64,kadabra,1,63,27,3,6,8,2,100,50,0,20,1,4,0,0,0,70,128,Kadabra,Psi Pokémon
+65,alakazam,1,64,27,3,12,8,2,50,50,0,20,1,4,1,0,0,71,129,Alakazam,Psi Pokémon
+66,machop,1,,28,4,6,4,2,180,50,0,20,0,4,0,0,0,72,98,Machop,Superpower Pokémon
+67,machoke,1,66,28,4,12,4,2,90,50,0,20,0,4,0,0,0,73,99,Machoke,Superpower Pokémon
+68,machamp,1,67,28,4,12,4,2,45,50,0,20,0,4,0,0,0,74,100,Machamp,Superpower Pokémon
+69,bellsprout,1,,29,5,12,2,4,255,70,0,20,0,4,0,0,0,75,,Bellsprout,Flower Pokémon
+70,weepinbell,1,69,29,5,5,2,4,120,70,0,20,0,4,0,0,0,76,,Weepinbell,Flycatcher Pokémon
+71,victreebel,1,70,29,5,5,2,4,45,70,0,20,0,4,0,0,0,77,,Victreebel,Flycatcher Pokémon
+72,tentacool,1,,30,2,10,7,4,190,50,0,20,0,1,0,0,0,78,,Tentacool,Jellyfish Pokémon
+73,tentacruel,1,72,30,2,10,7,4,60,50,0,20,0,1,0,0,0,79,,Tentacruel,Jellyfish Pokémon
+74,geodude,1,,31,3,4,4,4,255,70,0,15,0,4,0,0,0,80,,Geodude,Rock Pokémon
+75,graveler,1,74,31,3,12,4,4,120,70,0,15,0,4,0,0,0,81,,Graveler,Rock Pokémon
+76,golem,1,75,31,3,12,4,4,45,70,0,15,0,4,0,0,0,82,,Golem,Megaton Pokémon
+77,ponyta,1,,32,10,8,3,4,190,50,0,20,0,2,0,0,0,83,,Ponyta,Fire Horse Pokémon
+78,rapidash,1,77,32,10,8,3,4,60,50,0,20,0,2,0,0,0,84,,Rapidash,Fire Horse Pokémon
+79,slowpoke,1,,33,6,8,9,4,190,50,0,20,0,2,0,0,0,85,,Slowpoke,Dopey Pokémon
+80,slowbro,1,79,33,6,6,9,4,75,50,0,20,0,2,1,0,0,86,,Slowbro,Hermit Crab Pokémon
+81,magnemite,1,,34,4,4,6,-1,190,50,0,20,0,2,0,0,0,88,,Magnemite,Magnet Pokémon
+82,magneton,1,81,34,4,11,6,-1,60,50,0,20,0,2,0,0,0,89,,Magneton,Magnet Pokémon
+83,farfetchd,1,,35,3,9,3,4,45,50,0,20,0,2,0,0,0,91,,Farfetch’d,Wild Duck Pokémon
+84,doduo,1,,36,3,7,3,4,190,70,0,20,1,2,0,0,0,92,,Doduo,Twin Bird Pokémon
+85,dodrio,1,84,36,3,7,3,4,45,70,0,20,1,2,0,0,0,93,,Dodrio,Triple Bird Pokémon
+86,seel,1,,37,9,3,7,4,190,70,0,20,0,2,0,0,0,94,,Seel,Sea Lion Pokémon
+87,dewgong,1,86,37,9,3,7,4,75,70,0,20,0,2,0,0,0,95,,Dewgong,Sea Lion Pokémon
+88,grimer,1,,38,7,4,8,4,190,70,0,20,0,2,0,0,0,96,,Grimer,Sludge Pokémon
+89,muk,1,88,38,7,4,8,4,75,70,0,20,0,2,0,0,0,97,,Muk,Sludge Pokémon
+90,shellder,1,,39,7,1,7,4,190,50,0,20,0,1,0,0,0,98,,Shellder,Bivalve Pokémon
+91,cloyster,1,90,39,7,1,7,4,60,50,0,20,0,1,0,0,0,99,,Cloyster,Bivalve Pokémon
+92,gastly,1,,40,7,1,1,4,190,50,0,20,0,4,0,0,0,100,112,Gastly,Gas Pokémon
+93,haunter,1,92,40,7,4,1,4,90,50,0,20,0,4,0,0,0,101,113,Haunter,Gas Pokémon
+94,gengar,1,93,40,7,6,1,4,45,50,0,20,0,4,1,0,0,102,114,Gengar,Shadow Pokémon
+95,onix,1,,41,4,2,1,4,45,50,0,25,0,2,0,0,0,103,175,Onix,Rock Snake Pokémon
+96,drowzee,1,,42,10,12,3,4,190,70,0,20,0,2,0,0,0,105,,Drowzee,Hypnosis Pokémon
+97,hypno,1,96,42,10,12,3,4,75,70,0,20,1,2,0,0,0,106,,Hypno,Hypnosis Pokémon
+98,krabby,1,,43,8,14,9,4,225,50,0,20,0,2,0,0,0,107,,Krabby,River Crab Pokémon
+99,kingler,1,98,43,8,14,9,4,60,50,0,20,0,2,0,0,0,108,,Kingler,Pincer Pokémon
+100,voltorb,1,,44,8,1,8,-1,190,70,0,20,0,2,0,0,0,109,,Voltorb,Ball Pokémon
+101,electrode,1,100,44,8,1,8,-1,60,70,0,20,0,2,0,0,0,110,,Electrode,Ball Pokémon
+102,exeggcute,1,,45,6,11,2,4,90,50,0,20,0,1,0,0,0,111,,Exeggcute,Egg Pokémon
+103,exeggutor,1,102,45,10,7,2,4,45,50,0,20,0,1,0,0,0,112,,Exeggutor,Coconut Pokémon
+104,cubone,1,,46,3,6,4,4,190,50,0,20,0,2,0,0,0,113,,Cubone,Lonely Pokémon
+105,marowak,1,104,46,3,6,4,4,75,50,0,20,0,2,0,0,0,114,,Marowak,Bone Keeper Pokémon
+106,hitmonlee,1,236,47,3,12,8,0,45,50,0,25,0,2,0,0,0,116,,Hitmonlee,Kicking Pokémon
+107,hitmonchan,1,236,47,3,12,8,0,45,50,0,25,0,2,0,0,0,117,,Hitmonchan,Punching Pokémon
+108,lickitung,1,,48,6,6,3,4,45,50,0,20,0,2,0,0,0,119,,Lickitung,Licking Pokémon
+109,koffing,1,,49,7,1,8,4,190,50,0,20,0,2,0,0,0,121,,Koffing,Poison Gas Pokémon
+110,weezing,1,109,49,7,11,8,4,60,50,0,20,0,2,0,0,0,122,,Weezing,Poison Gas Pokémon
+111,rhyhorn,1,,50,4,8,6,4,120,50,0,20,1,1,0,0,0,123,160,Rhyhorn,Spikes Pokémon
+112,rhydon,1,111,50,4,6,6,4,60,50,0,20,1,1,0,0,0,124,161,Rhydon,Drill Pokémon
+113,chansey,1,440,51,6,6,8,8,30,140,0,40,0,3,0,0,0,127,,Chansey,Egg Pokémon
+114,tangela,1,,52,2,7,3,4,45,50,0,20,0,2,0,0,0,129,,Tangela,Vine Pokémon
+115,kangaskhan,1,,53,3,6,3,8,45,50,0,20,0,2,1,0,0,131,,Kangaskhan,Parent Pokémon
+116,horsea,1,,54,2,5,7,4,225,50,0,20,0,2,0,0,0,132,,Horsea,Dragon Pokémon
+117,seadra,1,116,54,2,5,7,4,75,50,0,20,0,2,0,0,0,133,,Seadra,Dragon Pokémon
+118,goldeen,1,,55,8,3,9,4,225,50,0,20,1,2,0,0,0,135,,Goldeen,Goldfish Pokémon
+119,seaking,1,118,55,8,3,9,4,60,50,0,20,1,2,0,0,0,136,,Seaking,Goldfish Pokémon
+120,staryu,1,,56,3,5,7,-1,225,50,0,20,0,1,0,0,0,137,,Staryu,Star Shape Pokémon
+121,starmie,1,120,56,7,5,7,-1,60,50,0,20,0,1,0,0,0,138,,Starmie,Mysterious Pokémon
+122,mr-mime,1,439,57,6,12,8,4,45,50,0,25,0,2,0,0,0,140,,Mr. Mime,Barrier Pokémon
+123,scyther,1,,58,5,13,3,4,45,50,0,25,1,2,0,0,0,141,188,Scyther,Mantis Pokémon
+124,jynx,1,238,59,8,12,8,8,45,50,0,25,0,2,0,0,0,144,,Jynx,Human Shape Pokémon
+125,electabuzz,1,239,60,10,6,3,2,45,50,0,25,0,2,0,0,0,146,,Electabuzz,Electric Pokémon
+126,magmar,1,240,61,8,6,4,2,45,50,0,25,0,2,0,0,0,149,,Magmar,Spitfire Pokémon
+127,pinsir,1,,62,3,12,2,4,45,50,0,25,0,1,1,0,0,151,,Pinsir,Stag Beetle Pokémon
+128,tauros,1,,63,3,8,3,0,45,50,0,20,0,1,0,0,0,152,,Tauros,Wild Bull Pokémon
+129,magikarp,1,,64,8,3,9,4,255,50,0,5,1,1,0,0,0,153,13,Magikarp,Fish Pokémon
+130,gyarados,1,129,64,2,2,9,4,45,50,0,5,1,1,1,0,0,154,14,Gyarados,Atrocious Pokémon
+131,lapras,1,,65,2,3,7,4,45,50,0,40,0,1,0,0,0,155,190,Lapras,Transport Pokémon
+132,ditto,1,,66,7,1,8,-1,35,50,0,20,0,2,0,0,0,156,,Ditto,Transform Pokémon
+133,eevee,1,,67,3,8,8,1,45,50,0,35,0,2,0,0,0,157,1,Eevee,Evolution Pokémon
+134,vaporeon,1,133,67,2,8,8,1,45,50,0,35,0,2,0,0,0,158,2,Vaporeon,Bubble Jet Pokémon
+135,jolteon,1,133,67,10,8,8,1,45,50,0,35,0,2,0,0,0,159,3,Jolteon,Lightning Pokémon
+136,flareon,1,133,67,8,8,8,1,45,50,0,35,0,2,0,0,0,160,4,Flareon,Flame Pokémon
+137,porygon,1,,68,6,7,8,-1,45,50,0,20,0,2,0,0,0,166,,Porygon,Virtual Pokémon
+138,omanyte,1,,69,2,10,7,1,45,50,0,30,0,2,0,0,0,169,,Omanyte,Spiral Pokémon
+139,omastar,1,138,69,2,10,7,1,45,50,0,30,0,2,0,0,0,170,,Omastar,Spiral Pokémon
+140,kabuto,1,,70,3,14,7,1,45,50,0,30,0,2,0,0,0,171,,Kabuto,Shellfish Pokémon
+141,kabutops,1,140,70,3,6,7,1,45,50,0,30,0,2,0,0,0,172,,Kabutops,Shellfish Pokémon
+142,aerodactyl,1,,71,7,9,4,1,45,50,0,35,0,1,1,0,0,173,,Aerodactyl,Fossil Pokémon
+143,snorlax,1,446,72,1,12,4,1,25,50,0,40,0,1,0,0,0,175,179,Snorlax,Sleeping Pokémon
+144,articuno,1,,73,2,9,5,-1,3,35,0,80,0,1,0,1,0,176,192,Articuno,Freeze Pokémon
+145,zapdos,1,,74,10,9,5,-1,3,35,0,80,0,1,0,1,0,177,,Zapdos,Electric Pokémon
+146,moltres,1,,75,10,9,5,-1,3,35,0,80,0,1,0,1,0,178,,Moltres,Flame Pokémon
+147,dratini,1,,76,2,2,9,4,45,35,0,40,0,1,0,0,0,179,76,Dratini,Dragon Pokémon
+148,dragonair,1,147,76,2,2,9,4,45,35,0,40,0,1,0,0,0,180,77,Dragonair,Dragon Pokémon
+149,dragonite,1,148,76,3,6,9,4,45,35,0,40,0,1,0,0,0,181,78,Dragonite,Dragon Pokémon
+150,mewtwo,1,,77,7,6,5,-1,3,0,0,120,0,1,1,1,0,182,196,Mewtwo,Genetic Pokémon
+151,mew,1,,78,6,6,5,-1,45,100,0,120,0,4,0,0,1,183,,Mew,New Species Pokémon
+152,chikorita,2,,79,5,8,3,1,45,70,0,20,0,4,0,0,0,184,,Chikorita,Leaf Pokémon
+153,bayleef,2,152,79,5,8,3,1,45,70,0,20,0,4,0,0,0,185,,Bayleef,Leaf Pokémon
+154,meganium,2,153,79,5,8,3,1,45,70,0,20,1,4,0,0,0,186,,Meganium,Herb Pokémon
+155,cyndaquil,2,,80,10,12,3,1,45,70,0,20,0,4,0,0,0,187,,Cyndaquil,Fire Mouse Pokémon
+156,quilava,2,155,80,10,8,3,1,45,70,0,20,0,4,0,0,0,188,,Quilava,Volcano Pokémon
+157,typhlosion,2,156,80,10,8,3,1,45,70,0,20,0,4,0,0,0,189,,Typhlosion,Volcano Pokémon
+158,totodile,2,,81,2,6,9,1,45,70,0,20,0,4,0,0,0,190,,Totodile,Big Jaw Pokémon
+159,croconaw,2,158,81,2,6,9,1,45,70,0,20,0,4,0,0,0,191,,Croconaw,Big Jaw Pokémon
+160,feraligatr,2,159,81,2,6,9,1,45,70,0,20,0,4,0,0,0,192,,Feraligatr,Big Jaw Pokémon
+161,sentret,2,,82,3,8,3,4,255,70,0,15,0,2,0,0,0,193,,Sentret,Scout Pokémon
+162,furret,2,161,82,3,8,3,4,90,70,0,15,0,2,0,0,0,194,,Furret,Long Body Pokémon
+163,hoothoot,2,,83,3,9,2,4,255,50,0,15,0,2,0,0,0,195,,Hoothoot,Owl Pokémon
+164,noctowl,2,163,83,3,9,2,4,90,50,0,15,0,2,0,0,0,196,,Noctowl,Owl Pokémon
+165,ledyba,2,,84,8,9,2,4,255,70,0,15,1,3,0,0,0,197,,Ledyba,Five Star Pokémon
+166,ledian,2,165,84,8,9,2,4,90,70,0,15,1,3,0,0,0,198,,Ledian,Five Star Pokémon
+167,spinarak,2,,85,5,14,2,4,255,70,0,15,0,3,0,0,0,199,,Spinarak,String Spit Pokémon
+168,ariados,2,167,85,8,14,2,4,90,70,0,15,0,3,0,0,0,200,,Ariados,Long Leg Pokémon
+169,crobat,2,42,17,7,13,1,4,90,50,0,15,0,2,0,0,0,46,25,Crobat,Bat Pokémon
+170,chinchou,2,,86,2,3,7,4,190,50,0,20,0,1,0,0,0,201,,Chinchou,Angler Pokémon
+171,lanturn,2,170,86,2,3,7,4,75,50,0,20,0,1,0,0,0,202,,Lanturn,Light Pokémon
+172,pichu,2,,10,10,8,2,4,190,50,1,10,0,2,0,0,0,25,15,Pichu,Tiny Mouse Pokémon
+173,cleffa,2,,14,6,6,4,6,150,140,1,10,0,3,0,0,0,36,,Cleffa,Star Shape Pokémon
+174,igglybuff,2,,16,6,12,3,6,170,50,1,10,0,3,0,0,0,41,20,Igglybuff,Balloon Pokémon
+175,togepi,2,,87,9,12,2,1,190,50,1,10,0,3,0,0,0,203,,Togepi,Spike Ball Pokémon
+176,togetic,2,175,87,9,12,2,1,75,50,0,10,0,3,0,0,0,204,,Togetic,Happiness Pokémon
+177,natu,2,,88,5,9,2,4,190,50,0,20,0,2,0,0,0,206,,Natu,Tiny Bird Pokémon
+178,xatu,2,177,88,5,9,2,4,75,50,0,20,1,2,0,0,0,207,,Xatu,Mystic Pokémon
+179,mareep,2,,89,9,8,3,4,235,70,0,20,0,4,0,0,0,208,45,Mareep,Wool Pokémon
+180,flaaffy,2,179,89,6,6,3,4,120,70,0,20,0,4,0,0,0,209,46,Flaaffy,Wool Pokémon
+181,ampharos,2,180,89,10,6,3,4,45,70,0,20,0,4,1,0,0,210,47,Ampharos,Light Pokémon
+182,bellossom,2,44,18,5,12,3,4,45,50,0,20,0,4,0,0,0,50,,Bellossom,Flower Pokémon
+183,marill,2,298,90,2,6,9,4,190,50,0,10,0,3,0,0,0,212,,Marill,Aqua Mouse Pokémon
+184,azumarill,2,183,90,2,6,9,4,75,50,0,10,0,3,0,0,0,213,,Azumarill,Aqua Rabbit Pokémon
+185,sudowoodo,2,438,91,3,12,2,4,65,50,0,20,1,2,0,0,0,215,,Sudowoodo,Imitation Pokémon
+186,politoed,2,61,26,5,12,9,4,45,50,0,20,1,4,0,0,0,68,,Politoed,Frog Pokémon
+187,hoppip,2,,92,6,6,3,4,255,70,0,20,0,4,0,0,0,216,,Hoppip,Cottonweed Pokémon
+188,skiploom,2,187,92,5,6,3,4,120,70,0,20,0,4,0,0,0,217,,Skiploom,Cottonweed Pokémon
+189,jumpluff,2,188,92,2,6,3,4,45,70,0,20,0,4,0,0,0,218,,Jumpluff,Cottonweed Pokémon
+190,aipom,2,,93,7,6,2,4,45,70,0,20,1,3,0,0,0,219,,Aipom,Long Tail Pokémon
+191,sunkern,2,,94,10,1,3,4,235,70,0,20,0,4,0,0,0,221,,Sunkern,Seed Pokémon
+192,sunflora,2,191,94,10,12,3,4,120,70,0,20,0,4,0,0,0,222,,Sunflora,Sun Pokémon
+193,yanma,2,,95,8,13,2,4,75,70,0,20,0,2,0,0,0,223,,Yanma,Clear Wing Pokémon
+194,wooper,2,,96,2,7,9,4,255,50,0,20,1,2,0,0,0,225,18,Wooper,Water Fish Pokémon
+195,quagsire,2,194,96,2,6,9,4,90,50,0,20,1,2,0,0,0,226,19,Quagsire,Water Fish Pokémon
+196,espeon,2,133,67,7,8,8,1,45,50,0,35,0,2,0,0,0,161,5,Espeon,Sun Pokémon
+197,umbreon,2,133,67,1,8,8,1,45,35,0,35,0,2,0,0,0,162,6,Umbreon,Moonlight Pokémon
+198,murkrow,2,,97,1,9,2,4,30,35,0,20,1,4,0,0,0,227,,Murkrow,Darkness Pokémon
+199,slowking,2,79,33,6,6,9,4,70,50,0,20,0,2,0,0,0,87,,Slowking,Royal Pokémon
+200,misdreavus,2,,98,4,1,1,4,45,35,0,25,0,3,0,0,0,229,183,Misdreavus,Screech Pokémon
+201,unown,2,,99,1,1,5,-1,225,70,0,40,0,2,0,0,0,231,,Unown,Symbol Pokémon
+202,wobbuffet,2,360,100,2,5,1,4,45,50,0,20,1,2,0,0,0,233,,Wobbuffet,Patient Pokémon
+203,girafarig,2,,101,10,8,3,4,60,70,0,20,1,2,0,0,0,234,,Girafarig,Long Neck Pokémon
+204,pineco,2,,102,4,1,2,4,190,70,0,20,0,2,0,0,0,235,56,Pineco,Bagworm Pokémon
+205,forretress,2,204,102,7,1,2,4,75,70,0,20,0,2,0,0,0,236,57,Forretress,Bagworm Pokémon
+206,dunsparce,2,,103,10,2,1,4,190,50,0,20,0,2,0,0,0,237,,Dunsparce,Land Snake Pokémon
+207,gligar,2,,104,7,9,4,4,60,70,0,20,1,4,0,0,0,238,,Gligar,Fly Scorpion Pokémon
+208,steelix,2,95,41,4,2,1,4,25,50,0,25,1,2,1,0,0,104,176,Steelix,Iron Snake Pokémon
+209,snubbull,2,,105,6,12,8,6,190,70,0,20,0,3,0,0,0,240,,Snubbull,Fairy Pokémon
+210,granbull,2,209,105,7,6,8,6,75,70,0,20,0,3,0,0,0,241,,Granbull,Fairy Pokémon
+211,qwilfish,2,,106,4,3,7,4,45,50,0,20,0,2,0,0,0,242,,Qwilfish,Balloon Pokémon
+212,scizor,2,123,58,8,13,3,4,25,50,0,25,1,2,1,0,0,142,189,Scizor,Pincer Pokémon
+213,shuckle,2,,107,10,14,4,4,190,50,0,20,0,4,0,0,0,243,,Shuckle,Mold Pokémon
+214,heracross,2,,108,2,12,2,4,45,50,0,25,1,1,1,0,0,244,,Heracross,Single Horn Pokémon
+215,sneasel,2,,109,1,6,2,4,60,35,0,20,1,4,0,0,0,245,181,Sneasel,Sharp Claw Pokémon
+216,teddiursa,2,,110,3,6,4,4,120,70,0,20,0,2,0,0,0,247,,Teddiursa,Little Bear Pokémon
+217,ursaring,2,216,110,3,6,4,4,60,70,0,20,1,2,0,0,0,248,,Ursaring,Hibernator Pokémon
+218,slugma,2,,111,8,2,4,4,190,70,0,20,0,2,0,0,0,249,,Slugma,Lava Pokémon
+219,magcargo,2,218,111,8,2,4,4,75,70,0,20,0,2,0,0,0,250,,Magcargo,Lava Pokémon
+220,swinub,2,,112,3,8,1,4,225,50,0,20,0,1,0,0,0,251,,Swinub,Pig Pokémon
+221,piloswine,2,220,112,3,8,1,4,75,50,0,20,1,1,0,0,0,252,,Piloswine,Swine Pokémon
+222,corsola,2,,113,6,14,7,6,60,50,0,20,0,3,0,0,0,254,,Corsola,Coral Pokémon
+223,remoraid,2,,114,4,3,7,4,190,50,0,20,0,2,0,0,0,255,,Remoraid,Jet Pokémon
+224,octillery,2,223,114,8,10,7,4,75,50,0,20,1,2,0,0,0,256,,Octillery,Jet Pokémon
+225,delibird,2,,115,8,9,4,4,45,50,0,20,0,3,0,0,0,257,,Delibird,Delivery Pokémon
+226,mantine,2,458,116,7,9,7,4,25,50,0,25,0,1,0,0,0,259,,Mantine,Kite Pokémon
+227,skarmory,2,,117,4,9,6,4,25,50,0,25,0,1,0,0,0,260,,Skarmory,Armor Bird Pokémon
+228,houndour,2,,118,1,8,6,4,120,35,0,20,0,1,0,0,0,261,,Houndour,Dark Pokémon
+229,houndoom,2,228,118,1,8,6,4,45,35,0,20,1,1,1,0,0,262,,Houndoom,Dark Pokémon
+230,kingdra,2,117,54,2,5,7,4,45,50,0,20,0,2,0,0,0,134,,Kingdra,Dragon Pokémon
+231,phanpy,2,,119,2,8,6,4,120,70,0,20,0,2,0,0,0,263,,Phanpy,Long Nose Pokémon
+232,donphan,2,231,119,4,8,6,4,60,70,0,20,1,2,0,0,0,264,,Donphan,Armor Pokémon
+233,porygon2,2,137,68,8,7,8,-1,45,50,0,20,0,2,0,0,0,167,,Porygon2,Virtual Pokémon
+234,stantler,2,,120,3,8,2,4,45,70,0,20,0,1,0,0,0,265,,Stantler,Big Horn Pokémon
+235,smeargle,2,,121,9,6,8,4,45,70,0,20,0,3,0,0,0,266,,Smeargle,Painter Pokémon
+236,tyrogue,2,,47,7,12,8,0,75,50,1,25,0,2,0,0,0,115,,Tyrogue,Scuffle Pokémon
+237,hitmontop,2,236,47,3,6,8,0,45,50,0,25,0,2,0,0,0,118,,Hitmontop,Handstand Pokémon
+238,smoochum,2,,59,6,12,8,8,45,50,1,25,0,2,0,0,0,143,,Smoochum,Kiss Pokémon
+239,elekid,2,,60,10,12,3,2,45,50,1,25,0,2,0,0,0,145,,Elekid,Electric Pokémon
+240,magby,2,,61,8,6,4,2,45,50,1,25,0,2,0,0,0,148,,Magby,Live Coal Pokémon
+241,miltank,2,,122,6,6,3,8,45,50,0,20,0,1,0,0,0,267,,Miltank,Milk Cow Pokémon
+242,blissey,2,113,51,6,12,8,8,30,140,0,40,0,3,0,0,0,128,,Blissey,Happiness Pokémon
+243,raikou,2,,123,10,8,3,-1,3,35,0,80,0,1,0,1,0,268,,Raikou,Thunder Pokémon
+244,entei,2,,124,3,8,3,-1,3,35,0,80,0,1,0,1,0,269,,Entei,Volcano Pokémon
+245,suicune,2,,125,2,8,3,-1,3,35,0,80,0,1,0,1,0,270,,Suicune,Aurora Pokémon
+246,larvitar,2,,126,5,6,4,4,45,35,0,40,0,1,0,0,0,271,79,Larvitar,Rock Skin Pokémon
+247,pupitar,2,246,126,4,2,4,4,45,35,0,40,0,1,0,0,0,272,80,Pupitar,Hard Shell Pokémon
+248,tyranitar,2,247,126,5,6,4,4,45,35,0,40,0,1,1,0,0,273,81,Tyranitar,Armor Pokémon
+249,lugia,2,,127,9,9,5,-1,3,0,0,120,0,1,0,1,0,274,,Lugia,Diving Pokémon
+250,ho-oh,2,,128,8,9,5,-1,3,0,0,120,0,1,0,1,0,275,,Ho-Oh,Rainbow Pokémon
+251,celebi,2,,129,5,12,2,-1,45,100,0,120,0,4,0,0,1,276,,Celebi,Time Travel Pokémon
+252,treecko,3,,130,5,6,2,1,45,50,0,20,0,4,0,0,0,277,130,Treecko,Wood Gecko Pokémon
+253,grovyle,3,252,130,5,6,2,1,45,50,0,20,0,4,0,0,0,278,131,Grovyle,Wood Gecko Pokémon
+254,sceptile,3,253,130,5,6,2,1,45,50,0,20,0,4,1,0,0,279,132,Sceptile,Forest Pokémon
+255,torchic,3,,131,8,7,3,1,45,50,0,20,1,4,0,0,0,280,,Torchic,Chick Pokémon
+256,combusken,3,255,131,8,6,3,1,45,50,0,20,1,4,0,0,0,281,,Combusken,Young Fowl Pokémon
+257,blaziken,3,256,131,8,6,3,1,45,50,0,20,1,4,1,0,0,282,,Blaziken,Blaze Pokémon
+258,mudkip,3,,132,2,8,9,1,45,50,0,20,0,4,0,0,0,283,,Mudkip,Mud Fish Pokémon
+259,marshtomp,3,258,132,2,6,9,1,45,50,0,20,0,4,0,0,0,284,,Marshtomp,Mud Fish Pokémon
+260,swampert,3,259,132,2,6,9,1,45,50,0,20,0,4,1,0,0,285,,Swampert,Mud Fish Pokémon
+261,poochyena,3,,133,4,8,3,4,255,70,0,15,0,2,0,0,0,286,,Poochyena,Bite Pokémon
+262,mightyena,3,261,133,4,8,3,4,127,70,0,15,0,2,0,0,0,287,,Mightyena,Bite Pokémon
+263,zigzagoon,3,,134,3,8,3,4,255,50,0,15,0,2,0,0,0,288,,Zigzagoon,Tiny Raccoon Pokémon
+264,linoone,3,263,134,9,8,3,4,90,50,0,15,0,2,0,0,0,289,,Linoone,Rushing Pokémon
+265,wurmple,3,,135,8,14,2,4,255,70,0,15,0,2,0,0,0,290,,Wurmple,Worm Pokémon
+266,silcoon,3,265,135,9,1,2,4,120,70,0,15,0,2,0,0,0,291,,Silcoon,Cocoon Pokémon
+267,beautifly,3,266,135,10,13,2,4,45,70,0,15,1,2,0,0,0,292,,Beautifly,Butterfly Pokémon
+268,cascoon,3,265,135,7,1,2,4,120,70,0,15,0,2,0,0,0,293,,Cascoon,Cocoon Pokémon
+269,dustox,3,268,135,5,13,2,4,45,70,0,15,1,2,0,0,0,294,,Dustox,Poison Moth Pokémon
+270,lotad,3,,136,5,14,9,4,255,50,0,15,0,4,0,0,0,295,,Lotad,Water Weed Pokémon
+271,lombre,3,270,136,5,12,9,4,120,50,0,15,0,4,0,0,0,296,,Lombre,Jolly Pokémon
+272,ludicolo,3,271,136,5,12,9,4,45,50,0,15,1,4,0,0,0,297,,Ludicolo,Carefree Pokémon
+273,seedot,3,,137,3,7,2,4,255,50,0,15,0,4,0,0,0,298,,Seedot,Acorn Pokémon
+274,nuzleaf,3,273,137,3,12,2,4,120,50,0,15,1,4,0,0,0,299,,Nuzleaf,Wily Pokémon
+275,shiftry,3,274,137,3,12,2,4,45,50,0,15,1,4,0,0,0,300,,Shiftry,Wicked Pokémon
+276,taillow,3,,138,2,9,3,4,200,70,0,15,0,4,0,0,0,301,,Taillow,Tiny Swallow Pokémon
+277,swellow,3,276,138,2,9,3,4,45,70,0,15,0,4,0,0,0,302,,Swellow,Swallow Pokémon
+278,wingull,3,,139,9,9,7,4,190,50,0,20,0,2,0,0,0,303,,Wingull,Seagull Pokémon
+279,pelipper,3,278,139,10,9,7,4,45,50,0,20,0,2,0,0,0,304,,Pelipper,Water Bird Pokémon
+280,ralts,3,,140,9,12,8,4,235,35,0,20,0,1,0,0,0,305,9,Ralts,Feeling Pokémon
+281,kirlia,3,280,140,9,12,8,4,120,35,0,20,0,1,0,0,0,306,10,Kirlia,Emotion Pokémon
+282,gardevoir,3,281,140,9,12,8,4,45,35,0,20,0,1,1,0,0,307,11,Gardevoir,Embrace Pokémon
+283,surskit,3,,141,2,14,9,4,200,70,0,15,0,2,0,0,0,309,,Surskit,Pond Skater Pokémon
+284,masquerain,3,283,141,2,13,9,4,75,70,0,15,0,2,0,0,0,310,,Masquerain,Eyeball Pokémon
+285,shroomish,3,,142,3,7,2,4,255,70,0,15,0,6,0,0,0,311,,Shroomish,Mushroom Pokémon
+286,breloom,3,285,142,5,6,2,4,90,70,0,15,0,6,0,0,0,312,,Breloom,Mushroom Pokémon
+287,slakoth,3,,143,3,8,2,4,255,70,0,15,0,1,0,0,0,313,,Slakoth,Slacker Pokémon
+288,vigoroth,3,287,143,9,6,2,4,120,70,0,15,0,1,0,0,0,314,,Vigoroth,Wild Monkey Pokémon
+289,slaking,3,288,143,3,12,2,4,45,70,0,15,0,1,0,0,0,315,,Slaking,Lazy Pokémon
+290,nincada,3,,144,4,14,2,4,255,50,0,15,0,5,0,0,0,316,,Nincada,Trainee Pokémon
+291,ninjask,3,290,144,10,13,2,4,120,50,0,15,0,5,0,0,0,317,,Ninjask,Ninja Pokémon
+292,shedinja,3,290,144,3,5,2,-1,45,50,0,15,0,5,0,0,0,318,,Shedinja,Shed Pokémon
+293,whismur,3,,145,6,6,1,4,190,50,0,20,0,4,0,0,0,319,,Whismur,Whisper Pokémon
+294,loudred,3,293,145,2,6,1,4,120,50,0,20,0,4,0,0,0,320,,Loudred,Big Voice Pokémon
+295,exploud,3,294,145,2,6,1,4,45,50,0,20,0,4,0,0,0,321,,Exploud,Loud Noise Pokémon
+296,makuhita,3,,146,10,12,4,2,180,70,0,20,0,6,0,0,0,322,,Makuhita,Guts Pokémon
+297,hariyama,3,296,146,3,12,4,2,200,70,0,20,0,6,0,0,0,323,,Hariyama,Arm Thrust Pokémon
+298,azurill,3,,90,2,7,9,6,150,50,1,10,0,3,0,0,0,211,,Azurill,Polka Dot Pokémon
+299,nosepass,3,,147,4,12,1,4,255,70,0,20,0,2,0,0,0,324,,Nosepass,Compass Pokémon
+300,skitty,3,,148,6,8,2,6,255,70,0,15,0,3,0,0,0,326,,Skitty,Kitten Pokémon
+301,delcatty,3,300,148,7,8,2,6,60,70,0,15,0,3,0,0,0,327,,Delcatty,Prim Pokémon
+302,sableye,3,,149,7,12,1,4,45,35,0,25,0,4,1,0,0,328,,Sableye,Darkness Pokémon
+303,mawile,3,,150,1,12,1,4,45,50,0,20,0,3,1,0,0,329,,Mawile,Deceiver Pokémon
+304,aron,3,,151,4,8,4,4,180,35,0,35,0,1,0,0,0,330,149,Aron,Iron Armor Pokémon
+305,lairon,3,304,151,4,8,4,4,90,35,0,35,0,1,0,0,0,331,150,Lairon,Iron Armor Pokémon
+306,aggron,3,305,151,4,6,4,4,45,35,0,35,0,1,1,0,0,332,151,Aggron,Iron Armor Pokémon
+307,meditite,3,,152,2,12,4,4,180,70,0,20,1,2,0,0,0,333,,Meditite,Meditate Pokémon
+308,medicham,3,307,152,8,12,4,4,90,70,0,20,1,2,1,0,0,334,,Medicham,Meditate Pokémon
+309,electrike,3,,153,5,8,3,4,120,50,0,20,0,1,0,0,0,335,,Electrike,Lightning Pokémon
+310,manectric,3,309,153,10,8,3,4,45,50,0,20,0,1,1,0,0,336,,Manectric,Discharge Pokémon
+311,plusle,3,,154,10,6,3,4,200,70,0,20,0,2,0,0,0,337,,Plusle,Cheering Pokémon
+312,minun,3,,155,10,6,3,4,200,70,0,20,0,2,0,0,0,338,,Minun,Cheering Pokémon
+313,volbeat,3,,156,4,6,2,0,150,70,0,15,0,5,0,0,0,339,,Volbeat,Firefly Pokémon
+314,illumise,3,,157,7,12,2,8,150,70,0,15,0,6,0,0,0,340,,Illumise,Firefly Pokémon
+315,roselia,3,406,158,5,12,3,4,150,50,0,20,1,4,0,0,0,342,,Roselia,Thorn Pokémon
+316,gulpin,3,,159,5,4,3,4,225,70,0,20,1,6,0,0,0,344,,Gulpin,Stomach Pokémon
+317,swalot,3,316,159,7,4,3,4,75,70,0,20,1,6,0,0,0,345,,Swalot,Poison Bag Pokémon
+318,carvanha,3,,160,8,3,7,4,225,35,0,20,0,1,0,0,0,346,,Carvanha,Savage Pokémon
+319,sharpedo,3,318,160,2,3,7,4,60,35,0,20,0,1,1,0,0,347,,Sharpedo,Brutal Pokémon
+320,wailmer,3,,161,2,3,7,4,125,50,0,40,0,6,0,0,0,348,,Wailmer,Ball Whale Pokémon
+321,wailord,3,320,161,2,3,7,4,60,50,0,40,0,6,0,0,0,349,,Wailord,Float Whale Pokémon
+322,numel,3,,162,10,8,4,4,255,70,0,20,1,2,0,0,0,350,,Numel,Numb Pokémon
+323,camerupt,3,322,162,8,8,4,4,150,70,0,20,1,2,1,0,0,351,,Camerupt,Eruption Pokémon
+324,torkoal,3,,163,3,8,4,4,90,50,0,20,0,2,0,0,0,352,,Torkoal,Coal Pokémon
+325,spoink,3,,164,1,4,4,4,255,70,0,20,0,3,0,0,0,353,,Spoink,Bounce Pokémon
+326,grumpig,3,325,164,7,6,4,4,60,70,0,20,0,3,0,0,0,354,,Grumpig,Manipulate Pokémon
+327,spinda,3,,165,3,6,4,4,255,70,0,15,0,3,0,0,0,355,,Spinda,Spot Panda Pokémon
+328,trapinch,3,,166,3,14,6,4,255,50,0,20,0,4,0,0,0,356,,Trapinch,Ant Pit Pokémon
+329,vibrava,3,328,166,5,13,6,4,120,50,0,20,0,4,0,0,0,357,,Vibrava,Vibration Pokémon
+330,flygon,3,329,166,5,9,6,4,45,50,0,20,0,4,0,0,0,358,,Flygon,Mystic Pokémon
+331,cacnea,3,,167,5,12,6,4,190,35,0,20,0,4,0,0,0,359,,Cacnea,Cactus Pokémon
+332,cacturne,3,331,167,5,12,6,4,60,35,0,20,1,4,0,0,0,360,,Cacturne,Scarecrow Pokémon
+333,swablu,3,,168,2,9,2,4,255,50,0,20,0,5,0,0,0,361,,Swablu,Cotton Bird Pokémon
+334,altaria,3,333,168,2,9,2,4,45,50,0,20,0,5,1,0,0,362,,Altaria,Humming Pokémon
+335,zangoose,3,,169,9,6,3,4,90,70,0,20,0,5,0,0,0,363,,Zangoose,Cat Ferret Pokémon
+336,seviper,3,,170,1,2,3,4,90,70,0,20,0,6,0,0,0,364,,Seviper,Fang Snake Pokémon
+337,lunatone,3,,171,10,1,1,-1,45,50,0,25,0,3,0,0,0,365,,Lunatone,Meteorite Pokémon
+338,solrock,3,,172,8,1,1,-1,45,50,0,25,0,3,0,0,0,366,,Solrock,Meteorite Pokémon
+339,barboach,3,,173,4,3,9,4,190,50,0,20,0,2,0,0,0,367,,Barboach,Whiskers Pokémon
+340,whiscash,3,339,173,2,3,9,4,75,50,0,20,0,2,0,0,0,368,,Whiscash,Whiskers Pokémon
+341,corphish,3,,174,8,14,9,4,205,50,0,15,0,6,0,0,0,369,,Corphish,Ruffian Pokémon
+342,crawdaunt,3,341,174,8,14,9,4,155,50,0,15,0,6,0,0,0,370,,Crawdaunt,Rogue Pokémon
+343,baltoy,3,,175,3,4,6,-1,255,50,0,20,0,2,0,0,0,371,,Baltoy,Clay Doll Pokémon
+344,claydol,3,343,175,1,4,6,-1,90,50,0,20,0,2,0,0,0,372,,Claydol,Clay Doll Pokémon
+345,lileep,3,,176,7,5,7,1,45,50,0,30,0,5,0,0,0,373,,Lileep,Sea Lily Pokémon
+346,cradily,3,345,176,5,5,7,1,45,50,0,30,0,5,0,0,0,374,,Cradily,Barnacle Pokémon
+347,anorith,3,,177,4,14,9,1,45,50,0,30,0,5,0,0,0,375,171,Anorith,Old Shrimp Pokémon
+348,armaldo,3,347,177,4,6,9,1,45,50,0,30,0,5,0,0,0,376,172,Armaldo,Plate Pokémon
+349,feebas,3,,178,3,3,9,4,255,50,0,20,0,5,0,0,0,377,,Feebas,Fish Pokémon
+350,milotic,3,349,178,6,2,9,4,60,50,0,20,1,5,0,0,0,378,,Milotic,Tender Pokémon
+351,castform,3,,179,4,1,3,4,45,70,0,25,0,2,1,0,0,379,,Castform,Weather Pokémon
+352,kecleon,3,,180,5,6,2,4,200,70,0,20,0,4,0,0,0,380,,Kecleon,Color Swap Pokémon
+353,shuppet,3,,181,1,1,8,4,225,35,0,25,0,3,0,0,0,381,,Shuppet,Puppet Pokémon
+354,banette,3,353,181,1,6,8,4,45,35,0,25,0,3,1,0,0,382,,Banette,Marionette Pokémon
+355,duskull,3,,182,1,4,2,4,190,35,0,25,0,3,0,0,0,383,69,Duskull,Requiem Pokémon
+356,dusclops,3,355,182,1,12,2,4,90,35,0,25,0,3,0,0,0,384,70,Dusclops,Beckon Pokémon
+357,tropius,3,,183,5,8,2,4,200,70,0,25,0,1,0,0,0,386,,Tropius,Fruit Pokémon
+358,chimecho,3,433,184,2,4,3,4,45,70,0,25,0,3,0,0,0,388,53,Chimecho,Wind Chime Pokémon
+359,absol,3,,185,9,8,4,4,30,35,0,25,0,4,1,0,0,389,,Absol,Disaster Pokémon
+360,wynaut,3,,100,2,6,1,4,125,50,1,20,0,2,0,0,0,232,,Wynaut,Bright Pokémon
+361,snorunt,3,,186,4,12,1,4,190,50,0,20,0,2,0,0,0,390,93,Snorunt,Snow Hat Pokémon
+362,glalie,3,361,186,4,1,1,4,75,50,0,20,0,2,1,0,0,391,94,Glalie,Face Pokémon
+363,spheal,3,,187,2,3,7,4,255,50,0,20,0,4,0,0,0,393,60,Spheal,Clap Pokémon
+364,sealeo,3,363,187,2,3,7,4,120,50,0,20,0,4,0,0,0,394,61,Sealeo,Ball Roll Pokémon
+365,walrein,3,364,187,2,8,7,4,45,50,0,20,0,4,0,0,0,395,62,Walrein,Ice Break Pokémon
+366,clamperl,3,,188,2,1,7,4,255,70,0,20,0,5,0,0,0,396,,Clamperl,Bivalve Pokémon
+367,huntail,3,366,188,2,2,7,4,60,70,0,20,0,5,0,0,0,397,,Huntail,Deep Sea Pokémon
+368,gorebyss,3,366,188,6,2,7,4,60,70,0,20,0,5,0,0,0,398,,Gorebyss,South Sea Pokémon
+369,relicanth,3,,189,4,3,7,1,25,50,0,40,1,1,0,0,0,399,,Relicanth,Longevity Pokémon
+370,luvdisc,3,,190,6,3,7,6,225,70,0,20,0,3,0,0,0,400,,Luvdisc,Rendezvous Pokémon
+371,bagon,3,,191,2,12,6,4,45,35,0,40,0,1,0,0,0,401,,Bagon,Rock Head Pokémon
+372,shelgon,3,371,191,9,8,6,4,45,35,0,40,0,1,0,0,0,402,,Shelgon,Endurance Pokémon
+373,salamence,3,372,191,2,8,6,4,45,35,0,40,0,1,1,0,0,403,,Salamence,Dragon Pokémon
+374,beldum,3,,192,2,5,6,-1,3,35,0,40,0,1,0,0,0,404,82,Beldum,Iron Ball Pokémon
+375,metang,3,374,192,2,4,6,-1,3,35,0,40,0,1,0,0,0,405,83,Metang,Iron Claw Pokémon
+376,metagross,3,375,192,2,11,6,-1,3,35,0,40,0,1,1,0,0,406,84,Metagross,Iron Leg Pokémon
+377,regirock,3,,193,3,12,1,-1,3,35,0,80,0,1,0,1,0,407,,Regirock,Rock Peak Pokémon
+378,regice,3,,194,2,12,1,-1,3,35,0,80,0,1,0,1,0,408,,Regice,Iceberg Pokémon
+379,registeel,3,,195,4,12,1,-1,3,35,0,80,0,1,0,1,0,409,193,Registeel,Iron Pokémon
+380,latias,3,,196,8,9,9,8,3,90,0,120,0,1,1,1,0,410,,Latias,Eon Pokémon
+381,latios,3,,197,2,9,9,0,3,90,0,120,0,1,1,1,0,411,,Latios,Eon Pokémon
+382,kyogre,3,,198,2,3,7,-1,3,0,0,120,0,1,1,1,0,412,,Kyogre,Sea Basin Pokémon
+383,groudon,3,,199,8,6,6,-1,3,0,0,120,0,1,1,1,0,413,194,Groudon,Continent Pokémon
+384,rayquaza,3,,200,5,2,5,-1,45,0,0,120,0,1,1,1,0,414,200,Rayquaza,Sky High Pokémon
+385,jirachi,3,,201,10,12,4,-1,3,100,0,120,0,1,0,0,1,415,,Jirachi,Wish Pokémon
+386,deoxys,3,,202,8,12,5,-1,3,0,0,120,0,1,1,0,1,416,,Deoxys,DNA Pokémon
+387,turtwig,4,,203,5,8,,1,45,70,0,20,0,4,0,0,0,417,,Turtwig,Tiny Leaf Pokémon
+388,grotle,4,387,203,5,8,,1,45,70,0,20,0,4,0,0,0,418,,Grotle,Grove Pokémon
+389,torterra,4,388,203,5,8,,1,45,70,0,20,0,4,0,0,0,419,,Torterra,Continent Pokémon
+390,chimchar,4,,204,3,6,,1,45,70,0,20,0,4,0,0,0,420,115,Chimchar,Chimp Pokémon
+391,monferno,4,390,204,3,6,,1,45,70,0,20,0,4,0,0,0,421,116,Monferno,Playful Pokémon
+392,infernape,4,391,204,3,6,,1,45,70,0,20,0,4,0,0,0,422,117,Infernape,Flame Pokémon
+393,piplup,4,,205,2,12,,1,45,70,0,20,0,4,0,0,0,423,133,Piplup,Penguin Pokémon
+394,prinplup,4,393,205,2,6,,1,45,70,0,20,0,4,0,0,0,424,134,Prinplup,Penguin Pokémon
+395,empoleon,4,394,205,2,6,,1,45,70,0,20,0,4,0,0,0,425,135,Empoleon,Emperor Pokémon
+396,starly,4,,206,3,9,,4,255,70,0,15,1,4,0,0,0,426,26,Starly,Starling Pokémon
+397,staravia,4,396,206,3,9,,4,120,70,0,15,1,4,0,0,0,427,27,Staravia,Starling Pokémon
+398,staraptor,4,397,206,3,9,,4,45,70,0,15,1,4,0,0,0,428,28,Staraptor,Predator Pokémon
+399,bidoof,4,,207,3,8,,4,255,70,0,15,1,2,0,0,0,429,29,Bidoof,Plump Mouse Pokémon
+400,bibarel,4,399,207,3,6,,4,127,70,0,15,1,2,0,0,0,430,30,Bibarel,Beaver Pokémon
+401,kricketot,4,,208,8,12,,4,255,70,0,15,1,4,0,0,0,431,,Kricketot,Cricket Pokémon
+402,kricketune,4,401,208,8,13,,4,45,70,0,15,1,4,0,0,0,432,,Kricketune,Cricket Pokémon
+403,shinx,4,,209,2,8,,4,235,50,0,20,1,4,0,0,0,433,34,Shinx,Flash Pokémon
+404,luxio,4,403,209,2,8,,4,120,100,0,20,1,4,0,0,0,434,35,Luxio,Spark Pokémon
+405,luxray,4,404,209,2,8,,4,45,50,0,20,1,4,0,0,0,435,36,Luxray,Gleam Eyes Pokémon
+406,budew,4,,158,5,12,,4,255,50,1,20,0,4,0,0,0,341,,Budew,Bud Pokémon
+407,roserade,4,315,158,5,12,,4,75,50,0,20,1,4,0,0,0,343,,Roserade,Bouquet Pokémon
+408,cranidos,4,,211,2,6,,1,45,70,0,30,0,5,0,0,0,436,,Cranidos,Head Butt Pokémon
+409,rampardos,4,408,211,2,6,,1,45,70,0,30,0,5,0,0,0,437,,Rampardos,Head Butt Pokémon
+410,shieldon,4,,212,4,8,,1,45,70,0,30,0,5,0,0,0,438,163,Shieldon,Shield Pokémon
+411,bastiodon,4,410,212,4,8,,1,45,70,0,30,0,5,0,0,0,439,164,Bastiodon,Shield Pokémon
+412,burmy,4,,213,5,5,,4,120,70,0,15,0,2,1,0,0,440,,Burmy,Bagworm Pokémon
+413,wormadam,4,412,213,5,5,,8,45,70,0,15,0,2,0,0,0,441,,Wormadam,Bagworm Pokémon
+414,mothim,4,412,213,10,13,,0,45,70,0,15,0,2,0,0,0,442,,Mothim,Moth Pokémon
+415,combee,4,,214,10,11,,1,120,50,0,15,1,4,0,0,0,443,,Combee,Tiny Bee Pokémon
+416,vespiquen,4,415,214,10,13,,8,45,50,0,15,0,4,0,0,0,444,,Vespiquen,Beehive Pokémon
+417,pachirisu,4,,215,9,8,,4,200,100,0,10,1,2,0,0,0,445,,Pachirisu,EleSquirrel Pokémon
+418,buizel,4,,216,3,8,,4,190,70,0,20,1,2,0,0,0,446,,Buizel,Sea Weasel Pokémon
+419,floatzel,4,418,216,3,8,,4,75,70,0,20,1,2,0,0,0,447,,Floatzel,Sea Weasel Pokémon
+420,cherubi,4,,217,6,11,,4,190,50,0,20,0,2,0,0,0,448,,Cherubi,Cherry Pokémon
+421,cherrim,4,420,217,7,7,,4,75,50,0,20,0,2,1,0,0,449,,Cherrim,Blossom Pokémon
+422,shellos,4,,218,7,2,,4,190,50,0,20,0,2,0,0,0,450,,Shellos,Sea Slug Pokémon
+423,gastrodon,4,422,218,7,2,,4,75,50,0,20,0,2,0,0,0,451,,Gastrodon,Sea Slug Pokémon
+424,ambipom,4,190,93,7,6,,4,45,100,0,20,1,3,0,0,0,220,,Ambipom,Long Tail Pokémon
+425,drifloon,4,,219,7,4,,4,125,50,0,30,0,6,0,0,0,452,167,Drifloon,Balloon Pokémon
+426,drifblim,4,425,219,7,4,,4,60,50,0,30,0,6,0,0,0,453,168,Drifblim,Blimp Pokémon
+427,buneary,4,,220,3,6,,4,190,0,0,20,0,2,0,0,0,454,,Buneary,Rabbit Pokémon
+428,lopunny,4,427,220,3,6,,4,60,140,0,20,0,2,1,0,0,455,,Lopunny,Rabbit Pokémon
+429,mismagius,4,200,98,7,1,,4,45,35,0,25,0,3,0,0,0,230,184,Mismagius,Magical Pokémon
+430,honchkrow,4,198,97,1,9,,4,30,35,0,20,0,4,0,0,0,228,,Honchkrow,Big Boss Pokémon
+431,glameow,4,,221,4,8,,6,190,70,0,20,0,3,0,0,0,456,,Glameow,Catty Pokémon
+432,purugly,4,431,221,4,8,,6,75,70,0,20,0,3,0,0,0,457,,Purugly,Tiger Cat Pokémon
+433,chingling,4,,184,10,12,,4,120,70,1,25,0,3,0,0,0,387,52,Chingling,Bell Pokémon
+434,stunky,4,,223,7,8,,4,225,50,0,20,0,2,0,0,0,458,,Stunky,Skunk Pokémon
+435,skuntank,4,434,223,7,8,,4,60,50,0,20,0,2,0,0,0,459,,Skuntank,Skunk Pokémon
+436,bronzor,4,,224,5,1,,-1,255,50,0,20,0,2,0,0,0,460,,Bronzor,Bronze Pokémon
+437,bronzong,4,436,224,5,4,,-1,90,50,0,20,0,2,0,0,0,461,,Bronzong,Bronze Bell Pokémon
+438,bonsly,4,,91,3,7,,4,255,50,1,20,0,2,0,0,0,214,,Bonsly,Bonsai Pokémon
+439,mime-jr,4,,57,6,12,,4,145,50,1,25,0,2,0,0,0,139,,Mime Jr.,Mime Pokémon
+440,happiny,4,,51,6,12,,8,130,140,1,40,0,3,0,0,0,126,,Happiny,Playhouse Pokémon
+441,chatot,4,,228,1,9,,4,30,35,0,20,0,4,0,0,0,462,,Chatot,Music Note Pokémon
+442,spiritomb,4,,229,7,5,,4,100,50,0,30,0,2,0,0,0,463,187,Spiritomb,Forbidden Pokémon
+443,gible,4,,230,2,6,,4,45,50,0,40,1,1,0,0,0,464,85,Gible,Land Shark Pokémon
+444,gabite,4,443,230,2,6,,4,45,50,0,40,1,1,0,0,0,465,86,Gabite,Cave Pokémon
+445,garchomp,4,444,230,2,6,,4,45,50,0,40,1,1,1,0,0,466,87,Garchomp,Mach Pokémon
+446,munchlax,4,,72,1,12,,1,50,50,1,40,0,1,0,0,0,174,178,Munchlax,Big Eater Pokémon
+447,riolu,4,,232,2,6,,1,75,50,1,25,0,4,0,0,0,467,50,Riolu,Emanation Pokémon
+448,lucario,4,447,232,2,6,,1,45,50,0,25,0,4,1,0,0,468,51,Lucario,Aura Pokémon
+449,hippopotas,4,,233,3,8,,4,140,50,0,30,1,1,0,0,0,469,,Hippopotas,Hippo Pokémon
+450,hippowdon,4,449,233,3,8,,4,60,50,0,30,1,1,0,0,0,470,,Hippowdon,Heavyweight Pokémon
+451,skorupi,4,,234,7,14,,4,120,50,0,20,0,1,0,0,0,471,156,Skorupi,Scorpion Pokémon
+452,drapion,4,451,234,7,14,,4,45,50,0,20,0,1,0,0,0,472,157,Drapion,Ogre Scorpion Pokémon
+453,croagunk,4,,235,2,12,,4,140,100,0,10,1,2,0,0,0,473,88,Croagunk,Toxic Mouth Pokémon
+454,toxicroak,4,453,235,2,12,,4,75,50,0,20,1,2,0,0,0,474,89,Toxicroak,Toxic Mouth Pokémon
+455,carnivine,4,,236,5,10,,4,200,70,0,25,0,1,0,0,0,475,186,Carnivine,Bug Catcher Pokémon
+456,finneon,4,,237,2,3,,4,190,70,0,20,1,5,0,0,0,476,,Finneon,Wing Fish Pokémon
+457,lumineon,4,456,237,2,3,,4,75,70,0,20,1,5,0,0,0,477,,Lumineon,Neon Pokémon
+458,mantyke,4,,116,2,9,,4,25,50,1,25,0,1,0,0,0,258,,Mantyke,Kite Pokémon
+459,snover,4,,239,9,6,,4,120,50,0,20,1,1,0,0,0,478,,Snover,Frost Tree Pokémon
+460,abomasnow,4,459,239,9,6,,4,60,50,0,20,1,1,1,0,0,479,,Abomasnow,Frost Tree Pokémon
+461,weavile,4,215,109,1,6,,4,45,35,0,20,1,4,0,0,0,246,182,Weavile,Sharp Claw Pokémon
+462,magnezone,4,82,34,4,4,,-1,30,50,0,20,0,2,0,0,0,90,,Magnezone,Magnet Area Pokémon
+463,lickilicky,4,108,48,6,12,,4,30,50,0,20,0,2,0,0,0,120,,Lickilicky,Licking Pokémon
+464,rhyperior,4,112,50,4,6,,4,30,50,0,20,1,1,0,0,0,125,162,Rhyperior,Drill Pokémon
+465,tangrowth,4,114,52,2,12,,4,30,50,0,20,1,2,0,0,0,130,,Tangrowth,Vine Pokémon
+466,electivire,4,125,60,10,6,,2,30,50,0,25,0,2,0,0,0,147,,Electivire,Thunderbolt Pokémon
+467,magmortar,4,126,61,8,6,,2,30,50,0,25,0,2,0,0,0,150,,Magmortar,Blast Pokémon
+468,togekiss,4,176,87,9,9,,1,30,50,0,10,0,3,0,0,0,205,,Togekiss,Jubilee Pokémon
+469,yanmega,4,193,95,5,13,,4,30,70,0,20,0,2,0,0,0,224,,Yanmega,Ogre Darner Pokémon
+470,leafeon,4,133,67,5,8,,1,45,35,0,35,0,2,0,0,0,163,7,Leafeon,Verdant Pokémon
+471,glaceon,4,133,67,2,8,,1,45,35,0,35,0,2,0,0,0,164,8,Glaceon,Fresh Snow Pokémon
+472,gliscor,4,207,104,7,9,,4,30,70,0,20,0,4,0,0,0,239,,Gliscor,Fang Scorpion Pokémon
+473,mamoswine,4,221,112,3,8,,4,50,50,0,20,1,1,0,0,0,253,,Mamoswine,Twin Tusk Pokémon
+474,porygon-z,4,233,68,8,4,,-1,30,50,0,20,0,2,0,0,0,168,,Porygon-Z,Virtual Pokémon
+475,gallade,4,281,140,9,12,,0,45,35,0,20,0,1,1,0,0,308,12,Gallade,Blade Pokémon
+476,probopass,4,299,147,4,11,,4,60,70,0,20,0,2,0,0,0,325,,Probopass,Compass Pokémon
+477,dusknoir,4,356,182,1,4,,4,45,35,0,25,0,3,0,0,0,385,71,Dusknoir,Gripper Pokémon
+478,froslass,4,361,186,9,4,,8,75,50,0,20,0,2,0,0,0,392,95,Froslass,Snow Land Pokémon
+479,rotom,4,,240,8,1,,-1,45,50,0,20,0,2,1,0,0,480,,Rotom,Plasma Pokémon
+480,uxie,4,,241,10,6,,-1,3,140,0,80,0,1,0,1,0,481,,Uxie,Knowledge Pokémon
+481,mesprit,4,,242,6,6,,-1,3,140,0,80,0,1,0,1,0,482,,Mesprit,Emotion Pokémon
+482,azelf,4,,243,2,6,,-1,3,140,0,80,0,1,0,1,0,483,,Azelf,Willpower Pokémon
+483,dialga,4,,244,9,8,,-1,3,0,0,120,0,1,0,1,0,484,195,Dialga,Temporal Pokémon
+484,palkia,4,,245,7,6,,-1,3,0,0,120,0,1,0,1,0,485,,Palkia,Spatial Pokémon
+485,heatran,4,,246,3,8,,4,3,100,0,10,0,1,0,1,0,486,,Heatran,Lava Dome Pokémon
+486,regigigas,4,,247,9,12,,-1,3,0,0,120,0,1,0,1,0,487,,Regigigas,Colossal Pokémon
+487,giratina,4,,248,1,10,,-1,3,0,0,120,0,1,1,1,0,488,,Giratina,Renegade Pokémon
+488,cresselia,4,,249,10,2,,8,3,100,0,120,0,1,0,1,0,489,,Cresselia,Lunar Pokémon
+489,phione,4,,250,2,4,,-1,30,70,0,40,0,1,0,0,1,490,,Phione,Sea Drifter Pokémon
+490,manaphy,4,,250,2,12,,-1,3,70,0,10,0,1,0,0,1,491,,Manaphy,Seafaring Pokémon
+491,darkrai,4,,252,1,12,,-1,3,0,0,120,0,1,0,0,1,492,,Darkrai,Pitch-Black Pokémon
+492,shaymin,4,,253,5,8,,-1,45,100,0,120,0,4,1,0,1,493,,Shaymin,Gratitude Pokémon
+493,arceus,4,,254,9,8,,-1,3,0,0,120,0,1,1,0,1,494,199,Arceus,Alpha Pokémon
+494,victini,5,,255,10,12,,-1,3,100,0,120,0,1,0,0,1,495,,Victini,Victory Pokémon
+495,snivy,5,,256,5,6,,1,45,70,0,20,0,4,0,0,0,496,118,Snivy,Grass Snake Pokémon
+496,servine,5,495,256,5,6,,1,45,70,0,20,0,4,0,0,0,497,119,Servine,Grass Snake Pokémon
+497,serperior,5,496,256,5,2,,1,45,70,0,20,0,4,0,0,0,498,120,Serperior,Regal Pokémon
+498,tepig,5,,257,8,8,,1,45,70,0,20,0,4,0,0,0,499,121,Tepig,Fire Pig Pokémon
+499,pignite,5,498,257,8,6,,1,45,70,0,20,0,4,0,0,0,500,122,Pignite,Fire Pig Pokémon
+500,emboar,5,499,257,8,6,,1,45,70,0,20,0,4,0,0,0,501,123,Emboar,Mega Fire Pig Pokémon
+501,oshawott,5,,258,2,6,,1,45,70,0,20,0,4,0,0,0,502,106,Oshawott,Sea Otter Pokémon
+502,dewott,5,501,258,2,6,,1,45,70,0,20,0,4,0,0,0,503,107,Dewott,Discipline Pokémon
+503,samurott,5,502,258,2,8,,1,45,70,0,20,0,4,0,0,0,504,108,Samurott,Formidable Pokémon
+504,patrat,5,,259,3,8,,4,255,70,0,15,0,2,0,0,0,505,,Patrat,Scout Pokémon
+505,watchog,5,504,259,3,6,,4,255,70,0,20,0,2,0,0,0,506,,Watchog,Lookout Pokémon
+506,lillipup,5,,260,3,8,,4,255,50,0,15,0,4,0,0,0,507,,Lillipup,Puppy Pokémon
+507,herdier,5,506,260,4,8,,4,120,50,0,15,0,4,0,0,0,508,,Herdier,Loyal Dog Pokémon
+508,stoutland,5,507,260,4,8,,4,45,50,0,15,0,4,0,0,0,509,,Stoutland,Big-Hearted Pokémon
+509,purrloin,5,,261,7,8,,4,255,50,0,20,0,2,0,0,0,510,,Purrloin,Devious Pokémon
+510,liepard,5,509,261,7,8,,4,90,50,0,20,0,2,0,0,0,511,,Liepard,Cruel Pokémon
+511,pansage,5,,262,5,6,,1,190,70,0,20,0,2,0,0,0,512,136,Pansage,Grass Monkey Pokémon
+512,simisage,5,511,262,5,6,,1,75,70,0,20,0,2,0,0,0,513,137,Simisage,Thorn Monkey Pokémon
+513,pansear,5,,263,8,6,,1,190,70,0,20,0,2,0,0,0,514,138,Pansear,High Temp Pokémon
+514,simisear,5,513,263,8,6,,1,75,70,0,20,0,2,0,0,0,515,139,Simisear,Ember Pokémon
+515,panpour,5,,264,2,6,,1,190,70,0,20,0,2,0,0,0,516,140,Panpour,Spray Pokémon
+516,simipour,5,515,264,2,6,,1,75,70,0,20,0,2,0,0,0,517,141,Simipour,Geyser Pokémon
+517,munna,5,,265,6,8,,4,190,50,0,10,0,3,0,0,0,518,72,Munna,Dream Eater Pokémon
+518,musharna,5,517,265,6,12,,4,75,50,0,10,0,3,0,0,0,519,73,Musharna,Drowsing Pokémon
+519,pidove,5,,266,4,9,,4,255,50,0,15,0,4,0,0,0,520,,Pidove,Tiny Pigeon Pokémon
+520,tranquill,5,519,266,4,9,,4,120,50,0,15,0,4,0,0,0,521,,Tranquill,Wild Pigeon Pokémon
+521,unfezant,5,520,266,4,9,,4,45,50,0,15,1,4,0,0,0,522,,Unfezant,Proud Pokémon
+522,blitzle,5,,267,1,8,,4,190,70,0,20,0,2,0,0,0,523,74,Blitzle,Electrified Pokémon
+523,zebstrika,5,522,267,1,8,,4,75,70,0,20,0,2,0,0,0,524,75,Zebstrika,Thunderbolt Pokémon
+524,roggenrola,5,,268,2,7,,4,255,50,0,15,0,4,0,0,0,525,40,Roggenrola,Mantle Pokémon
+525,boldore,5,524,268,2,10,,4,120,50,0,15,0,4,0,0,0,526,41,Boldore,Ore Pokémon
+526,gigalith,5,525,268,2,10,,4,45,50,0,15,0,4,0,0,0,527,42,Gigalith,Compressed Pokémon
+527,woobat,5,,269,2,9,,4,190,50,0,15,0,2,0,0,0,528,,Woobat,Bat Pokémon
+528,swoobat,5,527,269,2,9,,4,45,50,0,15,0,2,0,0,0,529,,Swoobat,Courting Pokémon
+529,drilbur,5,,270,4,6,,4,120,50,0,20,0,2,0,0,0,530,152,Drilbur,Mole Pokémon
+530,excadrill,5,529,270,4,12,,4,60,50,0,20,0,2,0,0,0,531,153,Excadrill,Subterrene Pokémon
+531,audino,5,,271,6,6,,4,255,50,0,20,0,3,1,0,0,532,185,Audino,Hearing Pokémon
+532,timburr,5,,272,4,12,,2,180,70,0,20,0,4,0,0,0,533,101,Timburr,Muscular Pokémon
+533,gurdurr,5,532,272,4,12,,2,90,50,0,20,0,4,0,0,0,534,102,Gurdurr,Muscular Pokémon
+534,conkeldurr,5,533,272,3,12,,2,45,50,0,20,0,4,0,0,0,535,103,Conkeldurr,Muscular Pokémon
+535,tympole,5,,273,2,3,,4,255,50,0,20,0,4,0,0,0,536,,Tympole,Tadpole Pokémon
+536,palpitoad,5,535,273,2,6,,4,120,50,0,20,0,4,0,0,0,537,,Palpitoad,Vibration Pokémon
+537,seismitoad,5,536,273,2,12,,4,45,50,0,20,0,4,0,0,0,538,,Seismitoad,Vibration Pokémon
+538,throh,5,,274,8,12,,0,45,50,0,20,0,2,0,0,0,539,,Throh,Judo Pokémon
+539,sawk,5,,275,2,12,,0,45,50,0,20,0,2,0,0,0,540,,Sawk,Karate Pokémon
+540,sewaddle,5,,276,10,14,,4,255,70,0,15,0,4,0,0,0,541,124,Sewaddle,Sewing Pokémon
+541,swadloon,5,540,276,5,4,,4,120,70,0,15,0,4,0,0,0,542,125,Swadloon,Leaf-Wrapped Pokémon
+542,leavanny,5,541,276,10,12,,4,45,70,0,15,0,4,0,0,0,543,126,Leavanny,Nurturing Pokémon
+543,venipede,5,,277,8,14,,4,255,50,0,15,0,4,0,0,0,544,31,Venipede,Centipede Pokémon
+544,whirlipede,5,543,277,4,1,,4,120,50,0,15,0,4,0,0,0,545,32,Whirlipede,Curlipede Pokémon
+545,scolipede,5,544,277,8,14,,4,45,50,0,20,0,4,0,0,0,546,33,Scolipede,Megapede Pokémon
+546,cottonee,5,,278,5,1,,4,190,50,0,20,0,2,0,0,0,547,48,Cottonee,Cotton Puff Pokémon
+547,whimsicott,5,546,278,5,12,,4,75,50,0,20,0,2,0,0,0,548,49,Whimsicott,Windveiled Pokémon
+548,petilil,5,,279,5,5,,8,190,50,0,20,0,2,0,0,0,549,43,Petilil,Bulb Pokémon
+549,lilligant,5,548,279,5,5,,8,75,50,0,20,0,2,0,0,0,550,44,Lilligant,Flowering Pokémon
+550,basculin,5,,280,5,3,,4,25,50,0,40,0,2,0,0,0,551,,Basculin,Hostile Pokémon
+551,sandile,5,,281,3,8,,4,180,50,0,20,0,4,0,0,0,552,66,Sandile,Desert Croc Pokémon
+552,krokorok,5,551,281,3,8,,4,90,50,0,20,0,4,0,0,0,553,67,Krokorok,Desert Croc Pokémon
+553,krookodile,5,552,281,8,6,,4,45,50,0,20,0,4,0,0,0,554,68,Krookodile,Intimidation Pokémon
+554,darumaka,5,,282,8,12,,4,120,50,0,20,0,4,0,0,0,555,142,Darumaka,Zen Charm Pokémon
+555,darmanitan,5,554,282,8,8,,4,60,50,0,20,0,4,1,0,0,556,143,Darmanitan,Blazing Pokémon
+556,maractus,5,,283,5,5,,4,255,50,0,20,0,2,0,0,0,557,,Maractus,Cactus Pokémon
+557,dwebble,5,,284,8,14,,4,190,50,0,20,0,2,0,0,0,558,,Dwebble,Rock Inn Pokémon
+558,crustle,5,557,284,8,14,,4,75,50,0,20,0,2,0,0,0,559,,Crustle,Stone Home Pokémon
+559,scraggy,5,,285,10,6,,4,180,35,0,15,0,2,0,0,0,560,165,Scraggy,Shedding Pokémon
+560,scrafty,5,559,285,8,6,,4,90,50,0,15,0,2,0,0,0,561,166,Scrafty,Hoodlum Pokémon
+561,sigilyph,5,,286,1,9,,4,45,50,0,20,0,2,0,0,0,562,,Sigilyph,Avianoid Pokémon
+562,yamask,5,,287,1,4,,4,190,50,0,25,0,2,0,0,0,563,,Yamask,Spirit Pokémon
+563,cofagrigus,5,562,287,10,5,,4,90,50,0,25,0,2,0,0,0,564,,Cofagrigus,Coffin Pokémon
+564,tirtouga,5,,288,2,8,,1,45,50,0,30,0,2,0,0,0,565,,Tirtouga,Prototurtle Pokémon
+565,carracosta,5,564,288,2,6,,1,45,50,0,30,0,2,0,0,0,566,,Carracosta,Prototurtle Pokémon
+566,archen,5,,289,10,9,,1,45,50,0,30,0,2,0,0,0,567,,Archen,First Bird Pokémon
+567,archeops,5,566,289,10,9,,1,45,50,0,30,0,2,0,0,0,568,,Archeops,First Bird Pokémon
+568,trubbish,5,,290,5,12,,4,190,50,0,20,0,2,0,0,0,569,,Trubbish,Trash Bag Pokémon
+569,garbodor,5,568,290,5,12,,4,60,50,0,20,0,2,0,0,0,570,,Garbodor,Trash Heap Pokémon
+570,zorua,5,,291,4,8,,1,75,50,0,25,0,4,0,0,0,571,154,Zorua,Tricky Fox Pokémon
+571,zoroark,5,570,291,4,6,,1,45,50,0,20,0,4,0,0,0,572,155,Zoroark,Illusion Fox Pokémon
+572,minccino,5,,292,4,8,,6,255,50,0,15,0,3,0,0,0,573,96,Minccino,Chinchilla Pokémon
+573,cinccino,5,572,292,4,8,,6,60,50,0,15,0,3,0,0,0,574,97,Cinccino,Scarf Pokémon
+574,gothita,5,,293,7,12,,6,200,50,0,20,0,4,0,0,0,575,63,Gothita,Fixation Pokémon
+575,gothorita,5,574,293,7,12,,6,100,50,0,20,0,4,0,0,0,576,64,Gothorita,Manipulate Pokémon
+576,gothitelle,5,575,293,7,12,,6,50,50,0,20,0,4,0,0,0,577,65,Gothitelle,Astral Body Pokémon
+577,solosis,5,,294,5,1,,4,200,50,0,20,0,4,0,0,0,578,,Solosis,Cell Pokémon
+578,duosion,5,577,294,5,1,,4,100,50,0,20,0,4,0,0,0,579,,Duosion,Mitosis Pokémon
+579,reuniclus,5,578,294,5,4,,4,50,50,0,20,0,4,0,0,0,580,,Reuniclus,Multiplying Pokémon
+580,ducklett,5,,295,2,9,,4,190,70,0,20,0,2,0,0,0,581,,Ducklett,Water Bird Pokémon
+581,swanna,5,580,295,9,9,,4,45,70,0,20,0,2,0,0,0,582,,Swanna,White Bird Pokémon
+582,vanillite,5,,296,9,5,,4,255,50,0,20,0,1,0,0,0,583,,Vanillite,Fresh Snow Pokémon
+583,vanillish,5,582,296,9,5,,4,120,50,0,20,0,1,0,0,0,584,,Vanillish,Icy Snow Pokémon
+584,vanilluxe,5,583,296,9,11,,4,45,50,0,20,0,1,0,0,0,585,,Vanilluxe,Snowstorm Pokémon
+585,deerling,5,,297,6,8,,4,190,70,0,20,0,2,1,0,0,586,,Deerling,Season Pokémon
+586,sawsbuck,5,585,297,3,8,,4,75,70,0,20,0,2,1,0,0,587,,Sawsbuck,Season Pokémon
+587,emolga,5,,298,9,8,,4,200,50,0,20,0,2,0,0,0,588,180,Emolga,Sky Squirrel Pokémon
+588,karrablast,5,,299,2,12,,4,200,50,0,15,0,2,0,0,0,589,,Karrablast,Clamping Pokémon
+589,escavalier,5,588,299,4,4,,4,75,50,0,15,0,2,0,0,0,590,,Escavalier,Cavalry Pokémon
+590,foongus,5,,300,9,4,,4,190,50,0,20,0,2,0,0,0,591,,Foongus,Mushroom Pokémon
+591,amoonguss,5,590,300,9,4,,4,75,50,0,20,0,2,0,0,0,592,,Amoonguss,Mushroom Pokémon
+592,frillish,5,,301,9,10,,4,190,50,0,20,1,2,0,0,0,593,,Frillish,Floating Pokémon
+593,jellicent,5,592,301,9,10,,4,60,50,0,20,1,2,0,0,0,594,,Jellicent,Floating Pokémon
+594,alomomola,5,,302,6,3,,4,75,70,0,40,0,3,0,0,0,595,,Alomomola,Caring Pokémon
+595,joltik,5,,303,10,14,,4,190,50,0,20,0,2,0,0,0,596,147,Joltik,Attaching Pokémon
+596,galvantula,5,595,303,10,14,,4,75,50,0,20,0,2,0,0,0,597,148,Galvantula,EleSpider Pokémon
+597,ferroseed,5,,304,4,1,,4,255,50,0,20,0,2,0,0,0,598,,Ferroseed,Thorn Seed Pokémon
+598,ferrothorn,5,597,304,4,10,,4,90,50,0,20,0,2,0,0,0,599,,Ferrothorn,Thorn Pod Pokémon
+599,klink,5,,305,4,11,,-1,130,50,0,20,0,4,0,0,0,600,,Klink,Gear Pokémon
+600,klang,5,599,305,4,11,,-1,60,50,0,20,0,4,0,0,0,601,,Klang,Gear Pokémon
+601,klinklang,5,600,305,4,11,,-1,30,50,0,20,0,4,0,0,0,602,,Klinklang,Gear Pokémon
+602,tynamo,5,,306,9,3,,4,190,70,0,20,0,1,0,0,0,603,,Tynamo,EleFish Pokémon
+603,eelektrik,5,602,306,2,3,,4,60,70,0,20,0,1,0,0,0,604,,Eelektrik,EleFish Pokémon
+604,eelektross,5,603,306,2,3,,4,30,70,0,20,0,1,0,0,0,605,,Eelektross,EleFish Pokémon
+605,elgyem,5,,307,2,6,,4,255,50,0,20,0,2,0,0,0,606,,Elgyem,Cerebral Pokémon
+606,beheeyem,5,605,307,3,12,,4,90,50,0,20,0,2,0,0,0,607,,Beheeyem,Cerebral Pokémon
+607,litwick,5,,308,9,5,,4,190,50,0,20,0,4,0,0,0,608,37,Litwick,Candle Pokémon
+608,lampent,5,607,308,1,4,,4,90,50,0,20,0,4,0,0,0,609,38,Lampent,Lamp Pokémon
+609,chandelure,5,608,308,1,4,,4,45,50,0,20,0,4,0,0,0,610,39,Chandelure,Luring Pokémon
+610,axew,5,,309,5,6,,4,75,35,0,40,0,1,0,0,0,611,144,Axew,Tusk Pokémon
+611,fraxure,5,610,309,5,6,,4,60,35,0,40,0,1,0,0,0,612,145,Fraxure,Axe Jaw Pokémon
+612,haxorus,5,611,309,10,6,,4,45,35,0,40,0,1,0,0,0,613,146,Haxorus,Axe Jaw Pokémon
+613,cubchoo,5,,310,9,6,,4,120,50,0,20,0,2,0,0,0,614,104,Cubchoo,Chill Pokémon
+614,beartic,5,613,310,9,8,,4,60,50,0,20,0,2,0,0,0,615,105,Beartic,Freezing Pokémon
+615,cryogonal,5,,311,2,1,,-1,25,50,0,25,0,2,0,0,0,616,,Cryogonal,Crystallizing Pokémon
+616,shelmet,5,,312,8,1,,4,200,50,0,15,0,2,0,0,0,617,,Shelmet,Snail Pokémon
+617,accelgor,5,616,312,8,4,,4,75,50,0,15,0,2,0,0,0,618,,Accelgor,Shell Out Pokémon
+618,stunfisk,5,,313,3,3,,4,75,70,0,20,0,2,0,0,0,619,,Stunfisk,Trap Pokémon
+619,mienfoo,5,,314,10,6,,4,180,50,0,25,0,4,0,0,0,620,,Mienfoo,Martial Arts Pokémon
+620,mienshao,5,619,314,7,6,,4,45,50,0,25,0,4,0,0,0,621,,Mienshao,Martial Arts Pokémon
+621,druddigon,5,,315,8,6,,4,45,50,0,30,0,2,0,0,0,622,,Druddigon,Cave Pokémon
+622,golett,5,,316,5,12,,-1,190,50,0,25,0,2,0,0,0,623,,Golett,Automaton Pokémon
+623,golurk,5,622,316,5,12,,-1,90,50,0,25,0,2,0,0,0,624,,Golurk,Automaton Pokémon
+624,pawniard,5,,317,8,12,,4,120,35,0,20,0,2,0,0,0,625,158,Pawniard,Sharp Blade Pokémon
+625,bisharp,5,624,317,8,12,,4,45,35,0,20,0,2,0,0,0,626,159,Bisharp,Sword Blade Pokémon
+626,bouffalant,5,,318,3,8,,4,45,50,0,20,0,2,0,0,0,627,,Bouffalant,Bash Buffalo Pokémon
+627,rufflet,5,,319,9,9,,0,190,50,0,20,0,1,0,0,0,628,169,Rufflet,Eaglet Pokémon
+628,braviary,5,627,319,8,9,,0,60,50,0,20,0,1,0,0,0,629,170,Braviary,Valiant Pokémon
+629,vullaby,5,,320,3,9,,8,190,35,0,20,0,1,0,0,0,630,,Vullaby,Diapered Pokémon
+630,mandibuzz,5,629,320,3,9,,8,60,35,0,20,0,1,0,0,0,631,,Mandibuzz,Bone Vulture Pokémon
+631,heatmor,5,,321,8,6,,4,90,50,0,20,0,2,0,0,0,632,,Heatmor,Anteater Pokémon
+632,durant,5,,322,4,14,,4,90,50,0,20,0,2,0,0,0,633,,Durant,Iron Ant Pokémon
+633,deino,5,,323,2,8,,4,45,35,0,40,0,1,0,0,0,634,90,Deino,Irate Pokémon
+634,zweilous,5,633,323,2,8,,4,45,35,0,40,0,1,0,0,0,635,91,Zweilous,Hostile Pokémon
+635,hydreigon,5,634,323,2,6,,4,45,35,0,40,0,1,0,0,0,636,92,Hydreigon,Brutal Pokémon
+636,larvesta,5,,324,9,14,,4,45,50,0,40,0,1,0,0,0,637,173,Larvesta,Torch Pokémon
+637,volcarona,5,636,324,9,13,,4,15,50,0,40,0,1,0,0,0,638,174,Volcarona,Sun Pokémon
+638,cobalion,5,,325,2,8,,-1,3,35,0,80,0,1,0,1,0,639,,Cobalion,Iron Will Pokémon
+639,terrakion,5,,326,4,8,,-1,3,35,0,80,0,1,0,1,0,640,191,Terrakion,Cavern Pokémon
+640,virizion,5,,327,5,8,,-1,3,35,0,80,0,1,0,1,0,641,,Virizion,Grassland Pokémon
+641,tornadus,5,,328,5,4,,0,3,90,0,120,0,1,1,1,0,642,,Tornadus,Cyclone Pokémon
+642,thundurus,5,,329,2,4,,0,3,90,0,120,0,1,1,1,0,643,,Thundurus,Bolt Strike Pokémon
+643,reshiram,5,,330,9,9,,-1,3,0,0,120,0,1,0,1,0,644,197,Reshiram,Vast White Pokémon
+644,zekrom,5,,331,1,6,,-1,3,0,0,120,0,1,0,1,0,645,198,Zekrom,Deep Black Pokémon
+645,landorus,5,,332,3,4,,0,3,90,0,120,0,1,1,1,0,646,,Landorus,Abundance Pokémon
+646,kyurem,5,,333,4,6,,-1,3,0,0,120,0,1,1,1,0,647,,Kyurem,Boundary Pokémon
+647,keldeo,5,,334,10,8,,-1,3,35,0,80,0,1,1,0,1,648,,Keldeo,Colt Pokémon
+648,meloetta,5,,335,9,12,,-1,3,100,0,120,0,1,1,0,1,649,,Meloetta,Melody Pokémon
+649,genesect,5,,336,7,12,,-1,3,0,0,120,0,1,1,0,1,650,,Genesect,Paleozoic Pokémon
+650,chespin,6,,337,5,6,,1,45,70,0,20,0,4,0,0,0,651,,Chespin,Spiny Nut Pokémon
+651,quilladin,6,650,337,5,6,,1,45,70,0,20,0,4,0,0,0,652,,Quilladin,Spiny Armor Pokémon
+652,chesnaught,6,651,337,5,6,,1,45,70,0,20,0,4,0,0,0,653,,Chesnaught,Spiny Armor Pokémon
+653,fennekin,6,,338,8,8,,1,45,70,0,20,0,4,0,0,0,654,,Fennekin,Fox Pokémon
+654,braixen,6,653,338,8,6,,1,45,70,0,20,0,4,0,0,0,655,,Braixen,Fox Pokémon
+655,delphox,6,654,338,8,6,,1,45,70,0,20,0,4,0,0,0,656,,Delphox,Fox Pokémon
+656,froakie,6,,339,2,8,,1,45,70,0,20,0,4,0,0,0,657,,Froakie,Bubble Frog Pokémon
+657,frogadier,6,656,339,2,12,,1,45,70,0,20,0,4,0,0,0,658,,Frogadier,Bubble Frog Pokémon
+658,greninja,6,657,339,2,12,,1,45,70,0,20,0,4,0,0,0,659,,Greninja,Ninja Pokémon
+659,bunnelby,6,,340,3,6,,4,255,50,0,15,0,2,0,0,0,660,,Bunnelby,Digging Pokémon
+660,diggersby,6,659,340,3,6,,4,127,50,0,15,0,2,0,0,0,661,,Diggersby,Digging Pokémon
+661,fletchling,6,,341,8,9,,4,255,50,0,15,0,4,0,0,0,662,,Fletchling,Tiny Robin Pokémon
+662,fletchinder,6,661,341,8,9,,4,120,50,0,15,0,4,0,0,0,663,,Fletchinder,Ember Pokémon
+663,talonflame,6,662,341,8,9,,4,45,50,0,15,0,4,0,0,0,664,,Talonflame,Scorching Pokémon
+664,scatterbug,6,,342,1,14,,4,255,70,0,15,0,2,0,0,0,665,,Scatterbug,Scatterdust Pokémon
+665,spewpa,6,664,342,1,5,,4,120,70,0,15,0,2,0,0,0,666,,Spewpa,Scatterdust Pokémon
+666,vivillon,6,665,342,9,13,,4,45,70,0,15,0,2,0,0,0,667,,Vivillon,Scale Pokémon
+667,litleo,6,,343,3,8,,7,220,70,0,20,0,4,0,0,0,668,,Litleo,Lion Cub Pokémon
+668,pyroar,6,667,343,3,8,,7,65,70,0,20,1,4,0,0,0,669,,Pyroar,Royal Pokémon
+669,flabebe,6,,344,9,4,,8,225,70,0,20,0,2,0,0,0,670,,Flabébé,Single Bloom Pokémon
+670,floette,6,669,344,9,4,,8,120,70,0,20,0,2,0,0,0,671,,Floette,Single Bloom Pokémon
+671,florges,6,670,344,9,4,,8,45,70,0,20,0,2,0,0,0,672,,Florges,Garden Pokémon
+672,skiddo,6,,345,3,8,,4,200,70,0,20,0,2,0,0,0,673,,Skiddo,Mount Pokémon
+673,gogoat,6,672,345,3,8,,4,45,70,0,20,0,2,0,0,0,674,,Gogoat,Mount Pokémon
+674,pancham,6,,346,9,6,,4,220,50,0,25,0,2,0,0,0,675,,Pancham,Playful Pokémon
+675,pangoro,6,674,346,9,12,,4,65,50,0,25,0,2,0,0,0,676,,Pangoro,Daunting Pokémon
+676,furfrou,6,,347,9,8,,4,160,70,0,20,0,2,1,0,0,677,,Furfrou,Poodle Pokémon
+677,espurr,6,,348,4,6,,4,190,50,0,20,0,2,0,0,0,678,,Espurr,Restraint Pokémon
+678,meowstic,6,677,348,2,6,,0,75,50,0,20,1,2,0,0,0,679,,Meowstic,Constraint Pokémon
+679,honedge,6,,349,3,5,,4,180,50,0,20,0,2,0,0,0,680,,Honedge,Sword Pokémon
+680,doublade,6,679,349,3,11,,4,90,50,0,20,0,2,0,0,0,681,,Doublade,Sword Pokémon
+681,aegislash,6,680,349,3,5,,4,45,50,0,20,0,2,1,0,0,682,,Aegislash,Royal Sword Pokémon
+682,spritzee,6,,350,6,4,,4,200,50,0,20,0,2,0,0,0,683,,Spritzee,Perfume Pokémon
+683,aromatisse,6,682,350,6,12,,4,140,50,0,20,0,2,0,0,0,684,,Aromatisse,Fragrance Pokémon
+684,swirlix,6,,351,9,7,,4,200,50,0,20,0,2,0,0,0,685,,Swirlix,Cotton Candy Pokémon
+685,slurpuff,6,684,351,9,12,,4,140,50,0,20,0,2,0,0,0,686,,Slurpuff,Meringue Pokémon
+686,inkay,6,,352,2,10,,4,190,50,0,20,0,2,0,0,0,687,,Inkay,Revolving Pokémon
+687,malamar,6,686,352,2,5,,4,80,50,0,20,0,2,0,0,0,688,,Malamar,Overturning Pokémon
+688,binacle,6,,353,3,11,,4,120,50,0,20,0,2,0,0,0,689,,Binacle,Two-Handed Pokémon
+689,barbaracle,6,688,353,3,11,,4,45,50,0,20,0,2,0,0,0,690,,Barbaracle,Collective Pokémon
+690,skrelp,6,,354,3,5,,4,225,50,0,20,0,2,0,0,0,691,,Skrelp,Mock Kelp Pokémon
+691,dragalge,6,690,354,3,5,,4,55,50,0,20,0,2,0,0,0,692,,Dragalge,Mock Kelp Pokémon
+692,clauncher,6,,355,2,14,,4,225,50,0,15,0,1,0,0,0,693,,Clauncher,Water Gun Pokémon
+693,clawitzer,6,692,355,2,2,,4,55,50,0,15,0,1,0,0,0,694,,Clawitzer,Howitzer Pokémon
+694,helioptile,6,,356,10,6,,4,190,50,0,20,0,2,0,0,0,695,,Helioptile,Generator Pokémon
+695,heliolisk,6,694,356,10,6,,4,75,50,0,20,0,2,0,0,0,696,,Heliolisk,Generator Pokémon
+696,tyrunt,6,,357,3,6,,1,45,50,0,30,0,2,0,0,0,697,,Tyrunt,Royal Heir Pokémon
+697,tyrantrum,6,696,357,8,6,,1,45,50,0,30,0,2,0,0,0,698,,Tyrantrum,Despot Pokémon
+698,amaura,6,,358,2,8,,1,45,50,0,30,0,2,0,0,0,699,,Amaura,Tundra Pokémon
+699,aurorus,6,698,358,2,8,,1,45,50,0,30,0,2,0,0,0,700,,Aurorus,Tundra Pokémon
+700,sylveon,6,133,67,6,8,,1,45,50,0,35,0,2,0,0,0,165,,Sylveon,Intertwining Pokémon
+701,hawlucha,6,,359,5,12,,4,100,50,0,20,0,2,0,0,0,701,,Hawlucha,Wrestling Pokémon
+702,dedenne,6,,360,10,6,,4,180,50,0,20,0,2,0,0,0,702,,Dedenne,Antenna Pokémon
+703,carbink,6,,361,4,1,,-1,60,50,0,25,0,1,0,0,0,703,,Carbink,Jewel Pokémon
+704,goomy,6,,362,7,2,,4,45,35,0,40,0,1,0,0,0,704,,Goomy,Soft Tissue Pokémon
+705,sliggoo,6,704,362,7,2,,4,45,35,0,40,0,1,0,0,0,705,,Sliggoo,Soft Tissue Pokémon
+706,goodra,6,705,362,7,6,,4,45,35,0,40,0,1,0,0,0,706,,Goodra,Dragon Pokémon
+707,klefki,6,,363,4,1,,4,75,50,0,20,0,3,0,0,0,707,,Klefki,Key Ring Pokémon
+708,phantump,6,,364,3,4,,4,120,50,0,20,0,2,0,0,0,708,,Phantump,Stump Pokémon
+709,trevenant,6,708,364,3,10,,4,60,50,0,20,0,2,0,0,0,709,,Trevenant,Elder Tree Pokémon
+710,pumpkaboo,6,,365,3,1,,4,120,50,0,20,0,2,0,0,0,710,,Pumpkaboo,Pumpkin Pokémon
+711,gourgeist,6,710,365,3,5,,4,60,50,0,20,0,2,0,0,0,711,,Gourgeist,Pumpkin Pokémon
+712,bergmite,6,,366,2,8,,4,190,50,0,20,0,2,0,0,0,712,,Bergmite,Ice Chunk Pokémon
+713,avalugg,6,712,366,2,8,,4,55,50,0,20,0,2,0,0,0,713,,Avalugg,Iceberg Pokémon
+714,noibat,6,,367,7,9,,4,190,50,0,20,0,2,0,0,0,714,,Noibat,Sound Wave Pokémon
+715,noivern,6,714,367,7,9,,4,45,50,0,20,0,2,0,0,0,715,,Noivern,Sound Wave Pokémon
+716,xerneas,6,,368,2,8,,-1,45,0,0,120,0,1,1,1,0,716,,Xerneas,Life Pokémon
+717,yveltal,6,,369,8,9,,-1,45,0,0,120,0,1,0,1,0,717,,Yveltal,Destruction Pokémon
+718,zygarde,6,,370,5,2,,-1,3,0,0,120,0,1,0,1,0,718,,Zygarde,Order Pokémon
+719,diancie,6,,371,6,4,,-1,3,50,0,25,0,1,1,0,1,719,,Diancie,Jewel Pokémon
+720,hoopa,6,,372,7,4,,-1,3,100,0,120,0,1,0,0,1,720,,Hoopa,Mischief Pokémon
+721,volcanion,6,,373,3,8,,-1,3,100,0,120,0,1,0,0,1,721,,Volcanion,Steam Pokémon
+722,rowlet,7,,374,3,9,,1,45,50,0,15,0,4,0,0,0,722,,Rowlet,Grass Quill Pokémon
+723,dartrix,7,722,374,3,9,,1,45,50,0,15,0,4,0,0,0,723,,Dartrix,Blade Quill Pokémon
+724,decidueye,7,723,374,3,9,,1,45,50,0,15,0,4,0,0,0,724,,Decidueye,Arrow Quill Pokémon
+725,litten,7,,375,8,8,,1,45,50,0,15,0,4,0,0,0,725,,Litten,Fire Cat Pokémon
+726,torracat,7,725,375,8,8,,1,45,50,0,15,0,4,0,0,0,726,,Torracat,Fire Cat Pokémon
+727,incineroar,7,726,375,8,6,,1,45,50,0,15,0,4,0,0,0,727,,Incineroar,Heel Pokémon
+728,popplio,7,,376,2,3,,1,45,50,0,15,0,4,0,0,0,728,,Popplio,Sea Lion Pokémon
+729,brionne,7,728,376,2,3,,1,45,50,0,15,0,4,0,0,0,729,,Brionne,Pop Star Pokémon
+730,primarina,7,729,376,2,3,,1,45,50,0,15,0,4,0,0,0,730,,Primarina,Soloist Pokémon
+731,pikipek,7,,377,1,9,,4,255,70,0,15,0,2,0,0,0,731,,Pikipek,Woodpecker Pokémon
+732,trumbeak,7,731,377,1,9,,4,120,70,0,15,0,2,0,0,0,732,,Trumbeak,Bugle Beak Pokémon
+733,toucannon,7,732,377,1,9,,4,45,70,0,15,0,2,0,0,0,733,,Toucannon,Cannon Pokémon
+734,yungoos,7,,378,3,8,,4,255,70,0,15,0,2,0,0,0,734,,Yungoos,Loitering Pokémon
+735,gumshoos,7,734,378,3,8,,4,127,70,0,15,0,2,0,0,0,735,,Gumshoos,Stakeout Pokémon
+736,grubbin,7,,379,4,14,,4,255,50,0,15,0,2,0,0,0,736,,Grubbin,Larva Pokémon
+737,charjabug,7,736,379,5,2,,4,120,50,0,15,0,2,0,0,0,737,,Charjabug,Battery Pokémon
+738,vikavolt,7,737,379,2,14,,4,45,50,0,15,0,2,0,0,0,738,,Vikavolt,Stag Beetle Pokémon
+739,crabrawler,7,,380,7,14,,4,225,70,0,20,0,2,0,0,0,739,,Crabrawler,Boxing Pokémon
+740,crabominable,7,739,380,9,14,,4,60,70,0,20,0,2,0,0,0,740,,Crabominable,Woolly Crab Pokémon
+741,oricorio,7,,381,8,9,,6,45,70,0,20,0,2,0,0,0,741,,Oricorio,Dancing Pokémon
+742,cutiefly,7,,382,10,14,,4,190,50,0,20,0,2,0,0,0,742,,Cutiefly,Bee Fly Pokémon
+743,ribombee,7,742,382,10,13,,4,75,50,0,20,0,2,0,0,0,743,,Ribombee,Bee Fly Pokémon
+744,rockruff,7,,383,3,8,,4,190,50,0,15,0,2,0,0,0,744,,Rockruff,Puppy Pokémon
+745,lycanroc,7,744,383,3,8,,4,90,50,0,15,0,2,0,0,0,745,,Lycanroc,Wolf Pokémon
+746,wishiwashi,7,,384,2,3,,4,60,50,0,15,0,3,0,0,0,746,,Wishiwashi,Small Fry Pokémon
+747,mareanie,7,,385,2,5,,4,190,50,0,20,0,2,0,0,0,747,,Mareanie,Brutal Star Pokémon
+748,toxapex,7,747,385,2,10,,4,75,50,0,20,0,2,0,0,0,748,,Toxapex,Brutal Star Pokémon
+749,mudbray,7,,386,3,8,,4,190,50,0,20,0,2,0,0,0,749,,Mudbray,Donkey Pokémon
+750,mudsdale,7,749,386,3,8,,4,60,50,0,20,0,2,0,0,0,750,,Mudsdale,Draft Horse Pokémon
+751,dewpider,7,,387,5,7,,4,200,50,0,15,0,2,0,0,0,751,,Dewpider,Water Bubble Pokémon
+752,araquanid,7,751,387,5,14,,4,100,50,0,15,0,2,0,0,0,752,,Araquanid,Water Bubble Pokémon
+753,fomantis,7,,388,6,6,,4,190,50,0,20,0,2,0,0,0,753,,Fomantis,Sickle Grass Pokémon
+754,lurantis,7,753,388,6,12,,4,75,50,0,20,0,2,0,0,0,754,,Lurantis,Bloom Sickle Pokémon
+755,morelull,7,,389,7,5,,4,190,50,0,20,0,2,0,0,0,755,,Morelull,Illuminating Pokémon
+756,shiinotic,7,755,389,7,12,,4,75,50,0,20,0,2,0,0,0,756,,Shiinotic,Illuminating Pokémon
+757,salandit,7,,390,1,8,,1,120,50,0,20,0,2,0,0,0,757,,Salandit,Toxic Lizard Pokémon
+758,salazzle,7,757,390,1,8,,8,45,50,0,20,0,2,0,0,0,758,,Salazzle,Toxic Lizard Pokémon
+759,stufful,7,,391,6,8,,4,140,50,0,15,0,2,0,0,0,759,,Stufful,Flailing Pokémon
+760,bewear,7,759,391,6,6,,4,70,50,0,15,0,2,0,0,0,760,,Bewear,Strong Arm Pokémon
+761,bounsweet,7,,392,7,7,,8,235,50,0,20,0,4,0,0,0,761,,Bounsweet,Fruit Pokémon
+762,steenee,7,761,392,7,12,,8,120,50,0,20,0,4,0,0,0,762,,Steenee,Fruit Pokémon
+763,tsareena,7,762,392,7,12,,8,45,50,0,20,0,4,0,0,0,763,,Tsareena,Fruit Pokémon
+764,comfey,7,,393,5,1,,6,60,50,0,20,0,3,0,0,0,764,,Comfey,Posy Picker Pokémon
+765,oranguru,7,,394,9,12,,4,45,50,0,20,0,1,0,0,0,765,,Oranguru,Sage Pokémon
+766,passimian,7,,395,9,6,,4,45,50,0,20,0,1,0,0,0,766,,Passimian,Teamwork Pokémon
+767,wimpod,7,,396,4,10,,4,90,50,0,20,0,2,0,0,0,767,,Wimpod,Turn Tail Pokémon
+768,golisopod,7,767,396,4,12,,4,45,50,0,20,0,2,0,0,0,768,,Golisopod,Hard Scale Pokémon
+769,sandygast,7,,397,3,2,,4,140,50,0,15,0,2,0,0,0,769,,Sandygast,Sand Heap Pokémon
+770,palossand,7,769,397,3,2,,4,60,50,0,15,0,2,0,0,0,770,,Palossand,Sand Castle Pokémon
+771,pyukumuku,7,,398,1,2,,4,60,50,0,15,0,3,0,0,0,771,,Pyukumuku,Sea Cucumber Pokémon
+772,type-null,7,,399,4,8,,-1,3,0,0,120,0,1,0,0,0,772,,Type: Null,Synthetic Pokémon
+773,silvally,7,772,399,4,8,,-1,3,0,0,120,0,1,0,0,0,773,,Silvally,Synthetic Pokémon
+774,minior,7,,400,3,1,,-1,30,70,0,25,0,4,0,0,0,774,,Minior,Meteor Pokémon
+775,komala,7,,401,2,12,,4,45,70,0,20,0,1,0,0,0,775,,Komala,Drowsing Pokémon
+776,turtonator,7,,402,8,6,,4,70,50,0,20,0,2,0,0,0,776,,Turtonator,Blast Turtle Pokémon
+777,togedemaru,7,,403,4,6,,4,180,50,0,10,0,2,0,0,0,777,,Togedemaru,Roly-Poly Pokémon
+778,mimikyu,7,,404,10,2,,4,45,50,0,20,0,2,0,0,0,778,,Mimikyu,Disguise Pokémon
+779,bruxish,7,,405,6,3,,4,80,70,0,15,0,2,0,0,0,779,,Bruxish,Gnash Teeth Pokémon
+780,drampa,7,,406,9,2,,4,70,50,0,20,0,2,0,0,0,780,,Drampa,Placid Pokémon
+781,dhelmise,7,,407,5,5,,-1,25,50,0,25,0,2,0,0,0,781,,Dhelmise,Sea Creeper Pokémon
+782,jangmo-o,7,,408,4,8,,4,45,50,0,40,0,1,0,0,0,782,,Jangmo-o,Scaly Pokémon
+783,hakamo-o,7,782,408,4,6,,4,45,50,0,40,0,1,0,0,0,783,,Hakamo-o,Scaly Pokémon
+784,kommo-o,7,783,408,4,6,,4,45,50,0,40,0,1,0,0,0,784,,Kommo-o,Scaly Pokémon
+785,tapu-koko,7,,409,10,4,,-1,3,50,0,15,0,1,0,1,0,785,,Tapu Koko,Land Spirit Pokémon
+786,tapu-lele,7,,410,6,4,,-1,3,50,0,15,0,1,0,1,0,786,,Tapu Lele,Land Spirit Pokémon
+787,tapu-bulu,7,,411,8,4,,-1,3,50,0,15,0,1,0,1,0,787,,Tapu Bulu,Land Spirit Pokémon
+788,tapu-fini,7,,412,7,4,,-1,3,50,0,15,0,1,0,1,0,788,,Tapu Fini,Land Spirit Pokémon
+789,cosmog,7,,413,2,1,,-1,45,0,0,120,0,1,0,1,0,789,,Cosmog,Nebula Pokémon
+790,cosmoem,7,789,413,2,1,,-1,45,0,0,120,0,1,0,1,0,790,,Cosmoem,Protostar Pokémon
+791,solgaleo,7,790,413,9,8,,-1,45,0,0,120,0,1,0,1,0,791,,Solgaleo,Sunne Pokémon
+792,lunala,7,790,413,7,9,,-1,45,0,0,120,0,1,0,1,0,792,,Lunala,Moone Pokémon
+793,nihilego,7,,414,9,10,,-1,45,0,0,120,0,1,0,0,0,793,,Nihilego,Parasite Pokémon
+794,buzzwole,7,,415,8,10,,-1,45,0,0,120,0,1,0,0,0,794,,Buzzwole,Swollen Pokémon
+795,pheromosa,7,,416,9,12,,-1,45,0,0,120,0,1,0,0,0,795,,Pheromosa,Lissome Pokémon
+796,xurkitree,7,,417,1,6,,-1,45,0,0,120,0,1,0,0,0,796,,Xurkitree,Glowing Pokémon
+797,celesteela,7,,418,5,12,,-1,45,0,0,120,0,1,0,0,0,797,,Celesteela,Launch Pokémon
+798,kartana,7,,419,9,12,,-1,45,0,0,120,0,1,0,0,0,798,,Kartana,Drawn Sword Pokémon
+799,guzzlord,7,,420,1,6,,-1,45,0,0,120,0,1,0,0,0,799,,Guzzlord,Junkivore Pokémon
+800,necrozma,7,,421,1,4,,-1,255,0,0,120,0,1,0,1,0,800,,Necrozma,Prism Pokémon
+801,magearna,7,,422,4,12,,-1,3,0,0,120,0,1,0,0,1,801,,Magearna,Artificial Pokémon
+802,marshadow,7,,423,4,12,,-1,3,0,0,120,0,1,0,0,1,802,,Marshadow,Gloomdweller Pokémon
+803,poipole,7,,424,7,6,,-1,45,0,0,120,0,1,0,0,0,803,,Poipole,Poison Pin Pokémon
+804,naganadel,7,803,424,7,9,,-1,45,0,0,120,0,1,0,0,0,804,,Naganadel,Poison Pin Pokémon
+805,stakataka,7,,425,4,8,,-1,30,0,0,120,0,1,0,0,0,805,,Stakataka,Rampart Pokémon
+806,blacephalon,7,,426,9,12,,-1,30,0,0,120,0,1,0,0,0,806,,Blacephalon,Fireworks Pokémon
+807,zeraora,7,,427,10,12,,-1,3,0,0,120,0,1,0,0,1,807,,Zeraora,Thunderclap Pokémon
 808,meltan,7,,428,4,,,-1,3,0,0,120,0,1,0,0,1,808,,Meltan,Hex Nut Pokémon
 809,melmetal,7,,429,4,,,-1,3,0,0,120,0,1,0,0,1,809,,Melmetal,Hex Nut Pokémon
 810,grookey,8,,430,5,,,1,45,50,0,20,0,4,0,0,0,810,,Grookey,Chimp Pokémon
-811,thwackey,8,810.0,430,5,,,1,45,50,0,20,0,4,0,0,0,811,,Thwackey,Beat Pokémon
-812,rillaboom,8,811.0,430,5,,,1,45,50,0,20,0,4,0,0,0,812,,Rillaboom,Drummer Pokémon
+811,thwackey,8,810,430,5,,,1,45,50,0,20,0,4,0,0,0,811,,Thwackey,Beat Pokémon
+812,rillaboom,8,811,430,5,,,1,45,50,0,20,0,4,0,0,0,812,,Rillaboom,Drummer Pokémon
 813,scorbunny,8,,431,9,,,1,45,50,0,20,0,4,0,0,0,813,,Scorbunny,Rabbit Pokémon
-814,raboot,8,813.0,431,4,,,1,45,50,0,20,0,4,0,0,0,814,,Raboot,Rabbit Pokémon
-815,cinderace,8,814.0,431,9,,,1,45,50,0,20,0,4,0,0,0,815,,Cinderace,Striker Pokémon
+814,raboot,8,813,431,4,,,1,45,50,0,20,0,4,0,0,0,814,,Raboot,Rabbit Pokémon
+815,cinderace,8,814,431,9,,,1,45,50,0,20,0,4,0,0,0,815,,Cinderace,Striker Pokémon
 816,sobble,8,,432,2,,,1,45,50,0,20,0,4,0,0,0,816,,Sobble,Water Lizard Pokémon
-817,drizzile,8,816.0,432,2,,,1,45,50,0,20,0,4,0,0,0,817,,Drizzile,Water Lizard Pokémon
-818,inteleon,8,817.0,432,2,,,1,45,50,0,20,0,4,0,0,0,818,,Inteleon,Secret Agent Pokémon
+817,drizzile,8,816,432,2,,,1,45,50,0,20,0,4,0,0,0,817,,Drizzile,Water Lizard Pokémon
+818,inteleon,8,817,432,2,,,1,45,50,0,20,0,4,0,0,0,818,,Inteleon,Secret Agent Pokémon
 819,skwovet,8,,433,3,,,4,255,50,0,20,0,2,0,0,0,819,,Skwovet,Cheeky Pokémon
-820,greedent,8,819.0,433,3,,,4,90,50,0,20,0,2,0,0,0,820,,Greedent,Greedy Pokémon
+820,greedent,8,819,433,3,,,4,90,50,0,20,0,2,0,0,0,820,,Greedent,Greedy Pokémon
 821,rookidee,8,,434,2,,,4,255,50,0,15,0,4,0,0,0,821,,Rookidee,Tiny Bird Pokémon
-822,corvisquire,8,821.0,434,2,,,4,120,50,0,15,0,4,0,0,0,822,,Corvisquire,Raven Pokémon
-823,corviknight,8,822.0,434,7,,,4,45,50,0,15,0,4,0,0,0,823,,Corviknight,Raven Pokémon
+822,corvisquire,8,821,434,2,,,4,120,50,0,15,0,4,0,0,0,822,,Corvisquire,Raven Pokémon
+823,corviknight,8,822,434,7,,,4,45,50,0,15,0,4,0,0,0,823,,Corviknight,Raven Pokémon
 824,blipbug,8,,435,2,,,4,255,50,0,15,0,2,0,0,0,824,,Blipbug,Larva Pokémon
-825,dottler,8,824.0,435,10,,,4,120,50,0,15,0,2,0,0,0,825,,Dottler,Radome Pokémon
-826,orbeetle,8,825.0,435,8,,,4,45,50,0,15,0,2,0,0,0,826,,Orbeetle,Seven Spot Pokémon
+825,dottler,8,824,435,10,,,4,120,50,0,15,0,2,0,0,0,825,,Dottler,Radome Pokémon
+826,orbeetle,8,825,435,8,,,4,45,50,0,15,0,2,0,0,0,826,,Orbeetle,Seven Spot Pokémon
 827,nickit,8,,436,3,,,4,255,50,0,15,0,3,0,0,0,827,,Nickit,Fox Pokémon
-828,thievul,8,827.0,436,3,,,4,127,50,0,15,0,3,0,0,0,828,,Thievul,Fox Pokémon
+828,thievul,8,827,436,3,,,4,127,50,0,15,0,3,0,0,0,828,,Thievul,Fox Pokémon
 829,gossifleur,8,,437,5,,,4,190,50,0,20,0,2,0,0,0,829,,Gossifleur,Flowering Pokémon
-830,eldegoss,8,829.0,437,5,,,4,75,50,0,20,0,2,0,0,0,830,,Eldegoss,Cotton Bloom Pokémon
+830,eldegoss,8,829,437,5,,,4,75,50,0,20,0,2,0,0,0,830,,Eldegoss,Cotton Bloom Pokémon
 831,wooloo,8,,438,9,,,4,255,50,0,15,0,2,0,0,0,831,,Wooloo,Sheep Pokémon
-832,dubwool,8,831.0,438,9,,,4,127,50,0,15,0,2,0,0,0,832,,Dubwool,Sheep Pokémon
+832,dubwool,8,831,438,9,,,4,127,50,0,15,0,2,0,0,0,832,,Dubwool,Sheep Pokémon
 833,chewtle,8,,439,5,,,4,255,50,0,20,0,2,0,0,0,833,,Chewtle,Snapping Pokémon
-834,drednaw,8,833.0,439,5,,,4,75,50,0,20,0,2,0,0,0,834,,Drednaw,Bite Pokémon
+834,drednaw,8,833,439,5,,,4,75,50,0,20,0,2,0,0,0,834,,Drednaw,Bite Pokémon
 835,yamper,8,,440,10,,,4,255,50,0,20,0,3,0,0,0,835,,Yamper,Puppy Pokémon
-836,boltund,8,835.0,440,10,,,4,45,50,0,20,0,3,0,0,0,836,,Boltund,Dog Pokémon
+836,boltund,8,835,440,10,,,4,45,50,0,20,0,3,0,0,0,836,,Boltund,Dog Pokémon
 837,rolycoly,8,,441,1,,,4,255,50,0,15,0,4,0,0,0,837,,Rolycoly,Coal Pokémon
-838,carkol,8,837.0,441,1,,,4,120,50,0,15,0,4,0,0,0,838,,Carkol,Coal Pokémon
-839,coalossal,8,838.0,441,1,,,4,45,50,0,15,0,4,0,0,0,839,,Coalossal,Coal Pokémon
+838,carkol,8,837,441,1,,,4,120,50,0,15,0,4,0,0,0,838,,Carkol,Coal Pokémon
+839,coalossal,8,838,441,1,,,4,45,50,0,15,0,4,0,0,0,839,,Coalossal,Coal Pokémon
 840,applin,8,,442,5,,,4,255,50,0,20,0,5,0,0,0,840,,Applin,Apple Core Pokémon
-841,flapple,8,840.0,442,5,,,4,45,50,0,20,0,5,0,0,0,841,,Flapple,Apple Wing Pokémon
-842,appletun,8,840.0,442,5,,,4,45,50,0,20,0,5,0,0,0,842,,Appletun,Apple Nectar Pokémon
+841,flapple,8,840,442,5,,,4,45,50,0,20,0,5,0,0,0,841,,Flapple,Apple Wing Pokémon
+842,appletun,8,840,442,5,,,4,45,50,0,20,0,5,0,0,0,842,,Appletun,Apple Nectar Pokémon
 843,silicobra,8,,443,5,,,4,255,50,0,20,0,2,0,0,0,843,,Silicobra,Sand Snake Pokémon
-844,sandaconda,8,843.0,443,5,,,4,120,50,0,20,0,2,0,0,0,844,,Sandaconda,Sand Snake Pokémon
+844,sandaconda,8,843,443,5,,,4,120,50,0,20,0,2,0,0,0,844,,Sandaconda,Sand Snake Pokémon
 845,cramorant,8,,444,2,,,4,45,50,0,20,0,2,0,0,0,845,,Cramorant,Gulp Pokémon
 846,arrokuda,8,,445,3,,,4,255,50,0,20,0,1,0,0,0,846,,Arrokuda,Rush Pokémon
-847,barraskewda,8,846.0,445,3,,,4,60,50,0,20,0,1,0,0,0,847,,Barraskewda,Skewer Pokémon
+847,barraskewda,8,846,445,3,,,4,60,50,0,20,0,1,0,0,0,847,,Barraskewda,Skewer Pokémon
 848,toxel,8,,446,7,,,4,75,50,1,25,0,4,0,0,0,848,,Toxel,Baby Pokémon
-849,toxtricity,8,848.0,446,7,,,4,45,50,0,25,0,4,0,0,0,849,,Toxtricity,Punk Pokémon
+849,toxtricity,8,848,446,7,,,4,45,50,0,25,0,4,0,0,0,849,,Toxtricity,Punk Pokémon
 850,sizzlipede,8,,447,8,,,4,190,50,0,20,0,2,0,0,0,850,,Sizzlipede,Radiator Pokémon
-851,centiskorch,8,850.0,447,8,,,4,75,50,0,20,0,2,0,0,0,851,,Centiskorch,Radiator Pokémon
+851,centiskorch,8,850,447,8,,,4,75,50,0,20,0,2,0,0,0,851,,Centiskorch,Radiator Pokémon
 852,clobbopus,8,,448,3,,,4,180,50,0,25,0,4,0,0,0,852,,Clobbopus,Tantrum Pokémon
-853,grapploct,8,852.0,448,2,,,4,45,50,0,25,0,4,0,0,0,853,,Grapploct,Jujitsu Pokémon
+853,grapploct,8,852,448,2,,,4,45,50,0,25,0,4,0,0,0,853,,Grapploct,Jujitsu Pokémon
 854,sinistea,8,,449,7,,,-1,120,50,0,20,0,2,0,0,0,854,,Sinistea,Black Tea Pokémon
-855,polteageist,8,854.0,449,7,,,-1,60,50,0,20,0,2,0,0,0,855,,Polteageist,Black Tea Pokémon
+855,polteageist,8,854,449,7,,,-1,60,50,0,20,0,2,0,0,0,855,,Polteageist,Black Tea Pokémon
 856,hatenna,8,,450,6,,,8,235,50,0,20,0,1,0,0,0,856,,Hatenna,Calm Pokémon
-857,hattrem,8,856.0,450,6,,,8,120,50,0,20,0,1,0,0,0,857,,Hattrem,Serene Pokémon
-858,hatterene,8,857.0,450,6,,,8,45,50,0,20,0,1,0,0,0,858,,Hatterene,Silent Pokémon
+857,hattrem,8,856,450,6,,,8,120,50,0,20,0,1,0,0,0,857,,Hattrem,Serene Pokémon
+858,hatterene,8,857,450,6,,,8,45,50,0,20,0,1,0,0,0,858,,Hatterene,Silent Pokémon
 859,impidimp,8,,451,6,,,0,255,50,0,20,0,2,0,0,0,859,,Impidimp,Wily Pokémon
-860,morgrem,8,859.0,451,6,,,0,120,50,0,20,0,2,0,0,0,860,,Morgrem,Devious Pokémon
-861,grimmsnarl,8,860.0,451,7,,,0,45,50,0,20,0,2,0,0,0,861,,Grimmsnarl,Bulk Up Pokémon
-862,obstagoon,8,264.0,134,4,,,4,45,50,0,15,0,2,0,0,0,862,,Obstagoon,Blocking Pokémon
-863,perrserker,8,52.0,22,3,,,4,90,50,0,20,0,2,0,0,0,863,,Perrserker,Viking Pokémon
-864,cursola,8,222.0,113,9,,,6,30,50,0,20,0,3,0,0,0,864,,Cursola,Coral Pokémon
-865,sirfetchd,8,83.0,35,9,,,4,45,50,0,20,0,2,0,0,0,865,,Sirfetch’d,Wild Duck Pokémon
-866,mr-rime,8,122.0,57,7,,,4,45,50,0,25,0,2,0,0,0,866,,Mr. Rime,Comedian Pokémon
-867,runerigus,8,562.0,287,4,,,4,90,50,0,25,0,2,0,0,0,867,,Runerigus,Grudge Pokémon
+860,morgrem,8,859,451,6,,,0,120,50,0,20,0,2,0,0,0,860,,Morgrem,Devious Pokémon
+861,grimmsnarl,8,860,451,7,,,0,45,50,0,20,0,2,0,0,0,861,,Grimmsnarl,Bulk Up Pokémon
+862,obstagoon,8,264,134,4,,,4,45,50,0,15,0,2,0,0,0,862,,Obstagoon,Blocking Pokémon
+863,perrserker,8,52,22,3,,,4,90,50,0,20,0,2,0,0,0,863,,Perrserker,Viking Pokémon
+864,cursola,8,222,113,9,,,6,30,50,0,20,0,3,0,0,0,864,,Cursola,Coral Pokémon
+865,sirfetchd,8,83,35,9,,,4,45,50,0,20,0,2,0,0,0,865,,Sirfetch’d,Wild Duck Pokémon
+866,mr-rime,8,122,57,7,,,4,45,50,0,25,0,2,0,0,0,866,,Mr. Rime,Comedian Pokémon
+867,runerigus,8,562,287,4,,,4,90,50,0,25,0,2,0,0,0,867,,Runerigus,Grudge Pokémon
 868,milcery,8,,452,9,,,8,200,50,0,20,0,2,0,0,0,868,,Milcery,Cream Pokémon
-869,alcremie,8,868.0,452,9,,,8,100,50,0,20,0,2,0,0,0,869,,Alcremie,Cream Pokémon
+869,alcremie,8,868,452,9,,,8,100,50,0,20,0,2,0,0,0,869,,Alcremie,Cream Pokémon
 870,falinks,8,,453,10,,,-1,45,50,0,25,0,2,0,0,0,870,,Falinks,Formation Pokémon
 871,pincurchin,8,,454,7,,,4,75,50,0,20,0,2,0,0,0,871,,Pincurchin,Sea Urchin Pokémon
 872,snom,8,,455,9,,,4,190,50,0,20,0,2,0,0,0,872,,Snom,Worm Pokémon
-873,frosmoth,8,872.0,455,9,,,4,75,50,0,20,0,2,0,0,0,873,,Frosmoth,Frost Moth Pokémon
+873,frosmoth,8,872,455,9,,,4,75,50,0,20,0,2,0,0,0,873,,Frosmoth,Frost Moth Pokémon
 874,stonjourner,8,,456,4,,,4,60,50,0,25,0,1,0,0,0,874,,Stonjourner,Big Rock Pokémon
 875,eiscue,8,,457,2,,,4,60,50,0,25,0,1,0,0,0,875,,Eiscue,Penguin Pokémon
 876,indeedee,8,,458,7,,,0,30,140,0,40,0,3,0,0,0,876,,Indeedee,Emotion Pokémon
 877,morpeko,8,,459,10,,,4,180,50,0,10,0,2,0,0,0,877,,Morpeko,Two-Sided Pokémon
 878,cufant,8,,460,10,,,4,190,50,0,25,0,2,0,0,0,878,,Cufant,Copperderm Pokémon
-879,copperajah,8,878.0,460,5,,,4,90,50,0,25,0,2,0,0,0,879,,Copperajah,Copperderm Pokémon
+879,copperajah,8,878,460,5,,,4,90,50,0,25,0,2,0,0,0,879,,Copperajah,Copperderm Pokémon
 880,dracozolt,8,,461,5,,,-1,45,50,0,35,0,1,0,0,0,880,,Dracozolt,Fossil Pokémon
 881,arctozolt,8,,462,2,,,-1,45,50,0,35,0,1,0,0,0,881,,Arctozolt,Fossil Pokémon
 882,dracovish,8,,463,5,,,-1,45,50,0,35,0,1,0,0,0,882,,Dracovish,Fossil Pokémon
 883,arctovish,8,,464,2,,,-1,45,50,0,35,0,1,0,0,0,883,,Arctovish,Fossil Pokémon
 884,duraludon,8,,465,9,,,4,45,50,0,30,0,2,0,0,0,884,,Duraludon,Alloy Pokémon
 885,dreepy,8,,466,5,,,4,45,50,0,40,0,1,0,0,0,885,,Dreepy,Lingering Pokémon
-886,drakloak,8,885.0,466,5,,,4,45,50,0,40,0,1,0,0,0,886,,Drakloak,Caretaker Pokémon
-887,dragapult,8,886.0,466,5,,,4,45,50,0,40,0,1,0,0,0,887,,Dragapult,Stealth Pokémon
+886,drakloak,8,885,466,5,,,4,45,50,0,40,0,1,0,0,0,886,,Drakloak,Caretaker Pokémon
+887,dragapult,8,886,466,5,,,4,45,50,0,40,0,1,0,0,0,887,,Dragapult,Stealth Pokémon
 888,zacian,8,,467,2,,,-1,10,0,0,120,0,1,0,1,0,888,,Zacian,Warrior Pokémon
 889,zamazenta,8,,468,8,,,-1,10,0,0,120,0,1,0,1,0,889,,Zamazenta,Warrior Pokémon
 890,eternatus,8,,469,7,,,-1,255,0,0,120,0,1,0,1,0,890,,Eternatus,Gigantic Pokémon
 891,kubfu,8,,470,4,,,1,3,50,0,120,0,1,0,1,0,891,,Kubfu,Wushu Pokémon
-892,urshifu,8,891.0,470,4,,,1,3,50,0,120,0,1,0,1,0,892,,Urshifu,Wushu Pokémon
+892,urshifu,8,891,470,4,,,1,3,50,0,120,0,1,0,1,0,892,,Urshifu,Wushu Pokémon
 893,zarude,8,,471,5,,,-1,3,0,0,120,0,1,0,0,1,893,,Zarude,Rogue Monkey Pokémon
 894,regieleki,8,,472,10,,,-1,3,35,0,120,0,1,0,1,0,894,,Regieleki,Electron Pokémon
 895,regidrago,8,,473,5,,,-1,3,35,0,120,0,1,0,1,0,895,,Regidrago,Dragon Orb Pokémon

@@ -1,6 +1,9 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvEvolutionChains;
+import at.jku.faw.neo4jdemo.model.csv.CsvPalPark;
 import at.jku.faw.neo4jdemo.model.csv.CsvPokemonDexNumbers;
+import at.jku.faw.neo4jdemo.model.csv.CsvPokemonEggGroups;
 import at.jku.faw.neo4jdemo.model.csv.CsvPokemonEvolution;
 import at.jku.faw.neo4jdemo.repository.csv.CsvEvolutionChainsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPalParkRepositoryImpl;
@@ -104,61 +107,54 @@ public class PokemonSpeciesService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvPokemonSpeciesRepository.getAll().forEach(csvPokemonSpecies -> {
-            for (CsvPokemonEvolution csvPokemonEvolution : csvPokemonEvolutionRepositoryImpl.getByEvolvedSpeciesId(
-                    csvPokemonSpecies.getId())) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(csvPokemonSpecies.getId(),
-                        csvPokemonEvolution.getId());
+        Map<Long, List<CsvPokemonEvolution>> evolutionMap = csvPokemonEvolutionRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvPokemonEvolution::getEvolvedSpeciesId));
+
+        Map<Long, List<CsvPalPark>> palParkMap = csvPalParkRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvPalPark::getSpeciesId));
+
+        Map<Long, List<CsvPokemonDexNumbers>> dexMap = csvPokemonDexNumbersRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvPokemonDexNumbers::getSpeciesId));
+
+        Map<Long, List<CsvPokemonEggGroups>> eggGroupMap = csvPokemonEggGroupsRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvPokemonEggGroups::getSpeciesId));
+
+        Map<Long, CsvEvolutionChains> chainMap = csvEvolutionChainsRepositoryImpl.getAll().stream()
+                .collect(Collectors.toMap(CsvEvolutionChains::getId, c -> c, (existing, replacement) -> existing));
+
+        csvPokemonSpeciesRepository.getAll().forEach(csv -> {
+            Long sId = csv.getId();
+
+            if (evolutionMap.containsKey(sId)) {
+                evolutionMap.get(sId).forEach(evo ->
+                        pokemonSpeciesRepository.linkPokemonSpeciesToEvolutionStep(sId, evo.getId()));
             }
 
-            csvEvolutionChainsRepositoryImpl.getAll().forEach(csvEvolutionChain -> {
-                if (csvEvolutionChain.getId().equals(csvPokemonSpecies.getEvolutionChainId())) {
-                    pokemonSpeciesRepository.linkPokemonSpeciesIsPartOfEvolutionChain(csvPokemonSpecies.getId(), csvEvolutionChain.getId());
-                }
-            });
-
-            if (csvPokemonSpecies.getEvolvesFromSpeciesId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonSpecies(csvPokemonSpecies.getId(), csvPokemonSpecies.getEvolvesFromSpeciesId());
+            if (csv.getEvolutionChainId() != null && chainMap.containsKey(csv.getEvolutionChainId())) {
+                pokemonSpeciesRepository.linkPokemonSpeciesIsPartOfEvolutionChain(sId, csv.getEvolutionChainId());
             }
 
-            if (csvPokemonSpecies.getColorId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonColor(csvPokemonSpecies.getId(), csvPokemonSpecies.getColorId());
+            if (csv.getEvolvesFromSpeciesId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToPokemonSpecies(sId, csv.getEvolvesFromSpeciesId());
+            if (csv.getColorId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToPokemonColor(sId, csv.getColorId());
+            if (csv.getGenerationId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToGeneration(sId, csv.getGenerationId());
+            if (csv.getShapeId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToPokemonShape(sId, csv.getShapeId());
+            if (csv.getHabitatId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToPokemonHabitat(sId, csv.getHabitatId());
+            if (csv.getGrowthRateId() != null) pokemonSpeciesRepository.linkPokemonSpeciesToGrowthRate(sId, csv.getGrowthRateId());
+
+            if (palParkMap.containsKey(sId)) {
+                palParkMap.get(sId).forEach(pp ->
+                        palParkEncounterRepository.linkPokemonSpeciesToPalParkArea(sId, pp.getAreaId(), pp.getBaseScore(), pp.getRate()));
             }
 
-            if (csvPokemonSpecies.getGenerationId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToGeneration(csvPokemonSpecies.getId(), csvPokemonSpecies.getGenerationId());
+            if (dexMap.containsKey(sId)) {
+                dexMap.get(sId).forEach(dn ->
+                        pokedexEntryRepository.linkPokemonSpeciesToPokedex(sId, dn.getPokedexId(), dn.getPokedexNumber()));
             }
 
-            if (csvPokemonSpecies.getShapeId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonShape(csvPokemonSpecies.getId(), csvPokemonSpecies.getShapeId());
+            if (eggGroupMap.containsKey(sId)) {
+                eggGroupMap.get(sId).forEach(eg ->
+                        pokemonSpeciesRepository.linkPokemonSpeciesToEggGroup(sId, eg.getEggGroupId()));
             }
-
-            if (csvPokemonSpecies.getHabitatId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToPokemonHabitat(csvPokemonSpecies.getId(), csvPokemonSpecies.getHabitatId());
-            }
-
-            if (csvPokemonSpecies.getGrowthRateId() != null) {
-                pokemonSpeciesRepository.linkPokemonSpeciesToGrowthRate(csvPokemonSpecies.getId(), csvPokemonSpecies.getGrowthRateId());
-            }
-
-            csvPalParkRepositoryImpl.getAll().forEach(csvPalPark -> {
-                if(csvPalPark.getSpeciesId().equals(csvPokemonSpecies.getId())) {
-                    palParkEncounterRepository.linkPokemonSpeciesToPalParkArea(csvPokemonSpecies.getId(),
-                            csvPalPark.getAreaId(), csvPalPark.getBaseScore(), csvPalPark.getRate());
-                }
-            });
-
-            for (CsvPokemonDexNumbers csvPokemonDexNumber : csvPokemonDexNumbersRepositoryImpl.getBySpeciesId(
-                    csvPokemonSpecies.getId())) {
-                pokedexEntryRepository.linkPokemonSpeciesToPokedex(csvPokemonSpecies.getId(),
-                        csvPokemonDexNumber.getPokedexId(), csvPokemonDexNumber.getPokedexNumber());
-            }
-
-            csvPokemonEggGroupsRepositoryImpl.getAll().forEach(csvPokemonEggGroup -> {
-                if (csvPokemonEggGroup.getSpeciesId().equals(csvPokemonSpecies.getId())) {
-                    pokemonSpeciesRepository.linkPokemonSpeciesToEggGroup(csvPokemonSpecies.getId(), csvPokemonEggGroup.getEggGroupId());
-                }
-            });
         });
     }
 }

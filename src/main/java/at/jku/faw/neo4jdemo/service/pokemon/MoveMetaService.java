@@ -57,19 +57,6 @@ public class MoveMetaService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMoveMetaRepository.getAll().forEach(csvMoveMeta -> {
-            if (csvMoveMeta.getMetaAilmentId() != null) {
-                moveMetaRepository.findById(csvMoveMeta.getMetaAilmentId())
-                        .ifPresent(moveMeta ->
-                            moveMetaRepository.linkMoveMetaToMoveAilment(moveMeta.getId(), csvMoveMeta.getMetaAilmentId())
-                        );
-            }
-            if (csvMoveMeta.getMetaCategoryId() != null) {
-                moveCategoryRepository.findById(csvMoveMeta.getMetaCategoryId())
-                        .ifPresent(moveCategory -> moveMetaRepository.linkMoveMetaToMoveCategory(csvMoveMeta.getMetaCategoryId(), moveCategory.getId()));
-            }
-        });
-
         Map<Long, MoveMeta> metaLookup = moveMetaRepository.findAll().stream()
                 .collect(Collectors.toMap(
                         MoveMeta::getMoveId,

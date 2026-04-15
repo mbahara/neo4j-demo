@@ -1,6 +1,7 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.model.csv.CsvItem;
+import at.jku.faw.neo4jdemo.model.csv.CsvPokemonSpecies;
 import at.jku.faw.neo4jdemo.repository.csv.CsvEvolutionChainsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonSpeciesRepositoryImpl;
@@ -52,12 +53,29 @@ public class EvolutionChainService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
+        Map<Long, CsvItem> itemMap = csvItemRepositoryImpl.getAll().stream()
+                .collect(Collectors.toMap(CsvItem::getId, item -> item));
+
+        Map<Long, List<CsvPokemonSpecies>> speciesMap = csvPokemonSpeciesRepositoryImpl.getAll().stream()
+                .filter(s -> s.getEvolutionChainId() != null)
+                .collect(Collectors.groupingBy(CsvPokemonSpecies::getEvolutionChainId));
+
         csvMainRepo.getAll().forEach(csv -> {
-            CsvItem item = csvItemRepositoryImpl.getById(csv.getBabyTriggerItemId());
-            neo4jRepo.linkEvolutionChainToItem(csv.getId(), item.getId());
-            csvPokemonSpeciesRepositoryImpl.getByEvolutionChainId(csv.getId()).forEach(
-                    csvPokemonSpecies -> neo4jRepo.linkEvolutionChainToPokemonSpecies(csv.getId(), csvPokemonSpecies.getId())
-            );
+            Long chainId = csv.getId();
+
+            if (csv.getBabyTriggerItemId() != null) {
+                CsvItem item = itemMap.get(csv.getBabyTriggerItemId());
+                if (item != null) {
+                    neo4jRepo.linkEvolutionChainToItem(chainId, item.getId());
+                }
+            }
+
+            List<CsvPokemonSpecies> linkedSpecies = speciesMap.get(chainId);
+            if (linkedSpecies != null) {
+                linkedSpecies.forEach(species ->
+                        neo4jRepo.linkEvolutionChainToPokemonSpecies(chainId, species.getId())
+                );
+            }
         });
     }
 }

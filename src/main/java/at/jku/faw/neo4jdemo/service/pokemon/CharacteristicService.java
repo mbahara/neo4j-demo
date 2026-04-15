@@ -1,5 +1,6 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.neo4j.Stats;
 import at.jku.faw.neo4jdemo.repository.csv.CsvCharacteristicsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.CharacteristicRepository;
 import at.jku.faw.neo4jdemo.repository.neo4j.HighlightsRepository;
@@ -52,10 +53,23 @@ public class CharacteristicService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvCharacteristicsRepository.getAll().forEach(csvCharacteristics ->
-            statsRepository.findById(csvCharacteristics.getStatId()).ifPresent(stats ->
-                highlightsRepository.linkCharacteristicToStat(csvCharacteristics.getId(), stats.getId(), csvCharacteristics.getGeneMod5())
-            )
-        );
+        Map<Long, Stats> statsLookup = statsRepository.findAll().stream()
+                .collect(Collectors.toMap(
+                        Stats::getId,
+                        s -> s,
+                        (existing, replacement) -> existing
+                ));
+
+        csvCharacteristicsRepository.getAll().forEach(csv -> {
+            Stats stat = statsLookup.get(csv.getStatId());
+
+            if (stat != null) {
+                highlightsRepository.linkCharacteristicToStat(
+                        csv.getId(),
+                        stat.getId(),
+                        csv.getGeneMod5()
+                );
+            }
+        });
     }
 }

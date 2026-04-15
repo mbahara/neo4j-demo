@@ -1,5 +1,6 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvItemPockets;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemCategoriesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvItemPocketsRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.ItemCategoryRepository;
@@ -51,12 +52,13 @@ public class ItemCategoryService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(csv ->
-            csvItemPocketsRepositoryImpl.getAll().forEach(csvItemPocket -> {
-                if (csvItemPocket.getId().equals(csv.getPocketId())) {
-                    neo4jRepo.linkItemCategoryToItemPocket(csv.getId(), csvItemPocket.getId());
-                }
-            })
-        );
+        Map<Long, CsvItemPockets> pocketMap = csvItemPocketsRepositoryImpl.getAll().stream()
+                .collect(Collectors.toMap(CsvItemPockets::getId, p -> p));
+
+        csvMainRepo.getAll().forEach(csv -> {
+            if (csv.getPocketId() != null && pocketMap.containsKey(csv.getPocketId())) {
+                neo4jRepo.linkItemCategoryToItemPocket(csv.getId(), csv.getPocketId());
+            }
+        });
     }
 }

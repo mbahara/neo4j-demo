@@ -1,5 +1,6 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvExperience;
 import at.jku.faw.neo4jdemo.model.neo4j.Level;
 import at.jku.faw.neo4jdemo.repository.csv.CsvExperienceRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvGrowthRatesRepositoryImpl;
@@ -58,12 +59,23 @@ public class GrowthRateService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(rates ->
-            csvExperienceRepositoryImpl.getByGrowthRateId(rates.getId()).forEach(experience -> {
-                Level level = levelRepository.insertLevel(experience.getLevel());
-                levelRequirementRepository.linkGrowthRateToLevel(experience.getGrowthRateId(), level.getId(),
-                        experience.getExperience());
-            })
-        );
+        Map<Long, List<CsvExperience>> experienceMap = csvExperienceRepositoryImpl.getAll().stream()
+                .collect(Collectors.groupingBy(CsvExperience::getGrowthRateId));
+
+        csvMainRepo.getAll().forEach(rate -> {
+            Long growthRateId = rate.getId();
+            List<CsvExperience> experiences = experienceMap.get(growthRateId);
+
+            if (experiences != null) {
+                experiences.forEach(exp -> {
+                    Level level = levelRepository.insertLevel(exp.getLevel());
+                    levelRequirementRepository.linkGrowthRateToLevel(
+                            growthRateId,
+                            level.getId(),
+                            exp.getExperience()
+                    );
+                });
+            }
+        });
     }
 }

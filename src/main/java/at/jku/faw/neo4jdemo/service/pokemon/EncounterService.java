@@ -1,12 +1,12 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
+import at.jku.faw.neo4jdemo.model.csv.CsvLocationAreaEncounterRates;
 import at.jku.faw.neo4jdemo.repository.csv.CsvEncountersRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.csv.CsvLocationAreaEncounterRatesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.EncounterRepository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,16 +51,27 @@ public class EncounterService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        csvMainRepo.getAll().forEach(csvEncounters -> {
-            if (csvEncounters.getVersionId() != null) {
-                neo4jRepo.linkEncounterToVersion(csvEncounters.getId(), csvEncounters.getVersionId());
+        Map<Long, List<CsvLocationAreaEncounterRates>> ratesMap =
+                csvLocationAreaEncounterRatesRepositoryImpl.getAll().stream()
+                        .collect(Collectors.groupingBy(CsvLocationAreaEncounterRates::getLocationAreaId));
+
+        csvMainRepo.getAll().forEach(csv -> {
+            Long encounterId = csv.getId();
+            Long locationAreaId = csv.getLocationAreaId();
+
+            if (csv.getVersionId() != null) {
+                neo4jRepo.linkEncounterToVersion(encounterId, csv.getVersionId());
             }
-            csvLocationAreaEncounterRatesRepositoryImpl.getAll().stream().filter(rates ->
-                    Objects.equals(rates.getLocationAreaId(), csvEncounters.getLocationAreaId()))
-                    .forEach(encounterRates ->
-                            neo4jRepo.linkEncounterToEncounterMethod(csvEncounters.getId(), encounterRates.getEncounterMethodId()));
-            if (csvEncounters.getLocationAreaId() != null) {
-                neo4jRepo.linkEncounterToLocationArea(csvEncounters.getId(), csvEncounters.getLocationAreaId());
+
+            if (locationAreaId != null) {
+                neo4jRepo.linkEncounterToLocationArea(encounterId, locationAreaId);
+
+                List<CsvLocationAreaEncounterRates> rates = ratesMap.get(locationAreaId);
+                if (rates != null) {
+                    rates.forEach(rate ->
+                            neo4jRepo.linkEncounterToEncounterMethod(encounterId, rate.getEncounterMethodId())
+                    );
+                }
             }
         });
     }

@@ -48,7 +48,4 @@ public interface GenerationRepository extends Neo4jRepository<Generation, Long> 
         """)
     void linkGenerationToVersionGroup(@Param("generationId") Long generationId,
                         @Param("versionGroupId") Long versionGroupId);
-
-    @Query("CREATE INDEX generation_id_idx IF NOT EXISTS FOR (n:Generation) ON (n.id)")
-    void createIdIndex();
 }

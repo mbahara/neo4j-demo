@@ -13,7 +13,4 @@ public interface PokemonTypeRepository extends Neo4jRepository<PokemonType, Long
         """)
 	void linkPokemonToType(@Param("pokemonId") Long pokemonId, @Param("typeId") Long typeId, @Param("slot") int slot);
 
-
-    @Query("CREATE INDEX pokemontype_id_idx IF NOT EXISTS FOR (n:PokemonType) ON (n.id)")
-    void createIdIndex();
 }

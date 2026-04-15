@@ -29,7 +29,4 @@ public interface PokeathlonStatsRepository extends Neo4jRepository<PokeathlonSta
         RETURN n
         """)
     PokeathlonStats insertPokeathlonStats(@Param("id") Long id, @Param("identifier") String identifier);
-
-    @Query("CREATE INDEX pokeathlonstats_id_idx IF NOT EXISTS FOR (n:PokeathlonStats) ON (n.id)")
-    void createIdIndex();
 }

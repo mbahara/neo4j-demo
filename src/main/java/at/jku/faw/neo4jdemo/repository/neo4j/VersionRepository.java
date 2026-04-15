@@ -39,7 +39,4 @@ public interface VersionRepository extends Neo4jRepository<Version, Long> {
         """)
     void linkVersionToVersionGroup(@Param("versionId") Long versionId,
                         @Param("versionGroupId") Long versionGroupId);
-
-    @Query("CREATE INDEX version_id_idx IF NOT EXISTS FOR (n:Version) ON (n.id)")
-    void createIdIndex();
 }

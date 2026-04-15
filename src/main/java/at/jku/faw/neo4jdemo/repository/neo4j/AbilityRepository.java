@@ -48,7 +48,4 @@ public interface AbilityRepository extends Neo4jRepository<Ability, Long> {
         """)
     void linkAbilityToChangeEvent(@Param("abilityId") Long abilityId,
                         @Param("changeEventId") Long changeEventId);
-
-    @Query("CREATE INDEX ability_id_idx IF NOT EXISTS FOR (n:Ability) ON (n.id)")
-    void createIdIndex();
 }

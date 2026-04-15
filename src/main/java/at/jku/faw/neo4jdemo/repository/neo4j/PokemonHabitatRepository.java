@@ -37,7 +37,4 @@ public interface PokemonHabitatRepository extends Neo4jRepository<PokemonHabitat
         """)
     void linkPokemonHabitatToRegion(@Param("pokemonHabitatId") Long pokemonHabitatId,
                         @Param("regionId") Long regionId);
-
-    @Query("CREATE INDEX pokemonhabitat_id_idx IF NOT EXISTS FOR (n:PokemonHabitat) ON (n.id)")
-    void createIdIndex();
 }

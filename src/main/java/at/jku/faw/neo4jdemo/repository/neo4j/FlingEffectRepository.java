@@ -30,7 +30,4 @@ public interface FlingEffectRepository extends Neo4jRepository<FlingEffect, Long
         RETURN n
         """)
     FlingEffect insertFlingEffect(@Param("id") Long id, @Param("identifier") String identifier, @Param("effect") String effect);
-
-    @Query("CREATE INDEX flingeffect_id_idx IF NOT EXISTS FOR (n:FlingEffect) ON (n.id)")
-    void createIdIndex();
 }

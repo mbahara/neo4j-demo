@@ -31,7 +31,4 @@ public interface MoveBattleStyleRepository extends Neo4jRepository<MoveBattleSty
         RETURN n
         """)
     MoveBattleStyle insertMoveBattleStyle(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
-
-    @Query("CREATE INDEX movebattlestyle_id_idx IF NOT EXISTS FOR (n:MoveBattleStyle) ON (n.id)")
-    void createIdIndex();
 }

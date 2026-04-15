@@ -31,7 +31,4 @@ public interface GenderRepository extends Neo4jRepository<Gender, Long> {
     Gender insertGender(@Param("id") Long id, @Param("identifier") String identifier);
 
 
-
-    @Query("CREATE INDEX gender_id_idx IF NOT EXISTS FOR (n:Gender) ON (n.id)")
-    void createIdIndex();
 }

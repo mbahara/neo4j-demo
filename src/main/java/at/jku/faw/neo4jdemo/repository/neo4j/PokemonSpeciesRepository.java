@@ -114,7 +114,4 @@ public interface PokemonSpeciesRepository extends Neo4jRepository<PokemonSpecies
         """)
     void linkPokemonSpeciesToEggGroup(@Param("pokemonSpeciesId") Long pokemonSpeciesId,
                         @Param("eggGroupId") Long eggGroupId);
-
-    @Query("CREATE INDEX pokemonspecies_id_idx IF NOT EXISTS FOR (n:PokemonSpecies) ON (n.id)")
-    void createIdIndex();
 }

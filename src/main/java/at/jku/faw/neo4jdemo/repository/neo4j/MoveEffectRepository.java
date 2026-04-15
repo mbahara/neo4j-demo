@@ -27,7 +27,4 @@ public interface MoveEffectRepository extends Neo4jRepository<MoveEffect, Long> 
         RETURN n
         """)
     MoveEffect insertMoveEffect(@Param("id") Long id, @Param("shortEffect") String shortEffect, @Param("effect") String effect);
-
-    @Query("CREATE INDEX moveeffect_id_idx IF NOT EXISTS FOR (n:MoveEffect) ON (n.id)")
-    void createIdIndex();
 }

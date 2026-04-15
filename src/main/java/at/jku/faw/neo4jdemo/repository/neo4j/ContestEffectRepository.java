@@ -30,7 +30,4 @@ public interface ContestEffectRepository extends Neo4jRepository<ContestEffect, 
         RETURN n
         """)
     ContestEffect insertContestEffect(@Param("id") Long id, @Param("appeal") int appeal, @Param("jam") int jam, @Param("flavorText") String flavorText, @Param("effect") String effect);
-
-    @Query("CREATE INDEX contesteffect_id_idx IF NOT EXISTS FOR (n:ContestEffect) ON (n.id)")
-    void createIdIndex();
 }

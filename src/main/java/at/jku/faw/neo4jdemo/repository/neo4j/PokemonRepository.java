@@ -66,7 +66,4 @@ public interface PokemonRepository extends Neo4jRepository<Pokemon, Long> {
         """)
     void linkPokemonToEncounter(@Param("pokemonId") Long pokemonId,
                         @Param("encounterId") Long encounterId);
-
-    @Query("CREATE INDEX pokemon_id_idx IF NOT EXISTS FOR (n:Pokemon) ON (n.id)")
-    void createIdIndex();
 }

@@ -41,7 +41,4 @@ public interface AreaRepository extends Neo4jRepository<Area, Long> {
     void linkAreaToLocation(@Param("areaId") Long areaId,
                         @Param("locationId") Long locationId);
 
-
-    @Query("CREATE INDEX area_id_idx IF NOT EXISTS FOR (n:Area) ON (n.id)")
-    void createIdIndex();
 }

@@ -27,7 +27,4 @@ public interface CharacteristicRepository extends Neo4jRepository<Characteristic
         RETURN n
         """)
     Characteristic insertCharacteristic(@Param("id") Long id, @Param("description") String description);
-
-    @Query("CREATE INDEX characteristic_id_idx IF NOT EXISTS FOR (n:Characteristic) ON (n.id)")
-    void createIdIndex();
 }

@@ -40,7 +40,4 @@ public interface StatsRepository extends Neo4jRepository<Stats, Long> {
         """)
     void linkStatsToDamageClass(@Param("statsId") Long statsId,
                         @Param("damageClassId") Long damageClassId);
-
-    @Query("CREATE INDEX stats_id_idx IF NOT EXISTS FOR (n:Stats) ON (n.id)")
-    void createIdIndex();
 }

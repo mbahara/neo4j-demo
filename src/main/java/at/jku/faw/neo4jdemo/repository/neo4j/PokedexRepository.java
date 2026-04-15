@@ -46,7 +46,4 @@ public interface PokedexRepository extends Neo4jRepository<Pokedex, Long> {
         """)
     void linkPokedexToVersionGroup(@Param("pokedexId") Long pokedexId,
                         @Param("versionGroupId") Long versionGroupId);
-
-    @Query("CREATE INDEX pokedex_id_idx IF NOT EXISTS FOR (n:Pokedex) ON (n.id)")
-    void createIdIndex();
 }

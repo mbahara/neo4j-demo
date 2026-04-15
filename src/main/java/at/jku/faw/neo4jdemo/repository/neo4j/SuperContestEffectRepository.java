@@ -37,7 +37,4 @@ public interface SuperContestEffectRepository extends Neo4jRepository<SuperConte
         """)
     void linkSuperContestEffectToMove(@Param("superContestEffectId") Long superContestEffectId,
                         @Param("moveId") Long moveId);
-
-    @Query("CREATE INDEX supercontesteffect_id_idx IF NOT EXISTS FOR (n:SuperContestEffect) ON (n.id)")
-    void createIdIndex();
 }

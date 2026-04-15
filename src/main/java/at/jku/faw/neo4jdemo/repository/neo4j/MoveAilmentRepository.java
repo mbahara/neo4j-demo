@@ -31,7 +31,4 @@ public interface MoveAilmentRepository extends Neo4jRepository<MoveAilment, Long
         RETURN n
         """)
     MoveAilment insertMoveAilment(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name);
-
-    @Query("CREATE INDEX moveailment_id_idx IF NOT EXISTS FOR (n:MoveAilment) ON (n.id)")
-    void createIdIndex();
 }

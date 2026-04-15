@@ -16,7 +16,4 @@ public interface LevelRepository extends Neo4jRepository<Level, Long> {
         RETURN n
         """)
     Level insertLevel(@Param("value") int value);
-
-    @Query("CREATE INDEX level_id_idx IF NOT EXISTS FOR (n:Level) ON (n.id)")
-    void createIdIndex();
 }

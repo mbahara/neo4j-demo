@@ -53,7 +53,4 @@ public interface EncounterRepository extends Neo4jRepository<Encounter, Long> {
         """)
     void linkEncounterToLocationArea(@Param("encounterId") Long encounterId,
                                      @Param("locationAreaId") Long locationAreaId);
-
-    @Query("CREATE INDEX encounter_id_idx IF NOT EXISTS FOR (n:Encounter) ON (n.id)")
-    void createIdIndex();
 }

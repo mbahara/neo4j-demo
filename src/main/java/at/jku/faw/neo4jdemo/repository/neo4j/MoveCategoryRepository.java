@@ -30,7 +30,4 @@ public interface MoveCategoryRepository extends Neo4jRepository<MoveCategory, Lo
         RETURN n
         """)
     MoveCategory insertMoveCategory(@Param("id") Long id, @Param("identifier") String identifier, @Param("description") String description);
-
-    @Query("CREATE INDEX movecategory_id_idx IF NOT EXISTS FOR (n:MoveCategory) ON (n.id)")
-    void createIdIndex();
 }

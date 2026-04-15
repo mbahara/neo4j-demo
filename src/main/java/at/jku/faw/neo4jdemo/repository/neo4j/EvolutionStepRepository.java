@@ -91,7 +91,4 @@ public interface EvolutionStepRepository extends Neo4jRepository<EvolutionStep, 
         """)
     void linkEvolutionStepToPokemonSpecies(@Param("evolutionStepId") Long evolutionStepId,
                         @Param("pokemonSpeciesId") Long pokemonSpeciesId);
-
-    @Query("CREATE INDEX evolutionstep_id_idx IF NOT EXISTS FOR (n:EvolutionStep) ON (n.id)")
-    void createIdIndex();
 }

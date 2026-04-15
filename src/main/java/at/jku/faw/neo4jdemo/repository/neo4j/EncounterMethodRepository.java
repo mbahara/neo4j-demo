@@ -32,7 +32,4 @@ public interface EncounterMethodRepository extends Neo4jRepository<EncounterMeth
         RETURN n
         """)
     EncounterMethod insertEncounterMethod(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name, @Param("order") int order);
-
-    @Query("CREATE INDEX encountermethod_id_idx IF NOT EXISTS FOR (n:EncounterMethod) ON (n.id)")
-    void createIdIndex();
 }

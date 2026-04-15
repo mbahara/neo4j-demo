@@ -29,7 +29,4 @@ public interface PokemonColorRepository extends Neo4jRepository<PokemonColor, Lo
         RETURN n
         """)
     PokemonColor insertPokemonColor(@Param("id") Long id, @Param("identifier") String identifier);
-
-    @Query("CREATE INDEX pokemoncolor_id_idx IF NOT EXISTS FOR (n:PokemonColor) ON (n.id)")
-    void createIdIndex();
 }

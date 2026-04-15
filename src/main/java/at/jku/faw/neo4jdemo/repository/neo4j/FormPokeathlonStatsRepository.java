@@ -16,7 +16,4 @@ public interface FormPokeathlonStatsRepository extends Neo4jRepository<FormPokea
         RETURN n
         """)
     FormPokeathlonStats insertFormPokeathlonStats(@Param("minimumStat") int minimumStat, @Param("baseStat") int baseStat, @Param("maximumStat") int maximumStat);
-
-    @Query("CREATE INDEX formpokeathlonstats_id_idx IF NOT EXISTS FOR (n:FormPokeathlonStats) ON (n.id)")
-    void createIdIndex();
 }

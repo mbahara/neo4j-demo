@@ -63,7 +63,4 @@ public interface VersionGroupRepository extends Neo4jRepository<VersionGroup, Lo
         """)
     void linkVersionGroupToMoveMethod(@Param("versionGroupId") Long versionGroupId,
                         @Param("moveMethodId") Long moveMethodId);
-
-    @Query("CREATE INDEX versiongroup_id_idx IF NOT EXISTS FOR (n:VersionGroup) ON (n.id)")
-    void createIdIndex();
 }

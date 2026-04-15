@@ -29,7 +29,4 @@ public interface ContestTypeRepository extends Neo4jRepository<ContestType, Long
         RETURN n
         """)
     ContestType insertContestType(@Param("id") Long id, @Param("identifier") String identifier);
-
-    @Query("CREATE INDEX contesttype_id_idx IF NOT EXISTS FOR (n:ContestType) ON (n.id)")
-    void createIdIndex();
 }

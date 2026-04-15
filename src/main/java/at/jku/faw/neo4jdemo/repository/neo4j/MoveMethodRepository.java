@@ -34,7 +34,4 @@ public interface MoveMethodRepository extends Neo4jRepository<MoveMethod, Long> 
     MoveMethod insertMoveMethod(@Param("id") Long id, @Param("identifier") String identifier, @Param("name") String name, @Param("description") String description);
 
 
-
-    @Query("CREATE INDEX movemethod_id_idx IF NOT EXISTS FOR (n:MoveMethod) ON (n.id)")
-    void createIdIndex();
 }

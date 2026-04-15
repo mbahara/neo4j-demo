@@ -31,7 +31,4 @@ public interface EvolutionTriggerRepository extends Neo4jRepository<EvolutionTri
     EvolutionTrigger insertEvolutionTrigger(@Param("id") Long id, @Param("identifier") String identifier);
 
 
-
-    @Query("CREATE INDEX evolutiontrigger_id_idx IF NOT EXISTS FOR (n:EvolutionTrigger) ON (n.id)")
-    void createIdIndex();
 }

@@ -6,15 +6,15 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Comparator;
+import org.neo4j.configuration.connectors.BoltConnector;
 import org.neo4j.configuration.helpers.SocketAddress;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.neo4j.dbms.api.DatabaseManagementService;
 import org.neo4j.dbms.api.DatabaseManagementServiceBuilder;
-import org.neo4j.configuration.connectors.BoltConnector;
+import org.neo4j.graphdb.GraphDatabaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 @Component
 public class Neo4jEmbeddedServer {
@@ -53,9 +53,9 @@ public class Neo4jEmbeddedServer {
 			System.out.println("\n" + "=".repeat(40));
 			System.out.println("   NEO4J DEMO - LOCAL SERVER IS ACTIVE");
 			System.out.println("=".repeat(40));
-			System.out.printf(" Endpoint: http://%s:%s", hostname, serverPort);
-			System.out.printf("  Bolt UI:  bolt://%s:%s", hostname, neo4jPort);
-			System.out.println(" SESSION KEY: " + SESSION_KEY);
+			System.out.printf("Endpoint: http://%s:%s\n", hostname, serverPort);
+			System.out.printf("Bolt UI:  bolt://%s:%s\n", hostname, neo4jPort);
+			System.out.println("SESSION KEY: " + SESSION_KEY);
 			System.out.println("=".repeat(40));
 			System.out.println("Paste the key above into your UI.\n");
 

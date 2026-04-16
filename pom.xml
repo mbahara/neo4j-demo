@@ -10,7 +10,7 @@
     </parent>
     <groupId>at.jku.faw</groupId>
     <artifactId>neo4j-demo</artifactId>
-    <version>0.0.1</version>
+    <version>2.0.0</version>
     <name>Neo4j Demo</name>
     <description>Neo4j Demo project with Spring Boot</description>
 

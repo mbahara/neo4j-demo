@@ -35,7 +35,8 @@ public class EncounterService implements IPokemonDataLoader {
     @Override
     public void loadNodes() {
         List<CsvEncounters> allCsv = csvMainRepo.getAll();
-        int chunkSize = 2000;
+        int total = allCsv.size();
+        int chunkSize = 5000;
 
         for (int i = 0; i < allCsv.size(); i += chunkSize) {
             int end = Math.min(i + chunkSize, allCsv.size());
@@ -49,6 +50,8 @@ public class EncounterService implements IPokemonDataLoader {
                     }).collect(Collectors.toList());
 
             batchProcessor.processNodeChunk(rows, neo4jRepo::batchInsertEncounters);
+            int remaining = total - end;
+            System.out.println("Processed: " + end + " | Remaining: " + remaining + " | Total: " + total);
         }
 
         System.out.println("Successfully loaded Encounters nodes.");
@@ -62,7 +65,7 @@ public class EncounterService implements IPokemonDataLoader {
 
         List<CsvEncounters> allEncounters = csvMainRepo.getAll();
         int total = allEncounters.size();
-        int chunkSize = 2000;
+        int chunkSize = 5000;
 
         System.out.println("Linking Encounter relationships in chunks of " + chunkSize + "...");
 

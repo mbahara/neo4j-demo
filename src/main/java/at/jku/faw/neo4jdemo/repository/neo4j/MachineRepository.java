@@ -12,19 +12,20 @@ import org.springframework.stereotype.Repository;
 public interface MachineRepository extends Neo4jRepository<Machine, Long> {
     @Query("""
     UNWIND $rows AS row
-    MERGE (n:Machine {id: row.id})
-    SET n.machineNumber = row.machineNumber
+    MERGE (n:Machine {
+        machineNumber: row.machineNumber
+    })
     RETURN count(n)
     """)
     Integer batchInsertMachines(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
-        MERGE (n:Machine {id: $id})
+        MERGE (n:Machine)
         ON CREATE SET n.machineNumber = $machineNumber
         ON MATCH  SET n.machineNumber = $machineNumber
         RETURN n
         """)
-    Machine insertMachine(@Param("id") int id, @Param("machineNumber") int machineNumber);
+    Machine insertMachine(@Param("machineNumber") int machineNumber);
 
     @Query("""
         MATCH (s:Machine {id: $machineId})
@@ -32,7 +33,7 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
         MERGE (s)-[:TEACHES_MOVE]->(t)
         """)
     void linkMachineToMove(@Param("machineId") Long machineId,
-                        @Param("moveId") Long moveId);
+                           @Param("moveId") Long moveId);
 
     @Query("""
         MATCH (s:Machine {id: $machineId})
@@ -40,7 +41,7 @@ public interface MachineRepository extends Neo4jRepository<Machine, Long> {
         MERGE (s)-[:IN_VERSION_GROUP]->(t)
         """)
     void linkMachineToVersionGroup(@Param("machineId") Long machineId,
-                        @Param("versionGroupId") Long versionGroupId);
+                                   @Param("versionGroupId") Long versionGroupId);
 
     @Query("CREATE INDEX machine_number_idx IF NOT EXISTS FOR (n:Machine) ON (n.id)")
     void createMachineIndex();

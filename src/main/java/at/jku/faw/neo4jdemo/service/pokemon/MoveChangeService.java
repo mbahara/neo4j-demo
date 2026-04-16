@@ -1,12 +1,12 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.model.csv.CsvMoveChangelog;
+import at.jku.faw.neo4jdemo.model.neo4j.MoveChange;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMoveChangelogRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.MoveChangeRepository;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,49 +28,51 @@ public class MoveChangeService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        List<CsvMoveChangelog> allCsv = csvMoveChangelogRepositoryImpl.getAll();
-
-        long idCounter = 1;
-        List<Map<String, Object>> rows = new ArrayList<>();
-
-        for (CsvMoveChangelog csv : allCsv) {
-            Map<String, Object> row = new HashMap<>();
-            row.put("id", idCounter++);
-            row.put("power", csv.getPower());
-            row.put("pp", csv.getPp());
-            row.put("accuracy", csv.getAccuracy());
-            row.put("priority", csv.getPriority());
-            rows.add(row);
-        }
+        List<Map<String, Object>> rows = csvMoveChangelogRepositoryImpl.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("power", csv.getPower());
+                    row.put("pp", csv.getPp());
+                    row.put("accuracy", csv.getAccuracy());
+                    row.put("priority", csv.getPriority());
+                    return row;
+                })
+                .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
             Integer count = moveChangeRepository.batchInsertMoveChanges(rows);
-            moveChangeRepository.createChangeIdIndex();
-            System.out.println("Successfully loaded " + count + " MoveChange nodes.");
+            //moveChangeRepository.createChangeIdIndex();
+            System.out.println("Successfully loaded " + count + " MoveChanges nodes.");
         }
     }
 
     @Override
     @Transactional
     public void loadRelationships() {
-        List<CsvMoveChangelog> allCsv = csvMoveChangelogRepositoryImpl.getAll();
+        Map<Long, List<MoveChange>> moveChangeMap = moveChangeRepository.findAll().stream()
+                .collect(Collectors.groupingBy(MoveChange::getId));
 
-        long idCounter = 1;
-        for (CsvMoveChangelog csv : allCsv) {
-            long currentChangeId = idCounter++;
+        csvMoveChangelogRepositoryImpl.getAll().forEach(csv -> {
+            List<MoveChange> matchingNodes = moveChangeMap.get(csv.getMoveId());
 
-            if (csv.getVersionGroupId() != null) {
-                moveChangeRepository.linkMoveChangeToVersionGroup(currentChangeId, csv.getVersionGroupId());
+            if (matchingNodes != null) {
+                matchingNodes.forEach(moveChange -> {
+                    Long internalId = moveChange.getId();
+
+                    if (csv.getVersionGroupId() != null) {
+                        moveChangeRepository.linkMoveChangeToVersionGroup(internalId, csv.getVersionGroupId());
+                    }
+                    if (csv.getTypeId() != null) {
+                        moveChangeRepository.linkMoveChangeToType(internalId, csv.getTypeId());
+                    }
+                    if (csv.getEffectId() != null) {
+                        moveChangeRepository.linkMoveChangeToMoveEffect(internalId, csv.getEffectId(), csv.getEffectChance());
+                    }
+                    if (csv.getTargetId() != null) {
+                        moveChangeRepository.linkMoveChangeToMoveTarget(internalId, csv.getTargetId());
+                    }
+                });
             }
-            if (csv.getTypeId() != null) {
-                moveChangeRepository.linkMoveChangeToType(currentChangeId, csv.getTypeId());
-            }
-            if (csv.getEffectId() != null) {
-                moveChangeRepository.linkMoveChangeToMoveEffect(currentChangeId, csv.getEffectId(), csv.getEffectChance());
-            }
-            if (csv.getTargetId() != null) {
-                moveChangeRepository.linkMoveChangeToMoveTarget(currentChangeId, csv.getTargetId());
-            }
-        }
+        });
     }
 }

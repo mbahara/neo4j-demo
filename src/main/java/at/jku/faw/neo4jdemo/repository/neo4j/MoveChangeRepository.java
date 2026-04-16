@@ -15,14 +15,15 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
     void createChangeIdIndex();
 
     @Query("""
-        UNWIND $rows AS row
-        MERGE (n:MoveChange {id: row.id})
-        SET n.power = row.power,
-            n.pp = row.pp,
-            n.accuracy = row.accuracy,
-            n.priority = row.priority
-        RETURN count(n)
-        """)
+    UNWIND $rows AS row
+    MERGE (n:MoveChange {
+        power: row.power,
+        pp: row.pp,
+        accuracy: row.accuracy,
+        priority: row.priority
+    })
+    RETURN count(n)
+    """)
     Integer batchInsertMoveChanges(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""
@@ -40,7 +41,7 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
         MERGE (s)-[:CHANGED_IN]->(t)
         """)
     void linkMoveChangeToVersionGroup(@Param("moveChangeId") Long moveChangeId,
-                        @Param("versionGroupId") Long versionGroupId);
+                                      @Param("versionGroupId") Long versionGroupId);
 
     @Query("""
         MATCH (s:MoveChange {id: $moveChangeId})
@@ -48,7 +49,7 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
         MERGE (s)-[:FOR_TYPE]->(t)
         """)
     void linkMoveChangeToType(@Param("moveChangeId") Long moveChangeId,
-                        @Param("typeId") Long typeId);
+                              @Param("typeId") Long typeId);
 
     @Query("""
         MATCH (s:MoveChange {id: $moveChangeId})
@@ -56,7 +57,7 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
         MERGE (s)-[:HAS_EFFECT {effectChance: $effectChance}]->(t)
         """)
     void linkMoveChangeToMoveEffect(@Param("moveChangeId") Long moveChangeId,
-                        @Param("moveEffectId") Long moveEffectId, @Param("effectChance") int effectChance);
+                                    @Param("moveEffectId") Long moveEffectId, @Param("effectChance") int effectChance);
 
     @Query("""
         MATCH (s:MoveChange {id: $moveChangeId})
@@ -64,5 +65,5 @@ public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> 
         MERGE (s)-[:TARGETS]->(t)
         """)
     void linkMoveChangeToMoveTarget(@Param("moveChangeId") Long moveChangeId,
-                        @Param("moveTargetId") Long moveTargetId);
+                                    @Param("moveTargetId") Long moveTargetId);
 }

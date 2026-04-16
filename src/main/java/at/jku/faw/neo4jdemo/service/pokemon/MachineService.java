@@ -1,12 +1,12 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.model.csv.CsvMachine;
+import at.jku.faw.neo4jdemo.model.neo4j.Machine;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMachineRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.MachineRepository;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +17,7 @@ public class MachineService implements IPokemonDataLoader {
     private final MachineRepository machineRepository;
 
     public MachineService(CsvMachineRepositoryImpl csvMachineRepository,
-                           MachineRepository machineRepository) {
+                          MachineRepository machineRepository) {
         this.csvMachineRepository = csvMachineRepository;
         this.machineRepository = machineRepository;
     }
@@ -28,20 +28,17 @@ public class MachineService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        List<CsvMachine> csvMachine = csvMachineRepository.getAll();
-        long idCounter = 1;
-        List<Map<String, Object>> rows = new ArrayList<>();
-
-        for (CsvMachine csv : csvMachine) {
-            Map<String, Object> row = new HashMap<>();
-            row.put("id", idCounter++);
-            row.put("machineNumber", csv.getMachineNumber());
-            rows.add(row);
-        }
+        List<Map<String, Object>> rows = csvMachineRepository.getAll().stream()
+                .map(csv -> {
+                    Map<String, Object> row = new HashMap<>();
+                    row.put("machineNumber", csv.getMachineNumber());
+                    return row;
+                })
+                .collect(Collectors.toList());
 
         if (!rows.isEmpty()) {
             Integer count = machineRepository.batchInsertMachines(rows);
-            machineRepository.createMachineIndex();
+            //machineRepository.createMachineIndex();
             System.out.println("Successfully loaded " + count + " Machines nodes.");
         }
     }
@@ -49,24 +46,21 @@ public class MachineService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        List<CsvMachine> allCsv = csvMachineRepository.getAll();
+        Map<Integer, List<Machine>> machineMap = machineRepository.findAll().stream()
+                .collect(Collectors.groupingBy(Machine::getMachineNumber));
 
-        long idCounter = 1;
-
-        for (CsvMachine csv : allCsv) {
-            long currentMachineId = idCounter++;
+        csvMachineRepository.getAll().forEach(csv -> {
             if (csv.getMoveId() != null) {
-                machineRepository.linkMachineToMove(
-                        currentMachineId,
-                        csv.getMoveId()
-                );
+                List<Machine> matchingMachines = machineMap.get(csv.getMachineNumber());
+
+                if (matchingMachines != null) {
+                    matchingMachines.forEach(machine -> {
+                        Long internalId = machine.getId();
+                        machineRepository.linkMachineToMove(internalId, csv.getMoveId());
+                        machineRepository.linkMachineToVersionGroup(internalId, csv.getVersionGroupId());
+                    });
+                }
             }
-            if (csv.getVersionGroupId() != null) {
-                machineRepository.linkMachineToVersionGroup(
-                        currentMachineId,
-                        csv.getVersionGroupId()
-                );
-            }
-        }
+        });
     }
 }

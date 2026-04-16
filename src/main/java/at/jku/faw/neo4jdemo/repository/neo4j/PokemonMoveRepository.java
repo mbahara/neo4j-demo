@@ -16,8 +16,10 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
 
     @Query("""
         UNWIND $rows AS row
-        MERGE (n:PokemonMove {id: row.id})
-        SET n.level = row.level, n.order = row.order
+        MERGE (n:PokemonMove {
+            level: row.level,
+            order: row.order
+        })
         RETURN count(n)
         """)
     Integer batchInsertPokemonMoves(@Param("rows") List<Map<String, Object>> rows);
@@ -37,7 +39,7 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
         MERGE (s)-[:MOVE_LEARNED]->(t)
         """)
     void linkPokemonMoveToMove(@Param("pokemonMoveId") Long pokemonMoveId,
-                        @Param("moveId") Long moveId);
+                               @Param("moveId") Long moveId);
 
     @Query("""
         MATCH (s:PokemonMove {id: $pokemonMoveId})
@@ -45,7 +47,7 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
         MERGE (s)-[:LEARNED_VIA]->(t)
         """)
     void linkPokemonMoveToMoveMethod(@Param("pokemonMoveId") Long pokemonMoveId,
-                        @Param("moveMethodId") Long moveMethodId);
+                                     @Param("moveMethodId") Long moveMethodId);
 
     @Query("""
         MATCH (s:PokemonMove {id: $pokemonMoveId})
@@ -53,5 +55,5 @@ public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long
         MERGE (s)-[:IN_VERSION_GROUP]->(t)
         """)
     void linkPokemonMoveToVersionGroup(@Param("pokemonMoveId") Long pokemonMoveId,
-                        @Param("versionGroupId") Long versionGroupId);
+                                       @Param("versionGroupId") Long versionGroupId);
 }

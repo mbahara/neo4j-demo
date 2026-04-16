@@ -1,13 +1,8 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.neo4j.core.Neo4jClient;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +12,12 @@ public class PokemonLoaderService {
 
 	private final List<IPokemonDataLoader> pokemonDataLoaders;
 	private final Neo4jClient neo4jClient;
-	private final ResourceLoader resourceLoader;
 	private volatile boolean isImporting = false;
 	private volatile boolean isImported = false;
 
-	public PokemonLoaderService(List<IPokemonDataLoader> allLoaders, Neo4jClient neo4jClient,
-								ResourceLoader resourceLoader) {
+	public PokemonLoaderService(List<IPokemonDataLoader> allLoaders, Neo4jClient neo4jClient) {
 		this.pokemonDataLoaders = allLoaders;
 		this.neo4jClient = neo4jClient;
-		this.resourceLoader = resourceLoader;
 	}
 
 	public void loadPokemonData() {
@@ -41,24 +33,10 @@ public class PokemonLoaderService {
 
 		try {
 			isImporting = true;
-			Resource dumpResource = resourceLoader.getResource("classpath:data/pokemon.dump");
-
-			if (dumpResource.exists()) {
-				log.info("--- Dump file detected. Loading Pokémon graph... ---");
-				try (InputStream is = dumpResource.getInputStream()) {
-					String cypherDump = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-
-					neo4jClient.query(cypherDump).run();
-					log.info("Pokémon Data restored from dump successfully.");
-					return;
-				} catch (IOException e) {
-					log.error("Error reading dump file: {}. Falling back to CSV.", e.getMessage());
-				}
-			}
-
-			log.info("--- No dump file found or failed to load. Starting standard CSV import... ---");
+			log.info("--- Starting a CSV import... ---");
 			executeImport();
 		} catch (Exception e) {
+			log.error("An error occurred during the Pokémon data import from CSV files: {}", e.getMessage(), e);
 			isImported = false;
 		} finally {
 			isImporting = false;
@@ -66,7 +44,7 @@ public class PokemonLoaderService {
 	}
 
 	private boolean isDatabasePopulated() {
-		return neo4jClient.query("MATCH (n:Pokemon) RETURN count(n) > 0 AS exists")
+		return neo4jClient.query("MATCH (n) RETURN count(n) > 0 AS exists LIMIT 1")
 				.fetchAs(Boolean.class)
 				.one()
 				.orElse(false) || isImported;

@@ -11,12 +11,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PokemonMoveRepository extends Neo4jRepository<PokemonMove, Long> {
 
+    @Query("CREATE INDEX pokemon_move_idx IF NOT EXISTS FOR (n:PokemonMove) ON (n.id)")
+    void createPokemonMoveIndex();
+
     @Query("""
         UNWIND $rows AS row
-        MERGE (n:PokemonMove)
+        MERGE (n:PokemonMove {id: row.id})
         SET n.level = row.level, n.order = row.order
-    RETURN count(n)
-    """)
+        RETURN count(n)
+        """)
     Integer batchInsertPokemonMoves(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""

@@ -11,12 +11,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MoveChangeRepository extends Neo4jRepository<MoveChange, Long> {
 
+    @Query("CREATE INDEX move_change_id_idx IF NOT EXISTS FOR (n:MoveChange) ON (n.id)")
+    void createChangeIdIndex();
+
     @Query("""
-    UNWIND $rows AS row
-    MERGE (n:MoveChange)
-    SET n.power = row.power, n.pp = row.pp, n.accuracy = row.accuracy, n.priority = row.priority
-    RETURN count(n)
-    """)
+        UNWIND $rows AS row
+        MERGE (n:MoveChange {id: row.id})
+        SET n.power = row.power,
+            n.pp = row.pp,
+            n.accuracy = row.accuracy,
+            n.priority = row.priority
+        RETURN count(n)
+        """)
     Integer batchInsertMoveChanges(@Param("rows") List<Map<String, Object>> rows);
 
     @Query("""

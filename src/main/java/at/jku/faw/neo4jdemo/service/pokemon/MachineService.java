@@ -1,12 +1,12 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
-import at.jku.faw.neo4jdemo.model.neo4j.Machine;
+import at.jku.faw.neo4jdemo.model.csv.CsvMachine;
 import at.jku.faw.neo4jdemo.repository.csv.CsvMachineRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.MachineRepository;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,16 +28,20 @@ public class MachineService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadNodes() {
-        List<Map<String, Object>> rows = csvMachineRepository.getAll().stream()
-                .map(csv -> {
-                    Map<String, Object> row = new HashMap<>();
-                    row.put("machineNumber", csv.getMachineNumber());
-                    return row;
-                })
-                .collect(Collectors.toList());
+        List<CsvMachine> csvMachine = csvMachineRepository.getAll();
+        long idCounter = 1;
+        List<Map<String, Object>> rows = new ArrayList<>();
+
+        for (CsvMachine csv : csvMachine) {
+            Map<String, Object> row = new HashMap<>();
+            row.put("id", idCounter++);
+            row.put("machineNumber", csv.getMachineNumber());
+            rows.add(row);
+        }
 
         if (!rows.isEmpty()) {
             Integer count = machineRepository.batchInsertMachines(rows);
+            machineRepository.createMachineIndex();
             System.out.println("Successfully loaded " + count + " Machines nodes.");
         }
     }
@@ -45,21 +49,24 @@ public class MachineService implements IPokemonDataLoader {
     @Override
     @Transactional
     public void loadRelationships() {
-        Map<Integer, List<Machine>> machineMap = machineRepository.findAll().stream()
-                .collect(Collectors.groupingBy(Machine::getMachineNumber));
+        List<CsvMachine> allCsv = csvMachineRepository.getAll();
 
-        csvMachineRepository.getAll().forEach(csv -> {
+        long idCounter = 1;
+
+        for (CsvMachine csv : allCsv) {
+            long currentMachineId = idCounter++;
             if (csv.getMoveId() != null) {
-                List<Machine> matchingMachines = machineMap.get(csv.getMachineNumber());
-
-                if (matchingMachines != null) {
-                    matchingMachines.forEach(machine -> {
-                        Long internalId = machine.getId();
-                        machineRepository.linkMachineToMove(internalId, csv.getMoveId());
-                        machineRepository.linkMachineToVersionGroup(internalId, csv.getVersionGroupId());
-                    });
-                }
+                machineRepository.linkMachineToMove(
+                        currentMachineId,
+                        csv.getMoveId()
+                );
             }
-        });
+            if (csv.getVersionGroupId() != null) {
+                machineRepository.linkMachineToVersionGroup(
+                        currentMachineId,
+                        csv.getVersionGroupId()
+                );
+            }
+        }
     }
 }

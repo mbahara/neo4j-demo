@@ -10,16 +10,14 @@ import org.springframework.stereotype.Repository;
 public interface HeldItemRepository extends Neo4jRepository<HeldItem, Long> {
 
     @Query("""
-        MERGE (n:HeldItem)
-        ON CREATE SET n.rarity = $rarity
-        ON MATCH  SET n.rarity = $rarity
+        MERGE (n:HeldItem {rarity: $rarity})
         RETURN n
         """)
     HeldItem insertHeldItem(@Param("rarity") int rarity);
 
 
     @Query("""
-        MATCH (s:HeldItem {id: $heldItemId})
+        MATCH (s:HeldItem) WHERE elementId(s) = $heldItemId
         MATCH (t:Item {id: $itemId})
         MERGE (s)-[:ITEM_HELD]->(t)
         """)
@@ -27,7 +25,7 @@ public interface HeldItemRepository extends Neo4jRepository<HeldItem, Long> {
                         @Param("itemId") Long itemId);
 
     @Query("""
-        MATCH (s:HeldItem {id: $heldItemId})
+        MATCH (s:HeldItem) WHERE elementId(s) = $heldItemId
         MATCH (t:Version {id: $versionId})
         MERGE (s)-[:IN_VERSION]->(t)
         """)

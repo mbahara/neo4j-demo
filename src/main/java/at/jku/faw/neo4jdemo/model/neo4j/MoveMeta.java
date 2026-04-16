@@ -28,7 +28,6 @@ public class MoveMeta {
     private int ailmentChance;
     private int flinchChance;
     private int statChance;
-    private Long moveId;
 
     @Relationship(type = "CAUSES_AILMENT")
     private MoveAilment ailment;

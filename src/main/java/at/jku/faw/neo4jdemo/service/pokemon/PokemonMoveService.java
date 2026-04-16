@@ -1,7 +1,6 @@
 package at.jku.faw.neo4jdemo.service.pokemon;
 
 import at.jku.faw.neo4jdemo.model.csv.CsvPokemonMoves;
-import at.jku.faw.neo4jdemo.model.neo4j.PokemonMove;
 import at.jku.faw.neo4jdemo.repository.csv.CsvPokemonMovesRepositoryImpl;
 import at.jku.faw.neo4jdemo.repository.neo4j.PokemonMoveRepository;
 import java.util.HashMap;
@@ -38,9 +37,13 @@ public class PokemonMoveService implements IPokemonDataLoader {
 		for (int i = 0; i < total; i += chunkSize) {
 			int end = Math.min(i + chunkSize, total);
 
+			final int chunkStartId = i + 1;
+			final java.util.concurrent.atomic.AtomicInteger offset = new java.util.concurrent.atomic.AtomicInteger(0);
+
 			List<Map<String, Object>> rows = allCsv.subList(i, end).stream()
 					.map(csv -> {
 						Map<String, Object> row = new HashMap<>();
+						row.put("id", (long) chunkStartId + offset.getAndIncrement());
 						row.put("level", csv.getLevel());
 						row.put("order", csv.getOrder());
 						return row;
@@ -53,19 +56,14 @@ public class PokemonMoveService implements IPokemonDataLoader {
 				System.out.println("Nodes Progress: " + i + "/" + total);
 			}
 		}
+
+		pokemonMoveRepository.createPokemonMoveIndex();
+		System.out.println("All PokemonMove nodes loaded and index created.");
 	}
 
 	@Override
 	public void loadRelationships() {
-		Map<Long, Long> moveNodeLookup = pokemonMoveRepository.findAll().stream()
-				.filter(pm -> pm.getMove() != null)
-				.collect(Collectors.toMap(
-						pm -> pm.getMove().getId(),
-						PokemonMove::getId,
-						(existing, replacement) -> existing
-				));
-
-		List<at.jku.faw.neo4jdemo.model.csv.CsvPokemonMoves> allCsv = csvPokemonMovesRepository.getAll();
+		List<CsvPokemonMoves> allCsv = csvPokemonMovesRepository.getAll();
 		int total = allCsv.size();
 		int chunkSize = 2500;
 
@@ -73,16 +71,23 @@ public class PokemonMoveService implements IPokemonDataLoader {
 
 		for (int i = 0; i < total; i += chunkSize) {
 			int end = Math.min(i + chunkSize, total);
-			List<at.jku.faw.neo4jdemo.model.csv.CsvPokemonMoves> chunk = allCsv.subList(i, end);
+			List<CsvPokemonMoves> chunk = allCsv.subList(i, end);
+
+			final long chunkStartId = i + 1;
 
 			pokemonBatchProcessor.processRelationshipChunk(() -> {
-				for (at.jku.faw.neo4jdemo.model.csv.CsvPokemonMoves csv : chunk) {
-					Long internalId = moveNodeLookup.get(csv.getMoveId());
-
-					if (internalId != null) {
-						pokemonMoveRepository.linkPokemonMoveToMove(internalId, csv.getMoveId());
-						pokemonMoveRepository.linkPokemonMoveToMoveMethod(internalId, csv.getMoveMethodId());
-						pokemonMoveRepository.linkPokemonMoveToVersionGroup(internalId, csv.getVersionGroupId());
+				long currentIdOffset = 0;
+				for (CsvPokemonMoves csv : chunk) {
+					Long syntheticId = chunkStartId + currentIdOffset;
+					currentIdOffset++;
+					if (csv.getMoveId() != null) {
+						pokemonMoveRepository.linkPokemonMoveToMove(syntheticId, csv.getMoveId());
+					}
+					if (csv.getMoveMethodId() != null) {
+						pokemonMoveRepository.linkPokemonMoveToMoveMethod(syntheticId, csv.getMoveMethodId());
+					}
+					if (csv.getVersionGroupId() != null) {
+						pokemonMoveRepository.linkPokemonMoveToVersionGroup(syntheticId, csv.getVersionGroupId());
 					}
 				}
 			});

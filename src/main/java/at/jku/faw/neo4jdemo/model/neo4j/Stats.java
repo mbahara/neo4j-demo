@@ -12,7 +12,7 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Node("Stat")
+@Node("Stats")
 public class Stats {
     @Id
     public Long id;
@@ -21,7 +21,7 @@ public class Stats {
     private boolean isBattleOnly;
     private int gameIndex;
 
-    // (:Stat)-[:HAS_DAMAGE_CLASS]->(:DamageClass)
+    // (:Stats)-[:HAS_DAMAGE_CLASS]->(:DamageClass)
     @Relationship(type = "HAS_DAMAGE_CLASS")
     private DamageClass damageClass;
 }
